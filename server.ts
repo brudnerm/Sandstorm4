@@ -9,6 +9,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const MCP_DIR = path.resolve(__dirname, '../yahoo-fantasy-baseball-mcp')
 const ENV_PATH = path.join(MCP_DIR, '.env')
 const DATA_PATH = path.join(MCP_DIR, 'data', 'all_transactions.json')
+const PUBLIC_DATA_PATH = path.join(__dirname, 'public', 'data', 'all_transactions.json')
 const SEASONS_DIR = path.join(MCP_DIR, 'data', 'transactions')
 
 const app = express()
@@ -127,6 +128,7 @@ const BASE = 'https://fantasysports.yahooapis.com/fantasy/v2'
 const LEAGUE_SEASONS: Record<string, string> = {
   '2009': '215.l.134803',
   '2010': '238.l.429668',
+  '2011': '253.l.89167',
   '2012': '268.l.116014',
   '2013': '308.l.61021',
   '2014': '328.l.60208',
@@ -146,6 +148,7 @@ const LEAGUE_SEASONS: Record<string, string> = {
 const CACHED_TRANSACTIONS: Record<string, string> = {
   '2009': '215.l.134803',
   '2010': '238.l.429668',
+  '2011': '253.l.89167',
   '2012': '268.l.116014',
   '2013': '308.l.61021',
   '2014': '328.l.60208',
@@ -530,9 +533,12 @@ app.post('/api/refresh-data', async (_req, res) => {
   }
 
   try {
-    writeFileSync(DATA_PATH, JSON.stringify(txnOutput, null, 2))
+    const txnJson = JSON.stringify(txnOutput, null, 2)
+    writeFileSync(DATA_PATH, txnJson)
+    writeFileSync(PUBLIC_DATA_PATH, txnJson)
     log(`\n[OK] Wrote ${allTxns.length} transactions across ${successSeasons.length} seasons to:`)
     log(`     ${DATA_PATH}`)
+    log(`     ${PUBLIC_DATA_PATH}`)
   } catch (e) {
     log(`[ERROR] Failed to write transactions file: ${String(e)}`)
   }

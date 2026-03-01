@@ -16,12 +16,14 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const MCP_DIR = path.resolve(__dirname, '../../yahoo-fantasy-baseball-mcp')
 const ENV_PATH = path.join(MCP_DIR, '.env')
 const OUTPUT_PATH = path.join(MCP_DIR, 'data', 'all_drafts.json')
+const PUBLIC_OUTPUT_PATH = path.join(__dirname, '../public/data/all_drafts.json')
 
 const BASE = 'https://fantasysports.yahooapis.com/fantasy/v2'
 
 const LEAGUE_SEASONS: Record<string, string> = {
   '2009': '215.l.134803',
   '2010': '238.l.429668',
+  '2011': '253.l.89167',
   '2012': '268.l.116014',
   '2013': '308.l.61021',
   '2014': '328.l.60208',
@@ -343,11 +345,14 @@ async function main() {
     transactions: allDrafts,
   }
 
-  writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2))
+  const outputJson = JSON.stringify(output, null, 2)
+  writeFileSync(OUTPUT_PATH, outputJson)
+  writeFileSync(PUBLIC_OUTPUT_PATH, outputJson)
 
   console.log(`\nWrote ${allDrafts.length} draft picks across ${successSeasons.length} seasons`)
   console.log(`  Seasons: ${successSeasons.sort().join(', ')}`)
-  console.log(`  File: ${OUTPUT_PATH}`)
+  console.log(`  Files: ${OUTPUT_PATH}`)
+  console.log(`         ${PUBLIC_OUTPUT_PATH}`)
 }
 
 main().catch(err => {

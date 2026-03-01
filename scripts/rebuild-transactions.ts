@@ -21,6 +21,7 @@ const ALL_TXN_PATH = path.join(MCP_DIR, 'data', 'all_transactions.json')
 const LEAGUE_SEASONS: Record<string, string> = {
   '2009': '215.l.134803',
   '2010': '238.l.429668',
+  '2011': '253.l.89167',
   '2012': '268.l.116014',
   '2013': '308.l.61021',
   '2014': '328.l.60208',
