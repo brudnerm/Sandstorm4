@@ -5,11 +5,14 @@
  * Input:  public/data/league_owners.json
  *   - Per-season-per-team structure with owner_name and owner_guid
  *
- * Output: ../yahoo-fantasy-baseball-mcp/data/team_owners.json
+ * Output: public/data/team_owners.json  (canonical app source)
  *   - Flat array: { team_name, owner, owner_guid, manager_id, seasons[] }
  *   - One entry per unique team_name (across all seasons)
  *   - Seasons list is deduplicated and sorted descending
  *   - owner_name resolved via GUID when hidden in some seasons but known in others
+ *
+ * Run via:  npm run gen-owners
+ * This writes directly into public/data so the MCP server's copy cannot clobber it.
  */
 
 import { readFileSync, writeFileSync } from 'fs'
@@ -19,7 +22,7 @@ import { fileURLToPath } from 'url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 const LEAGUE_OWNERS_PATH = path.resolve(__dirname, '../public/data/league_owners.json')
-const TEAM_OWNERS_OUT = path.resolve(__dirname, '../../yahoo-fantasy-baseball-mcp/data/team_owners.json')
+const TEAM_OWNERS_OUT    = path.resolve(__dirname, '../public/data/team_owners.json')
 
 interface LeagueTeam {
   team_key: string
