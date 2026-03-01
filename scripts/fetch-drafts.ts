@@ -274,9 +274,11 @@ async function main() {
 
       // 5. Normalize each pick into a transaction-like entry
       // Primary source: Yahoo's own 'type' annotation on each pick ('keeper' | 'regular').
-      // Fallback (for historical picks where Yahoo omits the field): per-team last-5 heuristic.
-      // Keepers are always the last 5 picks per team (by overall pick number), regardless of round.
+      // Fallback (for historical picks where Yahoo omits the field): per-team heuristic.
+      // Rule: 2014 and earlier → first 5 picks per team are keepers.
+      //       2015 and after  → last 5 picks per team are keepers.
       const KEEPER_COUNT = 5
+      const keepersFirst = parseInt(season) <= 2014
       const keeperPickNums = new Set<number>()
       const teamPickGroups = new Map<string, DraftPick[]>()
       for (const pick of picks) {
@@ -285,7 +287,8 @@ async function main() {
       }
       for (const teamPicks of teamPickGroups.values()) {
         const sorted = [...teamPicks].sort((a, b) => a.pick - b.pick)
-        for (const kp of sorted.slice(-KEEPER_COUNT)) keeperPickNums.add(kp.pick)
+        const keeperSlice = keepersFirst ? sorted.slice(0, KEEPER_COUNT) : sorted.slice(-KEEPER_COUNT)
+        for (const kp of keeperSlice) keeperPickNums.add(kp.pick)
       }
 
       let draftCount = 0
