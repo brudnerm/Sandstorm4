@@ -39,12 +39,17 @@ export default function DraftHistory({ indexes }: Props) {
     return rows.sort((a, b) => a.pick - b.pick)
   }, [season, indexes])
 
-  // Split into keepers (last 5 rounds) and regular draft picks
+  // Split using the action field from the data (source of truth)
   const maxRound = draftRows.length > 0 ? Math.max(...draftRows.map(r => r.round)) : 21
-  const keeperRoundStart = maxRound - 4
 
-  const regularPicks = draftRows.filter(r => r.round < keeperRoundStart)
-  const keeperPicks  = draftRows.filter(r => r.round >= keeperRoundStart)
+  const keeperPicks  = draftRows.filter(r => r.player.action === 'keeper')
+  const regularPicks = draftRows.filter(r => r.player.action !== 'keeper')
+
+  // Compute keeper round range for the section label
+  const keeperRounds = keeperPicks.map(r => r.round)
+  const keeperMinRound = keeperRounds.length > 0 ? Math.min(...keeperRounds) : 1
+  const keeperMaxRound = keeperRounds.length > 0 ? Math.max(...keeperRounds) : maxRound
+  const draftMaxRound  = regularPicks.length > 0 ? Math.max(...regularPicks.map(r => r.round)) : keeperMinRound - 1
 
   // Stats
   const teams = useMemo(() => [...new Set(draftRows.map(r => r.team_name))].sort(), [draftRows])
@@ -109,7 +114,7 @@ export default function DraftHistory({ indexes }: Props) {
             {/* Keepers section */}
             {keeperPicks.length > 0 && (
               <div>
-                <div className="section-label">Keepers — rounds {keeperRoundStart}–{maxRound}</div>
+                <div className="section-label">Keepers — rounds {keeperMinRound}–{keeperMaxRound}</div>
                 <DraftTable rows={keeperPicks} />
               </div>
             )}
@@ -117,7 +122,7 @@ export default function DraftHistory({ indexes }: Props) {
             {/* Regular draft section */}
             {regularPicks.length > 0 && (
               <div>
-                <div className="section-label">Draft — rounds 1–{keeperRoundStart - 1}</div>
+                <div className="section-label">Draft — rounds 1–{draftMaxRound}</div>
                 <DraftTable rows={regularPicks} />
               </div>
             )}
