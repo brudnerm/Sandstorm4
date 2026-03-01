@@ -274,8 +274,19 @@ async function main() {
 
       // 5. Normalize each pick into a transaction-like entry
       // Primary source: Yahoo's own 'type' annotation on each pick ('keeper' | 'regular').
-      // Fallback (for historical picks where Yahoo omits the field): last-5-rounds heuristic.
-      const maxRound = Math.max(...picks.map(p => p.round))
+      // Fallback (for historical picks where Yahoo omits the field): per-team last-5 heuristic.
+      // Keepers are always the last 5 picks per team (by overall pick number), regardless of round.
+      const KEEPER_COUNT = 5
+      const keeperPickNums = new Set<number>()
+      const teamPickGroups = new Map<string, DraftPick[]>()
+      for (const pick of picks) {
+        if (!teamPickGroups.has(pick.team_key)) teamPickGroups.set(pick.team_key, [])
+        teamPickGroups.get(pick.team_key)!.push(pick)
+      }
+      for (const teamPicks of teamPickGroups.values()) {
+        const sorted = [...teamPicks].sort((a, b) => a.pick - b.pick)
+        for (const kp of sorted.slice(-KEEPER_COUNT)) keeperPickNums.add(kp.pick)
+      }
 
       let draftCount = 0
       let keeperCount = 0
@@ -289,8 +300,8 @@ async function main() {
           // Yahoo told us directly — trust it
           isKeeper = pick.type === 'keeper'
         } else {
-          // Yahoo didn't annotate this pick; fall back to last-5-rounds heuristic
-          isKeeper = pick.round >= maxRound - 4
+          // Yahoo didn't annotate this pick; use per-team last-5 heuristic
+          isKeeper = keeperPickNums.has(pick.pick)
         }
 
         const action = isKeeper ? 'keeper' : 'draft'
