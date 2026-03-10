@@ -8,6 +8,7 @@ import TeamHistory from './components/TeamHistory'
 import DraftHistory from './components/DraftHistory'
 import HallOfFame from './components/HallOfFame'
 import DataRefresh from './components/DataRefresh'
+import DraftPrep from './components/DraftPrep'
 
 const ALL_TABS: Array<{ id: TabId; label: string }> = [
   { id: 'player',  label: 'Player Search' },
@@ -15,6 +16,7 @@ const ALL_TABS: Array<{ id: TabId; label: string }> = [
   { id: 'team',    label: 'Team History' },
   { id: 'draft',   label: 'Draft History' },
   { id: 'hof',     label: 'Hall of Fame' },
+  { id: 'draftprep', label: 'Draft Prep' },
   { id: 'refresh', label: 'Data Refresh' },
 ]
 
@@ -51,31 +53,37 @@ export default function App() {
       </header>
 
       <main className="app-content">
-        {state.status === 'loading' && (
-          <LoadingSpinner message="Loading transactions and draft history…" />
-        )}
-        {state.status === 'error' && (
-          <div className="tab-panel">
-            <div className="panel-inner">
-              <div className="empty-state">
-                <div className="empty-state-icon error-icon">!</div>
-                <div className="empty-state-title">Failed to load transaction data</div>
-                <div className="empty-state-desc">{state.message}</div>
-                <div className="empty-state-desc" style={{ marginTop: 8 }}>
-                  Make sure <code>public/data/all_transactions.json</code> exists and the dev server is running.
+        {activeTab === 'draftprep' ? (
+          <DraftPrep />
+        ) : (
+          <>
+            {state.status === 'loading' && (
+              <LoadingSpinner message="Loading transactions and draft history…" />
+            )}
+            {state.status === 'error' && (
+              <div className="tab-panel">
+                <div className="panel-inner">
+                  <div className="empty-state">
+                    <div className="empty-state-icon error-icon">!</div>
+                    <div className="empty-state-title">Failed to load transaction data</div>
+                    <div className="empty-state-desc">{state.message}</div>
+                    <div className="empty-state-desc" style={{ marginTop: 8 }}>
+                      Make sure <code>public/data/all_transactions.json</code> exists and the dev server is running.
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        )}
-        {state.status === 'ready' && (
-          <>
-            {activeTab === 'player'  && <PlayerSearch  indexes={state.indexes} />}
-            {activeTab === 'season'  && <SeasonBrowser indexes={state.indexes} />}
-            {activeTab === 'team'    && <TeamHistory   indexes={state.indexes} />}
-            {activeTab === 'draft'   && <DraftHistory  indexes={state.indexes} />}
-            {activeTab === 'hof'     && <HallOfFame    indexes={state.indexes} />}
-            {activeTab === 'refresh' && <DataRefresh   generatedAt={state.indexes.data.generated_at} totalTransactions={state.indexes.data.total_transactions} />}
+            )}
+            {state.status === 'ready' && (
+              <>
+                {activeTab === 'player'  && <PlayerSearch  indexes={state.indexes} />}
+                {activeTab === 'season'  && <SeasonBrowser indexes={state.indexes} />}
+                {activeTab === 'team'    && <TeamHistory   indexes={state.indexes} />}
+                {activeTab === 'draft'   && <DraftHistory  indexes={state.indexes} />}
+                {activeTab === 'hof'     && <HallOfFame    indexes={state.indexes} />}
+                {activeTab === 'refresh' && <DataRefresh   generatedAt={state.indexes.data.generated_at} totalTransactions={state.indexes.data.total_transactions} />}
+              </>
+            )}
           </>
         )}
       </main>

@@ -48,7 +48,7 @@ export interface DraftData {
   transactions: Transaction[];
 }
 
-export type TabId = 'player' | 'season' | 'team' | 'draft' | 'hof' | 'refresh';
+export type TabId = 'player' | 'season' | 'team' | 'draft' | 'hof' | 'draftprep' | 'refresh';
 
 export interface PlayerMatch {
   name: string;
