@@ -136,7 +136,7 @@ function ExpertTags({ tags }: { tags?: string[] }) {
 // ---- Inline split rows — aligned to parent table grid ----
 
 // Renders a single split stat row using the parent table's gridTemplate
-function SplitDataRow<T>({ label, stats, columns, gridTemplate, isSeasonRow, isExpanded, onClick }: {
+function SplitDataRow<T>({ label, stats, columns, gridTemplate, isSeasonRow, isExpanded, onClick, age }: {
   label: string
   stats: Record<string, unknown>
   columns: Column<T>[]
@@ -144,6 +144,7 @@ function SplitDataRow<T>({ label, stats, columns, gridTemplate, isSeasonRow, isE
   isSeasonRow?: boolean
   isExpanded?: boolean
   onClick?: () => void
+  age?: number
 }) {
   return (
     <div
@@ -157,6 +158,7 @@ function SplitDataRow<T>({ label, stats, columns, gridTemplate, isSeasonRow, isE
       </span>
       <span />
       <span />
+      <span className="dp-cell-dim" style={{ textAlign: 'right' }}>{age ?? '—'}</span>
       {columns.map(col => {
         const val = stats[col.key]
         return (
@@ -318,6 +320,7 @@ function BatterHistoryExpander({ fgId, detail, currentSeason, columns, gridTempl
               isSeasonRow
               isExpanded={isExpanded}
               onClick={() => setExpandedSeason(isExpanded ? null : seasonStr)}
+              age={player.age}
             />
             {isExpanded && filteredSplits && (
               <BatterSplitsInline splits={filteredSplits} columns={columns} gridTemplate={gridTemplate} />
@@ -374,6 +377,7 @@ function PitcherHistoryExpander({ fgId, detail, currentSeason, columns, gridTemp
               isSeasonRow
               isExpanded={isExpanded}
               onClick={() => setExpandedSeason(isExpanded ? null : seasonStr)}
+              age={player.age}
             />
             {isExpanded && filteredSplits && (
               <PitcherSplitsInline splits={filteredSplits} columns={columns} gridTemplate={gridTemplate} />
@@ -569,12 +573,13 @@ export default function DraftPrep() {
 
   // ---- Grid template ----
 
-  const nameColWidth = 220
+  const nameColWidth = 280
   const posColWidth = 50
   const teamColWidth = 44
+  const ageColWidth = 34
 
   const activeCols = playerType === 'batter' ? visibleBatterCols : visiblePitcherCols
-  const gridTemplate = `${nameColWidth}px ${posColWidth}px ${teamColWidth}px ${activeCols.map(c => c.width + 'px').join(' ')}`
+  const gridTemplate = `${nameColWidth}px ${posColWidth}px ${teamColWidth}px ${ageColWidth}px ${activeCols.map(c => c.width + 'px').join(' ')}`
 
   // ---- Detail data for expander ----
 
@@ -817,6 +822,7 @@ export default function DraftPrep() {
               <span className="dp-col-name">Player</span>
               <span style={{ textAlign: 'center' }}>Pos</span>
               <span style={{ textAlign: 'center' }}>Tm</span>
+              <span style={{ textAlign: 'right' }}>Age</span>
               {activeCols.map(col => (
                 <span
                   key={col.key}
@@ -933,18 +939,6 @@ export default function DraftPrep() {
 
 // ---- Row components ----
 
-function OwnerBadge({ assignment, ownerInfo }: { assignment?: DraftAssignment; ownerInfo?: OwnerInfo }) {
-  if (!assignment || !ownerInfo) return null
-  const isKeeper = assignment.type === 'keeper'
-  return (
-    <span
-      className={`dp-owner-badge ${isKeeper ? 'dp-owner-badge--keeper' : 'dp-owner-badge--drafted'}`}
-      style={isKeeper ? undefined : { background: ownerInfo.color + '22', color: ownerInfo.color, borderColor: ownerInfo.color + '44' }}
-    >
-      {isKeeper ? `K:${ownerInfo.abbrev}` : ownerInfo.abbrev}
-    </span>
-  )
-}
 
 function BatterRow({ batter, columns, gridTemplate, rank, isExpanded, onClick, isProjections, assignment, ownerInfo, owners, onAssign, onUnassign }: {
   batter: AnyBatter
@@ -983,10 +977,10 @@ function BatterRow({ batter, columns, gridTemplate, rank, isExpanded, onClick, i
         <span className="dp-rank">{rank}</span>
         <span className="dp-player-name">{batter.name}</span>
         <ExpertTags tags={expertTags} />
-        <OwnerBadge assignment={assignment} ownerInfo={ownerInfo} />
       </span>
       <span className="dp-cell-dim" style={{ textAlign: 'center' }}>{batter.positions.join(', ')}</span>
       <span className="dp-cell-dim" style={{ textAlign: 'center' }}>{batter.team}</span>
+      <span className="dp-cell-dim" style={{ textAlign: 'right' }}>{(batter as DraftPrepBatter).age ?? (batter as SeasonBatter).age ?? '—'}</span>
       {columns.map(col => (
         <span key={col.key} className="dp-cell" style={{ textAlign: col.align ?? 'right' }}>
           {(col.format ?? String)(col.getValue(batter))}
@@ -1033,10 +1027,10 @@ function PitcherRow({ pitcher, columns, gridTemplate, rank, isExpanded, onClick,
         <span className="dp-rank">{rank}</span>
         <span className="dp-player-name">{pitcher.name}</span>
         <ExpertTags tags={expertTags} />
-        <OwnerBadge assignment={assignment} ownerInfo={ownerInfo} />
       </span>
       <span className="dp-cell-dim" style={{ textAlign: 'center' }}>{pitcher.positions.join(', ')}</span>
       <span className="dp-cell-dim" style={{ textAlign: 'center' }}>{pitcher.team}</span>
+      <span className="dp-cell-dim" style={{ textAlign: 'right' }}>{(pitcher as DraftPrepPitcher).age ?? (pitcher as SeasonPitcher).age ?? '—'}</span>
       {columns.map(col => (
         <span key={col.key} className="dp-cell" style={{ textAlign: col.align ?? 'right' }}>
           {(col.format ?? String)(col.getValue(pitcher))}

@@ -106,6 +106,7 @@ interface FGBatter {
   position: string   // Leaders API uses this instead of minpos
   playerid: string
   xMLBAMID: number
+  Age?: number
   PA: number
   AB: number
   H: number
@@ -139,6 +140,7 @@ interface FGPitcher {
   Team: string
   playerid: string
   xMLBAMID: number
+  Age?: number
   W: number
   L: number
   GS: number
@@ -170,6 +172,7 @@ interface DraftPrepBatter {
   positions: string[]
   mlbam_id: number
   fg_id: string
+  age?: number
   adp?: number
   pa: number
   r: number
@@ -202,6 +205,7 @@ interface DraftPrepPitcher {
   positions: string[]
   mlbam_id: number
   fg_id: string
+  age?: number
   adp?: number
   ip: number
   w: number
@@ -236,6 +240,7 @@ interface SeasonBatter {
   positions: string[]
   mlbam_id: number
   fg_id: string
+  age?: number
   pa: number
   r: number
   rbi: number
@@ -257,6 +262,7 @@ interface SeasonPitcher {
   positions: string[]
   mlbam_id: number
   fg_id: string
+  age?: number
   ip: number
   w: number
   l: number
@@ -711,6 +717,7 @@ function transformSeasonBatter(fg: FGBatter): SeasonBatter {
     positions: parsePositions(fg.minpos || fg.position),
     mlbam_id: fg.xMLBAMID ?? 0,
     fg_id: String(fg.playerid ?? ''),
+    age: fg.Age,
     pa: fg.PA ?? 0,
     r: fg.R ?? 0,
     rbi: fg.RBI ?? 0,
@@ -734,6 +741,7 @@ function transformSeasonPitcher(fg: FGPitcher): SeasonPitcher {
     positions: fg.GS > 0 && fg.GS >= fg.G * 0.4 ? ['SP'] : ['RP'],
     mlbam_id: fg.xMLBAMID ?? 0,
     fg_id: String(fg.playerid ?? ''),
+    age: fg.Age,
     ip: round1(fg.IP),
     w: fg.W ?? 0,
     l: fg.L ?? 0,
@@ -778,7 +786,7 @@ const FG_MONTH_LABELS: Record<number, string> = {
   4: 'April', 5: 'May', 6: 'June', 7: 'July', 8: 'August', 9: 'September',
 }
 
-async function fetchSeasonData(season: number): Promise<{ batters: SeasonBatter[]; pitchers: SeasonPitcher[] }> {
+async function fetchSeasonData(season: number): Promise<{ batters: SeasonBatter[]; pitchers: SeasonPitcher[]; ageMap: Map<string, number> }> {
   console.log(`[FG Leaders] Fetching ${season} season stats...`)
   const [rawBat, rawPit] = await Promise.all([
     fetchFanGraphsLeaders(season, 'bat', 0).catch(err => { console.warn(`[FG Leaders] ${season} batters failed: ${err}`); return [] }),
@@ -795,8 +803,17 @@ async function fetchSeasonData(season: number): Promise<{ batters: SeasonBatter[
     .map(transformSeasonPitcher)
     .sort((a, b) => b.war - a.war)
 
+  // Build fg_id -> age map from raw data (for enriching projections)
+  const ageMap = new Map<string, number>()
+  for (const fg of rawBat as FGBatter[]) {
+    if (fg.Age != null) ageMap.set(String(fg.playerid), fg.Age)
+  }
+  for (const fg of rawPit as FGPitcher[]) {
+    if (fg.Age != null) ageMap.set(String(fg.playerid), fg.Age)
+  }
+
   console.log(`[FG Leaders] ${season}: ${batters.length} batters, ${pitchers.length} pitchers`)
-  return { batters, pitchers }
+  return { batters, pitchers, ageMap }
 }
 
 // ---- FanGraphs split fetching ----
@@ -1104,13 +1121,25 @@ async function main() {
   // 9. Fetch previous season data from FanGraphs Leaders API
   console.log(`\n=== Fetching previous season data ===`)
   await delay(500)
-  const previousSeason = await fetchSeasonData(PREVIOUS_SEASON)
+  const { batters: prevBatters, pitchers: prevPitchers, ageMap: prevAgeMap } = await fetchSeasonData(PREVIOUS_SEASON)
+  const previousSeason = { batters: prevBatters, pitchers: prevPitchers }
+
+  // 9.5. Enrich projections with age (previous season age + 1)
+  for (const batter of batters) {
+    const prevAge = prevAgeMap.get(batter.fg_id)
+    if (prevAge != null) batter.age = prevAge + 1
+  }
+  for (const pitcher of pitchers) {
+    const prevAge = prevAgeMap.get(pitcher.fg_id)
+    if (prevAge != null) pitcher.age = prevAge + 1
+  }
 
   // 10. Fetch history seasons (for projection mode expander)
   const history: Record<string, { batters: SeasonBatter[]; pitchers: SeasonPitcher[] }> = {}
   for (const season of HISTORY_SEASONS) {
     await delay(500)
-    history[String(season)] = await fetchSeasonData(season)
+    const { batters: hBatters, pitchers: hPitchers } = await fetchSeasonData(season)
+    history[String(season)] = { batters: hBatters, pitchers: hPitchers }
   }
 
   // 11. Fetch FanGraphs split data for all 4 previous seasons

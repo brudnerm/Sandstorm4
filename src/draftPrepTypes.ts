@@ -67,6 +67,7 @@ export interface SeasonBatter {
   positions: string[]
   mlbam_id: number
   fg_id: string
+  age?: number
   pa: number
   r: number
   rbi: number
@@ -88,6 +89,7 @@ export interface SeasonPitcher {
   positions: string[]
   mlbam_id: number
   fg_id: string
+  age?: number
   ip: number
   w: number
   l: number
@@ -117,6 +119,7 @@ export interface DraftPrepBatter {
   positions: string[]
   mlbam_id: number
   fg_id: string
+  age?: number
 
   // ADP
   adp?: number
@@ -158,6 +161,7 @@ export interface DraftPrepPitcher {
   positions: string[]
   mlbam_id: number
   fg_id: string
+  age?: number
 
   // ADP
   adp?: number

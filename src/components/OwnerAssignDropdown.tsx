@@ -163,7 +163,7 @@ export default function OwnerAssignDropdown({ fgId, assignment, ownerInfo, owner
         title={assignment ? `${assignment.owner} (${assignment.type})` : 'Assign owner'}
         style={ownerInfo ? { background: ownerInfo.color + '33', borderColor: ownerInfo.color + '66', color: ownerInfo.color } : undefined}
       >
-        {ownerInfo ? ownerInfo.abbrev.charAt(0) : '+'}
+        {ownerInfo ? ownerInfo.name : '+'}
       </button>
       {dropdown}
     </div>
