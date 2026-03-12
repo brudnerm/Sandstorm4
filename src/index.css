@@ -169,6 +169,30 @@ button:disabled {
   line-height: 1;
 }
 
+.league-switcher {
+  background: transparent;
+  color: var(--text-dim);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 400;
+  padding: 2px 4px;
+  cursor: pointer;
+  outline: none;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+.league-switcher:hover {
+  border-color: var(--border);
+}
+.league-switcher:focus {
+  border-color: var(--accent);
+}
+.league-switcher option {
+  background: var(--card);
+  color: var(--text);
+}
+
 /* Tabs */
 .tabs {
   display: flex;
@@ -1230,6 +1254,179 @@ button:disabled {
   margin-left: 1px;
 }
 
+.dp-col-sortable[draggable="true"] {
+  cursor: grab;
+}
+
+.dp-col-drag-over {
+  border-left: 2px solid var(--accent);
+  padding-left: 2px;
+}
+
+/* ---- Team Comparison panel ---- */
+
+.tc-panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.tc-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  user-select: none;
+  transition: background var(--transition);
+}
+
+.tc-header:hover {
+  background: var(--card-hover);
+}
+
+.tc-header-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tc-header-summary {
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-left: auto;
+}
+
+.tc-chevron {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-dim);
+  font-size: 10px;
+  transition: transform var(--transition);
+}
+
+.tc-chevron--open {
+  transform: rotate(90deg);
+}
+
+.tc-body {
+  border-top: 1px solid var(--border);
+  padding: 8px 10px;
+}
+
+.tc-tabs {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.tc-tab {
+  background: transparent;
+  color: var(--text-muted);
+  border: none;
+  border-radius: 0;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.tc-tab:hover {
+  background: var(--card-hover);
+  color: var(--text);
+}
+
+.tc-tab.active {
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  color: var(--accent);
+}
+
+.tc-tab + .tc-tab {
+  border-left: 1px solid var(--border);
+}
+
+.tc-grid-scroll {
+  overflow-x: auto;
+}
+
+.tc-grid {
+  display: grid;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  min-width: max-content;
+}
+
+.tc-grid-header {
+  display: contents;
+}
+
+.tc-grid-header > span {
+  padding: 3px 6px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.tc-grid-row {
+  display: contents;
+}
+
+.tc-grid-row > span {
+  padding: 3px 6px;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 40%, transparent);
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+.tc-grid-row:last-child > span {
+  border-bottom: none;
+}
+
+.tc-owner-cell {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tc-owner-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tc-count-cell {
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.tc-stat-cell {
+  text-align: right;
+  border-radius: 2px;
+}
+
+.tc-no-comparison {
+  padding: 6px 4px;
+  font-size: 12px;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
 /* Draft Prep — expert tags */
 .dp-tag {
   display: inline-flex;
@@ -1493,6 +1690,41 @@ button:disabled {
   height: 1px;
   background: var(--border);
   margin: 4px 0;
+}
+
+.dp-assign-price-row {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  gap: 4px;
+  border-bottom: 1px solid var(--border);
+}
+
+.dp-assign-price-label {
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.dp-assign-price-input {
+  width: 60px;
+  padding: 2px 6px;
+  font-size: 13px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text);
+  outline: none;
+}
+
+.dp-assign-price-input:focus {
+  border-color: var(--accent);
+}
+
+.dp-assign-price-input::-webkit-inner-spin-button,
+.dp-assign-price-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* ---- Draft Board: row ownership styling ---- */
