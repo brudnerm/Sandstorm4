@@ -12,6 +12,8 @@ export interface BatterStatLine {
   ops: number
   bb_pct: number
   k_pct: number
+  so?: number
+  gdp?: number
 }
 
 export interface PitcherStatLine {
@@ -27,6 +29,9 @@ export interface PitcherStatLine {
   bb_9: number
   k_pct: number
   bb_pct: number
+  qs?: number
+  k_bb?: number
+  gdp?: number
 }
 
 // ---- Split types ----
@@ -81,6 +86,8 @@ export interface SeasonBatter {
   war: number
   bb_pct: number
   k_pct: number
+  so?: number
+  gdp?: number
 }
 
 export interface SeasonPitcher {
@@ -103,6 +110,9 @@ export interface SeasonPitcher {
   bb_9: number
   k_pct: number
   bb_pct: number
+  qs?: number
+  k_bb?: number
+  gdp?: number
 }
 
 export interface SeasonData {
@@ -140,6 +150,8 @@ export interface DraftPrepBatter {
   war: number
   bb_pct: number
   k_pct: number
+  so?: number
+  gdp?: number
 
   // Advanced (Savant)
   xba?: number
@@ -153,6 +165,21 @@ export interface DraftPrepBatter {
   expert_tags?: string[]
   cbs_rank?: number
   cbs_tier?: number
+
+  // Yahoo O-Rank (pre-draft overall rank)
+  yahoo_rank?: number
+
+  // Auction (FanGraphs)
+  auc_dollars?: number
+  auc_pts?: number
+  auc_apos?: number
+  auc_mAVG?: number
+  auc_mRBI?: number
+  auc_mR?: number
+  auc_mSB?: number
+  auc_mHR?: number
+  auc_mOPS?: number
+  auc_mSO?: number
 }
 
 export interface DraftPrepPitcher {
@@ -182,6 +209,9 @@ export interface DraftPrepPitcher {
   bb_9: number
   k_pct: number
   bb_pct: number
+  qs?: number
+  k_bb?: number
+  gdp?: number
 
   // Advanced (Savant)
   xera?: number
@@ -194,6 +224,21 @@ export interface DraftPrepPitcher {
   expert_tags?: string[]
   cbs_rank?: number
   cbs_tier?: number
+
+  // Yahoo O-Rank (pre-draft overall rank)
+  yahoo_rank?: number
+
+  // Auction (FanGraphs)
+  auc_dollars?: number
+  auc_pts?: number
+  auc_apos?: number
+  auc_mW?: number
+  auc_mSV?: number
+  auc_mERA?: number
+  auc_mWHIP?: number
+  auc_mSO?: number
+  auc_mKBB?: number
+  auc_mQS?: number
 }
 
 // ---- Detail data (splits + history, separate lazy-loaded file) ----
@@ -217,6 +262,7 @@ export interface DraftPrepData {
     projections: string
     advanced: string
     expert: string
+    rankings?: string
   }
   batters: DraftPrepBatter[]
   pitchers: DraftPrepPitcher[]

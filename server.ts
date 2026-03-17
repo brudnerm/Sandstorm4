@@ -143,6 +143,7 @@ const LEAGUE_SEASONS: Record<string, string> = {
   '2023': '422.l.20451',
   '2024': '431.l.11978',
   '2025': '458.l.19784',
+  '2026': '469.l.13624',
 }
 
 const CACHED_TRANSACTIONS: Record<string, string> = {
@@ -592,7 +593,226 @@ app.post('/api/refresh-data', async (_req, res) => {
   res.end()
 })
 
+/** POST /api/refresh-current-season — refresh 2026 data only (drafts + transactions) */
+app.post('/api/refresh-current-season', async (_req, res) => {
+  res.setHeader('Content-Type', 'text/plain; charset=utf-8')
+  res.setHeader('Transfer-Encoding', 'chunked')
+  res.flushHeaders()
+
+  const log = (msg: string) => { res.write(msg + '\n') }
+
+  const env = readEnv()
+  const accessToken = env['YAHOO_ACCESS_TOKEN'] ?? ''
+  if (!accessToken) {
+    log('[ERROR] No YAHOO_ACCESS_TOKEN in .env — run token refresh first')
+    res.end()
+    return
+  }
+
+  try {
+    const { refreshCurrentSeason } = await import('./server/refreshService.ts')
+    const result = await refreshCurrentSeason(accessToken, log)
+
+    log(`\n[SUMMARY]`)
+    log(`  Transactions: ${result.transactionCount}`)
+    log(`  Drafts: ${result.draftCount}`)
+    log(`  Season: 2026`)
+    if (result.success) {
+      log(`  Status: SUCCESS ✓`)
+    } else {
+      log(`  Status: FAILED with errors`)
+      for (const err of result.errors) {
+        log(`    - ${err}`)
+      }
+    }
+  } catch (e) {
+    log(`[ERROR] Failed to refresh current season: ${String(e)}`)
+  }
+
+  res.end()
+})
+
+/** POST /api/refresh-historical — refresh historical seasons (2009-2025) */
+app.post('/api/refresh-historical', async (_req, res) => {
+  res.setHeader('Content-Type', 'text/plain; charset=utf-8')
+  res.setHeader('Transfer-Encoding', 'chunked')
+  res.flushHeaders()
+
+  const log = (msg: string) => { res.write(msg + '\n') }
+
+  const env = readEnv()
+  const accessToken = env['YAHOO_ACCESS_TOKEN'] ?? ''
+  if (!accessToken) {
+    log('[ERROR] No YAHOO_ACCESS_TOKEN in .env — run token refresh first')
+    res.end()
+    return
+  }
+
+  try {
+    const { refreshHistoricalSeasons } = await import('./server/refreshService.ts')
+    const result = await refreshHistoricalSeasons(accessToken, log)
+
+    log(`\n[SUMMARY]`)
+    log(`  Transactions: ${result.transactionCount}`)
+    log(`  Seasons: ${result.seasons.length}`)
+    if (result.success) {
+      log(`  Status: SUCCESS ✓`)
+    } else {
+      log(`  Status: FAILED with errors`)
+      for (const err of result.errors) {
+        log(`    - ${err}`)
+      }
+    }
+  } catch (e) {
+    log(`[ERROR] Failed to refresh historical seasons: ${String(e)}`)
+  }
+
+  res.end()
+})
+
+/** POST /api/refresh-all — full refresh (all seasons) */
+app.post('/api/refresh-all', async (_req, res) => {
+  res.setHeader('Content-Type', 'text/plain; charset=utf-8')
+  res.setHeader('Transfer-Encoding', 'chunked')
+  res.flushHeaders()
+
+  const log = (msg: string) => { res.write(msg + '\n') }
+
+  const env = readEnv()
+  const accessToken = env['YAHOO_ACCESS_TOKEN'] ?? ''
+  if (!accessToken) {
+    log('[ERROR] No YAHOO_ACCESS_TOKEN in .env — run token refresh first')
+    res.end()
+    return
+  }
+
+  try {
+    const { refreshCurrentSeason, refreshHistoricalSeasons } = await import('./server/refreshService.ts')
+
+    log('[INFO] Refreshing historical seasons (2009-2025)...\n')
+    const histResult = await refreshHistoricalSeasons(accessToken, log)
+
+    log('\n[INFO] Refreshing current season (2026)...\n')
+    const currResult = await refreshCurrentSeason(accessToken, log)
+
+    log(`\n[SUMMARY]`)
+    log(`  Historical Transactions: ${histResult.transactionCount}`)
+    log(`  Current Season Transactions: ${currResult.transactionCount}`)
+    log(`  Current Season Drafts: ${currResult.draftCount}`)
+    log(`  Total Seasons: ${histResult.seasons.length + 1}`)
+    const allSuccess = histResult.success && currResult.success
+    log(`  Status: ${allSuccess ? 'SUCCESS ✓' : 'FAILED'}`)
+  } catch (e) {
+    log(`[ERROR] Full refresh failed: ${String(e)}`)
+  }
+
+  res.end()
+})
+
+/** GET /api/refresh-status — get refresh status and next scheduled refresh */
+app.get('/api/refresh-status', async (_req, res) => {
+  try {
+    const { readRefreshState, getRefreshConfig, getCurrentSeasonYear } = await import('./server/refreshService.ts').then(m => ({
+      readRefreshState: m.readRefreshState,
+      getRefreshConfig: m.getRefreshConfig,
+      getCurrentSeasonYear: m.getCurrentSeasonYear,
+    }))
+
+    const state = readRefreshState()
+    const config = getRefreshConfig()
+    const currentYear = getCurrentSeasonYear()
+
+    // Calculate next refresh time (for UI countdown)
+    const lastCurrentRefresh = state.lastRefreshCurrentSeason ? new Date(state.lastRefreshCurrentSeason) : null
+    const nextRefresh = lastCurrentRefresh ? new Date(lastCurrentRefresh.getTime() + config.currentSeasonIntervalMinutes * 60000) : new Date()
+
+    res.json({
+      currentSeason: {
+        year: currentYear,
+        lastRefresh: state.lastRefreshCurrentSeason,
+        transactionCount: state.currentSeasonTransactionCount,
+        draftCount: state.currentSeasonDraftCount,
+        autoRefreshEnabled: config.autoRefreshEnabled,
+      },
+      historical: {
+        lastRefresh: state.lastRefreshHistorical,
+        autoRefreshEnabled: false,
+      },
+      nextScheduledRefresh: nextRefresh.toISOString(),
+      config: {
+        currentSeasonIntervalMinutes: config.currentSeasonIntervalMinutes,
+        autoRefreshEnabled: config.autoRefreshEnabled,
+      },
+    })
+  } catch (e) {
+    res.status(500).json({ error: String(e) })
+  }
+})
+
+// ============================================================================
+// BACKGROUND POLLING SERVICE
+// ============================================================================
+
+let autoRefreshInterval: NodeJS.Timeout | null = null
+
+async function startAutoRefresh() {
+  const env = readEnv()
+  const accessToken = env['YAHOO_ACCESS_TOKEN'] ?? ''
+  const autoRefreshEnabled = process.env.AUTO_REFRESH_ENABLED !== 'false'
+  const intervalMinutes = parseInt(process.env.REFRESH_CURRENT_SEASON_INTERVAL_MINUTES ?? '10')
+
+  if (!autoRefreshEnabled || !accessToken || process.env.NODE_ENV === 'production') {
+    console.log('[autoRefresh] Disabled (check: AUTO_REFRESH_ENABLED, token, NODE_ENV)')
+    return
+  }
+
+  console.log(`[autoRefresh] Enabled - refreshing 2026 every ${intervalMinutes} minutes`)
+
+  const runRefresh = async () => {
+    try {
+      const { refreshCurrentSeason } = await import('./server/refreshService.ts')
+      const log = (msg: string) => console.log(`[autoRefresh] ${msg}`)
+
+      log('Starting background refresh...')
+      const result = await refreshCurrentSeason(accessToken, log)
+
+      if (result.success) {
+        log(`✓ Refreshed: ${result.transactionCount} txns, ${result.draftCount} drafts`)
+      } else {
+        log(`✗ Failed: ${result.errors.join(', ')}`)
+      }
+    } catch (err) {
+      console.error('[autoRefresh] Error:', err)
+    }
+  }
+
+  // Run immediately on startup
+  await runRefresh()
+
+  // Then set interval
+  autoRefreshInterval = setInterval(runRefresh, intervalMinutes * 60 * 1000)
+}
+
+function stopAutoRefresh() {
+  if (autoRefreshInterval) {
+    clearInterval(autoRefreshInterval)
+    autoRefreshInterval = null
+    console.log('[autoRefresh] Stopped')
+  }
+}
+
 const PORT = 3001
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`[sandstorm4] API server running on http://localhost:${PORT}`)
+  startAutoRefresh().catch(err => console.error('[autoRefresh] Failed to start:', err))
+})
+
+// Graceful shutdown
+process.on('SIGTERM', () => {
+  console.log('[server] SIGTERM received, shutting down gracefully...')
+  stopAutoRefresh()
+  server.close(() => {
+    console.log('[server] Closed')
+    process.exit(0)
+  })
 })

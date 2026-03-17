@@ -5,12 +5,19 @@ import { useState, useEffect, useCallback, useRef, useMemo } from 'react'
 export interface DraftAssignment {
   owner: string
   type: 'keeper' | 'drafted'
+  price?: number // auction leagues only
 }
 
 export interface OwnerInfo {
   name: string
   abbrev: string
   color: string
+}
+
+export interface DraftBoardOptions {
+  ownerNames: string[]
+  enableKeepers: boolean
+  storagePrefix: string
 }
 
 interface UndoEntry {
@@ -35,7 +42,7 @@ function makeAbbrev(name: string): string {
 
 interface StoredState {
   version: number
-  drafted: Array<[string, { owner: string }]>
+  drafted: Array<[string, { owner: string; price?: number }]>
 }
 
 function loadFromStorage(key: string): Map<string, DraftAssignment> {
@@ -45,8 +52,8 @@ function loadFromStorage(key: string): Map<string, DraftAssignment> {
     const parsed: StoredState = JSON.parse(raw)
     if (parsed.version !== 1) return new Map()
     const map = new Map<string, DraftAssignment>()
-    for (const [fgId, { owner }] of parsed.drafted) {
-      map.set(fgId, { owner, type: 'drafted' })
+    for (const [fgId, { owner, price }] of parsed.drafted) {
+      map.set(fgId, { owner, type: 'drafted', ...(price != null ? { price } : {}) })
     }
     return map
   } catch {
@@ -55,10 +62,10 @@ function loadFromStorage(key: string): Map<string, DraftAssignment> {
 }
 
 function saveToStorage(key: string, assignments: Map<string, DraftAssignment>) {
-  const drafted: Array<[string, { owner: string }]> = []
+  const drafted: Array<[string, { owner: string; price?: number }]> = []
   assignments.forEach((val, fgId) => {
     if (val.type === 'drafted') {
-      drafted.push([fgId, { owner: val.owner }])
+      drafted.push([fgId, { owner: val.owner, ...(val.price != null ? { price: val.price } : {}) }])
     }
   })
   const data: StoredState = { version: 1, drafted }
@@ -126,9 +133,10 @@ async function fetchKeepers(
 
 export function useDraftBoard(
   allPlayers: Array<{ fg_id: string; name: string }>,
-  season: number
+  season: number,
+  options: DraftBoardOptions
 ) {
-  const storageKey = `sandstorm_draft_${season}`
+  const storageKey = `${options.storagePrefix}_${season}`
 
   // Build name -> fg_id index from player data
   const nameIndex = useMemo(() => {
@@ -144,12 +152,18 @@ export function useDraftBoard(
     return loadFromStorage(storageKey)
   })
 
-  const [keeperStatus, setKeeperStatus] = useState<'loading' | 'ready' | 'error'>('loading')
+  const [keeperStatus, setKeeperStatus] = useState<'loading' | 'ready' | 'error'>(
+    options.enableKeepers ? 'loading' : 'ready'
+  )
   const keepersLoadedRef = useRef(false)
   const undoStackRef = useRef<UndoEntry[]>([])
 
-  // Load keepers from CSV when player data is available
+  // Load keepers from CSV when player data is available (only for keeper leagues)
   useEffect(() => {
+    if (!options.enableKeepers) {
+      setKeeperStatus('ready')
+      return
+    }
     if (allPlayers.length === 0 || keepersLoadedRef.current) return
     keepersLoadedRef.current = true
 
@@ -173,27 +187,21 @@ export function useDraftBoard(
         console.error('[DraftBoard] Failed to load keepers:', err)
         setKeeperStatus('error')
       })
-  }, [allPlayers, nameIndex])
+  }, [allPlayers, nameIndex, options.enableKeepers])
 
   // Persist drafted entries to localStorage on change
   useEffect(() => {
     saveToStorage(storageKey, assignments)
   }, [assignments, storageKey])
 
-  // Owner list derived from keepers + hardcoded 2026 owners
+  // Owner list from options
   const owners = useMemo((): OwnerInfo[] => {
-    // Use the known 2026 owner names, in consistent order
-    const ownerNames = [
-      'angel escobar', 'Brian Bennett', 'Galen', 'Jamison',
-      'joey', 'KC', 'Mark', 'mike',
-      'Nick', 'Rich Garcis', 'Swan', 'Will Youmans',
-    ]
-    return ownerNames.map((name, i) => ({
+    return options.ownerNames.map((name, i) => ({
       name,
       abbrev: makeAbbrev(name),
       color: OWNER_COLORS[i % OWNER_COLORS.length],
     }))
-  }, [])
+  }, [options.ownerNames])
 
   const ownerIndex = useMemo(() => {
     const idx = new Map<string, OwnerInfo>()
@@ -204,7 +212,7 @@ export function useDraftBoard(
   }, [owners])
 
   // Actions
-  const assignPlayer = useCallback((fgId: string, owner: string) => {
+  const assignPlayer = useCallback((fgId: string, owner: string, price?: number) => {
     setAssignments(prev => {
       const previous = prev.get(fgId)
       // Don't overwrite keepers
@@ -214,7 +222,7 @@ export function useDraftBoard(
       if (undoStackRef.current.length > 50) undoStackRef.current.shift()
 
       const next = new Map(prev)
-      next.set(fgId, { owner, type: 'drafted' })
+      next.set(fgId, { owner, type: 'drafted', ...(price != null ? { price } : {}) })
       return next
     })
   }, [])
@@ -296,6 +304,7 @@ export function useDraftBoard(
         player_name: player?.name ?? 'Unknown',
         owner: assignment.owner,
         type: assignment.type,
+        ...(assignment.price != null ? { price: assignment.price } : {}),
       }
     })
 
@@ -321,7 +330,11 @@ export function useDraftBoard(
         // Import drafted
         for (const entry of data.assignments) {
           if (entry.type === 'drafted' && entry.fg_id) {
-            next.set(entry.fg_id, { owner: entry.owner, type: 'drafted' })
+            next.set(entry.fg_id, {
+              owner: entry.owner,
+              type: 'drafted',
+              ...(entry.price != null ? { price: entry.price } : {}),
+            })
           }
         }
         return next

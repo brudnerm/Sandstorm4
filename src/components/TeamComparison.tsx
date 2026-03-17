@@ -1,16 +1,11 @@
 import { useState, useEffect, useMemo } from 'react'
-import type { DraftPrepBatter, DraftPrepPitcher } from '../draftPrepTypes'
 import type { Column, AnyBatter, AnyPitcher } from '../leagueConfig'
-import type { DraftAssignment, OwnerInfo } from '../hooks/useDraftBoard'
-import { useTeamAggregation, type TeamAggRow } from '../hooks/useTeamAggregation'
+import type { TeamAggRow } from '../hooks/useTeamAggregation'
 
 type TCView = 'batting' | 'pitching' | 'combined'
 
 interface TeamComparisonProps {
-  batters: DraftPrepBatter[]
-  pitchers: DraftPrepPitcher[]
-  assignments: Map<string, DraftAssignment>
-  owners: OwnerInfo[]
+  teamRows: TeamAggRow[]
   batterColumns: Column<AnyBatter>[]
   pitcherColumns: Column<AnyPitcher>[]
   storagePrefix: string
@@ -33,10 +28,7 @@ function heatColor(
 // ---- Component ----
 
 export default function TeamComparison({
-  batters,
-  pitchers,
-  assignments,
-  owners,
+  teamRows,
   batterColumns,
   pitcherColumns,
   storagePrefix,
@@ -59,8 +51,6 @@ export default function TeamComparison({
   useEffect(() => {
     try { localStorage.setItem(`${storagePrefix}_tc_view`, view) } catch { /* ignore */ }
   }, [view, storagePrefix])
-
-  const teamRows = useTeamAggregation(batters, pitchers, assignments, owners, batterColumns, pitcherColumns)
 
   const batterAggCols = useMemo(() => batterColumns.filter(c => c.teamAgg), [batterColumns])
   const pitcherAggCols = useMemo(() => pitcherColumns.filter(c => c.teamAgg), [pitcherColumns])

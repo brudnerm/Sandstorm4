@@ -1,6 +1,9 @@
-import { useState, useMemo, useCallback, useRef } from 'react'
+import { useState, useMemo, useCallback, useRef, useEffect } from 'react'
 import { useDraftPrepData, useDraftPrepDetail } from '../hooks/useDraftPrepData'
 import { useDraftBoard } from '../hooks/useDraftBoard'
+import { useTeamAggregation } from '../hooks/useTeamAggregation'
+import { useDraftOrder } from '../hooks/useDraftOrder'
+import { useDraftSuggestions, type DraftSuggestion } from '../hooks/useDraftSuggestions'
 import type {
   DraftPrepBatter, DraftPrepPitcher,
   SeasonBatter, SeasonPitcher,
@@ -8,102 +11,23 @@ import type {
   DraftPrepDetail,
 } from '../draftPrepTypes'
 import type { DraftAssignment, OwnerInfo } from '../hooks/useDraftBoard'
+import type { LeagueConfig, Column, AnyBatter, AnyPitcher } from '../leagueConfig'
 import LoadingSpinner from './LoadingSpinner'
 import OwnerAssignDropdown from './OwnerAssignDropdown'
+import TeamComparison from './TeamComparison'
 
-// ---- Column definitions ----
+// ---- Internal types ----
 
-type PlayerType = 'batter' | 'pitcher'
+type PlayerType = 'batter' | 'pitcher' | 'all'
 type DataSource = 'projections' | 'previous'
 
-// Union type for any player-like record used in the table
-type AnyBatter = DraftPrepBatter | SeasonBatter
-type AnyPitcher = DraftPrepPitcher | SeasonPitcher
-
-interface Column<T> {
-  key: string
-  label: string
-  group: string
-  getValue: (p: T) => number | string | undefined
-  format?: (v: number | string | undefined) => string
-  width: number
-  align?: 'left' | 'right'
-}
-
-const fmt3 = (v: number | string | undefined) => typeof v === 'number' ? v.toFixed(3).replace(/^0/, '') : '—'
-const fmt2 = (v: number | string | undefined) => typeof v === 'number' ? v.toFixed(2) : '—'
-const fmt1 = (v: number | string | undefined) => typeof v === 'number' ? v.toFixed(1) : '—'
-const fmtInt = (v: number | string | undefined) => typeof v === 'number' ? String(Math.round(v)) : '—'
-const fmtPct = (v: number | string | undefined) => typeof v === 'number' ? v.toFixed(1) + '%' : '—'
-const fmtAdp = (v: number | string | undefined) => typeof v === 'number' && v > 0 ? v.toFixed(1) : '—'
-
-const BATTER_COLUMNS: Column<AnyBatter>[] = [
-  // ADP
-  { key: 'adp', label: 'ADP', group: 'Scoring', getValue: p => (p as DraftPrepBatter).adp, format: fmtAdp, width: 48, align: 'right' },
-  // Scoring categories
-  { key: 'pa',  label: 'PA',  group: 'Scoring', getValue: p => p.pa,  format: fmtInt, width: 44, align: 'right' },
-  { key: 'r',   label: 'R',   group: 'Scoring', getValue: p => p.r,   format: fmtInt, width: 38, align: 'right' },
-  { key: 'hr',  label: 'HR',  group: 'Scoring', getValue: p => p.hr,  format: fmtInt, width: 38, align: 'right' },
-  { key: 'rbi', label: 'RBI', group: 'Scoring', getValue: p => p.rbi, format: fmtInt, width: 42, align: 'right' },
-  { key: 'sb',  label: 'SB',  group: 'Scoring', getValue: p => p.sb,  format: fmtInt, width: 38, align: 'right' },
-  { key: 'avg', label: 'AVG', group: 'Scoring', getValue: p => p.avg, format: fmt3,   width: 50, align: 'right' },
-  { key: 'obp', label: 'OBP', group: 'Scoring', getValue: p => p.obp, format: fmt3,   width: 50, align: 'right' },
-  // Rates
-  { key: 'slg',    label: 'SLG',  group: 'Rates', getValue: p => p.slg,    format: fmt3,   width: 50, align: 'right' },
-  { key: 'ops',    label: 'OPS',  group: 'Rates', getValue: p => p.ops,    format: fmt3,   width: 50, align: 'right' },
-  { key: 'woba',   label: 'wOBA', group: 'Rates', getValue: p => p.woba,   format: fmt3,   width: 50, align: 'right' },
-  { key: 'k_pct',  label: 'K%',   group: 'Rates', getValue: p => p.k_pct,  format: fmtPct, width: 50, align: 'right' },
-  { key: 'bb_pct', label: 'BB%',  group: 'Rates', getValue: p => p.bb_pct, format: fmtPct, width: 50, align: 'right' },
-  { key: 'war',    label: 'WAR',  group: 'Rates', getValue: p => p.war,    format: fmt1,   width: 44, align: 'right' },
-  // Advanced
-  { key: 'xba',         label: 'xBA',   group: 'Advanced', getValue: p => (p as DraftPrepBatter).xba,         format: fmt3,   width: 50, align: 'right' },
-  { key: 'xslg',        label: 'xSLG',  group: 'Advanced', getValue: p => (p as DraftPrepBatter).xslg,        format: fmt3,   width: 50, align: 'right' },
-  { key: 'xwoba',       label: 'xwOBA', group: 'Advanced', getValue: p => (p as DraftPrepBatter).xwoba,       format: fmt3,   width: 56, align: 'right' },
-  { key: 'barrel_pct',  label: 'Brl%',  group: 'Advanced', getValue: p => (p as DraftPrepBatter).barrel_pct,  format: fmtPct, width: 50, align: 'right' },
-]
-
-const PITCHER_COLUMNS: Column<AnyPitcher>[] = [
-  // ADP
-  { key: 'adp', label: 'ADP', group: 'Scoring', getValue: p => (p as DraftPrepPitcher).adp, format: fmtAdp, width: 48, align: 'right' },
-  // Scoring categories
-  { key: 'ip',   label: 'IP',   group: 'Scoring', getValue: p => p.ip,   format: fmt1,   width: 44, align: 'right' },
-  { key: 'w',    label: 'W',    group: 'Scoring', getValue: p => p.w,    format: fmtInt, width: 34, align: 'right' },
-  { key: 'l',    label: 'L',    group: 'Scoring', getValue: p => p.l,    format: fmtInt, width: 34, align: 'right' },
-  { key: 'sv',   label: 'SV',   group: 'Scoring', getValue: p => p.sv,   format: fmtInt, width: 34, align: 'right' },
-  { key: 'k',    label: 'K',    group: 'Scoring', getValue: p => p.k,    format: fmtInt, width: 40, align: 'right' },
-  { key: 'era',  label: 'ERA',  group: 'Scoring', getValue: p => p.era,  format: fmt2,   width: 48, align: 'right' },
-  { key: 'whip', label: 'WHIP', group: 'Scoring', getValue: p => p.whip, format: fmt2,   width: 50, align: 'right' },
-  // Rates
-  { key: 'fip',    label: 'FIP',  group: 'Rates', getValue: p => p.fip,    format: fmt2,   width: 48, align: 'right' },
-  { key: 'k_9',   label: 'K/9',  group: 'Rates', getValue: p => p.k_9,   format: fmt2,   width: 48, align: 'right' },
-  { key: 'bb_9',  label: 'BB/9', group: 'Rates', getValue: p => p.bb_9,  format: fmt2,   width: 48, align: 'right' },
-  { key: 'k_pct', label: 'K%',   group: 'Rates', getValue: p => p.k_pct, format: fmtPct, width: 50, align: 'right' },
-  { key: 'bb_pct',label: 'BB%',  group: 'Rates', getValue: p => p.bb_pct,format: fmtPct, width: 50, align: 'right' },
-  { key: 'war',   label: 'WAR',  group: 'Rates', getValue: p => p.war,   format: fmt1,   width: 44, align: 'right' },
-  // Advanced
-  { key: 'xera',              label: 'xERA',  group: 'Advanced', getValue: p => (p as DraftPrepPitcher).xera,              format: fmt2, width: 50, align: 'right' },
-  { key: 'xba_against',       label: 'xBA',   group: 'Advanced', getValue: p => (p as DraftPrepPitcher).xba_against,       format: fmt3, width: 50, align: 'right' },
-]
-
-const BATTER_GROUPS = ['Scoring', 'Rates', 'Advanced']
-const PITCHER_GROUPS = ['Scoring', 'Rates', 'Advanced']
-
-const BATTER_POSITIONS = ['All', 'C', '1B', '2B', '3B', 'SS', 'OF', 'DH']
-const PITCHER_POSITIONS = ['All', 'SP', 'RP']
+type AllPlayerEntry =
+  | { kind: 'batter'; data: AnyBatter; fg_id: string }
+  | { kind: 'pitcher'; data: AnyPitcher; fg_id: string }
 
 // ---- Sort helpers ----
 
 type SortDir = 'asc' | 'desc'
-
-function defaultSortDir(key: string): SortDir {
-  const ascKeys = new Set(['era', 'whip', 'fip', 'bb_9', 'bb_pct', 'k_pct', 'l', 'xera', 'xba_against', 'adp'])
-  return ascKeys.has(key) ? 'asc' : 'desc'
-}
-
-function defaultSortDirBatter(key: string): SortDir {
-  const ascKeys = new Set(['k_pct', 'adp'])
-  return ascKeys.has(key) ? 'asc' : 'desc'
-}
 
 function compareValues(a: number | string | undefined, b: number | string | undefined, dir: SortDir): number {
   if (a == null && b == null) return 0
@@ -128,6 +52,19 @@ function ExpertTags({ tags }: { tags?: string[] }) {
           {tag === 'sleeper' ? 'SLP' : tag === 'breakout' ? 'BRK' : tag === 'bust' ? 'BUST' : tag.toUpperCase()}
         </span>
       ))}
+    </span>
+  )
+}
+
+function SuggestionTag({ suggestion }: { suggestion?: DraftSuggestion }) {
+  if (!suggestion) return null
+  return (
+    <span
+      className="dp-tag dp-tag-target"
+      title={`Pick ${suggestion.targetPick} — ${suggestion.reasons.join('; ')}`}
+      style={{ marginLeft: 3 }}
+    >
+      R{suggestion.targetRound}
     </span>
   )
 }
@@ -391,7 +328,7 @@ function PitcherHistoryExpander({ fgId, detail, currentSeason, columns, gridTemp
 
 // ---- Main component ----
 
-export default function DraftPrep() {
+export default function DraftPrep({ league }: { league: LeagueConfig }) {
   const state = useDraftPrepData()
   const { detail, loadDetail } = useDraftPrepDetail()
   const [playerType, setPlayerType] = useState<PlayerType>('batter')
@@ -405,18 +342,134 @@ export default function DraftPrep() {
   const [expandedPlayer, setExpandedPlayer] = useState<string | null>(null)
   const [ownerFilter, setOwnerFilter] = useState<string>('')
   const [confirmReset, setConfirmReset] = useState(false)
+  const [suggestionOwner, setSuggestionOwner] = useState('angel escobar')
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  // Draft board: combine all players for the hook
+  // ---- Column order (drag-to-reorder, persisted per league) ----
+
+  const loadColOrder = useCallback((type: 'batter' | 'pitcher') => {
+    const cols = type === 'batter' ? league.batterColumns : league.pitcherColumns
+    const defaultOrder = cols.map(c => c.key)
+    try {
+      const stored = localStorage.getItem(`${league.storagePrefix}_col_order_${type}`)
+      if (stored) {
+        const parsed: string[] = JSON.parse(stored)
+        // Keep stored order for known keys, append any new keys at the end
+        const known = parsed.filter(k => defaultOrder.includes(k))
+        const added = defaultOrder.filter(k => !known.includes(k))
+        return [...known, ...added]
+      }
+    } catch { /* ignore */ }
+    return defaultOrder
+  }, [league])
+
+  const [colOrders, setColOrders] = useState<{ batter: string[]; pitcher: string[] }>(() => ({
+    batter: loadColOrder('batter'),
+    pitcher: loadColOrder('pitcher'),
+  }))
+
+  useEffect(() => {
+    setColOrders({ batter: loadColOrder('batter'), pitcher: loadColOrder('pitcher') })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [league.storagePrefix])
+
+  const dragKeyRef = useRef<string | null>(null)
+  const [dragOverKey, setDragOverKey] = useState<string | null>(null)
+
+  const handleDragStart = useCallback((key: string, e: React.DragEvent) => {
+    dragKeyRef.current = key
+    e.dataTransfer.effectAllowed = 'move'
+    e.dataTransfer.setData('text/plain', key)
+  }, [])
+
+  const handleDragOver = useCallback((key: string, e: React.DragEvent) => {
+    e.preventDefault()
+    e.dataTransfer.dropEffect = 'move'
+    if (dragKeyRef.current !== key) setDragOverKey(key)
+  }, [])
+
+  const handleDrop = useCallback((targetKey: string, e: React.DragEvent) => {
+    e.preventDefault()
+    const fromKey = dragKeyRef.current
+    if (!fromKey || fromKey === targetKey) { setDragOverKey(null); return }
+    const type = playerType === 'batter' ? 'batter' : 'pitcher'
+    setColOrders(prev => {
+      const order = [...prev[type]].filter(k => k !== fromKey)
+      const idx = order.indexOf(targetKey)
+      order.splice(idx === -1 ? order.length : idx, 0, fromKey)
+      try { localStorage.setItem(`${league.storagePrefix}_col_order_${type}`, JSON.stringify(order)) } catch { /* ignore */ }
+      return { ...prev, [type]: order }
+    })
+    setDragOverKey(null)
+    dragKeyRef.current = null
+  }, [playerType, league.storagePrefix])
+
+  const handleDragEnd = useCallback(() => {
+    setDragOverKey(null)
+    dragKeyRef.current = null
+  }, [])
+
+  // Two-way players: pitchers whose fg_id also appears in the batter list (e.g. Ohtani).
+  // We give their pitcher entry a "_p" suffix so assignments don't bleed across the two rows.
+  const twowayIds = useMemo((): Set<string> => {
+    if (state.status !== 'ready') return new Set()
+    const batterIds = new Set(state.data.batters.map(b => b.fg_id))
+    return new Set(state.data.pitchers.filter(p => batterIds.has(p.fg_id)).map(p => p.fg_id))
+  }, [state])
+
+  /** Returns the canonical draft-board key for a pitcher (adds "_p" for two-way players). */
+  const pitcherFgId = useCallback((fg_id: string) =>
+    twowayIds.has(fg_id) ? `${fg_id}_p` : fg_id
+  , [twowayIds])
+
+  // Draft board: combine all players for the hook.
+  // Pitchers come first so batters overwrite them in useDraftBoard's nameIndex —
+  // ensuring two-way players (e.g. Ohtani) resolve to the batter fg_id when
+  // matching names in keepers.csv.
   const allPlayers = useMemo(() => {
     if (state.status !== 'ready') return []
     return [
+      ...state.data.pitchers.map(p => ({ fg_id: pitcherFgId(p.fg_id), name: p.name })),
       ...state.data.batters.map(b => ({ fg_id: b.fg_id, name: b.name })),
-      ...state.data.pitchers.map(p => ({ fg_id: p.fg_id, name: p.name })),
     ]
-  }, [state])
+  }, [state, pitcherFgId])
 
-  const draftBoard = useDraftBoard(allPlayers, state.status === 'ready' ? state.data.season : 2026)
+  const draftBoardOptions = useMemo(() => ({
+    ownerNames: league.owners,
+    enableKeepers: league.enableKeepers,
+    storagePrefix: league.storagePrefix,
+  }), [league])
+
+  const draftBoard = useDraftBoard(allPlayers, state.status === 'ready' ? state.data.season : 2026, draftBoardOptions)
+
+  // Team aggregation (lifted from TeamComparison so useDraftSuggestions can share it)
+  const teamAggRows = useTeamAggregation(
+    state.status === 'ready' ? state.data.batters : [],
+    state.status === 'ready' ? state.data.pitchers : [],
+    draftBoard.assignments,
+    draftBoard.owners,
+    league.batterColumns,
+    league.pitcherColumns,
+  )
+
+  // Draft order + suggestion engine (snake drafts only)
+  const draftOrder = useDraftOrder()
+  const ownerPicks = useMemo(() => {
+    if (draftOrder.status !== 'ready' || !suggestionOwner) return []
+    return draftOrder.getOwnerPicks(suggestionOwner)
+  }, [draftOrder, suggestionOwner])
+
+  const suggestions = useDraftSuggestions({
+    selectedOwner: league.draftType === 'snake' ? suggestionOwner : '',
+    batters: state.status === 'ready' ? state.data.batters : [],
+    pitchers: state.status === 'ready' ? state.data.pitchers : [],
+    assignments: draftBoard.assignments,
+    ownerPicks,
+    teamAggRows,
+    rosterSlots: draftOrder.config?.roster_slots ?? {},
+    batterColumns: league.batterColumns,
+    pitcherColumns: league.pitcherColumns,
+  })
 
   const handleInput = useCallback((val: string) => {
     setQuery(val)
@@ -433,23 +486,24 @@ export default function DraftPrep() {
     })
   }, [])
 
-  const handleSort = useCallback((key: string, isPitcher: boolean) => {
+  const handleSort = useCallback((key: string) => {
     setSortKey(prev => {
       if (prev === key) {
-        setSortDir(d => d === 'asc' ? 'desc' : 'asc')
+        // ADP is always ascending — highest ADP = undraftable, never useful descending
+        if (key !== 'adp') setSortDir(d => d === 'asc' ? 'desc' : 'asc')
         return key
       }
-      const defDir = isPitcher ? defaultSortDir(key) : defaultSortDirBatter(key)
-      setSortDir(defDir)
+      const col = league.batterColumns.find(c => c.key === key) ?? league.pitcherColumns.find(c => c.key === key)
+      setSortDir(col?.defaultDir ?? 'desc')
       return key
     })
-  }, [])
+  }, [league])
 
   const handleTypeSwitch = useCallback((type: PlayerType) => {
     setPlayerType(type)
     setPosFilter('All')
-    setSortKey('war')
-    setSortDir('desc')
+    setSortKey(type === 'all' ? 'adp' : 'war')
+    setSortDir(type === 'all' ? 'asc' : 'desc')
     setExpandedPlayer(null)
   }, [])
 
@@ -533,7 +587,7 @@ export default function DraftPrep() {
 
   const sortedBatters = useMemo(() => {
     if (playerType !== 'batter') return []
-    const col = BATTER_COLUMNS.find(c => c.key === sortKey)
+    const col = league.batterColumns.find(c => c.key === sortKey)
     if (!col) return [...filteredBatters].sort((a, b) => b.war - a.war)
     return [...filteredBatters].sort((a, b) =>
       compareValues(col.getValue(a), col.getValue(b), sortDir)
@@ -542,12 +596,43 @@ export default function DraftPrep() {
 
   const sortedPitchers = useMemo(() => {
     if (playerType !== 'pitcher') return []
-    const col = PITCHER_COLUMNS.find(c => c.key === sortKey)
+    const col = league.pitcherColumns.find(c => c.key === sortKey)
     if (!col) return [...filteredPitchers].sort((a, b) => b.war - a.war)
     return [...filteredPitchers].sort((a, b) =>
       compareValues(col.getValue(a), col.getValue(b), sortDir)
     )
   }, [filteredPitchers, sortKey, sortDir, playerType])
+
+  const filteredAll = useMemo((): AllPlayerEntry[] => {
+    if (playerType !== 'all') return []
+    const entries: AllPlayerEntry[] = [
+      ...activeBatters.map(b => ({ kind: 'batter' as const, data: b, fg_id: b.fg_id })),
+      ...activePitchers.map(p => ({ kind: 'pitcher' as const, data: p, fg_id: pitcherFgId(p.fg_id) })),
+    ]
+    const q = debouncedQuery.toLowerCase().trim()
+    return entries.filter(e => {
+      if (q && !e.data.name.toLowerCase().includes(q)) return false
+      if (ownerFilter) {
+        const a = draftBoard.getAssignment(e.fg_id)
+        if (ownerFilter === 'available') return !a
+        if (ownerFilter === 'keeper') return a?.type === 'keeper'
+        if (ownerFilter === 'drafted') return a?.type === 'drafted'
+        return a?.owner === ownerFilter
+      }
+      return true
+    })
+  }, [playerType, activeBatters, activePitchers, debouncedQuery, ownerFilter, draftBoard, pitcherFgId])
+
+  const sortedAll = useMemo((): AllPlayerEntry[] => {
+    if (playerType !== 'all') return []
+    const batCol = league.batterColumns.find(c => c.key === sortKey)
+    const pitCol = league.pitcherColumns.find(c => c.key === sortKey)
+    return [...filteredAll].sort((a, b) => {
+      const aVal = a.kind === 'batter' ? batCol?.getValue(a.data) : pitCol?.getValue(a.data as AnyPitcher)
+      const bVal = b.kind === 'batter' ? batCol?.getValue(b.data) : pitCol?.getValue(b.data as AnyPitcher)
+      return compareValues(aVal, bVal, sortDir)
+    })
+  }, [filteredAll, sortKey, sortDir, playerType, league])
 
   // ---- Visible columns ----
   // Hide Advanced group when showing previous season data (no Savant data)
@@ -556,19 +641,40 @@ export default function DraftPrep() {
     if (dataSource === 'previous') {
       const g = new Set(visibleGroups)
       g.delete('Advanced')
+      g.delete('Auction')
       return g
     }
     return visibleGroups
   }, [visibleGroups, dataSource])
 
-  const visibleBatterCols = useMemo(
-    () => BATTER_COLUMNS.filter(c => effectiveGroups.has(c.group)),
-    [effectiveGroups]
-  )
+  const visibleBatterCols = useMemo(() => {
+    const cols = league.batterColumns.filter(c => effectiveGroups.has(c.group))
+    const order = colOrders.batter
+    return [...cols].sort((a, b) => {
+      const ai = order.indexOf(a.key)
+      const bi = order.indexOf(b.key)
+      return (ai === -1 ? Infinity : ai) - (bi === -1 ? Infinity : bi)
+    })
+  }, [effectiveGroups, colOrders.batter, league.batterColumns])
 
-  const visiblePitcherCols = useMemo(
-    () => PITCHER_COLUMNS.filter(c => effectiveGroups.has(c.group)),
-    [effectiveGroups]
+  const visiblePitcherCols = useMemo(() => {
+    const cols = league.pitcherColumns.filter(c => effectiveGroups.has(c.group))
+    const order = colOrders.pitcher
+    return [...cols].sort((a, b) => {
+      const ai = order.indexOf(a.key)
+      const bi = order.indexOf(b.key)
+      return (ai === -1 ? Infinity : ai) - (bi === -1 ? Infinity : bi)
+    })
+  }, [effectiveGroups, colOrders.pitcher, league.pitcherColumns])
+
+  // ---- "All" view: scoring-only combined columns ----
+  const allBatterScoringCols = useMemo(
+    () => league.batterColumns.filter(c => c.group === 'Scoring'),
+    [league.batterColumns]
+  )
+  const allPitcherScoringCols = useMemo(
+    () => league.pitcherColumns.filter(c => c.group === 'Scoring' && c.key !== 'adp'),
+    [league.pitcherColumns]
   )
 
   // ---- Grid template ----
@@ -578,8 +684,10 @@ export default function DraftPrep() {
   const teamColWidth = 44
   const ageColWidth = 34
 
-  const activeCols = playerType === 'batter' ? visibleBatterCols : visiblePitcherCols
-  const gridTemplate = `${nameColWidth}px ${posColWidth}px ${teamColWidth}px ${ageColWidth}px ${activeCols.map(c => c.width + 'px').join(' ')}`
+  const activeCols = playerType === 'batter' ? visibleBatterCols : playerType === 'pitcher' ? visiblePitcherCols : []
+  const gridTemplate = playerType === 'all'
+    ? `${nameColWidth}px ${posColWidth}px ${teamColWidth}px ${ageColWidth}px ${[...allBatterScoringCols, ...allPitcherScoringCols].map(c => c.width + 'px').join(' ')}`
+    : `${nameColWidth}px ${posColWidth}px ${teamColWidth}px ${ageColWidth}px ${activeCols.map(c => c.width + 'px').join(' ')}`
 
   // ---- Detail data for expander ----
 
@@ -653,10 +761,10 @@ export default function DraftPrep() {
   }
 
   const { data } = state
-  const positions = playerType === 'batter' ? BATTER_POSITIONS : PITCHER_POSITIONS
-  const groups = playerType === 'batter' ? BATTER_GROUPS : PITCHER_GROUPS
-  const totalCount = playerType === 'batter' ? activeBatters.length : activePitchers.length
-  const filteredCount = playerType === 'batter' ? sortedBatters.length : sortedPitchers.length
+  const positions = playerType === 'pitcher' ? league.pitcherPositions : league.batterPositions
+  const groups = playerType === 'pitcher' ? league.pitcherGroups : league.batterGroups
+  const totalCount = playerType === 'batter' ? activeBatters.length : playerType === 'pitcher' ? activePitchers.length : activeBatters.length + activePitchers.length
+  const filteredCount = playerType === 'batter' ? sortedBatters.length : playerType === 'pitcher' ? sortedPitchers.length : sortedAll.length
   const sourceLabel = dataSource === 'projections' ? data.sources.projections : `${data.previous_season?.season ?? ''} Actuals`
   const hasPreviousSeason = !!data.previous_season
 
@@ -676,11 +784,15 @@ export default function DraftPrep() {
             </span>
             <span className="stat-label">Available</span>
           </div>
-          <div className="stat-divider" />
-          <div className="stat-item">
-            <span className="stat-value" style={{ color: 'var(--keep)' }}>{draftBoard.keeperCount}</span>
-            <span className="stat-label">Keepers</span>
-          </div>
+          {league.enableKeepers && (
+            <>
+              <div className="stat-divider" />
+              <div className="stat-item">
+                <span className="stat-value" style={{ color: 'var(--keep)' }}>{draftBoard.keeperCount}</span>
+                <span className="stat-label">Keepers</span>
+              </div>
+            </>
+          )}
           <div className="stat-divider" />
           <div className="stat-item">
             <span className="stat-value" style={{ color: 'var(--draft)' }}>{draftBoard.draftedCount}</span>
@@ -695,7 +807,7 @@ export default function DraftPrep() {
 
         {/* Controls row */}
         <div className="controls-row">
-          {/* Batter / Pitcher toggle */}
+          {/* Batter / Pitcher / All toggle */}
           <div className="dp-toggle">
             <button
               className={`dp-toggle-btn${playerType === 'batter' ? ' active' : ''}`}
@@ -708,6 +820,12 @@ export default function DraftPrep() {
               onClick={() => handleTypeSwitch('pitcher')}
             >
               Pitchers
+            </button>
+            <button
+              className={`dp-toggle-btn${playerType === 'all' ? ' active' : ''}`}
+              onClick={() => handleTypeSwitch('all')}
+            >
+              All
             </button>
           </div>
 
@@ -730,22 +848,39 @@ export default function DraftPrep() {
           )}
 
           {/* Position filter */}
-          <select value={posFilter} onChange={e => setPosFilter(e.target.value)} style={{ width: 'auto', minWidth: 80 }}>
-            {positions.map(p => (
-              <option key={p} value={p}>{p === 'All' ? 'All Positions' : p}</option>
-            ))}
-          </select>
+          {playerType !== 'all' && (
+            <select value={posFilter} onChange={e => setPosFilter(e.target.value)} style={{ width: 'auto', minWidth: 80 }}>
+              {positions.map(p => (
+                <option key={p} value={p}>{p === 'All' ? 'All Positions' : p}</option>
+              ))}
+            </select>
+          )}
 
           {/* Owner filter */}
           <select value={ownerFilter} onChange={e => setOwnerFilter(e.target.value)} style={{ width: 'auto', minWidth: 100 }}>
             <option value="">All Owners</option>
             <option value="available">Available</option>
-            <option value="keeper">Keepers</option>
+            {league.enableKeepers && <option value="keeper">Keepers</option>}
             <option value="drafted">Drafted</option>
             {draftBoard.owners.map(o => (
               <option key={o.name} value={o.name}>{o.name}</option>
             ))}
           </select>
+
+          {/* Suggestion owner selector (snake drafts with draft order data) */}
+          {league.draftType === 'snake' && draftOrder.status === 'ready' && (
+            <select
+              value={suggestionOwner}
+              onChange={e => setSuggestionOwner(e.target.value)}
+              style={{ width: 'auto', minWidth: 120 }}
+              title="Show draft suggestions for this owner"
+            >
+              <option value="">Suggestions Off</option>
+              {draftBoard.owners.map(o => (
+                <option key={o.name} value={o.name}>{o.name}</option>
+              ))}
+            </select>
+          )}
 
           {/* Search */}
           <div className="search-wrap" style={{ flex: 1, maxWidth: 300 }}>
@@ -796,23 +931,35 @@ export default function DraftPrep() {
           </div>
         </div>
 
-        {/* Column group toggles */}
-        <div className="dp-group-toggles">
-          {groups.map(group => {
-            const disabled = dataSource === 'previous' && group === 'Advanced'
-            return (
-              <label key={group} className={`dp-group-toggle${disabled ? ' dp-group-toggle--disabled' : ''}`}>
-                <input
-                  type="checkbox"
-                  checked={effectiveGroups.has(group)}
-                  onChange={() => toggleGroup(group)}
-                  disabled={disabled}
-                />
-                <span>{group}</span>
-              </label>
-            )
-          })}
-        </div>
+        {/* Column group toggles (hidden in 'all' view — scoring only) */}
+        {playerType !== 'all' && (
+          <div className="dp-group-toggles">
+            {groups.map(group => {
+              const disabled = dataSource === 'previous' && (group === 'Advanced' || group === 'Auction')
+              return (
+                <label key={group} className={`dp-group-toggle${disabled ? ' dp-group-toggle--disabled' : ''}`}>
+                  <input
+                    type="checkbox"
+                    checked={effectiveGroups.has(group)}
+                    onChange={() => toggleGroup(group)}
+                    disabled={disabled}
+                  />
+                  <span>{group}</span>
+                </label>
+              )
+            })}
+          </div>
+        )}
+
+        {/* Team comparison panel (projections only) */}
+        {dataSource === 'projections' && state.status === 'ready' && (
+          <TeamComparison
+            teamRows={teamAggRows}
+            batterColumns={league.batterColumns}
+            pitcherColumns={league.pitcherColumns}
+            storagePrefix={league.storagePrefix}
+          />
+        )}
 
         {/* Table */}
         <div className="dp-table">
@@ -823,13 +970,46 @@ export default function DraftPrep() {
               <span style={{ textAlign: 'center' }}>Pos</span>
               <span style={{ textAlign: 'center' }}>Tm</span>
               <span style={{ textAlign: 'right' }}>Age</span>
-              {activeCols.map(col => (
+              {playerType === 'all' ? (
+                <>
+                  {allBatterScoringCols.map(col => (
+                    <span
+                      key={col.key}
+                      className={`dp-col-sortable${sortKey === col.key ? ' dp-sort-active' : ''}`}
+                      style={{ textAlign: col.align ?? 'right' }}
+                      onClick={() => handleSort(col.key)}
+                      title={`Sort by ${col.label}`}
+                    >
+                      {col.label}
+                      {sortKey === col.key && <span className="dp-sort-arrow">{sortDir === 'desc' ? ' ▼' : ' ▲'}</span>}
+                    </span>
+                  ))}
+                  {allPitcherScoringCols.map(col => (
+                    <span
+                      key={col.key}
+                      className={`dp-col-sortable${sortKey === col.key ? ' dp-sort-active' : ''}`}
+                      style={{ textAlign: col.align ?? 'right' }}
+                      onClick={() => handleSort(col.key)}
+                      title={`Sort by ${col.label}`}
+                    >
+                      {col.label}
+                      {sortKey === col.key && <span className="dp-sort-arrow">{sortDir === 'desc' ? ' ▼' : ' ▲'}</span>}
+                    </span>
+                  ))}
+                </>
+              ) : activeCols.map(col => (
                 <span
                   key={col.key}
-                  className={`dp-col-sortable${sortKey === col.key ? ' dp-sort-active' : ''}`}
+                  className={`dp-col-sortable${sortKey === col.key ? ' dp-sort-active' : ''}${dragOverKey === col.key ? ' dp-col-drag-over' : ''}`}
                   style={{ textAlign: col.align ?? 'right' }}
-                  onClick={() => handleSort(col.key, playerType === 'pitcher')}
-                  title={`Sort by ${col.label}`}
+                  onClick={() => handleSort(col.key)}
+                  title={col.tooltip ?? `Sort by ${col.label}`}
+                  draggable
+                  onDragStart={e => handleDragStart(col.key, e)}
+                  onDragOver={e => handleDragOver(col.key, e)}
+                  onDragLeave={() => setDragOverKey(null)}
+                  onDrop={e => handleDrop(col.key, e)}
+                  onDragEnd={handleDragEnd}
                 >
                   {col.label}
                   {sortKey === col.key && (
@@ -841,7 +1021,34 @@ export default function DraftPrep() {
 
             {/* Rows */}
             <div className="dp-rows">
-              {playerType === 'batter'
+              {playerType === 'all'
+                ? sortedAll.map((entry, i) => {
+                    const isExpanded = expandedPlayer === entry.fg_id
+                    const assignment = draftBoard.getAssignment(entry.fg_id)
+                    const ownerInfo = assignment ? draftBoard.getOwnerInfo(assignment.owner) : undefined
+                    return (
+                      <div key={entry.fg_id || i}>
+                        <AllPlayerRow
+                          entry={entry}
+                          batterCols={allBatterScoringCols}
+                          pitcherCols={allPitcherScoringCols}
+                          gridTemplate={gridTemplate}
+                          rank={i + 1}
+                          isExpanded={isExpanded}
+                          onClick={() => handleRowClick(entry.fg_id)}
+                          isProjections={dataSource === 'projections'}
+                          assignment={assignment}
+                          ownerInfo={ownerInfo}
+                          owners={draftBoard.owners}
+                          onAssign={draftBoard.assignPlayer}
+                          onUnassign={draftBoard.unassignPlayer}
+                          draftType={league.draftType}
+                          suggestion={suggestions.get(entry.fg_id)}
+                        />
+                      </div>
+                    )
+                  })
+                : playerType === 'batter'
                 ? sortedBatters.map((b, i) => {
                     const isExpanded = expandedPlayer === b.fg_id
                     const assignment = draftBoard.getAssignment(b.fg_id)
@@ -861,6 +1068,8 @@ export default function DraftPrep() {
                           owners={draftBoard.owners}
                           onAssign={draftBoard.assignPlayer}
                           onUnassign={draftBoard.unassignPlayer}
+                          draftType={league.draftType}
+                          suggestion={suggestions.get(b.fg_id)}
                         />
                         {isExpanded && (
                           <div className="dp-expander">
@@ -886,24 +1095,27 @@ export default function DraftPrep() {
                     )
                   })
                 : sortedPitchers.map((p, i) => {
-                    const isExpanded = expandedPlayer === p.fg_id
-                    const assignment = draftBoard.getAssignment(p.fg_id)
+                    const pKey = pitcherFgId(p.fg_id)
+                    const isExpanded = expandedPlayer === pKey
+                    const assignment = draftBoard.getAssignment(pKey)
                     const ownerInfo = assignment ? draftBoard.getOwnerInfo(assignment.owner) : undefined
                     return (
-                      <div key={p.fg_id || i}>
+                      <div key={pKey || i}>
                         <PitcherRow
                           pitcher={p}
                           columns={visiblePitcherCols}
                           gridTemplate={gridTemplate}
                           rank={i + 1}
                           isExpanded={isExpanded}
-                          onClick={() => handleRowClick(p.fg_id)}
+                          onClick={() => handleRowClick(pKey)}
                           isProjections={dataSource === 'projections'}
                           assignment={assignment}
                           ownerInfo={ownerInfo}
                           owners={draftBoard.owners}
-                          onAssign={draftBoard.assignPlayer}
-                          onUnassign={draftBoard.unassignPlayer}
+                          onAssign={(_fgId, owner, price) => draftBoard.assignPlayer(pKey, owner, price)}
+                          onUnassign={() => draftBoard.unassignPlayer(pKey)}
+                          draftType={league.draftType}
+                          suggestion={suggestions.get(p.fg_id)}
                         />
                         {isExpanded && (
                           <div className="dp-expander">
@@ -940,7 +1152,7 @@ export default function DraftPrep() {
 // ---- Row components ----
 
 
-function BatterRow({ batter, columns, gridTemplate, rank, isExpanded, onClick, isProjections, assignment, ownerInfo, owners, onAssign, onUnassign }: {
+function BatterRow({ batter, columns, gridTemplate, rank, isExpanded, onClick, isProjections, assignment, ownerInfo, owners, onAssign, onUnassign, draftType, suggestion }: {
   batter: AnyBatter
   columns: Column<AnyBatter>[]
   gridTemplate: string
@@ -951,8 +1163,10 @@ function BatterRow({ batter, columns, gridTemplate, rank, isExpanded, onClick, i
   assignment?: DraftAssignment
   ownerInfo?: OwnerInfo
   owners: OwnerInfo[]
-  onAssign: (fgId: string, owner: string) => void
+  onAssign: (fgId: string, owner: string, price?: number) => void
   onUnassign: (fgId: string) => void
+  draftType: 'snake' | 'auction'
+  suggestion?: DraftSuggestion
 }) {
   const expertTags = isProjections ? (batter as DraftPrepBatter).expert_tags : undefined
   const rowClass = `dp-row dp-row--expandable${isExpanded ? ' dp-row--expanded' : ''}${
@@ -972,11 +1186,13 @@ function BatterRow({ batter, columns, gridTemplate, rank, isExpanded, onClick, i
           owners={owners}
           onAssign={onAssign}
           onUnassign={onUnassign}
+          draftType={draftType}
         />
         <span className="dp-chevron">{isExpanded ? '▾' : '▸'}</span>
         <span className="dp-rank">{rank}</span>
         <span className="dp-player-name">{batter.name}</span>
         <ExpertTags tags={expertTags} />
+        <SuggestionTag suggestion={suggestion} />
       </span>
       <span className="dp-cell-dim" style={{ textAlign: 'center' }}>{batter.positions.join(', ')}</span>
       <span className="dp-cell-dim" style={{ textAlign: 'center' }}>{batter.team}</span>
@@ -990,7 +1206,7 @@ function BatterRow({ batter, columns, gridTemplate, rank, isExpanded, onClick, i
   )
 }
 
-function PitcherRow({ pitcher, columns, gridTemplate, rank, isExpanded, onClick, isProjections, assignment, ownerInfo, owners, onAssign, onUnassign }: {
+function PitcherRow({ pitcher, columns, gridTemplate, rank, isExpanded, onClick, isProjections, assignment, ownerInfo, owners, onAssign, onUnassign, draftType, suggestion }: {
   pitcher: AnyPitcher
   columns: Column<AnyPitcher>[]
   gridTemplate: string
@@ -1001,8 +1217,10 @@ function PitcherRow({ pitcher, columns, gridTemplate, rank, isExpanded, onClick,
   assignment?: DraftAssignment
   ownerInfo?: OwnerInfo
   owners: OwnerInfo[]
-  onAssign: (fgId: string, owner: string) => void
+  onAssign: (fgId: string, owner: string, price?: number) => void
   onUnassign: (fgId: string) => void
+  draftType: 'snake' | 'auction'
+  suggestion?: DraftSuggestion
 }) {
   const expertTags = isProjections ? (pitcher as DraftPrepPitcher).expert_tags : undefined
   const rowClass = `dp-row dp-row--expandable${isExpanded ? ' dp-row--expanded' : ''}${
@@ -1022,11 +1240,13 @@ function PitcherRow({ pitcher, columns, gridTemplate, rank, isExpanded, onClick,
           owners={owners}
           onAssign={onAssign}
           onUnassign={onUnassign}
+          draftType={draftType}
         />
         <span className="dp-chevron">{isExpanded ? '▾' : '▸'}</span>
         <span className="dp-rank">{rank}</span>
         <span className="dp-player-name">{pitcher.name}</span>
         <ExpertTags tags={expertTags} />
+        <SuggestionTag suggestion={suggestion} />
       </span>
       <span className="dp-cell-dim" style={{ textAlign: 'center' }}>{pitcher.positions.join(', ')}</span>
       <span className="dp-cell-dim" style={{ textAlign: 'center' }}>{pitcher.team}</span>
@@ -1034,6 +1254,65 @@ function PitcherRow({ pitcher, columns, gridTemplate, rank, isExpanded, onClick,
       {columns.map(col => (
         <span key={col.key} className="dp-cell" style={{ textAlign: col.align ?? 'right' }}>
           {(col.format ?? String)(col.getValue(pitcher))}
+        </span>
+      ))}
+    </div>
+  )
+}
+
+function AllPlayerRow({ entry, batterCols, pitcherCols, gridTemplate, rank, isExpanded, onClick, isProjections, assignment, ownerInfo, owners, onAssign, onUnassign, draftType, suggestion }: {
+  entry: AllPlayerEntry
+  batterCols: Column<AnyBatter>[]
+  pitcherCols: Column<AnyPitcher>[]
+  gridTemplate: string
+  rank: number
+  isExpanded: boolean
+  onClick: () => void
+  isProjections: boolean
+  assignment?: DraftAssignment
+  ownerInfo?: OwnerInfo
+  owners: OwnerInfo[]
+  onAssign: (fgId: string, owner: string, price?: number) => void
+  onUnassign: (fgId: string) => void
+  draftType: 'snake' | 'auction'
+  suggestion?: DraftSuggestion
+}) {
+  const { kind, data, fg_id } = entry
+  const isBatter = kind === 'batter'
+  const expertTags = isProjections ? (data as DraftPrepBatter | DraftPrepPitcher).expert_tags : undefined
+  const rowClass = `dp-row dp-row--expandable${isExpanded ? ' dp-row--expanded' : ''}${
+    assignment ? (assignment.type === 'keeper' ? ' dp-row--keeper' : ' dp-row--owned') : ''
+  }`
+  const age = (data as DraftPrepBatter).age ?? (data as SeasonBatter).age ?? '—'
+  return (
+    <div className={rowClass} style={{ gridTemplateColumns: gridTemplate }} onClick={onClick}>
+      <span className="dp-col-name">
+        <OwnerAssignDropdown
+          fgId={fg_id}
+          assignment={assignment}
+          ownerInfo={ownerInfo}
+          owners={owners}
+          onAssign={onAssign}
+          onUnassign={onUnassign}
+          draftType={draftType}
+        />
+        <span className="dp-chevron">{isExpanded ? '▾' : '▸'}</span>
+        <span className="dp-rank">{rank}</span>
+        <span className="dp-player-name">{data.name}</span>
+        <ExpertTags tags={expertTags} />
+        <SuggestionTag suggestion={suggestion} />
+      </span>
+      <span className="dp-cell-dim" style={{ textAlign: 'center' }}>{data.positions.join(', ')}</span>
+      <span className="dp-cell-dim" style={{ textAlign: 'center' }}>{data.team}</span>
+      <span className="dp-cell-dim" style={{ textAlign: 'right' }}>{age}</span>
+      {batterCols.map(col => (
+        <span key={col.key} className="dp-cell" style={{ textAlign: col.align ?? 'right', opacity: isBatter || col.key === 'adp' ? 1 : 0.25 }}>
+          {isBatter || col.key === 'adp' ? (col.format ?? String)(col.getValue(data as AnyBatter)) : '—'}
+        </span>
+      ))}
+      {pitcherCols.map(col => (
+        <span key={col.key} className="dp-cell" style={{ textAlign: col.align ?? 'right', opacity: isBatter ? 0.25 : 1 }}>
+          {!isBatter ? (col.format ?? String)(col.getValue(data as AnyPitcher)) : '—'}
         </span>
       ))}
     </div>

@@ -1456,6 +1456,11 @@ button:disabled {
   color: var(--drop);
 }
 
+.dp-tag-target {
+  background: #1a3a5c;
+  color: #60a5fa;
+}
+
 /* ---- Expander styles ---- */
 .dp-row--expandable {
   cursor: pointer;
@@ -1813,5 +1818,189 @@ button:disabled {
   .tabs {
     margin-left: 0;
     width: 100%;
+  }
+
+  /* Stats bar wrapping on tablets */
+  .stats-bar {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  /* Full-width selects on mobile */
+  .controls-row select {
+    width: 100%;
+  }
+}
+
+/* Transaction cards — hidden by default on desktop */
+.txn-cards {
+  display: none;
+}
+
+/* Mobile phones (480px and below) */
+@media (max-width: 480px) {
+  .tab-panel {
+    padding: 12px;
+  }
+
+  .panel-inner {
+    gap: 12px;
+  }
+
+  /* Transaction table → card layout */
+  .txn-table {
+    display: none;
+  }
+
+  /* Show transaction cards on mobile */
+  .txn-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Stats bar stacks vertically */
+  .stats-bar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .stat-item {
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .stat-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .stat-value {
+    font-size: 16px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+  }
+
+  /* Controls stack better on small screens */
+  .controls-row {
+    gap: 8px;
+  }
+
+  .controls-row select {
+    flex: 1 1 100%;
+    min-width: 100px;
+  }
+
+  /* Pick list optimization */
+  .pick-item {
+    padding: 12px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .pick-item-name {
+    flex: 1 1 100%;
+    margin-bottom: 4px;
+  }
+
+  .pick-item-meta {
+    margin-left: 0;
+  }
+
+  /* Player detail header responsiveness */
+  .player-detail-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .player-detail-header button {
+    padding: 10px 12px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .player-detail-header h2 {
+    font-size: 18px;
+    margin-top: 4px;
+  }
+
+  /* Search wrap optimization */
+  .search-wrap input {
+    font-size: 16px;
+  }
+
+  /* Empty state on mobile */
+  .empty-state {
+    padding: 32px 16px;
+  }
+
+  .empty-state-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .empty-state-title {
+    font-size: 15px;
+  }
+
+  .empty-state-desc {
+    font-size: 12px;
+  }
+
+  /* Section label on mobile */
+  .section-label {
+    font-size: 10px;
+  }
+}
+
+/* Small phones (320px and below) */
+@media (max-width: 320px) {
+  .tab-panel {
+    padding: 8px;
+  }
+
+  .panel-inner {
+    gap: 10px;
+  }
+
+  /* Reduce font sizes further for tiny screens */
+  body {
+    font-size: 13px;
+  }
+
+  /* Pick list metadata hidden on very small screens */
+  .pick-item-meta {
+    display: none;
+  }
+
+  .pick-item {
+    padding: 10px;
+  }
+
+  .stats-bar {
+    padding: 10px;
+  }
+
+  .stat-value {
+    font-size: 14px;
+  }
+
+  /* Ensure button touch targets still work */
+  button {
+    padding: 10px 12px;
+    min-height: 44px;
+  }
+
+  .controls-row {
+    gap: 6px;
   }
 }

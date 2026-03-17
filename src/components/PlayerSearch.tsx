@@ -2,7 +2,7 @@ import { useState, useMemo, useCallback, useRef } from 'react'
 import type { TransactionIndexes } from '../hooks/useTransactionData'
 import type { Transaction, TeamOwnerEntry } from '../types'
 import { searchPlayers, useMemoedPlayerTransactions } from '../hooks/useTransactionData'
-import { TransactionTableRow, actionClass, actionLabel } from './TransactionRow'
+import { TransactionTableRow, TransactionCard, actionClass, actionLabel } from './TransactionRow'
 
 interface Props {
   indexes: TransactionIndexes
@@ -182,7 +182,7 @@ function PlayerDetail({ name, transactions, seasons, ownerByTeam, onClear }: Det
   return (
     <>
       {/* Back + player header */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+      <div className="player-detail-header" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
         <button className="btn-ghost" style={{ padding: '6px 10px', flexShrink: 0 }} onClick={onClear}>
           ← Back
         </button>
@@ -232,34 +232,49 @@ function PlayerDetail({ name, transactions, seasons, ownerByTeam, onClear }: Det
         </span>
       </div>
 
-      {/* Table */}
+      {/* Table/Cards display - switches based on screen size */}
       {filtered.length === 0 ? (
         <div className="empty-state">
           <div className="empty-state-desc">No transactions match these filters</div>
         </div>
       ) : (
-        <div className="txn-table">
-          <div className="txn-table-header">
-            <span>Date</span>
-            <span>Season</span>
-            <span>Action</span>
-            <span>Type</span>
-            <span>From</span>
-            <span>To</span>
-            <span>Exchange</span>
+        <>
+          {/* Desktop table view */}
+          <div className="txn-table">
+            <div className="txn-table-header">
+              <span>Date</span>
+              <span>Season</span>
+              <span>Action</span>
+              <span>Type</span>
+              <span>From</span>
+              <span>To</span>
+              <span>Exchange</span>
+            </div>
+            <div className="txn-rows">
+              {filtered.map(t => (
+                <TransactionTableRow
+                  key={`${t.season}-${t.transaction_id}`}
+                  transaction={t}
+                  focusPlayer={name}
+                  showSeason
+                  ownerByTeam={ownerByTeam}
+                />
+              ))}
+            </div>
           </div>
-          <div className="txn-rows">
+
+          {/* Mobile card view */}
+          <div className="txn-cards">
             {filtered.map(t => (
-              <TransactionTableRow
+              <TransactionCard
                 key={`${t.season}-${t.transaction_id}`}
                 transaction={t}
-                focusPlayer={name}
                 showSeason
                 ownerByTeam={ownerByTeam}
               />
             ))}
           </div>
-        </div>
+        </>
       )}
     </>
   )

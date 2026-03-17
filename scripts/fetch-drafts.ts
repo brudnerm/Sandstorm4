@@ -38,6 +38,7 @@ const LEAGUE_SEASONS: Record<string, string> = {
   '2023': '422.l.20451',
   '2024': '431.l.11978',
   '2025': '458.l.19784',
+  '2026': '469.l.13624',
 }
 
 type AnyObj = Record<string, unknown>

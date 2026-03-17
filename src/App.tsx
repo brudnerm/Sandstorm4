@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { useTransactionData } from './hooks/useTransactionData'
 import type { TabId } from './types'
+import { KP_CONFIG, ALL_LEAGUES, type LeagueConfig } from './leagueConfig'
 import LoadingSpinner from './components/LoadingSpinner'
 import PlayerSearch from './components/PlayerSearch'
 import SeasonBrowser from './components/SeasonBrowser'
@@ -20,13 +21,29 @@ const ALL_TABS: Array<{ id: TabId; label: string }> = [
   { id: 'refresh', label: 'Data Refresh' },
 ]
 
-const TABS = import.meta.env.PROD
-  ? ALL_TABS.filter(t => t.id !== 'refresh')
-  : ALL_TABS
+const PROD_TABS = ALL_TABS.filter(t => t.id !== 'refresh')
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<TabId>('player')
+  const [activeLeague, setActiveLeague] = useState<LeagueConfig>(KP_CONFIG)
   const state = useTransactionData()
+
+  const visibleTabs = useMemo(() => {
+    const base = import.meta.env.PROD ? PROD_TABS : ALL_TABS
+    if (activeLeague.showTransactionTabs) return base
+    // Non-transaction leagues only get Draft Prep (and Data Refresh in dev)
+    return base.filter(t => t.id === 'draftprep' || t.id === 'refresh')
+  }, [activeLeague])
+
+  const handleLeagueChange = (leagueId: string) => {
+    const league = ALL_LEAGUES.find(l => l.id === leagueId)
+    if (!league) return
+    setActiveLeague(league)
+    // Auto-switch to Draft Prep when selecting a non-transaction league
+    if (!league.showTransactionTabs && activeTab !== 'draftprep' && activeTab !== 'refresh') {
+      setActiveTab('draftprep')
+    }
+  }
 
   return (
     <div id="root" style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
@@ -34,10 +51,18 @@ export default function App() {
         <div className="app-header-inner">
           <div className="app-title">
             <span className="app-title-wordmark">Sandstorm</span>
-            <span className="app-title-league">Keeping Pattycakes</span>
+            <select
+              className="league-switcher"
+              value={activeLeague.id}
+              onChange={e => handleLeagueChange(e.target.value)}
+            >
+              {ALL_LEAGUES.map(l => (
+                <option key={l.id} value={l.id}>{l.name}</option>
+              ))}
+            </select>
           </div>
           <nav className="tabs" role="tablist">
-            {TABS.map(tab => (
+            {visibleTabs.map(tab => (
               <button
                 key={tab.id}
                 role="tab"
@@ -54,7 +79,7 @@ export default function App() {
 
       <main className="app-content">
         {activeTab === 'draftprep' ? (
-          <DraftPrep />
+          <DraftPrep key={activeLeague.id} league={activeLeague} />
         ) : (
           <>
             {state.status === 'loading' && (

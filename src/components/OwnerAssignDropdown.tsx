@@ -7,18 +7,22 @@ interface Props {
   assignment?: DraftAssignment
   ownerInfo?: OwnerInfo
   owners: OwnerInfo[]
-  onAssign: (fgId: string, owner: string) => void
+  onAssign: (fgId: string, owner: string, price?: number) => void
   onUnassign: (fgId: string) => void
+  draftType?: 'snake' | 'auction'
 }
 
-export default function OwnerAssignDropdown({ fgId, assignment, ownerInfo, owners, onAssign, onUnassign }: Props) {
+export default function OwnerAssignDropdown({ fgId, assignment, ownerInfo, owners, onAssign, onUnassign, draftType = 'snake' }: Props) {
   const [open, setOpen] = useState(false)
   const [focusedIndex, setFocusedIndex] = useState(0)
   const [dropdownPos, setDropdownPos] = useState({ top: 0, left: 0 })
+  const [auctionPrice, setAuctionPrice] = useState('')
   const btnRef = useRef<HTMLButtonElement>(null)
   const dropdownRef = useRef<HTMLDivElement>(null)
+  const priceInputRef = useRef<HTMLInputElement>(null)
 
   const isKeeper = assignment?.type === 'keeper'
+  const isAuction = draftType === 'auction'
   // Items: all owners + optional Clear item
   const showClear = !!assignment && !isKeeper
   const totalItems = owners.length + (showClear ? 1 : 0)
@@ -29,10 +33,18 @@ export default function OwnerAssignDropdown({ fgId, assignment, ownerInfo, owner
     const rect = btnRef.current.getBoundingClientRect()
     setDropdownPos({ top: rect.bottom + 4, left: rect.left })
     setFocusedIndex(0)
+    setAuctionPrice('')
     setOpen(true)
   }, [])
 
   const closeDropdown = useCallback(() => setOpen(false), [])
+
+  // Focus price input when dropdown opens in auction mode
+  useEffect(() => {
+    if (open && isAuction && priceInputRef.current) {
+      setTimeout(() => priceInputRef.current?.focus(), 0)
+    }
+  }, [open, isAuction])
 
   // Recalculate position on scroll/resize while open
   useEffect(() => {
@@ -66,6 +78,12 @@ export default function OwnerAssignDropdown({ fgId, assignment, ownerInfo, owner
     return () => document.removeEventListener('mousedown', handler)
   }, [open, closeDropdown])
 
+  const getPrice = (): number | undefined => {
+    if (!isAuction) return undefined
+    const n = parseInt(auctionPrice, 10)
+    return isNaN(n) ? undefined : n
+  }
+
   // Keyboard navigation
   useEffect(() => {
     if (!open) return
@@ -84,10 +102,10 @@ export default function OwnerAssignDropdown({ fgId, assignment, ownerInfo, owner
         setFocusedIndex(i => (i - 1 + totalItems) % totalItems)
         return
       }
-      if (e.key === 'Enter' || e.key === ' ') {
+      if (e.key === 'Enter' || (e.key === ' ' && !(e.target instanceof HTMLInputElement))) {
         e.preventDefault()
         if (focusedIndex < owners.length) {
-          onAssign(fgId, owners[focusedIndex].name)
+          onAssign(fgId, owners[focusedIndex].name, getPrice())
           closeDropdown()
         } else if (showClear) {
           onUnassign(fgId)
@@ -97,11 +115,11 @@ export default function OwnerAssignDropdown({ fgId, assignment, ownerInfo, owner
     }
     document.addEventListener('keydown', handler)
     return () => document.removeEventListener('keydown', handler)
-  }, [open, focusedIndex, totalItems, owners, fgId, onAssign, onUnassign, showClear, closeDropdown])
+  }, [open, focusedIndex, totalItems, owners, fgId, onAssign, onUnassign, showClear, closeDropdown, auctionPrice, isAuction])
 
   const handleAssign = (e: React.MouseEvent, ownerName: string) => {
     e.stopPropagation()
-    onAssign(fgId, ownerName)
+    onAssign(fgId, ownerName, getPrice())
     closeDropdown()
   }
 
@@ -111,6 +129,15 @@ export default function OwnerAssignDropdown({ fgId, assignment, ownerInfo, owner
     closeDropdown()
   }
 
+  // Format button label
+  const buttonLabel = (() => {
+    if (!ownerInfo) return '+'
+    if (isAuction && assignment?.price != null) {
+      return `${ownerInfo.abbrev} $${assignment.price}`
+    }
+    return ownerInfo.name
+  })()
+
   const dropdown = open ? createPortal(
     <div
       ref={dropdownRef}
@@ -118,6 +145,21 @@ export default function OwnerAssignDropdown({ fgId, assignment, ownerInfo, owner
       style={{ top: dropdownPos.top, left: dropdownPos.left }}
       onClick={e => e.stopPropagation()}
     >
+      {isAuction && (
+        <div className="dp-assign-price-row">
+          <span className="dp-assign-price-label">$</span>
+          <input
+            ref={priceInputRef}
+            type="number"
+            className="dp-assign-price-input"
+            placeholder="Price"
+            value={auctionPrice}
+            onChange={e => setAuctionPrice(e.target.value)}
+            onClick={e => e.stopPropagation()}
+            min={0}
+          />
+        </div>
+      )}
       {owners.map((o, i) => (
         <button
           key={o.name}
@@ -160,10 +202,10 @@ export default function OwnerAssignDropdown({ fgId, assignment, ownerInfo, owner
         ref={btnRef}
         className={`dp-assign-btn${assignment ? ' dp-assign-btn--active' : ''}`}
         onClick={openDropdown}
-        title={assignment ? `${assignment.owner} (${assignment.type})` : 'Assign owner'}
+        title={assignment ? `${assignment.owner} (${assignment.type})${assignment.price != null ? ` $${assignment.price}` : ''}` : 'Assign owner'}
         style={ownerInfo ? { background: ownerInfo.color + '33', borderColor: ownerInfo.color + '66', color: ownerInfo.color } : undefined}
       >
-        {ownerInfo ? ownerInfo.name : '+'}
+        {buttonLabel}
       </button>
       {dropdown}
     </div>

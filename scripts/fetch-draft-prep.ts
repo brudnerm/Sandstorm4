@@ -6,7 +6,7 @@
  * Usage: npx tsx scripts/fetch-draft-prep.ts
  */
 
-import { writeFileSync } from 'fs'
+import { writeFileSync, readFileSync } from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import https from 'https'
@@ -128,6 +128,7 @@ interface FGBatter {
   WAR: number
   'BB%': number
   'K%': number
+  GDP?: number
   ISO: number
   BABIP: number
   wRC: number
@@ -159,8 +160,10 @@ interface FGPitcher {
   'BB/9': number
   FIP: number
   WAR: number
+  QS?: number
   'K%': number
   'BB%': number
+  GDP?: number
   ADP: number
 }
 
@@ -187,6 +190,8 @@ interface DraftPrepBatter {
   war: number
   bb_pct: number
   k_pct: number
+  so: number
+  gdp: number
   // Advanced (Savant)
   xba?: number
   xslg?: number
@@ -197,6 +202,19 @@ interface DraftPrepBatter {
   expert_tags?: string[]
   cbs_rank?: number
   cbs_tier?: number
+  // Yahoo O-Rank
+  yahoo_rank?: number
+  // Auction (FanGraphs)
+  auc_dollars?: number
+  auc_pts?: number
+  auc_apos?: number
+  auc_mAVG?: number
+  auc_mRBI?: number
+  auc_mR?: number
+  auc_mSB?: number
+  auc_mHR?: number
+  auc_mOPS?: number
+  auc_mSO?: number
 }
 
 interface DraftPrepPitcher {
@@ -220,6 +238,9 @@ interface DraftPrepPitcher {
   bb_9: number
   k_pct: number
   bb_pct: number
+  qs: number
+  k_bb: number
+  gdp?: number
   // Advanced (Savant)
   xera?: number
   xba_against?: number
@@ -230,6 +251,19 @@ interface DraftPrepPitcher {
   expert_tags?: string[]
   cbs_rank?: number
   cbs_tier?: number
+  // Yahoo O-Rank
+  yahoo_rank?: number
+  // Auction (FanGraphs)
+  auc_dollars?: number
+  auc_pts?: number
+  auc_apos?: number
+  auc_mW?: number
+  auc_mSV?: number
+  auc_mERA?: number
+  auc_mWHIP?: number
+  auc_mSO?: number
+  auc_mKBB?: number
+  auc_mQS?: number
 }
 
 // ---- Season data types (for previous season and history) ----
@@ -254,6 +288,8 @@ interface SeasonBatter {
   war: number
   bb_pct: number
   k_pct: number
+  so: number
+  gdp: number
 }
 
 interface SeasonPitcher {
@@ -276,18 +312,22 @@ interface SeasonPitcher {
   bb_9: number
   k_pct: number
   bb_pct: number
+  qs: number
+  k_bb: number
+  gdp?: number
 }
 
 interface BatterStatLine {
   pa: number; r: number; hr: number; rbi: number; sb: number
   avg: number; obp: number; slg: number; ops: number
-  bb_pct: number; k_pct: number
+  bb_pct: number; k_pct: number; so: number; gdp: number
 }
 
 interface PitcherStatLine {
   ip: number; w: number; l: number; sv: number; k: number
   era: number; whip: number; fip: number
   k_9: number; bb_9: number; k_pct: number; bb_pct: number
+  qs: number; k_bb: number; gdp?: number
 }
 
 interface SplitEntry {
@@ -418,6 +458,28 @@ async function fetchSavantStatcastBatters(): Promise<Map<number, SavantStatcast>
     })
   }
   console.log(`[Savant] Got ${map.size} batter statcast entries`)
+  return map
+}
+
+// ---- Yahoo O-Ranks ----
+
+const YAHOO_RANKINGS_PATH = path.join(__dirname, '../../yahoo-fantasy-baseball-mcp/data/pre_draft_rankings_2026.json')
+
+function loadYahooRankings(): Map<string, number> {
+  const map = new Map<string, number>()
+  try {
+    const raw = readFileSync(YAHOO_RANKINGS_PATH, 'utf8')
+    const data = JSON.parse(raw) as { players: { name: string; o_rank: number }[] }
+    for (const player of data.players) {
+      if (!player.o_rank) continue
+      // Strip "(Batter)" / "(Pitcher)" suffixes Yahoo appends to two-way players
+      const cleanName = player.name.replace(/\s*\(Batter\)|\s*\(Pitcher\)/gi, '').trim()
+      map.set(normalizeName(cleanName), player.o_rank)
+    }
+    console.log(`[Yahoo] Loaded ${map.size} O-Rank entries`)
+  } catch (err) {
+    console.warn(`[Yahoo] Could not load rankings: ${err}`)
+  }
   return map
 }
 
@@ -664,6 +726,8 @@ function transformBatter(fg: FGBatter): DraftPrepBatter {
     war: round1(fg.WAR),
     bb_pct: round1((fg['BB%'] ?? 0) * (fg['BB%'] > 1 ? 1 : 100)),
     k_pct: round1((fg['K%'] ?? 0) * (fg['K%'] > 1 ? 1 : 100)),
+    so: fg.SO ?? 0,
+    gdp: fg.GDP ?? 0,
   }
 }
 
@@ -688,12 +752,72 @@ function transformPitcher(fg: FGPitcher): DraftPrepPitcher {
     bb_9: round2(fg['BB/9']),
     k_pct: round1((fg['K%'] ?? 0) * (fg['K%'] > 1 ? 1 : 100)),
     bb_pct: round1((fg['BB%'] ?? 0) * (fg['BB%'] > 1 ? 1 : 100)),
+    qs: fg.QS ?? 0,
+    k_bb: fg.BB > 0 ? round2((fg.SO ?? 0) / fg.BB) : 0,
+    gdp: fg.GDP,
   }
 }
 
 function round1(n: number): number { return Math.round(n * 10) / 10 }
 function round2(n: number): number { return Math.round(n * 100) / 100 }
 function round3(n: number): number { return Math.round(n * 1000) / 1000 }
+
+// ---- FanGraphs Auction Calculator API ----
+
+interface FGAuctionBatter {
+  playerid: string
+  PlayerName: string
+  Dollars: number
+  PTS: number
+  aPOS: number
+  mAVG: number
+  mRBI: number
+  mR: number
+  mSB: number
+  mHR: number
+  mOPS: number
+  mSO: number
+}
+
+interface FGAuctionPitcher {
+  playerid: string
+  PlayerName: string
+  Dollars: number
+  PTS: number
+  aPOS: number
+  mW: number
+  mSV: number
+  mERA: number
+  mWHIP: number
+  mSO: number
+  mKBB: number
+  mQS: number
+}
+
+const FG_AUCTION_PARAMS = 'teams=10&lg=MLB&dollars=260&mb=1&mp=20&msp=5&mrp=5&players=&proj=fangraphsdc&split=&points=c%7C0%2C1%2C2%2C3%2C4%2C7%2C9%7C0%2C1%2C13%2C2%2C3%2C4%2C8&rep=0&drp=0&pp=2B%2C3B%2C1B%2COF%2CSS%2CC&pos=1%2C1%2C1%2C1%2C3%2C1%2C0%2C0%2C0%2C1%2C2%2C2%2C2%2C6%2C18&sort=&view=0'
+
+async function fetchFanGraphsAuction(): Promise<{ batters: Map<string, FGAuctionBatter>; pitchers: Map<string, FGAuctionPitcher> }> {
+  console.log('[FG Auction] Fetching auction calculator values...')
+  const batUrl = `https://www.fangraphs.com/api/fantasy/auction-calculator/data?type=bat&${FG_AUCTION_PARAMS}`
+  const pitUrl = `https://www.fangraphs.com/api/fantasy/auction-calculator/data?type=pit&${FG_AUCTION_PARAMS}`
+
+  const [batRaw, pitRaw] = await Promise.all([
+    httpGet(batUrl),
+    httpGet(pitUrl),
+  ])
+
+  const batData: FGAuctionBatter[] = (JSON.parse(batRaw) as { data: FGAuctionBatter[] }).data
+  const pitData: FGAuctionPitcher[] = (JSON.parse(pitRaw) as { data: FGAuctionPitcher[] }).data
+
+  const batMap = new Map<string, FGAuctionBatter>()
+  for (const b of batData) batMap.set(b.playerid, b)
+
+  const pitMap = new Map<string, FGAuctionPitcher>()
+  for (const p of pitData) pitMap.set(p.playerid, p)
+
+  console.log(`[FG Auction] ${batMap.size} batters, ${pitMap.size} pitchers`)
+  return { batters: batMap, pitchers: pitMap }
+}
 
 // ---- FanGraphs Leaders API (actual season stats) ----
 
@@ -731,6 +855,8 @@ function transformSeasonBatter(fg: FGBatter): SeasonBatter {
     war: round1(fg.WAR),
     bb_pct: round1((fg['BB%'] ?? 0) * (fg['BB%'] > 1 ? 1 : 100)),
     k_pct: round1((fg['K%'] ?? 0) * (fg['K%'] > 1 ? 1 : 100)),
+    so: fg.SO ?? 0,
+    gdp: fg.GDP ?? 0,
   }
 }
 
@@ -755,6 +881,9 @@ function transformSeasonPitcher(fg: FGPitcher): SeasonPitcher {
     bb_9: round2(fg['BB/9']),
     k_pct: round1((fg['K%'] ?? 0) * (fg['K%'] > 1 ? 1 : 100)),
     bb_pct: round1((fg['BB%'] ?? 0) * (fg['BB%'] > 1 ? 1 : 100)),
+    qs: fg.QS ?? 0,
+    k_bb: fg.BB > 0 ? round2((fg.SO ?? 0) / fg.BB) : 0,
+    gdp: fg.GDP ?? 0,
   }
 }
 
@@ -764,6 +893,8 @@ function fgToBatterStatLine(fg: FGBatter): BatterStatLine {
     avg: round3(fg.AVG), obp: round3(fg.OBP), slg: round3(fg.SLG), ops: round3(fg.OPS),
     bb_pct: round1((fg['BB%'] ?? 0) * (fg['BB%'] > 1 ? 1 : 100)),
     k_pct: round1((fg['K%'] ?? 0) * (fg['K%'] > 1 ? 1 : 100)),
+    so: fg.SO ?? 0,
+    gdp: fg.GDP ?? 0,
   }
 }
 
@@ -774,6 +905,9 @@ function fgToPitcherStatLine(fg: FGPitcher): PitcherStatLine {
     k_9: round2(fg['K/9']), bb_9: round2(fg['BB/9']),
     k_pct: round1((fg['K%'] ?? 0) * (fg['K%'] > 1 ? 1 : 100)),
     bb_pct: round1((fg['BB%'] ?? 0) * (fg['BB%'] > 1 ? 1 : 100)),
+    qs: fg.QS ?? 0,
+    k_bb: fg.BB > 0 ? round2((fg.SO ?? 0) / fg.BB) : 0,
+    gdp: fg.GDP ?? 0,
   }
 }
 
@@ -1118,6 +1252,61 @@ async function main() {
   tagPlayer(cbsData.busts, 'bust')
   console.log(`[Merge] CBS expert tags applied to ${cbsMatches} players`)
 
+  // 8.1 Load and merge Yahoo O-Ranks
+  const yahooRanks = loadYahooRankings()
+  let yahooMatches = 0
+  for (const batter of batters) {
+    const rank = yahooRanks.get(normalizeName(batter.name))
+    if (rank != null) { batter.yahoo_rank = rank; yahooMatches++ }
+  }
+  for (const pitcher of pitchers) {
+    const rank = yahooRanks.get(normalizeName(pitcher.name))
+    if (rank != null) { pitcher.yahoo_rank = rank; yahooMatches++ }
+  }
+  console.log(`[Merge] Yahoo O-Ranks applied to ${yahooMatches} players`)
+
+  // 8.5 Fetch and merge FanGraphs auction values
+  await delay(500)
+  const aucData = await fetchFanGraphsAuction()
+
+  let aucBatMatches = 0
+  for (const batter of batters) {
+    const auc = aucData.batters.get(batter.fg_id)
+    if (auc) {
+      batter.auc_dollars = round1(auc.Dollars)
+      batter.auc_pts = round1(auc.PTS)
+      batter.auc_apos = round1(auc.aPOS)
+      batter.auc_mAVG = round1(auc.mAVG)
+      batter.auc_mRBI = round1(auc.mRBI)
+      batter.auc_mR = round1(auc.mR)
+      batter.auc_mSB = round1(auc.mSB)
+      batter.auc_mHR = round1(auc.mHR)
+      batter.auc_mOPS = round1(auc.mOPS)
+      batter.auc_mSO = round1(auc.mSO)
+      aucBatMatches++
+    }
+  }
+  console.log(`[Merge] Auction batter values merged: ${aucBatMatches}/${batters.length}`)
+
+  let aucPitMatches = 0
+  for (const pitcher of pitchers) {
+    const auc = aucData.pitchers.get(pitcher.fg_id)
+    if (auc) {
+      pitcher.auc_dollars = round1(auc.Dollars)
+      pitcher.auc_pts = round1(auc.PTS)
+      pitcher.auc_apos = round1(auc.aPOS)
+      pitcher.auc_mW = round1(auc.mW)
+      pitcher.auc_mSV = round1(auc.mSV)
+      pitcher.auc_mERA = round1(auc.mERA)
+      pitcher.auc_mWHIP = round1(auc.mWHIP)
+      pitcher.auc_mSO = round1(auc.mSO)
+      pitcher.auc_mKBB = round1(auc.mKBB)
+      pitcher.auc_mQS = round1(auc.mQS)
+      aucPitMatches++
+    }
+  }
+  console.log(`[Merge] Auction pitcher values merged: ${aucPitMatches}/${pitchers.length}`)
+
   // 9. Fetch previous season data from FanGraphs Leaders API
   console.log(`\n=== Fetching previous season data ===`)
   await delay(500)
@@ -1222,6 +1411,7 @@ async function main() {
       projections: 'FanGraphs Depth Charts',
       advanced: `Baseball Savant Statcast (${PREVIOUS_SEASON})`,
       expert: 'CBS Sports Fantasy Baseball',
+      rankings: 'Yahoo Fantasy Baseball O-Ranks (2026)',
     },
     batters,
     pitchers,
