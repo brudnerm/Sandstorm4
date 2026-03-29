@@ -36,14 +36,16 @@ jobs:
         run: |
           npx tsx scripts/token-manager.ts refresh
 
-          # Read tokens from cache file for next steps
-          ACCESS_TOKEN=$(jq -r '.accessToken' token-cache.json)
-          REFRESH_TOKEN=$(jq -r '.refreshToken' token-cache.json)
-
-          echo "::add-mask::$ACCESS_TOKEN"
-          echo "::add-mask::$REFRESH_TOKEN"
-          echo "access_token=$ACCESS_TOKEN" >> "$GITHUB_OUTPUT"
-          echo "refresh_token=$REFRESH_TOKEN" >> "$GITHUB_OUTPUT"
+          # Read tokens from cache file for next steps using Node.js
+          node -e "
+            const fs = require('fs');
+            const cache = JSON.parse(fs.readFileSync('token-cache.json', 'utf8'));
+            console.log('::add-mask::' + cache.accessToken);
+            console.log('::add-mask::' + cache.refreshToken);
+            const fs2 = require('fs');
+            fs2.appendFileSync(process.env.GITHUB_OUTPUT, 'access_token=' + cache.accessToken + '\n');
+            fs2.appendFileSync(process.env.GITHUB_OUTPUT, 'refresh_token=' + cache.refreshToken + '\n');
+          "
 
       # Update GitHub secrets with new refresh token (for next run's fallback)
       - name: Update GitHub secrets with new refresh token
@@ -51,7 +53,12 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
-          REFRESH_TOKEN=$(jq -r '.refreshToken' token-cache.json)
+          node -e "
+            const fs = require('fs');
+            const cache = JSON.parse(fs.readFileSync('token-cache.json', 'utf8'));
+            console.log(cache.refreshToken);
+          " > /tmp/refresh_token.txt
+          REFRESH_TOKEN=$(cat /tmp/refresh_token.txt)
           gh secret set YAHOO_REFRESH_TOKEN --body "$REFRESH_TOKEN" 2>/dev/null || echo "⚠️  Could not update GitHub secret. Next run will auto-refresh from cached token."
 
       # Fetch matchup data for both leagues
