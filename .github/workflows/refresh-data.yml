@@ -1,0 +1,81 @@
+name: Refresh Matchup Data
+
+on:
+  schedule:
+    # Every 15 min during baseball hours: noon-1am ET (16:00-05:00 UTC), Mar-Oct
+    - cron: '*/15 16-23,0-5 * 3-10 *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-data
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      # Refresh Yahoo OAuth token (tokens rotate on each refresh)
+      - name: Refresh Yahoo OAuth token
+        id: refresh-token
+        env:
+          YAHOO_CLIENT_ID: ${{ secrets.YAHOO_CLIENT_ID }}
+          YAHOO_CLIENT_SECRET: ${{ secrets.YAHOO_CLIENT_SECRET }}
+          YAHOO_REFRESH_TOKEN: ${{ secrets.YAHOO_REFRESH_TOKEN }}
+        run: |
+          CREDENTIALS=$(echo -n "$YAHOO_CLIENT_ID:$YAHOO_CLIENT_SECRET" | base64 -w0)
+          RESPONSE=$(curl -s -X POST "https://api.login.yahoo.com/oauth2/get_token" \
+            -H "Authorization: Basic $CREDENTIALS" \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            -d "grant_type=refresh_token&redirect_uri=oob&refresh_token=$YAHOO_REFRESH_TOKEN")
+
+          NEW_ACCESS_TOKEN=$(echo "$RESPONSE" | jq -r '.access_token // empty')
+          NEW_REFRESH_TOKEN=$(echo "$RESPONSE" | jq -r '.refresh_token // empty')
+
+          if [ -z "$NEW_ACCESS_TOKEN" ]; then
+            echo "::error::Failed to refresh token: $RESPONSE"
+            exit 1
+          fi
+
+          echo "::add-mask::$NEW_ACCESS_TOKEN"
+          echo "::add-mask::$NEW_REFRESH_TOKEN"
+          echo "access_token=$NEW_ACCESS_TOKEN" >> "$GITHUB_OUTPUT"
+          echo "refresh_token=$NEW_REFRESH_TOKEN" >> "$GITHUB_OUTPUT"
+
+      # Persist rotated tokens back to GitHub secrets
+      - name: Update GitHub secrets with new tokens
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          gh secret set YAHOO_ACCESS_TOKEN --body "${{ steps.refresh-token.outputs.access_token }}"
+          gh secret set YAHOO_REFRESH_TOKEN --body "${{ steps.refresh-token.outputs.refresh_token }}"
+
+      # Fetch matchup data for both leagues
+      - name: Fetch matchups
+        env:
+          YAHOO_ACCESS_TOKEN: ${{ steps.refresh-token.outputs.access_token }}
+        run: npx tsx scripts/fetch-matchups.ts --ci
+
+      # Commit and push only if data changed
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/matchups_kp.json public/data/matchups_sidebar.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update matchup data"
+            git push
+          fi
