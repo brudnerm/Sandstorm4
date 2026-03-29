@@ -49,14 +49,26 @@ function readEnv(): Record<string, string> {
 }
 
 function getAccessToken(): string {
-  if (CI_MODE) {
-    const token = process.env.YAHOO_ACCESS_TOKEN
-    if (!token) throw new Error('YAHOO_ACCESS_TOKEN not set in environment')
-    return token
+  // Try environment first (CI or local override)
+  if (process.env.YAHOO_ACCESS_TOKEN) {
+    return process.env.YAHOO_ACCESS_TOKEN
   }
+
+  // Try local token cache (auto-managed by token-manager.ts)
+  try {
+    const cachePath = path.join(__dirname, '../token-cache.json')
+    const cache = JSON.parse(readFileSync(cachePath, 'utf8'))
+    if (cache.accessToken && cache.expiresAt > Date.now()) {
+      return cache.accessToken
+    }
+  } catch {
+    // Cache doesn't exist or is invalid, continue
+  }
+
+  // Fall back to .env (local development)
   const env = readEnv()
   const token = env['YAHOO_ACCESS_TOKEN']
-  if (!token) throw new Error('YAHOO_ACCESS_TOKEN not found in .env')
+  if (!token) throw new Error('YAHOO_ACCESS_TOKEN not found. Run: npx tsx scripts/token-manager.ts refresh')
   return token
 }
 

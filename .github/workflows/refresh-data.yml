@@ -34,32 +34,25 @@ jobs:
           YAHOO_CLIENT_SECRET: ${{ secrets.YAHOO_CLIENT_SECRET }}
           YAHOO_REFRESH_TOKEN: ${{ secrets.YAHOO_REFRESH_TOKEN }}
         run: |
-          CREDENTIALS=$(echo -n "$YAHOO_CLIENT_ID:$YAHOO_CLIENT_SECRET" | base64 -w0)
-          RESPONSE=$(curl -s -X POST "https://api.login.yahoo.com/oauth2/get_token" \
-            -H "Authorization: Basic $CREDENTIALS" \
-            -H "Content-Type: application/x-www-form-urlencoded" \
-            -d "grant_type=refresh_token&redirect_uri=oob&refresh_token=$YAHOO_REFRESH_TOKEN")
+          npx tsx scripts/token-manager.ts refresh
 
-          NEW_ACCESS_TOKEN=$(echo "$RESPONSE" | jq -r '.access_token // empty')
-          NEW_REFRESH_TOKEN=$(echo "$RESPONSE" | jq -r '.refresh_token // empty')
+          # Read tokens from cache file for next steps
+          ACCESS_TOKEN=$(jq -r '.accessToken' token-cache.json)
+          REFRESH_TOKEN=$(jq -r '.refreshToken' token-cache.json)
 
-          if [ -z "$NEW_ACCESS_TOKEN" ]; then
-            echo "::error::Failed to refresh token: $RESPONSE"
-            exit 1
-          fi
+          echo "::add-mask::$ACCESS_TOKEN"
+          echo "::add-mask::$REFRESH_TOKEN"
+          echo "access_token=$ACCESS_TOKEN" >> "$GITHUB_OUTPUT"
+          echo "refresh_token=$REFRESH_TOKEN" >> "$GITHUB_OUTPUT"
 
-          echo "::add-mask::$NEW_ACCESS_TOKEN"
-          echo "::add-mask::$NEW_REFRESH_TOKEN"
-          echo "access_token=$NEW_ACCESS_TOKEN" >> "$GITHUB_OUTPUT"
-          echo "refresh_token=$NEW_REFRESH_TOKEN" >> "$GITHUB_OUTPUT"
-
-      # Persist rotated tokens back to GitHub secrets
-      - name: Update GitHub secrets with new tokens
+      # Update GitHub secrets with new refresh token (for next run's fallback)
+      - name: Update GitHub secrets with new refresh token
+        if: always()
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
-          gh secret set YAHOO_ACCESS_TOKEN --body "${{ steps.refresh-token.outputs.access_token }}"
-          gh secret set YAHOO_REFRESH_TOKEN --body "${{ steps.refresh-token.outputs.refresh_token }}"
+          REFRESH_TOKEN=$(jq -r '.refreshToken' token-cache.json)
+          gh secret set YAHOO_REFRESH_TOKEN --body "$REFRESH_TOKEN" 2>/dev/null || echo "⚠️  Could not update GitHub secret. Next run will auto-refresh from cached token."
 
       # Fetch matchup data for both leagues
       - name: Fetch matchups
