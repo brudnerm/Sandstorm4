@@ -2203,3 +2203,395 @@ button:disabled {
 .standings-owner {
   color: var(--text-muted);
 }
+
+/* =============================================
+   Matchup Comparison Table
+   ============================================= */
+
+.mu-panel {
+  max-width: 1200px;
+  flex-direction: column;
+}
+
+.mu-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.mu-control-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mu-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.mu-select {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 6px 28px 6px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%239ca3af'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  transition: border-color var(--transition);
+}
+
+.mu-select:hover {
+  border-color: var(--accent);
+}
+
+.mu-select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-dim);
+}
+
+.mu-week-nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: auto;
+}
+
+.mu-week-btn {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), border-color var(--transition);
+  user-select: none;
+}
+
+.mu-week-btn:first-child {
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+
+.mu-week-btn:last-child {
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.mu-week-btn:hover:not(:disabled) {
+  background: var(--card-hover);
+  border-color: var(--accent);
+}
+
+.mu-week-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.mu-week-display {
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 0 12px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 100px;
+  justify-content: center;
+}
+
+.mu-week-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.mu-week-current {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mu-updated {
+  font-size: 11px;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+/* Table */
+
+.mu-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+}
+
+.mu-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.mu-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+.mu-table th {
+  background: var(--bg-secondary);
+  padding: 8px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: right;
+  border-bottom: 2px solid var(--border);
+}
+
+.mu-th-owner {
+  text-align: left;
+  min-width: 100px;
+}
+
+.mu-th-team {
+  text-align: left;
+  min-width: 120px;
+}
+
+.mu-th-stat {
+  min-width: 44px;
+}
+
+.mu-th-score {
+  min-width: 64px;
+  text-align: center;
+  color: var(--accent);
+}
+
+.mu-th-divider {
+  width: 1px;
+  padding: 0;
+  background: var(--border);
+}
+
+/* Sticky first two columns */
+.mu-th-sticky,
+.mu-td-sticky {
+  position: sticky;
+  z-index: 2;
+  background: inherit;
+}
+
+.mu-th-owner,
+.mu-td-owner {
+  left: 0;
+}
+
+.mu-th-score,
+.mu-td-score {
+  left: 100px;
+}
+
+/* Table body */
+
+.mu-table td {
+  padding: 7px 8px;
+  border-bottom: 1px solid var(--border);
+  font-variant-numeric: tabular-nums;
+}
+
+.mu-td-owner {
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--text);
+  text-align: left;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mu-td-team {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: left;
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mu-td-stat {
+  text-align: right;
+}
+
+.mu-td-divider {
+  width: 1px;
+  padding: 0;
+  background: var(--border);
+}
+
+.mu-td-score {
+  text-align: center;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* Stat coloring */
+
+.mu-stat-win {
+  color: var(--add);
+  font-weight: 600;
+}
+
+.mu-stat-loss {
+  color: var(--drop);
+}
+
+.mu-stat-tie {
+  color: var(--keep);
+}
+
+/* Score coloring */
+
+.mu-score {
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.mu-score-winning {
+  color: var(--add);
+}
+
+.mu-score-losing {
+  color: var(--drop);
+}
+
+.mu-score-tied {
+  color: var(--keep);
+}
+
+.mu-score-home {
+  color: var(--text-dim);
+}
+
+/* Row variants */
+
+.mu-row {
+  background: var(--card);
+  transition: background var(--transition);
+}
+
+.mu-row:hover {
+  background: var(--card-hover);
+}
+
+.mu-row-home {
+  background: var(--accent-dim);
+}
+
+.mu-row-home:hover {
+  background: rgba(102, 126, 234, 0.22);
+}
+
+.mu-row-home .mu-td-sticky {
+  background: var(--accent-dim);
+}
+
+.mu-row-home:hover .mu-td-sticky {
+  background: rgba(102, 126, 234, 0.22);
+}
+
+.mu-row-home .mu-td-owner {
+  color: var(--accent);
+}
+
+.mu-row-opponent {
+  border-left: 3px solid var(--accent);
+}
+
+.mu-row .mu-td-sticky {
+  background: var(--card);
+}
+
+.mu-row:hover .mu-td-sticky {
+  background: var(--card-hover);
+}
+
+/* Mobile responsive */
+
+@media (max-width: 768px) {
+  .mu-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .mu-control-group {
+    width: 100%;
+  }
+
+  .mu-select {
+    flex: 1;
+  }
+
+  .mu-week-nav {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .mu-updated {
+    text-align: center;
+  }
+
+  .mu-th-owner,
+  .mu-td-owner {
+    min-width: 80px;
+    max-width: 80px;
+  }
+
+  .mu-th-score,
+  .mu-td-score {
+    left: 80px;
+  }
+
+  .mu-table {
+    font-size: 11px;
+  }
+
+  .mu-table th {
+    font-size: 9px;
+    padding: 6px 5px;
+  }
+
+  .mu-table td {
+    padding: 6px 5px;
+  }
+
+  .mu-td-score {
+    font-size: 11px;
+  }
+}

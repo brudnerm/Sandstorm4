@@ -866,5 +866,760 @@
         }
       ]
     }
-  ]
+  ],
+  "total_weeks": 26,
+  "all_matchups": {
+    "2": [
+      {
+        "week": 2,
+        "status": "midevent",
+        "teams": [
+          {
+            "team_key": "469.l.20795.t.1",
+            "team_name": "Sod Poodles",
+            "owner": "Mark",
+            "points": "6",
+            "stats": {
+              "H/AB": {
+                "value": "20/143",
+                "result": "tie"
+              },
+              "R": {
+                "value": "11",
+                "result": "loss"
+              },
+              "HR": {
+                "value": "2",
+                "result": "loss"
+              },
+              "RBI": {
+                "value": "9",
+                "result": "loss"
+              },
+              "SB": {
+                "value": "2",
+                "result": "loss"
+              },
+              "K": {
+                "value": "40",
+                "result": "win"
+              },
+              "GIDP": {
+                "value": "0",
+                "result": "loss"
+              },
+              "AVG": {
+                "value": ".140",
+                "result": "loss"
+              },
+              "OPS": {
+                "value": ".469",
+                "result": "loss"
+              },
+              "IP": {
+                "value": "34.1",
+                "result": "tie"
+              },
+              "L": {
+                "value": "0",
+                "result": "win"
+              },
+              "SV": {
+                "value": "2",
+                "result": "win"
+              },
+              "ERA": {
+                "value": "3.15",
+                "result": "win"
+              },
+              "WHIP": {
+                "value": "0.87",
+                "result": "win"
+              },
+              "K/BB": {
+                "value": "4.00",
+                "result": "win"
+              },
+              "QS": {
+                "value": "2",
+                "result": "loss"
+              }
+            }
+          },
+          {
+            "team_key": "469.l.20795.t.10",
+            "team_name": "Simpson Samson",
+            "owner": "KC",
+            "points": "9",
+            "stats": {
+              "H/AB": {
+                "value": "40/136",
+                "result": "tie"
+              },
+              "R": {
+                "value": "28",
+                "result": "win"
+              },
+              "HR": {
+                "value": "8",
+                "result": "win"
+              },
+              "RBI": {
+                "value": "18",
+                "result": "win"
+              },
+              "SB": {
+                "value": "4",
+                "result": "win"
+              },
+              "K": {
+                "value": "30",
+                "result": "loss"
+              },
+              "GIDP": {
+                "value": "2",
+                "result": "win"
+              },
+              "AVG": {
+                "value": ".294",
+                "result": "win"
+              },
+              "OPS": {
+                "value": ".956",
+                "result": "win"
+              },
+              "IP": {
+                "value": "31.1",
+                "result": "tie"
+              },
+              "L": {
+                "value": "3",
+                "result": "loss"
+              },
+              "SV": {
+                "value": "1",
+                "result": "loss"
+              },
+              "ERA": {
+                "value": "3.16",
+                "result": "loss"
+              },
+              "WHIP": {
+                "value": "0.89",
+                "result": "loss"
+              },
+              "K/BB": {
+                "value": "2.31",
+                "result": "loss"
+              },
+              "QS": {
+                "value": "3",
+                "result": "win"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "week": 2,
+        "status": "midevent",
+        "teams": [
+          {
+            "team_key": "469.l.20795.t.2",
+            "team_name": "She Said 'Seiya Later Boy'",
+            "owner": "Jamison",
+            "points": "11",
+            "stats": {
+              "H/AB": {
+                "value": "37/145",
+                "result": "tie"
+              },
+              "R": {
+                "value": "21",
+                "result": "win"
+              },
+              "HR": {
+                "value": "7",
+                "result": "win"
+              },
+              "RBI": {
+                "value": "19",
+                "result": "win"
+              },
+              "SB": {
+                "value": "2",
+                "result": "win"
+              },
+              "K": {
+                "value": "37",
+                "result": "win"
+              },
+              "GIDP": {
+                "value": "0",
+                "result": "loss"
+              },
+              "AVG": {
+                "value": ".255",
+                "result": "win"
+              },
+              "OPS": {
+                "value": ".740",
+                "result": "win"
+              },
+              "IP": {
+                "value": "38.1",
+                "result": "tie"
+              },
+              "L": {
+                "value": "0",
+                "result": "win"
+              },
+              "SV": {
+                "value": "1",
+                "result": "loss"
+              },
+              "ERA": {
+                "value": "2.58",
+                "result": "win"
+              },
+              "WHIP": {
+                "value": "0.91",
+                "result": "win"
+              },
+              "K/BB": {
+                "value": "3.70",
+                "result": "win"
+              },
+              "QS": {
+                "value": "3",
+                "result": "loss"
+              }
+            }
+          },
+          {
+            "team_key": "469.l.20795.t.4",
+            "team_name": "McGonigle in 60 Seconds",
+            "owner": "joey",
+            "points": "5",
+            "stats": {
+              "H/AB": {
+                "value": "24/133",
+                "result": "tie"
+              },
+              "R": {
+                "value": "16",
+                "result": "loss"
+              },
+              "HR": {
+                "value": "3",
+                "result": "loss"
+              },
+              "RBI": {
+                "value": "18",
+                "result": "loss"
+              },
+              "SB": {
+                "value": "0",
+                "result": "loss"
+              },
+              "K": {
+                "value": "32",
+                "result": "loss"
+              },
+              "GIDP": {
+                "value": "2",
+                "result": "win"
+              },
+              "AVG": {
+                "value": ".180",
+                "result": "loss"
+              },
+              "OPS": {
+                "value": ".610",
+                "result": "loss"
+              },
+              "IP": {
+                "value": "33.0",
+                "result": "tie"
+              },
+              "L": {
+                "value": "1",
+                "result": "loss"
+              },
+              "SV": {
+                "value": "2",
+                "result": "win"
+              },
+              "ERA": {
+                "value": "2.73",
+                "result": "loss"
+              },
+              "WHIP": {
+                "value": "0.94",
+                "result": "loss"
+              },
+              "K/BB": {
+                "value": "3.20",
+                "result": "loss"
+              },
+              "QS": {
+                "value": "4",
+                "result": "win"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "week": 2,
+        "status": "midevent",
+        "teams": [
+          {
+            "team_key": "469.l.20795.t.3",
+            "team_name": "Rooker with a Heart of Gold",
+            "owner": "mike",
+            "points": "8",
+            "stats": {
+              "H/AB": {
+                "value": "29/140",
+                "result": "tie"
+              },
+              "R": {
+                "value": "22",
+                "result": "win"
+              },
+              "HR": {
+                "value": "5",
+                "result": "tie"
+              },
+              "RBI": {
+                "value": "16",
+                "result": "tie"
+              },
+              "SB": {
+                "value": "7",
+                "result": "win"
+              },
+              "K": {
+                "value": "28",
+                "result": "win"
+              },
+              "GIDP": {
+                "value": "3",
+                "result": "win"
+              },
+              "AVG": {
+                "value": ".207",
+                "result": "loss"
+              },
+              "OPS": {
+                "value": ".642",
+                "result": "loss"
+              },
+              "IP": {
+                "value": "23.0",
+                "result": "tie"
+              },
+              "L": {
+                "value": "3",
+                "result": "loss"
+              },
+              "SV": {
+                "value": "2",
+                "result": "win"
+              },
+              "ERA": {
+                "value": "7.04",
+                "result": "loss"
+              },
+              "WHIP": {
+                "value": "1.35",
+                "result": "loss"
+              },
+              "K/BB": {
+                "value": "3.11",
+                "result": "win"
+              },
+              "QS": {
+                "value": "0",
+                "result": "loss"
+              }
+            }
+          },
+          {
+            "team_key": "469.l.20795.t.7",
+            "team_name": "Pete Me In Montauk",
+            "owner": "Rich Garcis",
+            "points": "6",
+            "stats": {
+              "H/AB": {
+                "value": "34/145",
+                "result": "tie"
+              },
+              "R": {
+                "value": "20",
+                "result": "loss"
+              },
+              "HR": {
+                "value": "5",
+                "result": "tie"
+              },
+              "RBI": {
+                "value": "16",
+                "result": "tie"
+              },
+              "SB": {
+                "value": "1",
+                "result": "loss"
+              },
+              "K": {
+                "value": "25",
+                "result": "loss"
+              },
+              "GIDP": {
+                "value": "2",
+                "result": "loss"
+              },
+              "AVG": {
+                "value": ".234",
+                "result": "win"
+              },
+              "OPS": {
+                "value": ".725",
+                "result": "win"
+              },
+              "IP": {
+                "value": "24.1",
+                "result": "tie"
+              },
+              "L": {
+                "value": "1",
+                "result": "win"
+              },
+              "SV": {
+                "value": "1",
+                "result": "loss"
+              },
+              "ERA": {
+                "value": "1.11",
+                "result": "win"
+              },
+              "WHIP": {
+                "value": "0.86",
+                "result": "win"
+              },
+              "K/BB": {
+                "value": "2.50",
+                "result": "loss"
+              },
+              "QS": {
+                "value": "2",
+                "result": "win"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "week": 2,
+        "status": "midevent",
+        "teams": [
+          {
+            "team_key": "469.l.20795.t.5",
+            "team_name": "Lewiston Meth Heads",
+            "owner": "Will Youmans",
+            "points": "2",
+            "stats": {
+              "H/AB": {
+                "value": "34/133",
+                "result": "tie"
+              },
+              "R": {
+                "value": "17",
+                "result": "loss"
+              },
+              "HR": {
+                "value": "5",
+                "result": "tie"
+              },
+              "RBI": {
+                "value": "15",
+                "result": "loss"
+              },
+              "SB": {
+                "value": "3",
+                "result": "win"
+              },
+              "K": {
+                "value": "18",
+                "result": "loss"
+              },
+              "GIDP": {
+                "value": "3",
+                "result": "win"
+              },
+              "AVG": {
+                "value": ".256",
+                "result": "loss"
+              },
+              "OPS": {
+                "value": ".757",
+                "result": "loss"
+              },
+              "IP": {
+                "value": "14.0",
+                "result": "tie"
+              },
+              "L": {
+                "value": "2",
+                "result": "tie"
+              },
+              "SV": {
+                "value": "0",
+                "result": "loss"
+              },
+              "ERA": {
+                "value": "1.29",
+                "result": "loss"
+              },
+              "WHIP": {
+                "value": "1.00",
+                "result": "loss"
+              },
+              "K/BB": {
+                "value": "2.57",
+                "result": "loss"
+              },
+              "QS": {
+                "value": "1",
+                "result": "loss"
+              }
+            }
+          },
+          {
+            "team_key": "469.l.20795.t.9",
+            "team_name": "Never Shit a Schlittler",
+            "owner": "angel escobar",
+            "points": "11",
+            "stats": {
+              "H/AB": {
+                "value": "45/142",
+                "result": "tie"
+              },
+              "R": {
+                "value": "26",
+                "result": "win"
+              },
+              "HR": {
+                "value": "5",
+                "result": "tie"
+              },
+              "RBI": {
+                "value": "19",
+                "result": "win"
+              },
+              "SB": {
+                "value": "2",
+                "result": "loss"
+              },
+              "K": {
+                "value": "47",
+                "result": "win"
+              },
+              "GIDP": {
+                "value": "2",
+                "result": "loss"
+              },
+              "AVG": {
+                "value": ".317",
+                "result": "win"
+              },
+              "OPS": {
+                "value": ".959",
+                "result": "win"
+              },
+              "IP": {
+                "value": "39.0",
+                "result": "tie"
+              },
+              "L": {
+                "value": "2",
+                "result": "tie"
+              },
+              "SV": {
+                "value": "1",
+                "result": "win"
+              },
+              "ERA": {
+                "value": "0.69",
+                "result": "win"
+              },
+              "WHIP": {
+                "value": "0.64",
+                "result": "win"
+              },
+              "K/BB": {
+                "value": "5.88",
+                "result": "win"
+              },
+              "QS": {
+                "value": "6",
+                "result": "win"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "week": 2,
+        "status": "midevent",
+        "teams": [
+          {
+            "team_key": "469.l.20795.t.6",
+            "team_name": "Magic Baseballs",
+            "owner": "Galen",
+            "points": "3",
+            "stats": {
+              "H/AB": {
+                "value": "31/137",
+                "result": "tie"
+              },
+              "R": {
+                "value": "17",
+                "result": "loss"
+              },
+              "HR": {
+                "value": "5",
+                "result": "loss"
+              },
+              "RBI": {
+                "value": "18",
+                "result": "loss"
+              },
+              "SB": {
+                "value": "1",
+                "result": "loss"
+              },
+              "K": {
+                "value": "32",
+                "result": "loss"
+              },
+              "GIDP": {
+                "value": "5",
+                "result": "tie"
+              },
+              "AVG": {
+                "value": ".226",
+                "result": "loss"
+              },
+              "OPS": {
+                "value": ".677",
+                "result": "loss"
+              },
+              "IP": {
+                "value": "28.0",
+                "result": "tie"
+              },
+              "L": {
+                "value": "4",
+                "result": "tie"
+              },
+              "SV": {
+                "value": "1",
+                "result": "loss"
+              },
+              "ERA": {
+                "value": "5.46",
+                "result": "loss"
+              },
+              "WHIP": {
+                "value": "1.32",
+                "result": "loss"
+              },
+              "K/BB": {
+                "value": "4.57",
+                "result": "win"
+              },
+              "QS": {
+                "value": "0",
+                "result": "loss"
+              }
+            }
+          },
+          {
+            "team_key": "469.l.20795.t.8",
+            "team_name": "I Want Yandy",
+            "owner": "Nick",
+            "points": "11",
+            "stats": {
+              "H/AB": {
+                "value": "32/137",
+                "result": "tie"
+              },
+              "R": {
+                "value": "20",
+                "result": "win"
+              },
+              "HR": {
+                "value": "6",
+                "result": "win"
+              },
+              "RBI": {
+                "value": "19",
+                "result": "win"
+              },
+              "SB": {
+                "value": "2",
+                "result": "win"
+              },
+              "K": {
+                "value": "38",
+                "result": "win"
+              },
+              "GIDP": {
+                "value": "5",
+                "result": "tie"
+              },
+              "AVG": {
+                "value": ".234",
+                "result": "win"
+              },
+              "OPS": {
+                "value": ".710",
+                "result": "win"
+              },
+              "IP": {
+                "value": "38.0",
+                "result": "tie"
+              },
+              "L": {
+                "value": "4",
+                "result": "tie"
+              },
+              "SV": {
+                "value": "2",
+                "result": "win"
+              },
+              "ERA": {
+                "value": "3.55",
+                "result": "win"
+              },
+              "WHIP": {
+                "value": "1.26",
+                "result": "win"
+              },
+              "K/BB": {
+                "value": "3.17",
+                "result": "loss"
+              },
+              "QS": {
+                "value": "2",
+                "result": "win"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
 }

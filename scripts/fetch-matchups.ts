@@ -145,9 +145,11 @@ interface MatchupData {
   league_key: string
   league_name: string
   current_week: number
+  total_weeks: number
   generated_at: string
   standings: StandingsEntry[]
   matchups: Matchup[]
+  all_matchups: Record<number, Matchup[]>
 }
 
 function extractTeamName(teamArr: unknown[]): string {
@@ -398,8 +400,8 @@ async function main() {
 
       await delay(300)
 
-      // Fetch scoreboard
-      console.log(`  [INFO] Fetching scoreboard...`)
+      // Fetch current week scoreboard to discover current_week
+      console.log(`  [INFO] Fetching current scoreboard...`)
       const scoreboardUrl = `${BASE}/league/${league.key}/scoreboard`
       const scoreboardRaw = await bearerGet(scoreboardUrl, accessToken)
       const { matchups, currentWeek } = parseScoreboard(scoreboardRaw, statCategories)
@@ -414,15 +416,43 @@ async function main() {
       const standings = parseStandings(standingsRaw)
       console.log(`  [OK] ${standings.length} teams in standings`)
 
+      // Determine total weeks from league metadata
+      const leagueMetaArr = ((settingsRaw as AnyObj)['fantasy_content'] as AnyObj)?.['league'] as unknown[]
+      const leagueMeta = Array.isArray(leagueMetaArr) ? leagueMetaArr[0] as AnyObj : {} as AnyObj
+      const totalWeeks = (leagueMeta['end_week'] as number) ?? 26
+
+      // Fetch ALL weeks' scoreboards
+      const allMatchups: Record<number, Matchup[]> = {}
+      allMatchups[currentWeek] = matchups // already have current week
+
+      console.log(`  [INFO] Fetching all ${totalWeeks} weeks...`)
+      for (let w = 1; w <= totalWeeks; w++) {
+        if (w === currentWeek) continue // already fetched
+        await delay(250)
+        try {
+          const weekUrl = `${BASE}/league/${league.key}/scoreboard;week=${w}`
+          const weekRaw = await bearerGet(weekUrl, accessToken)
+          const { matchups: weekMatchups } = parseScoreboard(weekRaw, statCategories)
+          allMatchups[w] = weekMatchups
+          if (w % 5 === 0) console.log(`    [OK] Week ${w}/${totalWeeks}`)
+        } catch (err) {
+          console.warn(`    [WARN] Week ${w}: ${err}`)
+          allMatchups[w] = []
+        }
+      }
+      console.log(`  [OK] Fetched ${Object.keys(allMatchups).length} weeks`)
+
       await delay(300)
 
       const output: MatchupData = {
         league_key: league.key,
         league_name: league.name,
         current_week: currentWeek,
+        total_weeks: totalWeeks,
         generated_at: new Date().toISOString(),
         standings,
         matchups,
+        all_matchups: allMatchups,
       }
 
       const outputPath = path.join(PUBLIC_DATA_DIR, `matchups_${league.id}.json`)
