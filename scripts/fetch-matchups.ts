@@ -21,12 +21,14 @@ const PUBLIC_DATA_DIR = path.join(__dirname, '../public/data')
 
 const BASE = 'https://fantasysports.yahooapis.com/fantasy/v2'
 
-// League keys for 2026 season
-// Note: There are many archived leagues from previous seasons. Only use these current ones.
-// To find current league keys, run: npx tsx scripts/get-league-keys.ts <access_token>
+// League keys for the 2026 season (game key 469)
+// Note: There are many archived leagues from previous seasons — do NOT use those.
+// Keeping Pattycakes history starts at 215.l.134803 (2009), current season is 469.l.13624
+// sidebar history starts at 268.l.145820 (2012), current season is 469.l.20795
+// To verify current keys, run: npx tsx scripts/get-league-keys.ts <access_token>
 const LEAGUES = [
-  { key: '461.l.495103', id: 'kp', name: 'Keeping Pattycakes' },
-  { key: '458.l.19784', id: 'sidebar', name: 'sidebar' },
+  { key: '469.l.13624', id: 'kp', name: 'Keeping Pattycakes' },
+  { key: '469.l.20795', id: 'sidebar', name: 'sidebar' },
 ]
 
 type AnyObj = Record<string, unknown>
