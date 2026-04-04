@@ -43,6 +43,12 @@ export interface LeagueConfig {
   storagePrefix: string
   /** Show transaction-history tabs (Player Search, Season Browser, etc.) */
   showTransactionTabs: boolean
+  /** Stat keys that belong to the pitching group in matchup display */
+  pitchingStatKeys: string[]
+  /** Stat keys where a lower value is better (e.g. ERA, WHIP, L) */
+  lowerIsBetter: string[]
+  /** Stat keys that are display-only and not scored (always tied in Yahoo) */
+  nonScoringStats: string[]
   batterColumns: Column<AnyBatter>[]
   pitcherColumns: Column<AnyPitcher>[]
   batterGroups: string[]
@@ -325,6 +331,9 @@ export const KP_CONFIG: LeagueConfig = {
   enableKeepers: true,
   storagePrefix: 'sandstorm_draft',
   showTransactionTabs: true,
+  pitchingStatKeys: ['W', 'L', 'SV', 'K', 'ERA', 'WHIP'],
+  lowerIsBetter: ['L', 'ERA', 'WHIP'],
+  nonScoringStats: ['H/AB', 'IP'],
   batterColumns: KP_BATTER_COLUMNS,
   pitcherColumns: KP_PITCHER_COLUMNS,
   batterGroups: ['Scoring', 'Rates', 'Advanced'],
@@ -344,6 +353,10 @@ export const SIDEBAR_CONFIG: LeagueConfig = {
   enableKeepers: false,
   storagePrefix: 'sandstorm_sidebar_draft',
   showTransactionTabs: false,
+  // K=pitcher Ks (higher is better), GIDP=pitcher GIDP induced (higher is better)
+  pitchingStatKeys: ['L', 'SV', 'K', 'GIDP', 'ERA', 'WHIP', 'K/BB', 'QS'],
+  lowerIsBetter: ['L', 'ERA', 'WHIP'],
+  nonScoringStats: ['H/AB', 'IP'],
   batterColumns: SIDEBAR_BATTER_COLUMNS,
   pitcherColumns: SIDEBAR_PITCHER_COLUMNS,
   batterGroups: ['Scoring', 'Auction', 'Rates', 'Advanced'],
