@@ -213,9 +213,15 @@ function parseScoreboard(raw: unknown): { matchups: Matchup[]; currentWeek: numb
 
   const week = (scoreboardObj['week'] as number) ?? currentWeek
   const matchupsObj = scoreboardObj['matchups'] as AnyObj
-  if (!matchupsObj) return { matchups: [], currentWeek, statCategories }
+  if (!matchupsObj) {
+    console.log('[DEBUG] No matchupsObj found in scoreboard')
+    return { matchups: [], currentWeek, statCategories }
+  }
 
   const count = (matchupsObj['count'] as number) ?? 0
+  if (count === 0) {
+    console.log('[DEBUG] Matchup count is 0. Available keys:', Object.keys(matchupsObj))
+  }
   const matchups: Matchup[] = []
 
   for (let i = 0; i < count; i++) {
