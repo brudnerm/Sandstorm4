@@ -335,8 +335,10 @@ function parseStandings(raw: unknown): StandingsEntry[] {
     const owner = extractOwnerName(teamInfo)
 
     const teamData = teamWrapper[1] as AnyObj
-    const standingsData = (teamData?.['team_standings'] as AnyObj) ?? {}
-    const rank = (standingsData['rank'] as number) ?? 0
+    // team data may be nested under ['0']
+    const teamDataInner = (teamData?.['0'] as AnyObj) ?? teamData
+    const standingsData = (teamDataInner?.['team_standings'] ?? teamData?.['team_standings']) as AnyObj ?? {}
+    const rank = parseInt(String(standingsData['rank'] ?? '0'))
     const outcomes = (standingsData['outcome_totals'] as AnyObj) ?? {}
     const wins = parseInt(String(outcomes['wins'] ?? '0'))
     const losses = parseInt(String(outcomes['losses'] ?? '0'))
