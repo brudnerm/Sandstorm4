@@ -14,32 +14,34 @@ function timeAgo(iso: string): string {
   return `${Math.floor(hrs / 24)}d ago`
 }
 
-/** Stat categories that are "lower is better" */
-const LOWER_IS_BETTER = new Set(['L', 'ERA', 'WHIP'])
-
-/** Non-scoring display-only stats (always "tie" in Yahoo data) */
-const NON_SCORING = new Set(['H/AB', 'IP'])
-
 /** Determine if statA beats statB for a given category */
-function compareStat(cat: string, valA: string, valB: string): 'win' | 'loss' | 'tie' {
-  if (NON_SCORING.has(cat)) return 'tie'
+function compareStat(
+  cat: string,
+  valA: string,
+  valB: string,
+  lowerIsBetter: Set<string>,
+  nonScoring: Set<string>,
+): 'win' | 'loss' | 'tie' {
+  if (nonScoring.has(cat)) return 'tie'
   const a = parseFloat(valA)
   const b = parseFloat(valB)
   if (isNaN(a) || isNaN(b)) return 'tie'
   if (a === b) return 'tie'
-  if (LOWER_IS_BETTER.has(cat)) return a < b ? 'win' : 'loss'
+  if (lowerIsBetter.has(cat)) return a < b ? 'win' : 'loss'
   return a > b ? 'win' : 'loss'
 }
 
 /** Compute a hypothetical W-L-T record: home team's record vs the other team */
-function computeRecord(home: MatchupTeam, other: MatchupTeam): { w: number; l: number; t: number } {
+function computeRecord(
+  home: MatchupTeam,
+  other: MatchupTeam,
+  lowerIsBetter: Set<string>,
+  nonScoring: Set<string>,
+): { w: number; l: number; t: number } {
   let w = 0, l = 0, t = 0
-  const cats = Object.keys(home.stats)
-  for (const cat of cats) {
-    if (NON_SCORING.has(cat)) continue
-    const hVal = home.stats[cat]?.value ?? ''
-    const oVal = other.stats[cat]?.value ?? ''
-    const result = compareStat(cat, hVal, oVal)
+  for (const cat of Object.keys(home.stats)) {
+    if (nonScoring.has(cat)) continue
+    const result = compareStat(cat, home.stats[cat]?.value ?? '', other.stats[cat]?.value ?? '', lowerIsBetter, nonScoring)
     if (result === 'win') w++
     else if (result === 'loss') l++
     else t++
@@ -75,13 +77,17 @@ function getMatchupOrder(
   return order
 }
 
-/** Get the batting stat categories (non-pitching) */
-function splitStatCategories(statKeys: string[]): { batting: string[]; pitching: string[] } {
-  const pitchingStats = new Set(['IP', 'W', 'L', 'SV', 'K', 'ERA', 'WHIP'])
+/** Split stat keys into batting and pitching groups based on league config */
+function splitStatCategories(
+  statKeys: string[],
+  pitchingStatKeys: Set<string>,
+  nonScoring: Set<string>,
+): { batting: string[]; pitching: string[] } {
   const batting: string[] = []
   const pitching: string[] = []
   for (const key of statKeys) {
-    if (pitchingStats.has(key)) pitching.push(key)
+    if (nonScoring.has(key)) continue
+    if (pitchingStatKeys.has(key)) pitching.push(key)
     else batting.push(key)
   }
   return { batting, pitching }
@@ -97,7 +103,11 @@ interface ComparisonRow {
   isOpponent: boolean
 }
 
-function MatchupsReady({ data }: { data: MatchupData }) {
+function MatchupsReady({ data, league }: { data: MatchupData; league: LeagueConfig }) {
+  const lowerIsBetter = useMemo(() => new Set(league.lowerIsBetter), [league])
+  const nonScoring = useMemo(() => new Set(league.nonScoringStats), [league])
+  const pitchingStatKeySet = useMemo(() => new Set(league.pitchingStatKeys), [league])
+
   const owners = useMemo(() => {
     return data.standings.map(s => s.owner).sort((a, b) => a.localeCompare(b))
   }, [data.standings])
@@ -131,8 +141,8 @@ function MatchupsReady({ data }: { data: MatchupData }) {
   }, [weekMatchups])
 
   const { batting: battingStats, pitching: pitchingStats } = useMemo(
-    () => splitStatCategories(statKeys),
-    [statKeys]
+    () => splitStatCategories(statKeys, pitchingStatKeySet, nonScoring),
+    [statKeys, pitchingStatKeySet, nonScoring]
   )
 
   // Build matchup order
@@ -181,7 +191,7 @@ function MatchupsReady({ data }: { data: MatchupData }) {
       if (team.owner.toLowerCase() === homeOwner.toLowerCase()) continue
       if (rowMap.has(team.owner.toLowerCase())) continue
 
-      const record = computeRecord(homeTeam, team)
+      const record = computeRecord(homeTeam, team, lowerIsBetter, nonScoring)
 
       rowMap.set(team.owner.toLowerCase(), {
         owner: team.owner,
@@ -308,9 +318,9 @@ function MatchupsReady({ data }: { data: MatchupData }) {
                     const stat = row.stats[s]
                     const cellClass = row.isHome
                       ? ''
-                      : compareStat(s, stat?.value ?? '', homeTeam?.stats[s]?.value ?? '') === 'win'
+                      : compareStat(s, stat?.value ?? '', homeTeam?.stats[s]?.value ?? '', lowerIsBetter, nonScoring) === 'win'
                         ? 'mu-stat-win'
-                        : compareStat(s, stat?.value ?? '', homeTeam?.stats[s]?.value ?? '') === 'loss'
+                        : compareStat(s, stat?.value ?? '', homeTeam?.stats[s]?.value ?? '', lowerIsBetter, nonScoring) === 'loss'
                           ? 'mu-stat-loss'
                           : 'mu-stat-tie'
                     return (
@@ -324,9 +334,9 @@ function MatchupsReady({ data }: { data: MatchupData }) {
                     const stat = row.stats[s]
                     const cellClass = row.isHome
                       ? ''
-                      : compareStat(s, stat?.value ?? '', homeTeam?.stats[s]?.value ?? '') === 'win'
+                      : compareStat(s, stat?.value ?? '', homeTeam?.stats[s]?.value ?? '', lowerIsBetter, nonScoring) === 'win'
                         ? 'mu-stat-win'
-                        : compareStat(s, stat?.value ?? '', homeTeam?.stats[s]?.value ?? '') === 'loss'
+                        : compareStat(s, stat?.value ?? '', homeTeam?.stats[s]?.value ?? '', lowerIsBetter, nonScoring) === 'loss'
                           ? 'mu-stat-loss'
                           : 'mu-stat-tie'
                     return (
@@ -372,7 +382,7 @@ export default function Matchups({ league }: { league: LeagueConfig }) {
           </div>
         )}
         {state.status === 'ready' && (
-          <MatchupsReady data={state.data} />
+          <MatchupsReady data={state.data} league={league} />
         )}
       </div>
     </div>
