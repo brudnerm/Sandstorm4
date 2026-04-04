@@ -48,7 +48,7 @@ export interface DraftData {
   transactions: Transaction[];
 }
 
-export type TabId = 'matchups' | 'player' | 'season' | 'team' | 'draft' | 'hof' | 'draftprep' | 'refresh';
+export type TabId = 'matchups' | 'standings' | 'player' | 'season' | 'team' | 'draft' | 'hof' | 'draftprep' | 'refresh';
 
 export interface MatchupStat {
   value: string;
@@ -85,9 +85,11 @@ export interface MatchupData {
   league_key: string;
   league_name: string;
   current_week: number;
+  total_weeks: number;
   generated_at: string;
   standings: StandingsEntry[];
   matchups: Matchup[];
+  all_matchups: Record<number, Matchup[]>;
 }
 
 export interface PlayerMatch {

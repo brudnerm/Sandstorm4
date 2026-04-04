@@ -11,9 +11,11 @@ import HallOfFame from './components/HallOfFame'
 import DataRefresh from './components/DataRefresh'
 import DraftPrep from './components/DraftPrep'
 import Matchups from './components/Matchups'
+import Standings from './components/Standings'
 
 const ALL_TABS: Array<{ id: TabId; label: string }> = [
   { id: 'matchups', label: 'Matchups' },
+  { id: 'standings', label: 'Standings' },
   { id: 'player',  label: 'Player Search' },
   { id: 'season',  label: 'Season Browser' },
   { id: 'team',    label: 'Team History' },
@@ -34,7 +36,7 @@ export default function App() {
     const base = import.meta.env.PROD ? PROD_TABS : ALL_TABS
     if (activeLeague.showTransactionTabs) return base
     // Non-transaction leagues only get Draft Prep (and Data Refresh in dev)
-    return base.filter(t => t.id === 'matchups' || t.id === 'draftprep' || t.id === 'refresh')
+    return base.filter(t => t.id === 'matchups' || t.id === 'standings' || t.id === 'draftprep' || t.id === 'refresh')
   }, [activeLeague])
 
   const handleLeagueChange = (leagueId: string) => {
@@ -42,7 +44,7 @@ export default function App() {
     if (!league) return
     setActiveLeague(league)
     // Auto-switch to Draft Prep when selecting a non-transaction league
-    if (!league.showTransactionTabs && activeTab !== 'matchups' && activeTab !== 'draftprep' && activeTab !== 'refresh') {
+    if (!league.showTransactionTabs && activeTab !== 'matchups' && activeTab !== 'standings' && activeTab !== 'draftprep' && activeTab !== 'refresh') {
       setActiveTab('matchups')
     }
   }
@@ -82,6 +84,8 @@ export default function App() {
       <main className="app-content">
         {activeTab === 'matchups' ? (
           <Matchups key={activeLeague.id} league={activeLeague} />
+        ) : activeTab === 'standings' ? (
+          <Standings key={activeLeague.id} league={activeLeague} />
         ) : activeTab === 'draftprep' ? (
           <DraftPrep key={activeLeague.id} league={activeLeague} />
         ) : (
