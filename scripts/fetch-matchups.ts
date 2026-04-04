@@ -210,8 +210,13 @@ function parseScoreboard(raw: unknown): { matchups: Matchup[]; currentWeek: numb
     }
   }
 
-  const scoreboardObj = (leagueArr[1] as AnyObj)?.['scoreboard'] as AnyObj
-  if (!scoreboardObj) return { matchups: [], currentWeek, statCategories }
+  const leagueArr1 = leagueArr[1] as AnyObj
+  console.log('[DEBUG] leagueArr[1] keys:', Object.keys(leagueArr1 ?? {}))
+  const scoreboardObj = leagueArr1?.['scoreboard'] as AnyObj
+  if (!scoreboardObj) {
+    console.log('[DEBUG] Full leagueArr[1]:', JSON.stringify(leagueArr1).substring(0, 500))
+    return { matchups: [], currentWeek, statCategories }
+  }
 
   const week = (scoreboardObj['week'] as number) ?? currentWeek
   const matchupsObj = scoreboardObj['matchups'] as AnyObj
