@@ -168,8 +168,8 @@ async function doRefresh(): Promise<void> {
   console.log('[INFO] Refreshing Yahoo OAuth token...')
 
   try {
-    const refreshToken = getRefreshToken()
-    const newCache = await refreshToken(refreshToken)
+    const refreshTokenValue = getRefreshToken()
+    const newCache = await refreshToken(refreshTokenValue)
     saveTokenCache(newCache)
 
     // Output for GitHub Actions
@@ -207,8 +207,8 @@ async function getToken(): Promise<void> {
   // Cache missing or expired, refresh
   console.log('[INFO] Token cache missing or expired, refreshing...', { isStderr: true })
   try {
-    const refreshToken = getRefreshToken()
-    const newCache = await refreshToken(refreshToken)
+    const refreshTokenValue = getRefreshToken()
+    const newCache = await refreshToken(refreshTokenValue)
     saveTokenCache(newCache)
     console.log(newCache.accessToken)
   } catch (err) {
