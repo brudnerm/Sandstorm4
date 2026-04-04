@@ -1,0 +1,394 @@
+#!/usr/bin/env tsx
+/**
+ * Fetches current-week scoreboard and standings from the Yahoo Fantasy API
+ * for both leagues (KP and Sidebar). Writes matchups_kp.json and
+ * matchups_sidebar.json to public/data/.
+ *
+ * Usage:
+ *   npx tsx scripts/fetch-matchups.ts          # local (reads .env)
+ *   npx tsx scripts/fetch-matchups.ts --ci     # CI  (reads process.env)
+ */
+
+import { readFileSync, writeFileSync } from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
+import https from 'https'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const MCP_DIR = path.resolve(__dirname, '../../yahoo-fantasy-baseball-mcp')
+const ENV_PATH = path.join(MCP_DIR, '.env')
+const PUBLIC_DATA_DIR = path.join(__dirname, '../public/data')
+
+const BASE = 'https://fantasysports.yahooapis.com/fantasy/v2'
+
+const LEAGUES = [
+  { key: '469.l.13624', id: 'kp', name: 'Keeping Pattycakes' },
+  { key: '469.l.20795', id: 'sidebar', name: 'sidebar' },
+]
+
+type AnyObj = Record<string, unknown>
+
+const CI_MODE = process.argv.includes('--ci')
+
+// ---- Env reading ----
+
+function readEnv(): Record<string, string> {
+  const out: Record<string, string> = {}
+  try {
+    for (const line of readFileSync(ENV_PATH, 'utf8').split('\n')) {
+      const trimmed = line.trim()
+      if (!trimmed || trimmed.startsWith('#')) continue
+      const idx = trimmed.indexOf('=')
+      if (idx < 0) continue
+      const key = trimmed.slice(0, idx).trim()
+      const val = trimmed.slice(idx + 1).trim()
+      if (key) out[key] = val
+    }
+  } catch { /* ignore */ }
+  return out
+}
+
+function getAccessToken(): string {
+  // Try environment first (CI or local override)
+  if (process.env.YAHOO_ACCESS_TOKEN) {
+    return process.env.YAHOO_ACCESS_TOKEN
+  }
+
+  // Try local token cache (auto-managed by token-manager.ts)
+  try {
+    const cachePath = path.join(__dirname, '../token-cache.json')
+    const cache = JSON.parse(readFileSync(cachePath, 'utf8'))
+    if (cache.accessToken && cache.expiresAt > Date.now()) {
+      return cache.accessToken
+    }
+  } catch {
+    // Cache doesn't exist or is invalid, continue
+  }
+
+  // Fall back to .env (local development)
+  const env = readEnv()
+  const token = env['YAHOO_ACCESS_TOKEN']
+  if (!token) throw new Error('YAHOO_ACCESS_TOKEN not found. Run: npx tsx scripts/token-manager.ts refresh')
+  return token
+}
+
+// ---- HTTP helper ----
+
+function bearerGet(url: string, accessToken: string): Promise<unknown> {
+  return new Promise((resolve, reject) => {
+    const fullUrl = new URL(url + (url.includes('?') ? '&' : '?') + 'format=json')
+    const options = {
+      hostname: fullUrl.hostname,
+      path: fullUrl.pathname + fullUrl.search,
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        Accept: 'application/json',
+      },
+    }
+    https.get(options, (resp) => {
+      let data = ''
+      resp.on('data', chunk => { data += chunk })
+      resp.on('end', () => {
+        if (resp.statusCode && resp.statusCode >= 400) {
+          reject(new Error(`HTTP ${resp.statusCode}: ${data.slice(0, 300)}`))
+          return
+        }
+        try { resolve(JSON.parse(data)) } catch { reject(new Error(`JSON parse: ${data.slice(0, 200)}`)) }
+      })
+    }).on('error', reject)
+  })
+}
+
+function delay(ms: number) {
+  return new Promise(r => setTimeout(r, ms))
+}
+
+// ---- Response parsing ----
+
+interface MatchupStat {
+  value: string
+  result: 'win' | 'loss' | 'tie'
+}
+
+interface MatchupTeam {
+  team_key: string
+  team_name: string
+  owner: string
+  points: string
+  stats: Record<string, MatchupStat>
+}
+
+interface Matchup {
+  week: number
+  status: string
+  teams: [MatchupTeam, MatchupTeam]
+}
+
+interface StandingsEntry {
+  team_key: string
+  team_name: string
+  owner: string
+  rank: number
+  wins: number
+  losses: number
+  ties: number
+  points_for: number
+  points_against: number
+}
+
+interface MatchupData {
+  league_key: string
+  league_name: string
+  current_week: number
+  generated_at: string
+  standings: StandingsEntry[]
+  matchups: Matchup[]
+}
+
+function extractTeamName(teamArr: unknown[]): string {
+  for (const item of teamArr) {
+    if (item && typeof item === 'object' && 'name' in (item as AnyObj)) {
+      return (item as AnyObj)['name'] as string
+    }
+  }
+  return 'Unknown'
+}
+
+function extractTeamKey(teamArr: unknown[]): string {
+  for (const item of teamArr) {
+    if (item && typeof item === 'object' && 'team_key' in (item as AnyObj)) {
+      return (item as AnyObj)['team_key'] as string
+    }
+  }
+  return ''
+}
+
+function extractOwnerName(teamArr: unknown[]): string {
+  for (const item of teamArr) {
+    if (item && typeof item === 'object' && 'managers' in (item as AnyObj)) {
+      const managers = (item as AnyObj)['managers'] as unknown[]
+      if (Array.isArray(managers) && managers.length > 0) {
+        const mgr = (managers[0] as AnyObj)?.['manager'] as AnyObj | undefined
+        return (mgr?.['nickname'] as string) ?? 'Unknown'
+      }
+    }
+  }
+  return 'Unknown'
+}
+
+function parseScoreboard(raw: unknown): { matchups: Matchup[]; currentWeek: number; statCategories: Map<string, string> } {
+  const leagueArr = ((raw as AnyObj)['fantasy_content'] as AnyObj)?.['league'] as unknown[]
+  if (!Array.isArray(leagueArr) || leagueArr.length < 2) {
+    return { matchups: [], currentWeek: 0, statCategories: new Map() }
+  }
+
+  const leagueMeta = leagueArr[0] as AnyObj
+  const currentWeek = (leagueMeta['current_week'] as number) ?? 0
+
+  // Build stat_id → abbreviation map from league settings
+  const statCategories = new Map<string, string>()
+  const settings = leagueMeta['settings'] as unknown[] | undefined
+  if (Array.isArray(settings)) {
+    for (const s of settings) {
+      const cats = (s as AnyObj)?.['stat_categories'] as AnyObj | undefined
+      const stats = cats?.['stats'] as unknown[] | undefined
+      if (Array.isArray(stats)) {
+        for (const st of stats) {
+          const stat = (st as AnyObj)?.['stat'] as AnyObj | undefined
+          if (stat) {
+            const id = String(stat['stat_id'] ?? '')
+            const abbr = (stat['display_name'] as string) ?? ''
+            if (id && abbr) statCategories.set(id, abbr)
+          }
+        }
+      }
+    }
+  }
+
+  const scoreboardObj = (leagueArr[1] as AnyObj)?.['scoreboard'] as AnyObj
+  if (!scoreboardObj) return { matchups: [], currentWeek, statCategories }
+
+  const week = (scoreboardObj['week'] as number) ?? currentWeek
+  const matchupsObj = scoreboardObj['matchups'] as AnyObj
+  if (!matchupsObj) return { matchups: [], currentWeek, statCategories }
+
+  const count = (matchupsObj['count'] as number) ?? 0
+  const matchups: Matchup[] = []
+
+  for (let i = 0; i < count; i++) {
+    const matchup = (matchupsObj[String(i)] as AnyObj)?.['matchup'] as AnyObj
+    if (!matchup) continue
+
+    const status = (matchup['status'] as string) ?? 'unknown'
+
+    // Parse stat winners
+    const statWinners = new Map<string, { winner_team_key: string; is_tied: number }>()
+    const swArr = matchup['stat_winners'] as unknown[]
+    if (Array.isArray(swArr)) {
+      for (const sw of swArr) {
+        const winner = (sw as AnyObj)?.['stat_winner'] as AnyObj
+        if (!winner) continue
+        const statId = String(winner['stat_id'] ?? '')
+        statWinners.set(statId, {
+          winner_team_key: (winner['winner_team_key'] as string) ?? '',
+          is_tied: (winner['is_tied'] as number) ?? 0,
+        })
+      }
+    }
+
+    // Parse the two teams
+    const teamsObj = matchup['teams'] as AnyObj
+    if (!teamsObj) continue
+
+    const parsedTeams: MatchupTeam[] = []
+    for (let t = 0; t < 2; t++) {
+      const teamWrapper = (teamsObj[String(t)] as AnyObj)?.['team'] as unknown[]
+      if (!Array.isArray(teamWrapper) || teamWrapper.length < 2) continue
+
+      const teamInfo = teamWrapper[0] as unknown[]
+      const teamKey = extractTeamKey(teamInfo)
+      const teamName = extractTeamName(teamInfo)
+      const owner = extractOwnerName(teamInfo)
+
+      const teamData = teamWrapper[1] as AnyObj
+      const teamPoints = (teamData?.['team_points'] as AnyObj)?.['total'] as string ?? '0'
+
+      // Parse team stats
+      const stats: Record<string, MatchupStat> = {}
+      const teamStats = (teamData?.['team_stats'] as AnyObj)?.['stats'] as unknown[]
+      if (Array.isArray(teamStats)) {
+        for (const s of teamStats) {
+          const stat = (s as AnyObj)?.['stat'] as AnyObj
+          if (!stat) continue
+          const statId = String(stat['stat_id'] ?? '')
+          const value = String(stat['value'] ?? '')
+          const abbr = statCategories.get(statId)
+          if (!abbr) continue
+
+          const sw = statWinners.get(statId)
+          let result: 'win' | 'loss' | 'tie' = 'tie'
+          if (sw) {
+            if (sw.is_tied) result = 'tie'
+            else if (sw.winner_team_key === teamKey) result = 'win'
+            else result = 'loss'
+          }
+
+          stats[abbr] = { value, result }
+        }
+      }
+
+      parsedTeams.push({ team_key: teamKey, team_name: teamName, owner, points: teamPoints, stats })
+    }
+
+    if (parsedTeams.length === 2) {
+      matchups.push({
+        week,
+        status,
+        teams: parsedTeams as [MatchupTeam, MatchupTeam],
+      })
+    }
+  }
+
+  return { matchups, currentWeek, statCategories }
+}
+
+function parseStandings(raw: unknown): StandingsEntry[] {
+  const leagueArr = ((raw as AnyObj)['fantasy_content'] as AnyObj)?.['league'] as unknown[]
+  if (!Array.isArray(leagueArr) || leagueArr.length < 2) return []
+
+  const standingsObj = (leagueArr[1] as AnyObj)?.['standings'] as AnyObj
+  if (!standingsObj) return []
+
+  const teamsObj = standingsObj['teams'] as AnyObj
+  if (!teamsObj) return []
+
+  const count = (teamsObj['count'] as number) ?? 0
+  const entries: StandingsEntry[] = []
+
+  for (let i = 0; i < count; i++) {
+    const teamWrapper = (teamsObj[String(i)] as AnyObj)?.['team'] as unknown[]
+    if (!Array.isArray(teamWrapper) || teamWrapper.length < 2) continue
+
+    const teamInfo = teamWrapper[0] as unknown[]
+    const teamKey = extractTeamKey(teamInfo)
+    const teamName = extractTeamName(teamInfo)
+    const owner = extractOwnerName(teamInfo)
+
+    const teamData = teamWrapper[1] as AnyObj
+    const standingsData = (teamData?.['team_standings'] as AnyObj) ?? {}
+    const rank = (standingsData['rank'] as number) ?? 0
+    const outcomes = (standingsData['outcome_totals'] as AnyObj) ?? {}
+    const wins = parseInt(String(outcomes['wins'] ?? '0'))
+    const losses = parseInt(String(outcomes['losses'] ?? '0'))
+    const ties = parseInt(String(outcomes['ties'] ?? '0'))
+    const pointsFor = parseFloat(String(standingsData['points_for'] ?? '0'))
+    const pointsAgainst = parseFloat(String(standingsData['points_against'] ?? '0'))
+
+    entries.push({
+      team_key: teamKey,
+      team_name: teamName,
+      owner,
+      rank,
+      wins,
+      losses,
+      ties,
+      points_for: pointsFor,
+      points_against: pointsAgainst,
+    })
+  }
+
+  return entries.sort((a, b) => a.rank - b.rank)
+}
+
+// ---- Main ----
+
+async function main() {
+  const accessToken = getAccessToken()
+  console.log(`[INFO] Mode: ${CI_MODE ? 'CI' : 'local'}`)
+
+  for (const league of LEAGUES) {
+    console.log(`\n[INFO] Fetching ${league.name} (${league.key})...`)
+
+    try {
+      // Fetch scoreboard (includes settings with stat categories)
+      console.log(`  [INFO] Fetching scoreboard...`)
+      const scoreboardUrl = `${BASE}/league/${league.key}/scoreboard`
+      const scoreboardRaw = await bearerGet(scoreboardUrl, accessToken)
+      const { matchups, currentWeek } = parseScoreboard(scoreboardRaw)
+      console.log(`  [OK] ${matchups.length} matchups, week ${currentWeek}`)
+
+      await delay(300)
+
+      // Fetch standings
+      console.log(`  [INFO] Fetching standings...`)
+      const standingsUrl = `${BASE}/league/${league.key}/standings`
+      const standingsRaw = await bearerGet(standingsUrl, accessToken)
+      const standings = parseStandings(standingsRaw)
+      console.log(`  [OK] ${standings.length} teams in standings`)
+
+      await delay(300)
+
+      const output: MatchupData = {
+        league_key: league.key,
+        league_name: league.name,
+        current_week: currentWeek,
+        generated_at: new Date().toISOString(),
+        standings,
+        matchups,
+      }
+
+      const outputPath = path.join(PUBLIC_DATA_DIR, `matchups_${league.id}.json`)
+      writeFileSync(outputPath, JSON.stringify(output, null, 2))
+      console.log(`  [OK] Wrote ${outputPath}`)
+    } catch (err) {
+      console.error(`  [ERR] ${league.name}: ${err}`)
+    }
+  }
+
+  console.log('\n[INFO] Done.')
+}
+
+main().catch(err => {
+  console.error('Fatal error:', err)
+  process.exit(1)
+})

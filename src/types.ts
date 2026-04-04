@@ -48,7 +48,47 @@ export interface DraftData {
   transactions: Transaction[];
 }
 
-export type TabId = 'player' | 'season' | 'team' | 'draft' | 'hof' | 'draftprep' | 'refresh';
+export type TabId = 'matchups' | 'player' | 'season' | 'team' | 'draft' | 'hof' | 'draftprep' | 'refresh';
+
+export interface MatchupStat {
+  value: string;
+  result: 'win' | 'loss' | 'tie';
+}
+
+export interface MatchupTeam {
+  team_key: string;
+  team_name: string;
+  owner: string;
+  points: string;
+  stats: Record<string, MatchupStat>;
+}
+
+export interface Matchup {
+  week: number;
+  status: string;
+  teams: [MatchupTeam, MatchupTeam];
+}
+
+export interface StandingsEntry {
+  team_key: string;
+  team_name: string;
+  owner: string;
+  rank: number;
+  wins: number;
+  losses: number;
+  ties: number;
+  points_for: number;
+  points_against: number;
+}
+
+export interface MatchupData {
+  league_key: string;
+  league_name: string;
+  current_week: number;
+  generated_at: string;
+  standings: StandingsEntry[];
+  matchups: Matchup[];
+}
 
 export interface PlayerMatch {
   name: string;

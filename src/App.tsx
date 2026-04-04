@@ -10,8 +10,10 @@ import DraftHistory from './components/DraftHistory'
 import HallOfFame from './components/HallOfFame'
 import DataRefresh from './components/DataRefresh'
 import DraftPrep from './components/DraftPrep'
+import Matchups from './components/Matchups'
 
 const ALL_TABS: Array<{ id: TabId; label: string }> = [
+  { id: 'matchups', label: 'Matchups' },
   { id: 'player',  label: 'Player Search' },
   { id: 'season',  label: 'Season Browser' },
   { id: 'team',    label: 'Team History' },
@@ -24,7 +26,7 @@ const ALL_TABS: Array<{ id: TabId; label: string }> = [
 const PROD_TABS = ALL_TABS.filter(t => t.id !== 'refresh')
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<TabId>('player')
+  const [activeTab, setActiveTab] = useState<TabId>('matchups')
   const [activeLeague, setActiveLeague] = useState<LeagueConfig>(KP_CONFIG)
   const state = useTransactionData()
 
@@ -32,7 +34,7 @@ export default function App() {
     const base = import.meta.env.PROD ? PROD_TABS : ALL_TABS
     if (activeLeague.showTransactionTabs) return base
     // Non-transaction leagues only get Draft Prep (and Data Refresh in dev)
-    return base.filter(t => t.id === 'draftprep' || t.id === 'refresh')
+    return base.filter(t => t.id === 'matchups' || t.id === 'draftprep' || t.id === 'refresh')
   }, [activeLeague])
 
   const handleLeagueChange = (leagueId: string) => {
@@ -40,8 +42,8 @@ export default function App() {
     if (!league) return
     setActiveLeague(league)
     // Auto-switch to Draft Prep when selecting a non-transaction league
-    if (!league.showTransactionTabs && activeTab !== 'draftprep' && activeTab !== 'refresh') {
-      setActiveTab('draftprep')
+    if (!league.showTransactionTabs && activeTab !== 'matchups' && activeTab !== 'draftprep' && activeTab !== 'refresh') {
+      setActiveTab('matchups')
     }
   }
 
@@ -78,7 +80,9 @@ export default function App() {
       </header>
 
       <main className="app-content">
-        {activeTab === 'draftprep' ? (
+        {activeTab === 'matchups' ? (
+          <Matchups key={activeLeague.id} league={activeLeague} />
+        ) : activeTab === 'draftprep' ? (
           <DraftPrep key={activeLeague.id} league={activeLeague} />
         ) : (
           <>

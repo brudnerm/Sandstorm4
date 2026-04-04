@@ -1,0 +1,81 @@
+name: Refresh Matchup Data
+
+on:
+  schedule:
+    # Every 15 min during baseball hours: noon-1am ET (16:00-05:00 UTC), Mar-Oct
+    - cron: '*/15 16-23,0-5 * 3-10 *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-data
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      # Refresh Yahoo OAuth token (tokens rotate on each refresh)
+      - name: Refresh Yahoo OAuth token
+        id: refresh-token
+        env:
+          YAHOO_CLIENT_ID: ${{ secrets.YAHOO_CLIENT_ID }}
+          YAHOO_CLIENT_SECRET: ${{ secrets.YAHOO_CLIENT_SECRET }}
+          YAHOO_REFRESH_TOKEN: ${{ secrets.YAHOO_REFRESH_TOKEN }}
+        run: |
+          npx tsx scripts/token-manager.ts refresh
+
+          # Read tokens from cache file for next steps using Node.js
+          node -e "
+            const fs = require('fs');
+            const cache = JSON.parse(fs.readFileSync('token-cache.json', 'utf8'));
+            console.log('::add-mask::' + cache.accessToken);
+            console.log('::add-mask::' + cache.refreshToken);
+            const fs2 = require('fs');
+            fs2.appendFileSync(process.env.GITHUB_OUTPUT, 'access_token=' + cache.accessToken + '\n');
+            fs2.appendFileSync(process.env.GITHUB_OUTPUT, 'refresh_token=' + cache.refreshToken + '\n');
+          "
+
+      # Update GitHub secrets with new refresh token (for next run's fallback)
+      - name: Update GitHub secrets with new refresh token
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          node -e "
+            const fs = require('fs');
+            const cache = JSON.parse(fs.readFileSync('token-cache.json', 'utf8'));
+            console.log(cache.refreshToken);
+          " > /tmp/refresh_token.txt
+          REFRESH_TOKEN=$(cat /tmp/refresh_token.txt)
+          gh secret set YAHOO_REFRESH_TOKEN --body "$REFRESH_TOKEN" 2>/dev/null || echo "⚠️  Could not update GitHub secret. Next run will auto-refresh from cached token."
+
+      # Fetch matchup data for both leagues
+      - name: Fetch matchups
+        env:
+          YAHOO_ACCESS_TOKEN: ${{ steps.refresh-token.outputs.access_token }}
+        run: npx tsx scripts/fetch-matchups.ts --ci
+
+      # Commit and push only if data changed
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/matchups_kp.json public/data/matchups_sidebar.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update matchup data"
+            git push
+          fi
