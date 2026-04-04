@@ -8,6 +8,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: refresh-data
@@ -16,6 +18,9 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -69,7 +74,7 @@ jobs:
           YAHOO_ACCESS_TOKEN: ${{ steps.refresh-token.outputs.access_token }}
         run: npx tsx scripts/fetch-matchups.ts --ci
 
-      # Commit and push only if data changed
+      # Commit updated data to main (for persistence / history)
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
@@ -83,3 +88,16 @@ jobs:
             git commit -m "Update matchup data"
             git push origin main
           fi
+
+      # Build and deploy the site with fresh data
+      - name: Build site
+        run: npm run build:pages
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
