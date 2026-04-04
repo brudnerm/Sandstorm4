@@ -63,6 +63,9 @@ function MatchupCard({ matchup }: { matchup: MatchupType }) {
 }
 
 function StandingsTable({ standings }: { standings: StandingsEntry[] }) {
+  const hasFaab = standings.some(s => s.faab_balance !== undefined)
+  const hasWaiver = standings.some(s => s.waiver_priority !== undefined)
+
   return (
     <div className="standings-section">
       <h3 className="standings-title">Standings</h3>
@@ -76,8 +79,8 @@ function StandingsTable({ standings }: { standings: StandingsEntry[] }) {
               <th>W</th>
               <th>L</th>
               <th>T</th>
-              <th>PF</th>
-              <th>PA</th>
+              {hasFaab && <th>FAAB</th>}
+              {hasWaiver && <th>Waiver</th>}
             </tr>
           </thead>
           <tbody>
@@ -89,8 +92,8 @@ function StandingsTable({ standings }: { standings: StandingsEntry[] }) {
                 <td>{s.wins}</td>
                 <td>{s.losses}</td>
                 <td>{s.ties}</td>
-                <td>{s.points_for}</td>
-                <td>{s.points_against}</td>
+                {hasFaab && <td>${s.faab_balance}</td>}
+                {hasWaiver && <td>{s.waiver_priority}</td>}
               </tr>
             ))}
           </tbody>

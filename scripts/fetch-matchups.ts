@@ -137,8 +137,8 @@ interface StandingsEntry {
   wins: number
   losses: number
   ties: number
-  points_for: number
-  points_against: number
+  waiver_priority?: number
+  faab_balance?: number
 }
 
 interface MatchupData {
@@ -343,19 +343,25 @@ function parseStandings(raw: unknown): StandingsEntry[] {
     const teamName = extractTeamName(teamInfo)
     const owner = extractOwnerName(teamInfo)
 
-    // team_standings is in the team info array, not in teamWrapper[1]
-    if (i === 0) {
-      console.log(`  [DEBUG] teamInfo items: ${JSON.stringify(teamInfo.map((x: unknown) => typeof x === 'object' && x !== null ? Object.keys(x as AnyObj) : x))}`)
-      console.log(`  [DEBUG] teamWrapper length: ${teamWrapper.length}, teamWrapper[1] keys: ${JSON.stringify(Object.keys(teamWrapper[1] as AnyObj ?? {}))}`)
-    }
-    const standingsData = extractTeamStandings(teamInfo)
+    // team_standings is in teamWrapper[2]
+    const standingsRaw = teamWrapper[2] as AnyObj | undefined
+    const standingsData = (standingsRaw?.['team_standings'] as AnyObj) ?? {}
     const rank = parseInt(String(standingsData['rank'] ?? '0'))
     const outcomes = (standingsData['outcome_totals'] as AnyObj) ?? {}
     const wins = parseInt(String(outcomes['wins'] ?? '0'))
     const losses = parseInt(String(outcomes['losses'] ?? '0'))
     const ties = parseInt(String(outcomes['ties'] ?? '0'))
-    const pointsFor = parseFloat(String(standingsData['points_for'] ?? '0'))
-    const pointsAgainst = parseFloat(String(standingsData['points_against'] ?? '0'))
+
+    // Extract waiver priority and FAAB balance from team info
+    let waiverPriority: number | undefined
+    let faabBalance: number | undefined
+    for (const item of teamInfo) {
+      if (item && typeof item === 'object') {
+        const obj = item as AnyObj
+        if ('waiver_priority' in obj) waiverPriority = parseInt(String(obj['waiver_priority'] ?? ''))
+        if ('faab_balance' in obj) faabBalance = parseInt(String(obj['faab_balance'] ?? ''))
+      }
+    }
 
     entries.push({
       team_key: teamKey,
@@ -365,8 +371,8 @@ function parseStandings(raw: unknown): StandingsEntry[] {
       wins,
       losses,
       ties,
-      points_for: pointsFor,
-      points_against: pointsAgainst,
+      ...(waiverPriority !== undefined && !isNaN(waiverPriority) ? { waiver_priority: waiverPriority } : {}),
+      ...(faabBalance !== undefined && !isNaN(faabBalance) ? { faab_balance: faabBalance } : {}),
     })
   }
 

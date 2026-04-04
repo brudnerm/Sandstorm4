@@ -77,8 +77,8 @@ export interface StandingsEntry {
   wins: number;
   losses: number;
   ties: number;
-  points_for: number;
-  points_against: number;
+  waiver_priority?: number;
+  faab_balance?: number;
 }
 
 export interface MatchupData {
