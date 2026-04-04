@@ -365,6 +365,11 @@ async function main() {
       console.log(`  [INFO] Fetching scoreboard...`)
       const scoreboardUrl = `${BASE}/league/${league.key}/scoreboard`
       const scoreboardRaw = await bearerGet(scoreboardUrl, accessToken)
+      console.log(`  [DEBUG] Raw scoreboard keys: ${Object.keys((scoreboardRaw as Record<string, unknown>)?.['fantasy_content'] as Record<string, unknown> ?? {})}`)
+      const leagueArr = ((scoreboardRaw as Record<string, unknown>)?.['fantasy_content'] as Record<string, unknown>)?.['league'] as unknown[]
+      if (Array.isArray(leagueArr)) {
+        console.log(`  [DEBUG] leagueArr length: ${leagueArr.length}, leagueArr[1] keys: ${Object.keys(leagueArr[1] as Record<string, unknown> ?? {})}`)
+      }
       const { matchups, currentWeek } = parseScoreboard(scoreboardRaw)
       console.log(`  [OK] ${matchups.length} matchups, week ${currentWeek}`)
 
