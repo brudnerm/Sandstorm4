@@ -221,10 +221,9 @@ function parseScoreboard(raw: unknown): { matchups: Matchup[]; currentWeek: numb
     return { matchups: [], currentWeek, statCategories }
   }
 
-  const count = (matchupsObj['count'] as number) ?? 0
-  if (count === 0) {
-    console.log('[DEBUG] Matchup count is 0. Available keys:', Object.keys(matchupsObj))
-  }
+  const count = typeof matchupsObj['count'] === 'number'
+    ? matchupsObj['count'] as number
+    : Object.keys(matchupsObj).filter(k => !isNaN(Number(k))).length
   const matchups: Matchup[] = []
 
   for (let i = 0; i < count; i++) {
