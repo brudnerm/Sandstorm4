@@ -181,20 +181,15 @@ function extractOwnerName(teamArr: unknown[]): string {
   return 'Unknown'
 }
 
-function parseScoreboard(raw: unknown): { matchups: Matchup[]; currentWeek: number; statCategories: Map<string, string> } {
-  const leagueArr = ((raw as AnyObj)['fantasy_content'] as AnyObj)?.['league'] as unknown[]
-  if (!Array.isArray(leagueArr) || leagueArr.length < 2) {
-    return { matchups: [], currentWeek: 0, statCategories: new Map() }
-  }
-
-  const leagueMeta = leagueArr[0] as AnyObj
-  const currentWeek = (leagueMeta['current_week'] as number) ?? 0
-
-  // Build stat_id → abbreviation map from league settings
+function parseStatCategories(raw: unknown): Map<string, string> {
   const statCategories = new Map<string, string>()
-  const settings = leagueMeta['settings'] as unknown[] | undefined
-  if (Array.isArray(settings)) {
-    for (const s of settings) {
+  const leagueArr = ((raw as AnyObj)['fantasy_content'] as AnyObj)?.['league'] as unknown[]
+  if (!Array.isArray(leagueArr)) return statCategories
+
+  for (const item of leagueArr) {
+    const settingsObj = (item as AnyObj)?.['settings'] as unknown[] | undefined
+    if (!Array.isArray(settingsObj)) continue
+    for (const s of settingsObj) {
       const cats = (s as AnyObj)?.['stat_categories'] as AnyObj | undefined
       const stats = cats?.['stats'] as unknown[] | undefined
       if (Array.isArray(stats)) {
@@ -209,16 +204,27 @@ function parseScoreboard(raw: unknown): { matchups: Matchup[]; currentWeek: numb
       }
     }
   }
+  return statCategories
+}
+
+function parseScoreboard(raw: unknown, statCategories: Map<string, string>): { matchups: Matchup[]; currentWeek: number } {
+  const leagueArr = ((raw as AnyObj)['fantasy_content'] as AnyObj)?.['league'] as unknown[]
+  if (!Array.isArray(leagueArr) || leagueArr.length < 2) {
+    return { matchups: [], currentWeek: 0 }
+  }
+
+  const leagueMeta = leagueArr[0] as AnyObj
+  const currentWeek = (leagueMeta['current_week'] as number) ?? 0
 
   const scoreboardObj = (leagueArr[1] as AnyObj)?.['scoreboard'] as AnyObj
-  if (!scoreboardObj) return { matchups: [], currentWeek, statCategories }
+  if (!scoreboardObj) return { matchups: [], currentWeek }
 
   const week = (scoreboardObj['week'] as number) ?? currentWeek
   // scoreboard is { "0": { matchups: {...} }, "week": N }
   const scoreboardInner = (scoreboardObj['0'] as AnyObj) ?? scoreboardObj
   const matchupsObj = (scoreboardInner['matchups'] ?? scoreboardObj['matchups']) as AnyObj
   if (!matchupsObj) {
-    return { matchups: [], currentWeek, statCategories }
+    return { matchups: [], currentWeek }
   }
 
   const count = typeof matchupsObj['count'] === 'number'
@@ -302,7 +308,7 @@ function parseScoreboard(raw: unknown): { matchups: Matchup[]; currentWeek: numb
     }
   }
 
-  return { matchups, currentWeek, statCategories }
+  return { matchups, currentWeek }
 }
 
 function parseStandings(raw: unknown): StandingsEntry[] {
@@ -364,11 +370,20 @@ async function main() {
     console.log(`\n[INFO] Fetching ${league.name} (${league.key})...`)
 
     try {
-      // Fetch scoreboard (includes settings with stat categories)
+      // Fetch settings for stat category names
+      console.log(`  [INFO] Fetching settings...`)
+      const settingsUrl = `${BASE}/league/${league.key}/settings`
+      const settingsRaw = await bearerGet(settingsUrl, accessToken)
+      const statCategories = parseStatCategories(settingsRaw)
+      console.log(`  [OK] ${statCategories.size} stat categories`)
+
+      await delay(300)
+
+      // Fetch scoreboard
       console.log(`  [INFO] Fetching scoreboard...`)
       const scoreboardUrl = `${BASE}/league/${league.key}/scoreboard`
       const scoreboardRaw = await bearerGet(scoreboardUrl, accessToken)
-      const { matchups, currentWeek } = parseScoreboard(scoreboardRaw)
+      const { matchups, currentWeek } = parseScoreboard(scoreboardRaw, statCategories)
       console.log(`  [OK] ${matchups.length} matchups, week ${currentWeek}`)
 
       await delay(300)
