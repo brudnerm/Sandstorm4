@@ -344,6 +344,10 @@ function parseStandings(raw: unknown): StandingsEntry[] {
     const owner = extractOwnerName(teamInfo)
 
     // team_standings is in the team info array, not in teamWrapper[1]
+    if (i === 0) {
+      console.log(`  [DEBUG] teamInfo items: ${JSON.stringify(teamInfo.map((x: unknown) => typeof x === 'object' && x !== null ? Object.keys(x as AnyObj) : x))}`)
+      console.log(`  [DEBUG] teamWrapper length: ${teamWrapper.length}, teamWrapper[1] keys: ${JSON.stringify(Object.keys(teamWrapper[1] as AnyObj ?? {}))}`)
+    }
     const standingsData = extractTeamStandings(teamInfo)
     const rank = parseInt(String(standingsData['rank'] ?? '0'))
     const outcomes = (standingsData['outcome_totals'] as AnyObj) ?? {}
