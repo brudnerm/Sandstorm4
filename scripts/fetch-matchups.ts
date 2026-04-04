@@ -338,6 +338,12 @@ function parseStandings(raw: unknown): StandingsEntry[] {
     // team data may be nested under ['0']
     const teamDataInner = (teamData?.['0'] as AnyObj) ?? teamData
     const standingsData = (teamDataInner?.['team_standings'] ?? teamData?.['team_standings']) as AnyObj ?? {}
+    if (i === 0) {
+      console.log(`  [DEBUG] standings teamWrapper[1] keys: ${JSON.stringify(Object.keys(teamData ?? {}))}`)
+      console.log(`  [DEBUG] standings teamDataInner keys: ${JSON.stringify(Object.keys(teamDataInner ?? {}))}`)
+      console.log(`  [DEBUG] standings standingsData keys: ${JSON.stringify(Object.keys(standingsData))}`)
+      console.log(`  [DEBUG] standings standingsData sample: ${JSON.stringify(standingsData).slice(0, 300)}`)
+    }
     const rank = parseInt(String(standingsData['rank'] ?? '0'))
     const outcomes = (standingsData['outcome_totals'] as AnyObj) ?? {}
     const wins = parseInt(String(outcomes['wins'] ?? '0'))
