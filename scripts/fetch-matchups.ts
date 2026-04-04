@@ -214,10 +214,10 @@ function parseScoreboard(raw: unknown): { matchups: Matchup[]; currentWeek: numb
   if (!scoreboardObj) return { matchups: [], currentWeek, statCategories }
 
   const week = (scoreboardObj['week'] as number) ?? currentWeek
-  const matchupsObj = scoreboardObj['matchups'] as AnyObj
+  // scoreboard is { "0": { matchups: {...} }, "week": N }
+  const scoreboardInner = (scoreboardObj['0'] as AnyObj) ?? scoreboardObj
+  const matchupsObj = (scoreboardInner['matchups'] ?? scoreboardObj['matchups']) as AnyObj
   if (!matchupsObj) {
-    console.log('[DEBUG] No matchupsObj. scoreboard keys:', Object.keys(scoreboardObj))
-    console.log('[DEBUG] scoreboard content:', JSON.stringify(scoreboardObj).substring(0, 800))
     return { matchups: [], currentWeek, statCategories }
   }
 
@@ -308,10 +308,11 @@ function parseStandings(raw: unknown): StandingsEntry[] {
   const leagueArr = ((raw as AnyObj)['fantasy_content'] as AnyObj)?.['league'] as unknown[]
   if (!Array.isArray(leagueArr) || leagueArr.length < 2) return []
 
-  const standingsObj = (leagueArr[1] as AnyObj)?.['standings'] as AnyObj
-  if (!standingsObj) return []
-
-  const teamsObj = standingsObj['teams'] as AnyObj
+  const standingsRaw = (leagueArr[1] as AnyObj)?.['standings'] as AnyObj
+  if (!standingsRaw) return []
+  // standings is { "0": { teams: {...} } } or { teams: {...} }
+  const standingsObj = (standingsRaw['0'] as AnyObj) ?? standingsRaw
+  const teamsObj = (standingsObj['teams'] ?? standingsRaw['teams']) as AnyObj
   if (!teamsObj) return []
 
   const count = (teamsObj['count'] as number) ?? 0
