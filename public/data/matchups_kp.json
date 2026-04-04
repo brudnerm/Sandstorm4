@@ -2,7 +2,7 @@
   "league_key": "469.l.13624",
   "league_name": "Keeping Pattycakes",
   "current_week": 2,
-  "generated_at": "2026-04-04T16:09:04.005Z",
+  "generated_at": "2026-04-04T16:10:26.591Z",
   "standings": [
     {
       "team_key": "469.l.13624.t.9",
@@ -137,5 +137,126 @@
       "points_against": 0
     }
   ],
-  "matchups": []
+  "matchups": [
+    {
+      "week": 2,
+      "status": "midevent",
+      "teams": [
+        {
+          "team_key": "469.l.13624.t.1",
+          "team_name": "Manchester by Marsee",
+          "owner": "Swan",
+          "points": "8",
+          "stats": {}
+        },
+        {
+          "team_key": "469.l.13624.t.3",
+          "team_name": "Bradishwalla",
+          "owner": "joey",
+          "points": "2",
+          "stats": {}
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "status": "midevent",
+      "teams": [
+        {
+          "team_key": "469.l.13624.t.2",
+          "team_name": "Bennett?",
+          "owner": "Brian Bennett",
+          "points": "4",
+          "stats": {}
+        },
+        {
+          "team_key": "469.l.13624.t.8",
+          "team_name": "Raisin Duran Crunch",
+          "owner": "angel escobar",
+          "points": "8",
+          "stats": {}
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "status": "midevent",
+      "teams": [
+        {
+          "team_key": "469.l.13624.t.4",
+          "team_name": "Leiter House Rules",
+          "owner": "Rich Garcis",
+          "points": "7",
+          "stats": {}
+        },
+        {
+          "team_key": "469.l.13624.t.7",
+          "team_name": "Boho Chic",
+          "owner": "Nick",
+          "points": "2",
+          "stats": {}
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "status": "midevent",
+      "teams": [
+        {
+          "team_key": "469.l.13624.t.5",
+          "team_name": "Constellation Joe Ryan",
+          "owner": "mike",
+          "points": "7",
+          "stats": {}
+        },
+        {
+          "team_key": "469.l.13624.t.11",
+          "team_name": "Go Outside Nerd",
+          "owner": "Jamison",
+          "points": "5",
+          "stats": {}
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "status": "midevent",
+      "teams": [
+        {
+          "team_key": "469.l.13624.t.6",
+          "team_name": "IM IN MY PRIME",
+          "owner": "Mark",
+          "points": "5",
+          "stats": {}
+        },
+        {
+          "team_key": "469.l.13624.t.10",
+          "team_name": "mannys still stoned",
+          "owner": "Galen",
+          "points": "7",
+          "stats": {}
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "status": "midevent",
+      "teams": [
+        {
+          "team_key": "469.l.13624.t.9",
+          "team_name": "MAINEiacs",
+          "owner": "Will Youmans",
+          "points": "6",
+          "stats": {}
+        },
+        {
+          "team_key": "469.l.13624.t.12",
+          "team_name": "Who's Your Vladdy",
+          "owner": "KC",
+          "points": "5",
+          "stats": {}
+        }
+      ]
+    }
+  ]
 }
