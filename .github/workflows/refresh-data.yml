@@ -79,5 +79,5 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Update matchup data"
-            git push --force-with-lease origin main || git push origin main
+            git push --force origin main
           fi
