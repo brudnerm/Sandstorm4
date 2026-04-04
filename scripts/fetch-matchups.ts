@@ -230,11 +230,13 @@ function parseScoreboard(raw: unknown): { matchups: Matchup[]; currentWeek: numb
     const matchup = (matchupsObj[String(i)] as AnyObj)?.['matchup'] as AnyObj
     if (!matchup) continue
 
-    const status = (matchup['status'] as string) ?? 'unknown'
+    // matchup content is nested under ['0']
+    const matchupData = (matchup['0'] as AnyObj) ?? matchup
+    const status = ((matchupData['status'] ?? matchup['status']) as string) ?? 'unknown'
 
     // Parse stat winners
     const statWinners = new Map<string, { winner_team_key: string; is_tied: number }>()
-    const swArr = matchup['stat_winners'] as unknown[]
+    const swArr = (matchupData['stat_winners'] ?? matchup['stat_winners']) as unknown[]
     if (Array.isArray(swArr)) {
       for (const sw of swArr) {
         const winner = (sw as AnyObj)?.['stat_winner'] as AnyObj
@@ -248,7 +250,7 @@ function parseScoreboard(raw: unknown): { matchups: Matchup[]; currentWeek: numb
     }
 
     // Parse the two teams
-    const teamsObj = matchup['teams'] as AnyObj
+    const teamsObj = (matchupData['teams'] ?? matchup['teams']) as AnyObj
     if (!teamsObj) continue
 
     const parsedTeams: MatchupTeam[] = []
@@ -366,11 +368,6 @@ async function main() {
       console.log(`  [INFO] Fetching scoreboard...`)
       const scoreboardUrl = `${BASE}/league/${league.key}/scoreboard`
       const scoreboardRaw = await bearerGet(scoreboardUrl, accessToken)
-      console.log(`  [DEBUG] Raw scoreboard keys: ${Object.keys((scoreboardRaw as Record<string, unknown>)?.['fantasy_content'] as Record<string, unknown> ?? {})}`)
-      const leagueArr = ((scoreboardRaw as Record<string, unknown>)?.['fantasy_content'] as Record<string, unknown>)?.['league'] as unknown[]
-      if (Array.isArray(leagueArr)) {
-        console.log(`  [DEBUG] leagueArr length: ${leagueArr.length}, leagueArr[1] keys: ${Object.keys(leagueArr[1] as Record<string, unknown> ?? {})}`)
-      }
       const { matchups, currentWeek } = parseScoreboard(scoreboardRaw)
       console.log(`  [OK] ${matchups.length} matchups, week ${currentWeek}`)
 
