@@ -216,7 +216,8 @@ function parseScoreboard(raw: unknown): { matchups: Matchup[]; currentWeek: numb
   const week = (scoreboardObj['week'] as number) ?? currentWeek
   const matchupsObj = scoreboardObj['matchups'] as AnyObj
   if (!matchupsObj) {
-    console.log('[DEBUG] No matchupsObj found in scoreboard')
+    console.log('[DEBUG] No matchupsObj. scoreboard keys:', Object.keys(scoreboardObj))
+    console.log('[DEBUG] scoreboard content:', JSON.stringify(scoreboardObj).substring(0, 800))
     return { matchups: [], currentWeek, statCategories }
   }
 
