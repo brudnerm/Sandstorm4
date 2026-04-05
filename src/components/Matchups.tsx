@@ -279,22 +279,8 @@ function MatchupsReady({ data, league }: { data: MatchupData; league: LeagueConf
 
   return (
     <>
-      {/* Controls */}
-      <div className="mu-controls">
-        <div className="mu-control-group">
-          <label className="mu-label" htmlFor="home-owner">Home Team</label>
-          <select
-            id="home-owner"
-            className="mu-select"
-            value={homeOwner}
-            onChange={e => handleSetHomeOwner(e.target.value)}
-          >
-            {owners.map(o => (
-              <option key={o} value={o}>{o}</option>
-            ))}
-          </select>
-        </div>
-
+      {/* Week nav - stays at top on mobile */}
+      <div className="mu-week-row">
         <div className="mu-week-nav">
           <button
             className="mu-week-btn"
@@ -315,8 +301,24 @@ function MatchupsReady({ data, league }: { data: MatchupData; league: LeagueConf
             aria-label="Next week"
           >&#8250;</button>
         </div>
-
         <span className="mu-updated">Updated {timeAgo(data.generated_at)}</span>
+      </div>
+
+      {/* Home team selector - moves to bottom on mobile */}
+      <div className="mu-controls">
+        <div className="mu-control-group">
+          <label className="mu-label" htmlFor="home-owner">Home Team</label>
+          <select
+            id="home-owner"
+            className="mu-select"
+            value={homeOwner}
+            onChange={e => handleSetHomeOwner(e.target.value)}
+          >
+            {owners.map(o => (
+              <option key={o} value={o}>{o}</option>
+            ))}
+          </select>
+        </div>
       </div>
 
       {rows.length === 0 ? (
@@ -326,7 +328,7 @@ function MatchupsReady({ data, league }: { data: MatchupData; league: LeagueConf
         </div>
       ) : (
         <>
-          {/* KPI bar */}
+          {/* KPI bar - moves below table on mobile */}
           <KpiBar rows={rows} />
 
           {/* Comparison table */}

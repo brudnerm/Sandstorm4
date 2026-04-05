@@ -72,6 +72,7 @@ export default function App() {
                 role="tab"
                 aria-selected={activeTab === tab.id}
                 className={`tab-btn${activeTab === tab.id ? ' active' : ''}`}
+                data-tab-id={tab.id}
                 onClick={() => setActiveTab(tab.id)}
               >
                 {tab.label}

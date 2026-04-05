@@ -1805,21 +1805,6 @@ button:disabled {
     display: none;
   }
 
-  .tab-panel {
-    padding: 16px;
-  }
-
-  .app-header-inner {
-    height: auto;
-    padding: 10px 0;
-    flex-wrap: wrap;
-  }
-
-  .tabs {
-    margin-left: 0;
-    width: 100%;
-  }
-
   /* Stats bar wrapping on tablets */
   .stats-bar {
     flex-wrap: wrap;
@@ -1843,14 +1828,6 @@ button:disabled {
 
 /* Mobile phones (480px and below) */
 @media (max-width: 480px) {
-  .tab-panel {
-    padding: 12px;
-  }
-
-  .panel-inner {
-    gap: 12px;
-  }
-
   /* Transaction table → card layout */
   .txn-table {
     display: none;
@@ -2213,11 +2190,23 @@ button:disabled {
   flex-direction: column;
 }
 
+/* Week row (desktop: display:contents merges into panel flow) */
+.mu-week-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.mu-week-row .mu-updated {
+  white-space: nowrap;
+}
+
 .mu-controls {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   flex-wrap: wrap;
 }
 
@@ -2616,10 +2605,93 @@ button:disabled {
 /* Mobile responsive */
 
 @media (max-width: 768px) {
+  /* Bottom nav bar */
+  .tabs {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    margin-left: 0;
+    width: 100%;
+    justify-content: space-around;
+    padding: 6px 0;
+    gap: 0;
+  }
+
+  /* Hide non-mobile tabs */
+  .tab-btn[data-tab-id="season"],
+  .tab-btn[data-tab-id="team"],
+  .tab-btn[data-tab-id="draft"],
+  .tab-btn[data-tab-id="hof"],
+  .tab-btn[data-tab-id="draftprep"],
+  .tab-btn[data-tab-id="refresh"] {
+    display: none;
+  }
+
+  .tab-btn {
+    font-size: 11px;
+    padding: 6px 12px;
+    flex: 1;
+    text-align: center;
+  }
+
+  /* Lock horizontal scroll */
+  #root {
+    overflow-x: hidden;
+  }
+
+  /* Tight app-like spacing */
+  .tab-panel {
+    padding: 4px 6px;
+    padding-bottom: 44px;
+  }
+
+  .panel-inner {
+    gap: 0;
+  }
+
+  .app-header {
+    padding: 0 6px;
+  }
+
+  .app-header-inner {
+    padding: 4px 0;
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  /* Reorder matchup sections: week nav, table, KPIs, home team */
+  .mu-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .mu-week-row {
+    order: 1;
+    justify-content: center;
+    margin-bottom: 0;
+    gap: 8px;
+  }
+
+  .mu-table-wrap {
+    order: 2;
+  }
+
+  .mu-kpi-bar {
+    order: 3;
+    margin-bottom: 0;
+  }
+
   .mu-controls {
+    order: 4;
     flex-direction: column;
     align-items: stretch;
-    gap: 10px;
+    gap: 4px;
+    margin-bottom: 0;
   }
 
   .mu-control-group {
@@ -2637,7 +2709,19 @@ button:disabled {
 
   .mu-updated {
     text-align: center;
+    font-size: 10px;
   }
+
+  /* Compact KPI bar */
+  .mu-kpi {
+    padding: 8px 6px;
+    gap: 2px;
+  }
+
+  .mu-kpi-value { font-size: 18px; }
+  .mu-kpi-best, .mu-kpi-worst { font-size: 13px; }
+  .mu-kpi-label { font-size: 8px; }
+  .mu-kpi-sub { font-size: 10px; }
 
   .mu-th-owner,
   .mu-td-owner {
@@ -2656,11 +2740,11 @@ button:disabled {
 
   .mu-table th {
     font-size: 9px;
-    padding: 6px 5px;
+    padding: 4px 5px;
   }
 
   .mu-table td {
-    padding: 6px 5px;
+    padding: 4px 5px;
   }
 
   .mu-td-score {
