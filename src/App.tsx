@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useCallback } from 'react'
 import { useTransactionData } from './hooks/useTransactionData'
 import type { TabId } from './types'
 import { KP_CONFIG, ALL_LEAGUES, type LeagueConfig } from './leagueConfig'
@@ -30,7 +30,9 @@ const PROD_TABS = ALL_TABS.filter(t => t.id !== 'refresh')
 export default function App() {
   const [activeTab, setActiveTab] = useState<TabId>('matchups')
   const [activeLeague, setActiveLeague] = useState<LeagueConfig>(KP_CONFIG)
-  const state = useTransactionData()
+  const [refreshKey, setRefreshKey] = useState(0)
+  const state = useTransactionData(refreshKey)
+  const handleDataRefreshed = useCallback(() => setRefreshKey(k => k + 1), [])
 
   const visibleTabs = useMemo(() => {
     const base = import.meta.env.PROD ? PROD_TABS : ALL_TABS
@@ -115,7 +117,7 @@ export default function App() {
                 {activeTab === 'team'    && <TeamHistory   indexes={state.indexes} />}
                 {activeTab === 'draft'   && <DraftHistory  indexes={state.indexes} />}
                 {activeTab === 'hof'     && <HallOfFame    indexes={state.indexes} />}
-                {activeTab === 'refresh' && <DataRefresh   generatedAt={state.indexes.data.generated_at} totalTransactions={state.indexes.data.total_transactions} />}
+                {activeTab === 'refresh' && <DataRefresh   generatedAt={state.indexes.data.generated_at} totalTransactions={state.indexes.data.total_transactions} onDataRefreshed={handleDataRefreshed} />}
               </>
             )}
           </>

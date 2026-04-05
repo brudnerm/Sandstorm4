@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 interface Props {
   generatedAt: string
   totalTransactions: number
+  onDataRefreshed?: () => void
 }
 
 type Status = 'idle' | 'running' | 'success' | 'error'
@@ -26,7 +27,7 @@ interface RefreshStatusData {
   }
 }
 
-export default function DataRefresh(_props: Props) {
+export default function DataRefresh({ onDataRefreshed }: Props) {
   // Props are passed but not used; we get status from API endpoint instead
   const [tokenStatus, setTokenStatus] = useState<Status>('idle')
   const [tokenLog, setTokenLog] = useState('')
@@ -135,6 +136,7 @@ export default function DataRefresh(_props: Props) {
       }
       setCurrentSeasonStatus('success')
       setCurrentSeasonLog(prev => prev + '\n[OK] 2026 refresh complete!\n')
+      onDataRefreshed?.()
     } catch (e) {
       setCurrentSeasonStatus('error')
       setCurrentSeasonLog(prev => prev + `[ERROR] ${String(e)}\n`)
@@ -164,6 +166,7 @@ export default function DataRefresh(_props: Props) {
       }
       setHistoricalStatus('success')
       setHistoricalLog(prev => prev + '\n[OK] Historical refresh complete!\n')
+      onDataRefreshed?.()
     } catch (e) {
       setHistoricalStatus('error')
       setHistoricalLog(prev => prev + `[ERROR] ${String(e)}\n`)

@@ -56,6 +56,13 @@ function ownerSuffix(teamName: string | null | undefined, ownerByTeam?: Map<stri
   return ` (${entry.owner})`
 }
 
+/** Resolve a team name to owner display name when available */
+export function ownerName(teamName: string | null | undefined, ownerByTeam?: Map<string, TeamOwnerEntry>): string {
+  if (!teamName || !ownerByTeam) return teamName || ''
+  const entry = ownerByTeam.get(teamName)
+  return entry?.owner || teamName
+}
+
 function fromLabel(p: TransactionPlayer, ownerByTeam?: Map<string, TeamOwnerEntry>): string {
   if (p.source_team) return p.source_team + ownerSuffix(p.source_team, ownerByTeam)
   if (p.source_type === 'waivers') return 'Waivers'
@@ -68,6 +75,23 @@ function toLabel(p: TransactionPlayer, ownerByTeam?: Map<string, TeamOwnerEntry>
   if (p.destination_team) return p.destination_team + ownerSuffix(p.destination_team, ownerByTeam)
   if (p.destination_type === 'waivers') return 'Waivers'
   if (p.destination_type === 'freeagents') return 'Free Agents'
+  return p.destination_type || '—'
+}
+
+/** Owner-only from label for compact views */
+export function fromOwner(p: TransactionPlayer, ownerByTeam?: Map<string, TeamOwnerEntry>): string {
+  if (p.source_team) return ownerName(p.source_team, ownerByTeam)
+  if (p.source_type === 'waivers') return 'Waivers'
+  if (p.source_type === 'freeagents') return 'FA'
+  if (p.source_type === 'draft') return 'Draft'
+  return p.source_type || '—'
+}
+
+/** Owner-only to label for compact views */
+export function toOwner(p: TransactionPlayer, ownerByTeam?: Map<string, TeamOwnerEntry>): string {
+  if (p.destination_team) return ownerName(p.destination_team, ownerByTeam)
+  if (p.destination_type === 'waivers') return 'Waivers'
+  if (p.destination_type === 'freeagents') return 'FA'
   return p.destination_type || '—'
 }
 

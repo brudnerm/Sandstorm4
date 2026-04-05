@@ -2,7 +2,7 @@ import { useState, useMemo, useCallback, useRef } from 'react'
 import type { TransactionIndexes } from '../hooks/useTransactionData'
 import type { Transaction, TeamOwnerEntry } from '../types'
 import { searchPlayers, useMemoedPlayerTransactions } from '../hooks/useTransactionData'
-import { TransactionTableRow, TransactionCard, actionClass, actionLabel } from './TransactionRow'
+import { TransactionTableRow, actionClass, actionLabel, fromOwner, toOwner, ownerName } from './TransactionRow'
 
 interface Props {
   indexes: TransactionIndexes
@@ -90,13 +90,13 @@ export default function PlayerSearch({ indexes }: Props) {
                 return (
                   <div key={name} className="pick-item" onClick={() => selectPlayer(name)}>
                     <span className="pick-item-name">{name}</span>
-                    <div style={{ display: 'flex', gap: 4, alignItems: 'center', marginLeft: 'auto' }}>
+                    <span className="pick-item-badges">
                       {[...actionsSet].slice(0, 3).map(a => (
                         <span key={a} className={`badge ${actionClass(a)}`}>{actionLabel(a)}</span>
                       ))}
-                    </div>
+                    </span>
                     <span className="pick-item-meta">
-                      {transactions.length} txn{transactions.length !== 1 ? 's' : ''}
+                      {transactions.length}×
                       &nbsp;·&nbsp;
                       {seasons[0]}
                       {seasons.length > 1 ? `–${seasons[seasons.length - 1]}` : ''}
@@ -119,7 +119,7 @@ export default function PlayerSearch({ indexes }: Props) {
             <div className="empty-state-icon search-icon-lg">⌕</div>
             <div className="empty-state-title">Search any player</div>
             <div className="empty-state-desc">
-              Type a name to find their complete transaction history across all 16 seasons
+              Type a name to find their complete transaction history across all seasons
             </div>
           </div>
         )}
@@ -181,37 +181,24 @@ function PlayerDetail({ name, transactions, seasons, ownerByTeam, onClear }: Det
 
   return (
     <>
-      {/* Back + player header */}
-      <div className="player-detail-header" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-        <button className="btn-ghost" style={{ padding: '6px 10px', flexShrink: 0 }} onClick={onClear}>
-          ← Back
-        </button>
-        <h2 style={{ fontSize: 20, fontWeight: 700, color: 'var(--text)' }}>{name}</h2>
-      </div>
-
-      {/* Stats bar */}
-      <div className="stats-bar">
-        <div className="stat-item">
-          <span className="stat-value">{transactions.length}</span>
-          <span className="stat-label">Transactions</span>
-        </div>
-        <div className="stat-divider" />
-        <div className="stat-item">
-          <span className="stat-value">{seasons.length}</span>
-          <span className="stat-label">Seasons</span>
-        </div>
-        <div className="stat-divider" />
-        <div className="stat-item">
-          <span className="stat-value">
-            {seasons.length > 1 ? `${seasons[seasons.length - 1]}–${seasons[0]}` : seasons[0]}
-          </span>
-          <span className="stat-label">Range</span>
-        </div>
-        <div className="stat-divider" />
-        <div style={{ display: 'flex', gap: 6 }}>
-          {allActions.map(a => (
-            <span key={a} className={`badge ${actionClass(a)}`}>{actionLabel(a)}</span>
-          ))}
+      {/* Compact header: back + name + inline stats */}
+      <div className="pd-header">
+        <button className="btn-ghost pd-back" onClick={onClear}>←</button>
+        <div className="pd-title-row">
+          <h2 className="pd-name">{name}</h2>
+          <div className="pd-stats-inline">
+            <span className="pd-stat">{transactions.length} txn</span>
+            <span className="pd-stat-sep">·</span>
+            <span className="pd-stat">{seasons.length} yr</span>
+            <span className="pd-stat-sep">·</span>
+            <span className="pd-stat">
+              {seasons.length > 1 ? `${seasons[seasons.length - 1]}–${seasons[0]}` : seasons[0]}
+            </span>
+            <span className="pd-stat-sep">·</span>
+            {allActions.map(a => (
+              <span key={a} className={`badge ${actionClass(a)}`}>{actionLabel(a)}</span>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -227,12 +214,12 @@ function PlayerDetail({ name, transactions, seasons, ownerByTeam, onClear }: Det
             <option key={a} value={a}>{actionLabel(a)}</option>
           ))}
         </select>
-        <span style={{ fontSize: 12, color: 'var(--text-muted)', marginLeft: 'auto' }}>
-          {filtered.length} of {transactions.length} transactions
+        <span className="pd-filter-count">
+          {filtered.length}/{transactions.length}
         </span>
       </div>
 
-      {/* Table/Cards display - switches based on screen size */}
+      {/* Transaction list */}
       {filtered.length === 0 ? (
         <div className="empty-state">
           <div className="empty-state-desc">No transactions match these filters</div>
@@ -263,13 +250,13 @@ function PlayerDetail({ name, transactions, seasons, ownerByTeam, onClear }: Det
             </div>
           </div>
 
-          {/* Mobile card view */}
-          <div className="txn-cards">
+          {/* Mobile compact view */}
+          <div className="txn-compact-list">
             {filtered.map(t => (
-              <TransactionCard
+              <CompactTransactionRow
                 key={`${t.season}-${t.transaction_id}`}
                 transaction={t}
-                showSeason
+                focusPlayer={name}
                 ownerByTeam={ownerByTeam}
               />
             ))}
@@ -277,5 +264,91 @@ function PlayerDetail({ name, transactions, seasons, ownerByTeam, onClear }: Det
         </>
       )}
     </>
+  )
+}
+
+/** Compact single-line transaction row for mobile player detail */
+function CompactTransactionRow({
+  transaction: t,
+  focusPlayer,
+  ownerByTeam,
+}: {
+  transaction: Transaction
+  focusPlayer: string
+  ownerByTeam: Map<string, TeamOwnerEntry>
+}) {
+  const focusLower = focusPlayer.toLowerCase()
+  const primary = t.players.find(p => p.name.toLowerCase() === focusLower)
+  const picks = t.picks ?? []
+  const isVetoed = t.status === 'vetoed'
+
+  // Picks-only trade (no focused player in this txn)
+  if (!primary && picks.length > 0) {
+    const pk = picks[0]!
+    return (
+      <div className={`tc-row${isVetoed ? ' tc-row--vetoed' : ''}`}>
+        <div className="tc-left">
+          <span className="badge badge-season tc-season">{t.season}</span>
+          <span className="badge badge-trade">TRADE</span>
+          {isVetoed && <span className="badge badge-vetoed">V</span>}
+        </div>
+        <div className="tc-detail">
+          <span className="tc-flow">
+            {ownerName(pk.source_team, ownerByTeam)} → {ownerName(pk.destination_team, ownerByTeam)}
+          </span>
+          <span className="tc-meta">{t.date.slice(5)}</span>
+        </div>
+      </div>
+    )
+  }
+
+  if (!primary) return null
+
+  const exchange = t.players.filter(p => p.name.toLowerCase() !== focusLower)
+
+  return (
+    <div className={`tc-row${isVetoed ? ' tc-row--vetoed' : ''}`}>
+      <div className="tc-left">
+        <span className="badge badge-season tc-season">{t.season}</span>
+        <span className={`badge ${actionClass(primary.action)}`}>
+          {actionLabel(primary.action)}
+        </span>
+        {isVetoed && <span className="badge badge-vetoed">V</span>}
+      </div>
+      <div className="tc-detail">
+        <span className="tc-flow">
+          {fromOwner(primary, ownerByTeam)} → {toOwner(primary, ownerByTeam)}
+        </span>
+        {primary.draft_round != null && (
+          <span className="tc-draft-info">
+            Rd {primary.draft_round}, Pick {primary.draft_pick}
+          </span>
+        )}
+        {exchange.length > 0 && (
+          <span className="tc-exchange">
+            {exchange.map((ep, i) => (
+              <span key={ep.player_key}>
+                {i > 0 && ', '}
+                <span className={`tc-exchange-action ${actionClass(ep.action)}-text`}>
+                  {actionLabel(ep.action)}
+                </span>
+                {' '}{ep.name}
+              </span>
+            ))}
+          </span>
+        )}
+        {picks.length > 0 && (
+          <span className="tc-exchange">
+            {picks.map((pk, i) => (
+              <span key={i}>
+                {i > 0 && ', '}
+                {pk.round === 1 ? '1st' : pk.round === 2 ? '2nd' : pk.round === 3 ? '3rd' : `${pk.round}th`} rd pick
+              </span>
+            ))}
+          </span>
+        )}
+        <span className="tc-meta">{t.date.slice(5)}</span>
+      </div>
+    </div>
   )
 }
