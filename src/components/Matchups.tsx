@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect, useCallback } from 'react'
 import type { LeagueConfig } from '../leagueConfig'
 import type { MatchupData, MatchupTeam, Matchup as MatchupType } from '../types'
 import { useMatchupData } from '../hooks/useMatchupData'
@@ -14,7 +14,18 @@ function timeAgo(iso: string): string {
   return `${Math.floor(hrs / 24)}d ago`
 }
 
-/** Determine if statA beats statB for a given category */
+/** Normalize an owner name to a URL-safe hash fragment */
+function ownerToHash(owner: string): string {
+  return owner.toLowerCase().replace(/\s+/g, '')
+}
+
+/** Find an owner by hash fragment, case-insensitive */
+function ownerFromHash(hash: string, owners: string[]): string | undefined {
+  const normalized = hash.replace(/^#/, '').toLowerCase()
+  return owners.find(o => ownerToHash(o) === normalized)
+}
+
+/** Determine if statA beats statB for a given category (from A's perspective) */
 function compareStat(
   cat: string,
   valA: string,
@@ -31,7 +42,7 @@ function compareStat(
   return a > b ? 'win' : 'loss'
 }
 
-/** Compute a hypothetical W-L-T record: home team's record vs the other team */
+/** Compute W-L-T record from the home team's perspective vs the other team */
 function computeRecord(
   home: MatchupTeam,
   other: MatchupTeam,
@@ -49,35 +60,31 @@ function computeRecord(
   return { w, l, t }
 }
 
-/** Build the matchup order for a given owner starting from the current week */
+/** Build the matchup order starting from the selected week */
 function getMatchupOrder(
   allMatchups: Record<number, MatchupType[]>,
   homeOwner: string,
   currentWeek: number,
   totalWeeks: number,
 ): string[] {
-  // Build ordered list: current week opponent, next week, etc., wrapping around
   const order: string[] = []
   const seen = new Set<string>()
-
   for (let offset = 0; offset < totalWeeks; offset++) {
     const week = ((currentWeek - 1 + offset) % totalWeeks) + 1
-    const weekMatchups = allMatchups[week] ?? []
-    const matchup = weekMatchups.find(m =>
+    const matchup = (allMatchups[week] ?? []).find(m =>
       m.teams.some(t => t.owner.toLowerCase() === homeOwner.toLowerCase())
     )
     if (matchup) {
-      const opponent = matchup.teams.find(t => t.owner.toLowerCase() !== homeOwner.toLowerCase())
-      if (opponent && !seen.has(opponent.owner)) {
-        order.push(opponent.owner)
-        seen.add(opponent.owner)
+      const opp = matchup.teams.find(t => t.owner.toLowerCase() !== homeOwner.toLowerCase())
+      if (opp && !seen.has(opp.owner)) {
+        order.push(opp.owner)
+        seen.add(opp.owner)
       }
     }
   }
   return order
 }
 
-/** Split stat keys into batting and pitching groups based on league config */
 function splitStatCategories(
   statKeys: string[],
   pitchingStatKeys: Set<string>,
@@ -98,9 +105,52 @@ interface ComparisonRow {
   teamName: string
   teamKey: string
   stats: Record<string, { value: string; result: 'win' | 'loss' | 'tie' }>
-  score: { w: number; l: number; t: number } | null // null for home team
+  score: { w: number; l: number; t: number } | null
   isHome: boolean
   isOpponent: boolean
+}
+
+function KpiBar({ rows }: { rows: ComparisonRow[] }) {
+  const others = rows.filter(r => !r.isHome && r.score !== null)
+  const beaten = others.filter(r => r.score!.w > r.score!.l)
+  const lostTo = others.filter(r => r.score!.w < r.score!.l)
+
+  // Best = home wins most scoring categories (highest w - l margin)
+  const best = others.reduce<ComparisonRow | null>((best, r) => {
+    if (!best || !best.score || !r.score) return r
+    return (r.score.w - r.score.l) > (best.score.w - best.score.l) ? r : best
+  }, null)
+
+  // Worst = home wins fewest scoring categories (lowest w - l margin)
+  const worst = others.reduce<ComparisonRow | null>((worst, r) => {
+    if (!worst || !worst.score || !r.score) return r
+    return (r.score.w - r.score.l) < (worst.score.w - worst.score.l) ? r : worst
+  }, null)
+
+  if (others.length === 0) return null
+
+  return (
+    <div className="mu-kpi-bar">
+      <div className="mu-kpi">
+        <span className="mu-kpi-value mu-kpi-win">{beaten.length}</span>
+        <span className="mu-kpi-label">Would Beat</span>
+      </div>
+      <div className="mu-kpi">
+        <span className="mu-kpi-value mu-kpi-loss">{lostTo.length}</span>
+        <span className="mu-kpi-label">Would Lose To</span>
+      </div>
+      <div className="mu-kpi">
+        <span className="mu-kpi-value mu-kpi-best">{best?.score ? `${best.score.w}-${best.score.l}-${best.score.t}` : '—'}</span>
+        <span className="mu-kpi-label">Best Matchup</span>
+        <span className="mu-kpi-sub">{best?.owner ?? '—'}</span>
+      </div>
+      <div className="mu-kpi">
+        <span className="mu-kpi-value mu-kpi-worst">{worst?.score ? `${worst.score.w}-${worst.score.l}-${worst.score.t}` : '—'}</span>
+        <span className="mu-kpi-label">Worst Matchup</span>
+        <span className="mu-kpi-sub">{worst?.owner ?? '—'}</span>
+      </div>
+    </div>
+  )
 }
 
 function MatchupsReady({ data, league }: { data: MatchupData; league: LeagueConfig }) {
@@ -108,24 +158,50 @@ function MatchupsReady({ data, league }: { data: MatchupData; league: LeagueConf
   const nonScoring = useMemo(() => new Set(league.nonScoringStats), [league])
   const pitchingStatKeySet = useMemo(() => new Set(league.pitchingStatKeys), [league])
 
-  const owners = useMemo(() => {
-    return data.standings.map(s => s.owner).sort((a, b) => a.localeCompare(b))
-  }, [data.standings])
+  const owners = useMemo(() =>
+    data.standings.map(s => s.owner).sort((a, b) => a.localeCompare(b)),
+    [data.standings]
+  )
 
   const defaultOwner = useMemo(() => {
-    const angel = owners.find(o => o.toLowerCase() === 'angel escobar')
-    return angel ?? owners[0] ?? ''
+    // 1. Try URL hash
+    const fromHash = ownerFromHash(window.location.hash, owners)
+    if (fromHash) return fromHash
+    // 2. Fall back to angel escobar or first owner
+    return owners.find(o => o.toLowerCase() === 'angel escobar') ?? owners[0] ?? ''
   }, [owners])
 
   const [homeOwner, setHomeOwner] = useState(defaultOwner)
   const [selectedWeek, setSelectedWeek] = useState(data.current_week)
 
-  // Get matchups for selected week (only from all_matchups, no fallback to avoid stale data)
-  const weekMatchups = useMemo(() => {
-    return data.all_matchups?.[selectedWeek] ?? []
-  }, [data, selectedWeek])
+  // Sync URL hash when homeOwner changes
+  const handleSetHomeOwner = useCallback((owner: string) => {
+    setHomeOwner(owner)
+    history.replaceState(null, '', '#' + ownerToHash(owner))
+  }, [])
 
-  // Find home team data in selected week
+  // Listen for hash changes (back/forward navigation)
+  useEffect(() => {
+    const onHashChange = () => {
+      const found = ownerFromHash(window.location.hash, owners)
+      if (found) setHomeOwner(found)
+    }
+    window.addEventListener('hashchange', onHashChange)
+    return () => window.removeEventListener('hashchange', onHashChange)
+  }, [owners])
+
+  // Set initial hash if not already set
+  useEffect(() => {
+    if (!window.location.hash) {
+      history.replaceState(null, '', '#' + ownerToHash(homeOwner))
+    }
+  }, [homeOwner])
+
+  const weekMatchups = useMemo(() =>
+    data.all_matchups?.[selectedWeek] ?? [],
+    [data, selectedWeek]
+  )
+
   const homeTeam = useMemo(() => {
     for (const m of weekMatchups) {
       const team = m.teams.find(t => t.owner.toLowerCase() === homeOwner.toLowerCase())
@@ -134,7 +210,6 @@ function MatchupsReady({ data, league }: { data: MatchupData; league: LeagueConf
     return null
   }, [weekMatchups, homeOwner])
 
-  // Get stat categories from any matchup
   const statKeys = useMemo(() => {
     if (weekMatchups.length === 0) return []
     return Object.keys(weekMatchups[0].teams[0].stats)
@@ -145,37 +220,23 @@ function MatchupsReady({ data, league }: { data: MatchupData; league: LeagueConf
     [statKeys, pitchingStatKeySet, nonScoring]
   )
 
-  // Build matchup order
   const matchupOrder = useMemo(() => {
     if (!data.all_matchups) return []
     return getMatchupOrder(data.all_matchups, homeOwner, selectedWeek, data.total_weeks ?? 26)
   }, [data.all_matchups, homeOwner, selectedWeek, data.total_weeks])
 
-  // Find the current opponent
   const currentOpponent = useMemo(() => {
     const matchup = weekMatchups.find(m =>
       m.teams.some(t => t.owner.toLowerCase() === homeOwner.toLowerCase())
     )
-    if (!matchup) return null
-    return matchup.teams.find(t => t.owner.toLowerCase() !== homeOwner.toLowerCase()) ?? null
+    return matchup?.teams.find(t => t.owner.toLowerCase() !== homeOwner.toLowerCase()) ?? null
   }, [weekMatchups, homeOwner])
 
-  // Build comparison rows
   const rows = useMemo((): ComparisonRow[] => {
     if (!homeTeam) return []
-
-    // Map all teams from this week's matchups
-    const allTeams: MatchupTeam[] = []
-    for (const m of weekMatchups) {
-      for (const t of m.teams) {
-        allTeams.push(t)
-      }
-    }
-
-    // Build rows with computed scores
+    const allTeams: MatchupTeam[] = weekMatchups.flatMap(m => [...m.teams])
     const rowMap = new Map<string, ComparisonRow>()
 
-    // Home team row
     rowMap.set(homeOwner.toLowerCase(), {
       owner: homeTeam.owner,
       teamName: homeTeam.team_name,
@@ -186,51 +247,39 @@ function MatchupsReady({ data, league }: { data: MatchupData; league: LeagueConf
       isOpponent: false,
     })
 
-    // Other teams
     for (const team of allTeams) {
       if (team.owner.toLowerCase() === homeOwner.toLowerCase()) continue
       if (rowMap.has(team.owner.toLowerCase())) continue
-
-      const record = computeRecord(homeTeam, team, lowerIsBetter, nonScoring)
-
       rowMap.set(team.owner.toLowerCase(), {
         owner: team.owner,
         teamName: team.team_name,
         teamKey: team.team_key,
         stats: team.stats,
-        score: record,
+        score: computeRecord(homeTeam, team, lowerIsBetter, nonScoring),
         isHome: false,
         isOpponent: currentOpponent?.owner.toLowerCase() === team.owner.toLowerCase(),
       })
     }
 
-    // Sort by matchup order: home first, then matchup schedule order
     const sorted: ComparisonRow[] = []
     const homeRow = rowMap.get(homeOwner.toLowerCase())
     if (homeRow) sorted.push(homeRow)
 
     for (const oppOwner of matchupOrder) {
       const row = rowMap.get(oppOwner.toLowerCase())
-      if (row) {
-        sorted.push(row)
-        rowMap.delete(oppOwner.toLowerCase())
-      }
+      if (row) { sorted.push(row); rowMap.delete(oppOwner.toLowerCase()) }
     }
-
-    // Any remaining teams not in the schedule
     rowMap.delete(homeOwner.toLowerCase())
-    for (const row of rowMap.values()) {
-      sorted.push(row)
-    }
+    for (const row of rowMap.values()) sorted.push(row)
 
     return sorted
-  }, [homeTeam, weekMatchups, homeOwner, matchupOrder, currentOpponent])
+  }, [homeTeam, weekMatchups, homeOwner, matchupOrder, currentOpponent, lowerIsBetter, nonScoring])
 
   const totalWeeks = data.total_weeks ?? 26
 
   return (
     <>
-      {/* Controls bar */}
+      {/* Controls */}
       <div className="mu-controls">
         <div className="mu-control-group">
           <label className="mu-label" htmlFor="home-owner">Home Team</label>
@@ -238,7 +287,7 @@ function MatchupsReady({ data, league }: { data: MatchupData; league: LeagueConf
             id="home-owner"
             className="mu-select"
             value={homeOwner}
-            onChange={e => setHomeOwner(e.target.value)}
+            onChange={e => handleSetHomeOwner(e.target.value)}
           >
             {owners.map(o => (
               <option key={o} value={o}>{o}</option>
@@ -252,9 +301,7 @@ function MatchupsReady({ data, league }: { data: MatchupData; league: LeagueConf
             disabled={selectedWeek <= 1}
             onClick={() => setSelectedWeek(w => Math.max(1, w - 1))}
             aria-label="Previous week"
-          >
-            &#8249;
-          </button>
+          >&#8249;</button>
           <div className="mu-week-display">
             <span className="mu-week-label">Week {selectedWeek}</span>
             {selectedWeek === data.current_week && (
@@ -266,92 +313,83 @@ function MatchupsReady({ data, league }: { data: MatchupData; league: LeagueConf
             disabled={selectedWeek >= totalWeeks}
             onClick={() => setSelectedWeek(w => Math.min(totalWeeks, w + 1))}
             aria-label="Next week"
-          >
-            &#8250;
-          </button>
+          >&#8250;</button>
         </div>
 
         <span className="mu-updated">Updated {timeAgo(data.generated_at)}</span>
       </div>
 
-      {/* Comparison table */}
       {rows.length === 0 ? (
         <div className="empty-state">
           <div className="empty-state-title">No matchup data for week {selectedWeek}</div>
           <div className="empty-state-desc">Stats will appear once games begin.</div>
         </div>
       ) : (
-        <div className="mu-table-wrap">
-          <table className="mu-table">
-            <thead>
-              <tr>
-                <th className="mu-th-sticky mu-th-owner">Owner</th>
-                <th className="mu-th-sticky mu-th-score">vs</th>
-                {battingStats.map(s => (
-                  <th key={s} className="mu-th-stat">{s}</th>
-                ))}
-                <th className="mu-th-divider" />
-                {pitchingStats.map(s => (
-                  <th key={s} className="mu-th-stat">{s}</th>
-                ))}
-                <th className="mu-th-divider" />
-                <th className="mu-th-team">Team</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map(row => (
-                <tr
-                  key={row.teamKey}
-                  className={`mu-row ${row.isHome ? 'mu-row-home' : ''} ${row.isOpponent ? 'mu-row-opponent' : ''}`}
-                >
-                  <td className="mu-td-sticky mu-td-owner">{row.owner}</td>
-                  <td className="mu-td-sticky mu-td-score">
-                    {row.isHome ? (
-                      <span className="mu-score-home">—</span>
-                    ) : row.score ? (
-                      <span className={`mu-score ${row.score.w > row.score.l ? 'mu-score-winning' : row.score.w < row.score.l ? 'mu-score-losing' : 'mu-score-tied'}`}>
-                        {row.score.w}-{row.score.l}-{row.score.t}
-                      </span>
-                    ) : '—'}
-                  </td>
-                  {battingStats.map(s => {
-                    const stat = row.stats[s]
-                    const cellClass = row.isHome
-                      ? ''
-                      : compareStat(s, stat?.value ?? '', homeTeam?.stats[s]?.value ?? '', lowerIsBetter, nonScoring) === 'win'
-                        ? 'mu-stat-win'
-                        : compareStat(s, stat?.value ?? '', homeTeam?.stats[s]?.value ?? '', lowerIsBetter, nonScoring) === 'loss'
-                          ? 'mu-stat-loss'
-                          : 'mu-stat-tie'
-                    return (
-                      <td key={s} className={`mu-td-stat ${cellClass}`}>
-                        {stat?.value ?? '—'}
-                      </td>
-                    )
-                  })}
-                  <td className="mu-td-divider" />
-                  {pitchingStats.map(s => {
-                    const stat = row.stats[s]
-                    const cellClass = row.isHome
-                      ? ''
-                      : compareStat(s, stat?.value ?? '', homeTeam?.stats[s]?.value ?? '', lowerIsBetter, nonScoring) === 'win'
-                        ? 'mu-stat-win'
-                        : compareStat(s, stat?.value ?? '', homeTeam?.stats[s]?.value ?? '', lowerIsBetter, nonScoring) === 'loss'
-                          ? 'mu-stat-loss'
-                          : 'mu-stat-tie'
-                    return (
-                      <td key={s} className={`mu-td-stat ${cellClass}`}>
-                        {stat?.value ?? '—'}
-                      </td>
-                    )
-                  })}
-                  <td className="mu-td-divider" />
-                  <td className="mu-td-team">{row.teamName}</td>
+        <>
+          {/* KPI bar */}
+          <KpiBar rows={rows} />
+
+          {/* Comparison table */}
+          <div className="mu-table-wrap">
+            <table className="mu-table">
+              <thead>
+                <tr>
+                  <th className="mu-th-sticky mu-th-owner">Owner</th>
+                  <th className="mu-th-sticky mu-th-score">vs</th>
+                  {battingStats.map(s => (
+                    <th key={s} className="mu-th-stat">{s}</th>
+                  ))}
+                  <th className="mu-th-divider" />
+                  {pitchingStats.map(s => (
+                    <th key={s} className="mu-th-stat">{s}</th>
+                  ))}
+                  <th className="mu-th-divider" />
+                  <th className="mu-th-team">Team</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+              </thead>
+              <tbody>
+                {rows.map(row => (
+                  <tr
+                    key={row.teamKey}
+                    className={`mu-row${row.isHome ? ' mu-row-home' : ''}${row.isOpponent ? ' mu-row-opponent' : ''}`}
+                  >
+                    <td className="mu-td-sticky mu-td-owner">{row.owner}</td>
+                    <td className="mu-td-sticky mu-td-score">
+                      {row.isHome ? (
+                        <span className="mu-score-home">—</span>
+                      ) : row.score ? (
+                        <span className={`mu-score ${row.score.w > row.score.l ? 'mu-score-winning' : row.score.w < row.score.l ? 'mu-score-losing' : 'mu-score-tied'}`}>
+                          {row.score.w}-{row.score.l}-{row.score.t}
+                        </span>
+                      ) : '—'}
+                    </td>
+                    {battingStats.map(s => {
+                      const stat = row.stats[s]
+                      const dir = row.isHome ? null : compareStat(s, stat?.value ?? '', homeTeam?.stats[s]?.value ?? '', lowerIsBetter, nonScoring)
+                      return (
+                        <td key={s} className={`mu-td-stat${dir === 'win' ? ' mu-stat-loss' : dir === 'loss' ? ' mu-stat-win' : dir === 'tie' ? ' mu-stat-tie' : ''}`}>
+                          {stat?.value ?? '—'}
+                        </td>
+                      )
+                    })}
+                    <td className="mu-td-divider" />
+                    {pitchingStats.map(s => {
+                      const stat = row.stats[s]
+                      const dir = row.isHome ? null : compareStat(s, stat?.value ?? '', homeTeam?.stats[s]?.value ?? '', lowerIsBetter, nonScoring)
+                      return (
+                        <td key={s} className={`mu-td-stat${dir === 'win' ? ' mu-stat-loss' : dir === 'loss' ? ' mu-stat-win' : dir === 'tie' ? ' mu-stat-tie' : ''}`}>
+                          {stat?.value ?? '—'}
+                        </td>
+                      )
+                    })}
+                    <td className="mu-td-divider" />
+                    <td className="mu-td-team">{row.teamName}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
       )}
     </>
   )
@@ -363,9 +401,7 @@ export default function Matchups({ league }: { league: LeagueConfig }) {
   return (
     <div className="tab-panel">
       <div className="panel-inner mu-panel">
-        {state.status === 'loading' && (
-          <LoadingSpinner message="Loading matchups..." />
-        )}
+        {state.status === 'loading' && <LoadingSpinner message="Loading matchups..." />}
         {state.status === 'error' && (
           <div className="empty-state">
             <div className="empty-state-icon error-icon">!</div>
@@ -381,9 +417,7 @@ export default function Matchups({ league }: { league: LeagueConfig }) {
             </div>
           </div>
         )}
-        {state.status === 'ready' && (
-          <MatchupsReady data={state.data} league={league} />
-        )}
+        {state.status === 'ready' && <MatchupsReady data={state.data} league={league} />}
       </div>
     </div>
   )
