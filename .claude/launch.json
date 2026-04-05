@@ -3,9 +3,10 @@
   "configurations": [
     {
       "name": "sandstorm4",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
-      "port": 5173
+      "runtimeExecutable": "/Users/mattbrudner/Projects/sandstorm4/.claude/dev.sh",
+      "runtimeArgs": [],
+      "port": 5173,
+      "autoPort": true
     }
   ]
 }
