@@ -744,6 +744,163 @@ button:disabled {
   color: var(--text-dim);
 }
 
+/* ---- Player Detail (compact header) ---- */
+
+.pd-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.pd-back {
+  padding: 4px 8px;
+  flex-shrink: 0;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.pd-title-row {
+  flex: 1;
+  min-width: 0;
+}
+
+.pd-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.pd-stats-inline {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 2px;
+  flex-wrap: wrap;
+}
+
+.pd-stat {
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.pd-stat-sep {
+  font-size: 10px;
+  color: var(--text-dim);
+}
+
+.pd-filter-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* ---- Compact transaction rows (mobile player detail) ---- */
+
+.txn-compact-list {
+  display: none; /* shown on mobile via media query */
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.tc-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.tc-row:last-child {
+  border-bottom: none;
+}
+
+.tc-row--vetoed {
+  opacity: 0.55;
+}
+
+.tc-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+  width: 48px;
+}
+
+.tc-season {
+  font-size: 9px !important;
+  padding: 1px 4px !important;
+}
+
+.tc-detail {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tc-flow {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tc-draft-info {
+  font-size: 11px;
+  color: var(--draft);
+  font-weight: 500;
+}
+
+.tc-exchange {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+.tc-exchange-action {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.badge-add-text { color: var(--add); }
+.badge-drop-text { color: var(--drop); }
+.badge-trade-text { color: var(--trade); }
+.badge-keep-text { color: var(--keep); }
+.badge-draft-text { color: var(--draft); }
+
+.tc-meta {
+  font-size: 11px;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Pick list badges inline */
+.pick-item-badges {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
 /* Hall of Fame */
 .hof-grid {
   display: grid;
@@ -1828,16 +1985,21 @@ button:disabled {
 
 /* Mobile phones (480px and below) */
 @media (max-width: 480px) {
-  /* Transaction table → card layout */
+  /* Transaction table → compact list */
   .txn-table {
     display: none;
   }
 
-  /* Show transaction cards on mobile */
+  /* Show compact list on mobile */
+  .txn-compact-list {
+    display: flex;
+  }
+
+  /* Show transaction cards on mobile (for season/team views) */
   .txn-cards {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
   }
 
   /* Stats bar stacks vertically */
@@ -1865,49 +2027,59 @@ button:disabled {
     font-size: 10px;
   }
 
-  /* Controls stack better on small screens */
+  /* Controls row: side-by-side selects */
   .controls-row {
-    gap: 8px;
+    gap: 6px;
   }
 
   .controls-row select {
-    flex: 1 1 100%;
-    min-width: 100px;
+    flex: 1 1 0;
+    min-width: 0;
   }
 
-  /* Pick list optimization */
+  /* Pick list: compact single-line rows */
   .pick-item {
-    padding: 12px;
-    gap: 8px;
-    flex-wrap: wrap;
+    padding: 10px 12px;
+    gap: 6px;
   }
 
   .pick-item-name {
-    flex: 1 1 100%;
-    margin-bottom: 4px;
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .pick-item-badges {
+    gap: 3px;
+  }
+
+  .pick-item-badges .badge {
+    font-size: 8px;
+    padding: 1px 4px;
   }
 
   .pick-item-meta {
-    margin-left: 0;
+    font-size: 11px;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
-  /* Player detail header responsiveness */
-  .player-detail-header {
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-start;
+  /* Player detail header compact */
+  .pd-header {
+    padding: 8px 10px;
+    gap: 6px;
   }
 
-  .player-detail-header button {
-    padding: 10px 12px;
+  .pd-name {
+    font-size: 16px;
+  }
+
+  .pd-back {
     min-height: 44px;
     display: flex;
     align-items: center;
-  }
-
-  .player-detail-header h2 {
-    font-size: 18px;
-    margin-top: 4px;
   }
 
   /* Search wrap optimization */
@@ -1949,18 +2121,16 @@ button:disabled {
     gap: 10px;
   }
 
-  /* Reduce font sizes further for tiny screens */
   body {
     font-size: 13px;
   }
 
-  /* Pick list metadata hidden on very small screens */
   .pick-item-meta {
     display: none;
   }
 
   .pick-item {
-    padding: 10px;
+    padding: 8px 10px;
   }
 
   .stats-bar {
@@ -1971,7 +2141,6 @@ button:disabled {
     font-size: 14px;
   }
 
-  /* Ensure button touch targets still work */
   button {
     padding: 10px 12px;
     min-height: 44px;
@@ -1979,6 +2148,28 @@ button:disabled {
 
   .controls-row {
     gap: 6px;
+  }
+
+  /* Tighter compact rows */
+  .tc-row {
+    padding: 6px 8px;
+    gap: 6px;
+  }
+
+  .tc-left {
+    width: 42px;
+  }
+
+  .tc-flow {
+    font-size: 12px;
+  }
+
+  .pd-name {
+    font-size: 15px;
+  }
+
+  .pd-stat {
+    font-size: 11px;
   }
 }
 

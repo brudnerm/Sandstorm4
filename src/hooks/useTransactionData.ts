@@ -163,21 +163,22 @@ export function searchPlayers(
     .map(({ name, transactions }) => ({ name, transactions }))
 }
 
-export function useTransactionData(): State {
+export function useTransactionData(refreshKey = 0): State {
   const [state, setState] = useState<State>({ status: 'loading' })
 
   useEffect(() => {
     let cancelled = false
+    const cacheBust = refreshKey > 0 ? `?_=${refreshKey}` : ''
     Promise.all([
-      fetch(`${import.meta.env.BASE_URL}data/all_transactions.json`).then(r => {
+      fetch(`${import.meta.env.BASE_URL}data/all_transactions.json${cacheBust}`).then(r => {
         if (!r.ok) throw new Error(`transactions HTTP ${r.status}`)
         return r.json() as Promise<TransactionData>
       }),
-      fetch(`${import.meta.env.BASE_URL}data/team_owners.json`).then(r => {
+      fetch(`${import.meta.env.BASE_URL}data/team_owners.json${cacheBust}`).then(r => {
         if (!r.ok) throw new Error(`team_owners HTTP ${r.status}`)
         return r.json() as Promise<TeamOwnerEntry[]>
       }),
-      fetch(`${import.meta.env.BASE_URL}data/all_drafts.json`).then(r => {
+      fetch(`${import.meta.env.BASE_URL}data/all_drafts.json${cacheBust}`).then(r => {
         if (!r.ok) throw new Error(`drafts HTTP ${r.status}`)
         return r.json() as Promise<DraftData>
       }),
@@ -199,7 +200,7 @@ export function useTransactionData(): State {
         setState({ status: 'error', message: String(err) })
       })
     return () => { cancelled = true }
-  }, [])
+  }, [refreshKey])
 
   return state
 }
@@ -211,6 +212,6 @@ export function useMemoedPlayerTransactions(
   return useMemo(() => {
     if (!canonicalName) return []
     const txns = playerNames.get(canonicalName) ?? []
-    return [...txns].sort((a, b) => a.timestamp - b.timestamp)
+    return [...txns].sort((a, b) => b.timestamp - a.timestamp)
   }, [playerNames, canonicalName])
 }
