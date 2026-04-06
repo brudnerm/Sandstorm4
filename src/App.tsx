@@ -16,7 +16,7 @@ import Standings from './components/Standings'
 const ALL_TABS: Array<{ id: TabId; label: string }> = [
   { id: 'matchups', label: 'Matchups' },
   { id: 'standings', label: 'Standings' },
-  { id: 'player',  label: 'Player Search' },
+  { id: 'player',  label: 'Transactions' },
   { id: 'season',  label: 'Season Browser' },
   { id: 'team',    label: 'Team History' },
   { id: 'draft',   label: 'Draft History' },
