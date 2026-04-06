@@ -3,7 +3,7 @@
   "league_name": "sidebar",
   "current_week": 3,
   "total_weeks": "25",
-  "generated_at": "2026-04-06T21:13:43.561Z",
+  "generated_at": "2026-04-06T21:30:20.045Z",
   "standings": [
     {
       "team_key": "469.l.20795.t.9",
@@ -125,10 +125,10 @@
           "team_key": "469.l.20795.t.1",
           "team_name": "Sod Poodles",
           "owner": "Mark",
-          "points": "1",
+          "points": "3",
           "stats": {
             "H/AB": {
-              "value": "0/1",
+              "value": "1/2",
               "result": "tie"
             },
             "R": {
@@ -156,12 +156,12 @@
               "result": "tie"
             },
             "AVG": {
-              "value": ".000",
-              "result": "loss"
+              "value": ".500",
+              "result": "win"
             },
             "OPS": {
-              "value": ".500",
-              "result": "loss"
+              "value": "1.667",
+              "result": "win"
             },
             "IP": {
               "value": "0.0",
@@ -197,10 +197,10 @@
           "team_key": "469.l.20795.t.8",
           "team_name": "I Want Yandy",
           "owner": "Nick",
-          "points": "4",
+          "points": "2",
           "stats": {
             "H/AB": {
-              "value": "3/6",
+              "value": "3/8",
               "result": "tie"
             },
             "R": {
@@ -228,12 +228,12 @@
               "result": "tie"
             },
             "AVG": {
-              "value": ".500",
-              "result": "win"
+              "value": ".375",
+              "result": "loss"
             },
             "OPS": {
-              "value": "1.000",
-              "result": "win"
+              "value": ".750",
+              "result": "loss"
             },
             "IP": {
               "value": "0.0",
@@ -275,7 +275,7 @@
           "team_key": "469.l.20795.t.2",
           "team_name": "She Said 'Seiya Later Boy'",
           "owner": "Jamison",
-          "points": "0",
+          "points": "1",
           "stats": {
             "H/AB": {
               "value": "0/0",
@@ -350,7 +350,7 @@
           "points": "2",
           "stats": {
             "H/AB": {
-              "value": "0/2",
+              "value": "0/3",
               "result": "tie"
             },
             "R": {
@@ -2382,10 +2382,10 @@
             "team_key": "469.l.20795.t.1",
             "team_name": "Sod Poodles",
             "owner": "Mark",
-            "points": "1",
+            "points": "3",
             "stats": {
               "H/AB": {
-                "value": "0/1",
+                "value": "1/2",
                 "result": "tie"
               },
               "R": {
@@ -2413,12 +2413,12 @@
                 "result": "tie"
               },
               "AVG": {
-                "value": ".000",
-                "result": "loss"
+                "value": ".500",
+                "result": "win"
               },
               "OPS": {
-                "value": ".500",
-                "result": "loss"
+                "value": "1.667",
+                "result": "win"
               },
               "IP": {
                 "value": "0.0",
@@ -2454,10 +2454,10 @@
             "team_key": "469.l.20795.t.8",
             "team_name": "I Want Yandy",
             "owner": "Nick",
-            "points": "4",
+            "points": "2",
             "stats": {
               "H/AB": {
-                "value": "3/6",
+                "value": "3/8",
                 "result": "tie"
               },
               "R": {
@@ -2485,12 +2485,12 @@
                 "result": "tie"
               },
               "AVG": {
-                "value": ".500",
-                "result": "win"
+                "value": ".375",
+                "result": "loss"
               },
               "OPS": {
-                "value": "1.000",
-                "result": "win"
+                "value": ".750",
+                "result": "loss"
               },
               "IP": {
                 "value": "0.0",
@@ -2532,7 +2532,7 @@
             "team_key": "469.l.20795.t.2",
             "team_name": "She Said 'Seiya Later Boy'",
             "owner": "Jamison",
-            "points": "0",
+            "points": "1",
             "stats": {
               "H/AB": {
                 "value": "0/0",
@@ -2607,7 +2607,7 @@
             "points": "2",
             "stats": {
               "H/AB": {
-                "value": "0/2",
+                "value": "0/3",
                 "result": "tie"
               },
               "R": {
