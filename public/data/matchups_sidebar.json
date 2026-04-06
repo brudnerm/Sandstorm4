@@ -3,7 +3,7 @@
   "league_name": "sidebar",
   "current_week": 3,
   "total_weeks": "25",
-  "generated_at": "2026-04-06T19:48:06.357Z",
+  "generated_at": "2026-04-06T20:13:44.732Z",
   "standings": [
     {
       "team_key": "469.l.20795.t.9",
@@ -125,7 +125,7 @@
           "team_key": "469.l.20795.t.1",
           "team_name": "Sod Poodles",
           "owner": "Mark",
-          "points": "0",
+          "points": "1",
           "stats": {
             "H/AB": {
               "value": "0/0",
@@ -157,11 +157,11 @@
             },
             "AVG": {
               "value": "",
-              "result": "tie"
+              "result": "loss"
             },
             "OPS": {
               "value": "",
-              "result": "tie"
+              "result": "loss"
             },
             "IP": {
               "value": "0.0",
@@ -197,10 +197,10 @@
           "team_key": "469.l.20795.t.8",
           "team_name": "I Want Yandy",
           "owner": "Nick",
-          "points": "0",
+          "points": "2",
           "stats": {
             "H/AB": {
-              "value": "0/0",
+              "value": "0/1",
               "result": "tie"
             },
             "R": {
@@ -228,12 +228,12 @@
               "result": "tie"
             },
             "AVG": {
-              "value": "",
-              "result": "tie"
+              "value": ".000",
+              "result": "win"
             },
             "OPS": {
-              "value": "",
-              "result": "tie"
+              "value": ".000",
+              "result": "win"
             },
             "IP": {
               "value": "0.0",
@@ -449,7 +449,7 @@
             },
             "K": {
               "value": "0",
-              "result": "tie"
+              "result": "loss"
             },
             "GIDP": {
               "value": "0",
@@ -477,11 +477,11 @@
             },
             "ERA": {
               "value": "",
-              "result": "tie"
+              "result": "loss"
             },
             "WHIP": {
               "value": "",
-              "result": "tie"
+              "result": "loss"
             },
             "K/BB": {
               "value": "",
@@ -497,7 +497,7 @@
           "team_key": "469.l.20795.t.10",
           "team_name": "Simpson Samson",
           "owner": "KC",
-          "points": "0",
+          "points": "3",
           "stats": {
             "H/AB": {
               "value": "0/0",
@@ -520,8 +520,8 @@
               "result": "tie"
             },
             "K": {
-              "value": "0",
-              "result": "tie"
+              "value": "1",
+              "result": "win"
             },
             "GIDP": {
               "value": "0",
@@ -536,7 +536,7 @@
               "result": "tie"
             },
             "IP": {
-              "value": "0.0",
+              "value": "0.1",
               "result": "tie"
             },
             "L": {
@@ -548,12 +548,12 @@
               "result": "tie"
             },
             "ERA": {
-              "value": "",
-              "result": "tie"
+              "value": "0.00",
+              "result": "win"
             },
             "WHIP": {
-              "value": "",
-              "result": "tie"
+              "value": "0.00",
+              "result": "win"
             },
             "K/BB": {
               "value": "",
@@ -2382,7 +2382,7 @@
             "team_key": "469.l.20795.t.1",
             "team_name": "Sod Poodles",
             "owner": "Mark",
-            "points": "0",
+            "points": "1",
             "stats": {
               "H/AB": {
                 "value": "0/0",
@@ -2414,11 +2414,11 @@
               },
               "AVG": {
                 "value": "",
-                "result": "tie"
+                "result": "loss"
               },
               "OPS": {
                 "value": "",
-                "result": "tie"
+                "result": "loss"
               },
               "IP": {
                 "value": "0.0",
@@ -2454,10 +2454,10 @@
             "team_key": "469.l.20795.t.8",
             "team_name": "I Want Yandy",
             "owner": "Nick",
-            "points": "0",
+            "points": "2",
             "stats": {
               "H/AB": {
-                "value": "0/0",
+                "value": "0/1",
                 "result": "tie"
               },
               "R": {
@@ -2485,12 +2485,12 @@
                 "result": "tie"
               },
               "AVG": {
-                "value": "",
-                "result": "tie"
+                "value": ".000",
+                "result": "win"
               },
               "OPS": {
-                "value": "",
-                "result": "tie"
+                "value": ".000",
+                "result": "win"
               },
               "IP": {
                 "value": "0.0",
@@ -2706,7 +2706,7 @@
               },
               "K": {
                 "value": "0",
-                "result": "tie"
+                "result": "loss"
               },
               "GIDP": {
                 "value": "0",
@@ -2734,11 +2734,11 @@
               },
               "ERA": {
                 "value": "",
-                "result": "tie"
+                "result": "loss"
               },
               "WHIP": {
                 "value": "",
-                "result": "tie"
+                "result": "loss"
               },
               "K/BB": {
                 "value": "",
@@ -2754,7 +2754,7 @@
             "team_key": "469.l.20795.t.10",
             "team_name": "Simpson Samson",
             "owner": "KC",
-            "points": "0",
+            "points": "3",
             "stats": {
               "H/AB": {
                 "value": "0/0",
@@ -2777,8 +2777,8 @@
                 "result": "tie"
               },
               "K": {
-                "value": "0",
-                "result": "tie"
+                "value": "1",
+                "result": "win"
               },
               "GIDP": {
                 "value": "0",
@@ -2793,7 +2793,7 @@
                 "result": "tie"
               },
               "IP": {
-                "value": "0.0",
+                "value": "0.1",
                 "result": "tie"
               },
               "L": {
@@ -2805,12 +2805,12 @@
                 "result": "tie"
               },
               "ERA": {
-                "value": "",
-                "result": "tie"
+                "value": "0.00",
+                "result": "win"
               },
               "WHIP": {
-                "value": "",
-                "result": "tie"
+                "value": "0.00",
+                "result": "win"
               },
               "K/BB": {
                 "value": "",
