@@ -74,6 +74,12 @@ jobs:
           YAHOO_ACCESS_TOKEN: ${{ steps.refresh-token.outputs.access_token }}
         run: npx tsx scripts/fetch-matchups.ts --ci
 
+      # Fetch current-season transactions (adds/drops/trades/draft picks)
+      - name: Fetch transactions
+        env:
+          YAHOO_ACCESS_TOKEN: ${{ steps.refresh-token.outputs.access_token }}
+        run: npx tsx scripts/fetch-transactions.ts --ci
+
       # Commit updated data to main (for persistence / history)
       - name: Commit updated data
         run: |
@@ -81,11 +87,11 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git fetch origin main
           git reset --soft origin/main
-          git add public/data/matchups_kp.json public/data/matchups_sidebar.json
+          git add public/data/matchups_kp.json public/data/matchups_sidebar.json public/data/all_transactions.json
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Update matchup data"
+            git commit -m "Update matchup + transaction data"
             git push origin main
           fi
 

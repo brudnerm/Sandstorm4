@@ -1,11 +1,12 @@
 import express from 'express'
 import { execSync } from 'child_process'
 import { readFileSync, writeFileSync } from 'fs'
-import { fileURLToPath } from 'url'
+import { fileURLToPath, pathToFileURL } from 'url'
 import path from 'path'
 import https from 'https'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const REFRESH_SERVICE_URL = pathToFileURL(path.resolve(__dirname, 'server', 'refreshService.ts')).href
 const MCP_DIR = path.resolve(__dirname, '../yahoo-fantasy-baseball-mcp')
 const ENV_PATH = path.join(MCP_DIR, '.env')
 const DATA_PATH = path.join(MCP_DIR, 'data', 'all_transactions.json')
@@ -610,7 +611,7 @@ app.post('/api/refresh-current-season', async (_req, res) => {
   }
 
   try {
-    const { refreshCurrentSeason } = await import('./server/refreshService.ts')
+    const { refreshCurrentSeason } = await import(REFRESH_SERVICE_URL)
     const result = await refreshCurrentSeason(accessToken, log)
 
     log(`\n[SUMMARY]`)
@@ -649,7 +650,7 @@ app.post('/api/refresh-historical', async (_req, res) => {
   }
 
   try {
-    const { refreshHistoricalSeasons } = await import('./server/refreshService.ts')
+    const { refreshHistoricalSeasons } = await import(REFRESH_SERVICE_URL)
     const result = await refreshHistoricalSeasons(accessToken, log)
 
     log(`\n[SUMMARY]`)
@@ -687,7 +688,7 @@ app.post('/api/refresh-all', async (_req, res) => {
   }
 
   try {
-    const { refreshCurrentSeason, refreshHistoricalSeasons } = await import('./server/refreshService.ts')
+    const { refreshCurrentSeason, refreshHistoricalSeasons } = await import(REFRESH_SERVICE_URL)
 
     log('[INFO] Refreshing historical seasons (2009-2025)...\n')
     const histResult = await refreshHistoricalSeasons(accessToken, log)
@@ -712,7 +713,7 @@ app.post('/api/refresh-all', async (_req, res) => {
 /** GET /api/refresh-status — get refresh status and next scheduled refresh */
 app.get('/api/refresh-status', async (_req, res) => {
   try {
-    const { readRefreshState, getRefreshConfig, getCurrentSeasonYear } = await import('./server/refreshService.ts').then(m => ({
+    const { readRefreshState, getRefreshConfig, getCurrentSeasonYear } = await import(REFRESH_SERVICE_URL).then(m => ({
       readRefreshState: m.readRefreshState,
       getRefreshConfig: m.getRefreshConfig,
       getCurrentSeasonYear: m.getCurrentSeasonYear,
@@ -770,7 +771,7 @@ async function startAutoRefresh() {
 
   const runRefresh = async () => {
     try {
-      const { refreshCurrentSeason } = await import('./server/refreshService.ts')
+      const { refreshCurrentSeason } = await import(REFRESH_SERVICE_URL)
       const log = (msg: string) => console.log(`[autoRefresh] ${msg}`)
 
       log('Starting background refresh...')

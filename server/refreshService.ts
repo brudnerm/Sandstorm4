@@ -13,7 +13,7 @@ import https from 'https'
 import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const PROJECT_ROOT = path.resolve(__dirname, '../..')
+const PROJECT_ROOT = path.resolve(__dirname, '..')
 const MCP_DIR = path.resolve(PROJECT_ROOT, '../yahoo-fantasy-baseball-mcp')
 const DATA_DIR = path.join(MCP_DIR, 'data')
 const PUBLIC_DATA_DIR = path.join(PROJECT_ROOT, 'public/data')
