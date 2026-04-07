@@ -3,7 +3,7 @@
   "league_name": "Keeping Pattycakes",
   "current_week": 3,
   "total_weeks": "25",
-  "generated_at": "2026-04-07T19:26:54.393Z",
+  "generated_at": "2026-04-07T19:50:50.190Z",
   "standings": [
     {
       "team_key": "469.l.13624.t.9",
@@ -135,7 +135,7 @@
           "team_key": "469.l.13624.t.1",
           "team_name": "Manchester by Marsee",
           "owner": "Swan",
-          "points": "7",
+          "points": "6",
           "stats": {
             "H/AB": {
               "value": "8/35",
@@ -187,7 +187,7 @@
             },
             "ERA": {
               "value": "6.52",
-              "result": "win"
+              "result": "loss"
             },
             "WHIP": {
               "value": "1.34",
@@ -199,10 +199,10 @@
           "team_key": "469.l.13624.t.12",
           "team_name": "Who's Your Vladdy",
           "owner": "KC",
-          "points": "3",
+          "points": "4",
           "stats": {
             "H/AB": {
-              "value": "7/33",
+              "value": "7/34",
               "result": "tie"
             },
             "R": {
@@ -222,15 +222,15 @@
               "result": "win"
             },
             "AVG": {
-              "value": ".212",
+              "value": ".206",
               "result": "loss"
             },
             "OBP": {
-              "value": ".366",
+              "value": ".357",
               "result": "loss"
             },
             "IP": {
-              "value": "6.0",
+              "value": "7.0",
               "result": "tie"
             },
             "W": {
@@ -246,15 +246,15 @@
               "result": "win"
             },
             "K": {
-              "value": "3",
+              "value": "4",
               "result": "loss"
             },
             "ERA": {
-              "value": "7.50",
-              "result": "loss"
+              "value": "6.43",
+              "result": "win"
             },
             "WHIP": {
-              "value": "2.17",
+              "value": "1.86",
               "result": "loss"
             }
           }
@@ -537,10 +537,10 @@
           "team_key": "469.l.13624.t.4",
           "team_name": "Leiter House Rules",
           "owner": "Rich Garcis",
-          "points": "8",
+          "points": "7",
           "stats": {
             "H/AB": {
-              "value": "11/34",
+              "value": "11/35",
               "result": "tie"
             },
             "R": {
@@ -560,11 +560,11 @@
               "result": "loss"
             },
             "AVG": {
-              "value": ".324",
+              "value": ".314",
               "result": "win"
             },
             "OBP": {
-              "value": ".415",
+              "value": ".405",
               "result": "win"
             },
             "IP": {
@@ -585,7 +585,7 @@
             },
             "K": {
               "value": "6",
-              "result": "win"
+              "result": "loss"
             },
             "ERA": {
               "value": "1.80",
@@ -601,7 +601,7 @@
           "team_key": "469.l.13624.t.10",
           "team_name": "mannys still stoned",
           "owner": "Galen",
-          "points": "2",
+          "points": "3",
           "stats": {
             "H/AB": {
               "value": "6/26",
@@ -632,7 +632,7 @@
               "result": "loss"
             },
             "IP": {
-              "value": "5.0",
+              "value": "6.0",
               "result": "tie"
             },
             "W": {
@@ -648,15 +648,15 @@
               "result": "win"
             },
             "K": {
-              "value": "5",
-              "result": "loss"
+              "value": "7",
+              "result": "win"
             },
             "ERA": {
-              "value": "3.60",
+              "value": "3.00",
               "result": "loss"
             },
             "WHIP": {
-              "value": "1.20",
+              "value": "1.00",
               "result": "loss"
             }
           }
@@ -671,10 +671,10 @@
           "team_key": "469.l.13624.t.7",
           "team_name": "Boho Chic",
           "owner": "Nick",
-          "points": "3",
+          "points": "2",
           "stats": {
             "H/AB": {
-              "value": "9/30",
+              "value": "9/31",
               "result": "tie"
             },
             "R": {
@@ -694,11 +694,11 @@
               "result": "loss"
             },
             "AVG": {
-              "value": ".300",
-              "result": "win"
+              "value": ".290",
+              "result": "loss"
             },
             "OBP": {
-              "value": ".323",
+              "value": ".312",
               "result": "loss"
             },
             "IP": {
@@ -735,7 +735,7 @@
           "team_key": "469.l.13624.t.9",
           "team_name": "MAINEiacs",
           "owner": "Will Youmans",
-          "points": "8",
+          "points": "9",
           "stats": {
             "H/AB": {
               "value": "11/37",
@@ -759,7 +759,7 @@
             },
             "AVG": {
               "value": ".297",
-              "result": "loss"
+              "result": "win"
             },
             "OBP": {
               "value": ".366",
@@ -2554,7 +2554,7 @@
             "team_key": "469.l.13624.t.1",
             "team_name": "Manchester by Marsee",
             "owner": "Swan",
-            "points": "7",
+            "points": "6",
             "stats": {
               "H/AB": {
                 "value": "8/35",
@@ -2606,7 +2606,7 @@
               },
               "ERA": {
                 "value": "6.52",
-                "result": "win"
+                "result": "loss"
               },
               "WHIP": {
                 "value": "1.34",
@@ -2618,10 +2618,10 @@
             "team_key": "469.l.13624.t.12",
             "team_name": "Who's Your Vladdy",
             "owner": "KC",
-            "points": "3",
+            "points": "4",
             "stats": {
               "H/AB": {
-                "value": "7/33",
+                "value": "7/34",
                 "result": "tie"
               },
               "R": {
@@ -2641,15 +2641,15 @@
                 "result": "win"
               },
               "AVG": {
-                "value": ".212",
+                "value": ".206",
                 "result": "loss"
               },
               "OBP": {
-                "value": ".366",
+                "value": ".357",
                 "result": "loss"
               },
               "IP": {
-                "value": "6.0",
+                "value": "7.0",
                 "result": "tie"
               },
               "W": {
@@ -2665,15 +2665,15 @@
                 "result": "win"
               },
               "K": {
-                "value": "3",
+                "value": "4",
                 "result": "loss"
               },
               "ERA": {
-                "value": "7.50",
-                "result": "loss"
+                "value": "6.43",
+                "result": "win"
               },
               "WHIP": {
-                "value": "2.17",
+                "value": "1.86",
                 "result": "loss"
               }
             }
@@ -2956,10 +2956,10 @@
             "team_key": "469.l.13624.t.4",
             "team_name": "Leiter House Rules",
             "owner": "Rich Garcis",
-            "points": "8",
+            "points": "7",
             "stats": {
               "H/AB": {
-                "value": "11/34",
+                "value": "11/35",
                 "result": "tie"
               },
               "R": {
@@ -2979,11 +2979,11 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".324",
+                "value": ".314",
                 "result": "win"
               },
               "OBP": {
-                "value": ".415",
+                "value": ".405",
                 "result": "win"
               },
               "IP": {
@@ -3004,7 +3004,7 @@
               },
               "K": {
                 "value": "6",
-                "result": "win"
+                "result": "loss"
               },
               "ERA": {
                 "value": "1.80",
@@ -3020,7 +3020,7 @@
             "team_key": "469.l.13624.t.10",
             "team_name": "mannys still stoned",
             "owner": "Galen",
-            "points": "2",
+            "points": "3",
             "stats": {
               "H/AB": {
                 "value": "6/26",
@@ -3051,7 +3051,7 @@
                 "result": "loss"
               },
               "IP": {
-                "value": "5.0",
+                "value": "6.0",
                 "result": "tie"
               },
               "W": {
@@ -3067,15 +3067,15 @@
                 "result": "win"
               },
               "K": {
-                "value": "5",
-                "result": "loss"
+                "value": "7",
+                "result": "win"
               },
               "ERA": {
-                "value": "3.60",
+                "value": "3.00",
                 "result": "loss"
               },
               "WHIP": {
-                "value": "1.20",
+                "value": "1.00",
                 "result": "loss"
               }
             }
@@ -3090,10 +3090,10 @@
             "team_key": "469.l.13624.t.7",
             "team_name": "Boho Chic",
             "owner": "Nick",
-            "points": "3",
+            "points": "2",
             "stats": {
               "H/AB": {
-                "value": "9/30",
+                "value": "9/31",
                 "result": "tie"
               },
               "R": {
@@ -3113,11 +3113,11 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".300",
-                "result": "win"
+                "value": ".290",
+                "result": "loss"
               },
               "OBP": {
-                "value": ".323",
+                "value": ".312",
                 "result": "loss"
               },
               "IP": {
@@ -3154,7 +3154,7 @@
             "team_key": "469.l.13624.t.9",
             "team_name": "MAINEiacs",
             "owner": "Will Youmans",
-            "points": "8",
+            "points": "9",
             "stats": {
               "H/AB": {
                 "value": "11/37",
@@ -3178,7 +3178,7 @@
               },
               "AVG": {
                 "value": ".297",
-                "result": "loss"
+                "result": "win"
               },
               "OBP": {
                 "value": ".366",
