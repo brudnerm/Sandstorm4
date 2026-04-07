@@ -3,7 +3,7 @@
   "league_name": "Keeping Pattycakes",
   "current_week": 3,
   "total_weeks": "25",
-  "generated_at": "2026-04-07T17:48:57.069Z",
+  "generated_at": "2026-04-07T18:20:28.129Z",
   "standings": [
     {
       "team_key": "469.l.13624.t.9",
@@ -135,7 +135,7 @@
           "team_key": "469.l.13624.t.1",
           "team_name": "Manchester by Marsee",
           "owner": "Swan",
-          "points": "6",
+          "points": "7",
           "stats": {
             "H/AB": {
               "value": "8/33",
@@ -162,11 +162,11 @@
               "result": "win"
             },
             "OBP": {
-              "value": ".381",
+              "value": ".395",
               "result": "win"
             },
             "IP": {
-              "value": "7.0",
+              "value": "8.2",
               "result": "tie"
             },
             "W": {
@@ -182,15 +182,15 @@
               "result": "loss"
             },
             "K": {
-              "value": "11",
+              "value": "15",
               "result": "win"
             },
             "ERA": {
-              "value": "9.00",
-              "result": "tie"
+              "value": "7.27",
+              "result": "win"
             },
             "WHIP": {
-              "value": "1.43",
+              "value": "1.50",
               "result": "win"
             }
           }
@@ -251,7 +251,7 @@
             },
             "ERA": {
               "value": "9.00",
-              "result": "tie"
+              "result": "loss"
             },
             "WHIP": {
               "value": "2.60",
@@ -470,7 +470,7 @@
           "points": "10",
           "stats": {
             "H/AB": {
-              "value": "10/35",
+              "value": "10/36",
               "result": "tie"
             },
             "R": {
@@ -490,15 +490,15 @@
               "result": "win"
             },
             "AVG": {
-              "value": ".286",
+              "value": ".278",
               "result": "win"
             },
             "OBP": {
-              "value": ".375",
+              "value": ".366",
               "result": "win"
             },
             "IP": {
-              "value": "18.2",
+              "value": "20.1",
               "result": "tie"
             },
             "W": {
@@ -514,11 +514,11 @@
               "result": "tie"
             },
             "K": {
-              "value": "16",
+              "value": "17",
               "result": "win"
             },
             "ERA": {
-              "value": "3.86",
+              "value": "3.54",
               "result": "win"
             },
             "WHIP": {
@@ -540,7 +540,7 @@
           "points": "8",
           "stats": {
             "H/AB": {
-              "value": "11/32",
+              "value": "11/33",
               "result": "tie"
             },
             "R": {
@@ -560,11 +560,11 @@
               "result": "loss"
             },
             "AVG": {
-              "value": ".344",
+              "value": ".333",
               "result": "win"
             },
             "OBP": {
-              "value": ".436",
+              "value": ".425",
               "result": "win"
             },
             "IP": {
@@ -829,11 +829,11 @@
             },
             "AVG": {
               "value": ".207",
-              "result": "loss"
+              "result": "tie"
             },
             "OBP": {
               "value": ".303",
-              "result": "loss"
+              "result": "tie"
             },
             "IP": {
               "value": "1.0",
@@ -869,10 +869,10 @@
           "team_key": "469.l.13624.t.11",
           "team_name": "Go Outside Nerd",
           "owner": "Jamison",
-          "points": "2",
+          "points": "0",
           "stats": {
             "H/AB": {
-              "value": "6/28",
+              "value": "6/29",
               "result": "tie"
             },
             "R": {
@@ -892,12 +892,12 @@
               "result": "loss"
             },
             "AVG": {
-              "value": ".214",
-              "result": "win"
+              "value": ".207",
+              "result": "tie"
             },
             "OBP": {
-              "value": ".312",
-              "result": "win"
+              "value": ".303",
+              "result": "tie"
             },
             "IP": {
               "value": "0.2",
@@ -2554,7 +2554,7 @@
             "team_key": "469.l.13624.t.1",
             "team_name": "Manchester by Marsee",
             "owner": "Swan",
-            "points": "6",
+            "points": "7",
             "stats": {
               "H/AB": {
                 "value": "8/33",
@@ -2581,11 +2581,11 @@
                 "result": "win"
               },
               "OBP": {
-                "value": ".381",
+                "value": ".395",
                 "result": "win"
               },
               "IP": {
-                "value": "7.0",
+                "value": "8.2",
                 "result": "tie"
               },
               "W": {
@@ -2601,15 +2601,15 @@
                 "result": "loss"
               },
               "K": {
-                "value": "11",
+                "value": "15",
                 "result": "win"
               },
               "ERA": {
-                "value": "9.00",
-                "result": "tie"
+                "value": "7.27",
+                "result": "win"
               },
               "WHIP": {
-                "value": "1.43",
+                "value": "1.50",
                 "result": "win"
               }
             }
@@ -2670,7 +2670,7 @@
               },
               "ERA": {
                 "value": "9.00",
-                "result": "tie"
+                "result": "loss"
               },
               "WHIP": {
                 "value": "2.60",
@@ -2889,7 +2889,7 @@
             "points": "10",
             "stats": {
               "H/AB": {
-                "value": "10/35",
+                "value": "10/36",
                 "result": "tie"
               },
               "R": {
@@ -2909,15 +2909,15 @@
                 "result": "win"
               },
               "AVG": {
-                "value": ".286",
+                "value": ".278",
                 "result": "win"
               },
               "OBP": {
-                "value": ".375",
+                "value": ".366",
                 "result": "win"
               },
               "IP": {
-                "value": "18.2",
+                "value": "20.1",
                 "result": "tie"
               },
               "W": {
@@ -2933,11 +2933,11 @@
                 "result": "tie"
               },
               "K": {
-                "value": "16",
+                "value": "17",
                 "result": "win"
               },
               "ERA": {
-                "value": "3.86",
+                "value": "3.54",
                 "result": "win"
               },
               "WHIP": {
@@ -2959,7 +2959,7 @@
             "points": "8",
             "stats": {
               "H/AB": {
-                "value": "11/32",
+                "value": "11/33",
                 "result": "tie"
               },
               "R": {
@@ -2979,11 +2979,11 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".344",
+                "value": ".333",
                 "result": "win"
               },
               "OBP": {
-                "value": ".436",
+                "value": ".425",
                 "result": "win"
               },
               "IP": {
@@ -3248,11 +3248,11 @@
               },
               "AVG": {
                 "value": ".207",
-                "result": "loss"
+                "result": "tie"
               },
               "OBP": {
                 "value": ".303",
-                "result": "loss"
+                "result": "tie"
               },
               "IP": {
                 "value": "1.0",
@@ -3288,10 +3288,10 @@
             "team_key": "469.l.13624.t.11",
             "team_name": "Go Outside Nerd",
             "owner": "Jamison",
-            "points": "2",
+            "points": "0",
             "stats": {
               "H/AB": {
-                "value": "6/28",
+                "value": "6/29",
                 "result": "tie"
               },
               "R": {
@@ -3311,12 +3311,12 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".214",
-                "result": "win"
+                "value": ".207",
+                "result": "tie"
               },
               "OBP": {
-                "value": ".312",
-                "result": "win"
+                "value": ".303",
+                "result": "tie"
               },
               "IP": {
                 "value": "0.2",
