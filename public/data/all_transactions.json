@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-04-08T06:05:41.255Z",
-  "total_transactions": 13662,
+  "generated_at": "2026-04-08T16:27:44.638Z",
+  "total_transactions": 13664,
   "seasons_included": [
     "2009",
     "2010",
@@ -382352,7 +382352,7 @@
         {
           "player_key": "469.p.10922",
           "name": "Mark Vientos",
-          "position": "3B",
+          "position": "1B,3B",
           "mlb_team": "NYM",
           "action": "add",
           "source_type": "freeagents",
@@ -382540,6 +382540,70 @@
           "source_team": "",
           "destination_type": "team",
           "destination_team": "Manchester by Marsee"
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "70",
+      "date": "2026-04-08",
+      "timestamp": 1775656110,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.10494",
+          "name": "Jakob Junis",
+          "position": "RP",
+          "mlb_team": "TEX",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Constellation Joe Ryan"
+        },
+        {
+          "player_key": "469.p.12014",
+          "name": "Clayton Beeter",
+          "position": "RP",
+          "mlb_team": "WSH",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Constellation Joe Ryan",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "71",
+      "date": "2026-04-08",
+      "timestamp": 1775660268,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.12120",
+          "name": "Bryce Elder",
+          "position": "SP",
+          "mlb_team": "ATL",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "So bad it Kurtz"
+        },
+        {
+          "player_key": "469.p.64063",
+          "name": "Jose Fernandez",
+          "position": "SS",
+          "mlb_team": "AZ",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "So bad it Kurtz",
+          "destination_type": "waivers",
+          "destination_team": ""
         }
       ]
     }
