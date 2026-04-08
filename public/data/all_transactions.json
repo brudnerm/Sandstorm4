@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-04-08T22:14:58.081Z",
-  "total_transactions": 13665,
+  "generated_at": "2026-04-08T22:32:06.583Z",
+  "total_transactions": 13666,
   "seasons_included": [
     "2009",
     "2010",
@@ -382631,6 +382631,38 @@
           "name": "Justin Crawford",
           "position": "OF",
           "mlb_team": "PHI",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "IM IN MY PRIME",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "73",
+      "date": "2026-04-08",
+      "timestamp": 1775686785,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.11700",
+          "name": "Zach McKinstry",
+          "position": "3B,SS,OF",
+          "mlb_team": "DET",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "IM IN MY PRIME"
+        },
+        {
+          "player_key": "469.p.63648",
+          "name": "Liam Hicks",
+          "position": "C,1B",
+          "mlb_team": "MIA",
           "action": "drop",
           "source_type": "team",
           "source_team": "IM IN MY PRIME",
