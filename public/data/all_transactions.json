@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-04-08T21:46:43.568Z",
-  "total_transactions": 13664,
+  "generated_at": "2026-04-08T22:14:58.081Z",
+  "total_transactions": 13665,
   "seasons_included": [
     "2009",
     "2010",
@@ -382602,6 +382602,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "So bad it Kurtz",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "72",
+      "date": "2026-04-08",
+      "timestamp": 1775686145,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.11292",
+          "name": "Jonathan India",
+          "position": "2B,3B,OF",
+          "mlb_team": "KC",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "IM IN MY PRIME"
+        },
+        {
+          "player_key": "469.p.60317",
+          "name": "Justin Crawford",
+          "position": "OF",
+          "mlb_team": "PHI",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "IM IN MY PRIME",
           "destination_type": "waivers",
           "destination_team": ""
         }
