@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-04-09T06:03:59.018Z",
-  "total_transactions": 13666,
+  "generated_at": "2026-04-09T16:31:27.889Z",
+  "total_transactions": 13669,
   "seasons_included": [
     "2009",
     "2010",
@@ -382663,6 +382663,102 @@
           "name": "Liam Hicks",
           "position": "C,1B",
           "mlb_team": "MIA",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "IM IN MY PRIME",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "74",
+      "date": "2026-04-09",
+      "timestamp": 1775738470,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.10166",
+          "name": "Willson Contreras",
+          "position": "1B",
+          "mlb_team": "BOS",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Raisin Duran Crunch"
+        },
+        {
+          "player_key": "469.p.12582",
+          "name": "Daylen Lile",
+          "position": "OF",
+          "mlb_team": "WSH",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Raisin Duran Crunch",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "75",
+      "date": "2026-04-09",
+      "timestamp": 1775738702,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.10569",
+          "name": "Clay Holmes",
+          "position": "SP",
+          "mlb_team": "NYM",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Raisin Duran Crunch"
+        },
+        {
+          "player_key": "469.p.11208",
+          "name": "Bryan Abreu",
+          "position": "RP",
+          "mlb_team": "HOU",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Raisin Duran Crunch",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "76",
+      "date": "2026-04-09",
+      "timestamp": 1775743776,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.12100",
+          "name": "Otto Lopez",
+          "position": "2B,SS",
+          "mlb_team": "MIA",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "IM IN MY PRIME"
+        },
+        {
+          "player_key": "469.p.11700",
+          "name": "Zach McKinstry",
+          "position": "3B,SS,OF",
+          "mlb_team": "DET",
           "action": "drop",
           "source_type": "team",
           "source_team": "IM IN MY PRIME",
