@@ -3,7 +3,7 @@
   "league_name": "Keeping Pattycakes",
   "current_week": 3,
   "total_weeks": "25",
-  "generated_at": "2026-04-10T19:46:22.216Z",
+  "generated_at": "2026-04-10T20:11:31.725Z",
   "standings": [
     {
       "team_key": "469.l.13624.t.9",
@@ -135,7 +135,7 @@
           "team_key": "469.l.13624.t.1",
           "team_name": "Manchester by Marsee",
           "owner": "Swan",
-          "points": "3",
+          "points": "4",
           "stats": {
             "H/AB": {
               "value": "25/112",
@@ -163,7 +163,7 @@
             },
             "OBP": {
               "value": ".353",
-              "result": "tie"
+              "result": "win"
             },
             "IP": {
               "value": "32.2",
@@ -202,7 +202,7 @@
           "points": "6",
           "stats": {
             "H/AB": {
-              "value": "27/113",
+              "value": "27/114",
               "result": "tie"
             },
             "R": {
@@ -222,12 +222,12 @@
               "result": "win"
             },
             "AVG": {
-              "value": ".239",
+              "value": ".237",
               "result": "win"
             },
             "OBP": {
-              "value": ".353",
-              "result": "tie"
+              "value": ".350",
+              "result": "loss"
             },
             "IP": {
               "value": "23.1",
@@ -272,7 +272,7 @@
           "points": "3",
           "stats": {
             "H/AB": {
-              "value": "23/104",
+              "value": "23/105",
               "result": "tie"
             },
             "R": {
@@ -292,11 +292,11 @@
               "result": "win"
             },
             "AVG": {
-              "value": ".221",
+              "value": ".219",
               "result": "loss"
             },
             "OBP": {
-              "value": ".311",
+              "value": ".308",
               "result": "loss"
             },
             "IP": {
@@ -406,7 +406,7 @@
           "points": "5",
           "stats": {
             "H/AB": {
-              "value": "21/112",
+              "value": "22/113",
               "result": "tie"
             },
             "R": {
@@ -426,11 +426,11 @@
               "result": "loss"
             },
             "AVG": {
-              "value": ".188",
+              "value": ".195",
               "result": "loss"
             },
             "OBP": {
-              "value": ".319",
+              "value": ".324",
               "result": "win"
             },
             "IP": {
@@ -632,7 +632,7 @@
               "result": "loss"
             },
             "IP": {
-              "value": "17.2",
+              "value": "18.0",
               "result": "tie"
             },
             "W": {
@@ -648,15 +648,15 @@
               "result": "win"
             },
             "K": {
-              "value": "27",
+              "value": "28",
               "result": "win"
             },
             "ERA": {
-              "value": "4.08",
+              "value": "4.00",
               "result": "loss"
             },
             "WHIP": {
-              "value": "0.91",
+              "value": "0.89",
               "result": "win"
             }
           }
@@ -671,15 +671,15 @@
           "team_key": "469.l.13624.t.7",
           "team_name": "Boho Chic",
           "owner": "Nick",
-          "points": "5",
+          "points": "6",
           "stats": {
             "H/AB": {
-              "value": "31/113",
+              "value": "32/114",
               "result": "tie"
             },
             "R": {
-              "value": "12",
-              "result": "tie"
+              "value": "13",
+              "result": "win"
             },
             "HR": {
               "value": "2",
@@ -694,11 +694,11 @@
               "result": "loss"
             },
             "AVG": {
-              "value": ".274",
+              "value": ".281",
               "result": "win"
             },
             "OBP": {
-              "value": ".333",
+              "value": ".339",
               "result": "win"
             },
             "IP": {
@@ -743,7 +743,7 @@
             },
             "R": {
               "value": "12",
-              "result": "tie"
+              "result": "loss"
             },
             "HR": {
               "value": "2",
@@ -2554,7 +2554,7 @@
             "team_key": "469.l.13624.t.1",
             "team_name": "Manchester by Marsee",
             "owner": "Swan",
-            "points": "3",
+            "points": "4",
             "stats": {
               "H/AB": {
                 "value": "25/112",
@@ -2582,7 +2582,7 @@
               },
               "OBP": {
                 "value": ".353",
-                "result": "tie"
+                "result": "win"
               },
               "IP": {
                 "value": "32.2",
@@ -2621,7 +2621,7 @@
             "points": "6",
             "stats": {
               "H/AB": {
-                "value": "27/113",
+                "value": "27/114",
                 "result": "tie"
               },
               "R": {
@@ -2641,12 +2641,12 @@
                 "result": "win"
               },
               "AVG": {
-                "value": ".239",
+                "value": ".237",
                 "result": "win"
               },
               "OBP": {
-                "value": ".353",
-                "result": "tie"
+                "value": ".350",
+                "result": "loss"
               },
               "IP": {
                 "value": "23.1",
@@ -2691,7 +2691,7 @@
             "points": "3",
             "stats": {
               "H/AB": {
-                "value": "23/104",
+                "value": "23/105",
                 "result": "tie"
               },
               "R": {
@@ -2711,11 +2711,11 @@
                 "result": "win"
               },
               "AVG": {
-                "value": ".221",
+                "value": ".219",
                 "result": "loss"
               },
               "OBP": {
-                "value": ".311",
+                "value": ".308",
                 "result": "loss"
               },
               "IP": {
@@ -2825,7 +2825,7 @@
             "points": "5",
             "stats": {
               "H/AB": {
-                "value": "21/112",
+                "value": "22/113",
                 "result": "tie"
               },
               "R": {
@@ -2845,11 +2845,11 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".188",
+                "value": ".195",
                 "result": "loss"
               },
               "OBP": {
-                "value": ".319",
+                "value": ".324",
                 "result": "win"
               },
               "IP": {
@@ -3051,7 +3051,7 @@
                 "result": "loss"
               },
               "IP": {
-                "value": "17.2",
+                "value": "18.0",
                 "result": "tie"
               },
               "W": {
@@ -3067,15 +3067,15 @@
                 "result": "win"
               },
               "K": {
-                "value": "27",
+                "value": "28",
                 "result": "win"
               },
               "ERA": {
-                "value": "4.08",
+                "value": "4.00",
                 "result": "loss"
               },
               "WHIP": {
-                "value": "0.91",
+                "value": "0.89",
                 "result": "win"
               }
             }
@@ -3090,15 +3090,15 @@
             "team_key": "469.l.13624.t.7",
             "team_name": "Boho Chic",
             "owner": "Nick",
-            "points": "5",
+            "points": "6",
             "stats": {
               "H/AB": {
-                "value": "31/113",
+                "value": "32/114",
                 "result": "tie"
               },
               "R": {
-                "value": "12",
-                "result": "tie"
+                "value": "13",
+                "result": "win"
               },
               "HR": {
                 "value": "2",
@@ -3113,11 +3113,11 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".274",
+                "value": ".281",
                 "result": "win"
               },
               "OBP": {
-                "value": ".333",
+                "value": ".339",
                 "result": "win"
               },
               "IP": {
@@ -3162,7 +3162,7 @@
               },
               "R": {
                 "value": "12",
-                "result": "tie"
+                "result": "loss"
               },
               "HR": {
                 "value": "2",
