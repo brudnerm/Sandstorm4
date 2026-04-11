@@ -3,7 +3,7 @@
   "league_name": "sidebar",
   "current_week": 3,
   "total_weeks": "25",
-  "generated_at": "2026-04-11T17:45:27.331Z",
+  "generated_at": "2026-04-11T17:59:55.646Z",
   "standings": [
     {
       "team_key": "469.l.20795.t.9",
@@ -278,7 +278,7 @@
           "points": "4",
           "stats": {
             "H/AB": {
-              "value": "34/156",
+              "value": "34/157",
               "result": "tie"
             },
             "R": {
@@ -306,11 +306,11 @@
               "result": "loss"
             },
             "AVG": {
-              "value": ".218",
+              "value": ".217",
               "result": "loss"
             },
             "OPS": {
-              "value": ".682",
+              "value": ".677",
               "result": "loss"
             },
             "IP": {
@@ -350,7 +350,7 @@
           "points": "11",
           "stats": {
             "H/AB": {
-              "value": "43/161",
+              "value": "43/163",
               "result": "tie"
             },
             "R": {
@@ -378,11 +378,11 @@
               "result": "win"
             },
             "AVG": {
-              "value": ".267",
+              "value": ".264",
               "result": "win"
             },
             "OPS": {
-              "value": ".764",
+              "value": ".755",
               "result": "win"
             },
             "IP": {
@@ -425,7 +425,7 @@
           "team_key": "469.l.20795.t.3",
           "team_name": "Rooker with a Heart of Gold",
           "owner": "mike",
-          "points": "6",
+          "points": "4",
           "stats": {
             "H/AB": {
               "value": "35/143",
@@ -433,11 +433,11 @@
             },
             "R": {
               "value": "15",
-              "result": "tie"
+              "result": "loss"
             },
             "HR": {
               "value": "5",
-              "result": "win"
+              "result": "loss"
             },
             "RBI": {
               "value": "23",
@@ -461,7 +461,7 @@
             },
             "OPS": {
               "value": ".732",
-              "result": "win"
+              "result": "loss"
             },
             "IP": {
               "value": "29.1",
@@ -497,22 +497,22 @@
           "team_key": "469.l.20795.t.10",
           "team_name": "Simpson Samson",
           "owner": "KC",
-          "points": "6",
+          "points": "9",
           "stats": {
             "H/AB": {
-              "value": "35/141",
+              "value": "37/144",
               "result": "tie"
             },
             "R": {
-              "value": "15",
-              "result": "tie"
+              "value": "17",
+              "result": "win"
             },
             "HR": {
-              "value": "4",
-              "result": "loss"
+              "value": "6",
+              "result": "win"
             },
             "RBI": {
-              "value": "13",
+              "value": "17",
               "result": "loss"
             },
             "SB": {
@@ -528,12 +528,12 @@
               "result": "tie"
             },
             "AVG": {
-              "value": ".248",
+              "value": ".257",
               "result": "win"
             },
             "OPS": {
-              "value": ".710",
-              "result": "loss"
+              "value": ".764",
+              "result": "win"
             },
             "IP": {
               "value": "27.0",
@@ -610,7 +610,7 @@
               "result": "win"
             },
             "OPS": {
-              "value": ".668",
+              "value": ".672",
               "result": "loss"
             },
             "IP": {
@@ -2535,7 +2535,7 @@
             "points": "4",
             "stats": {
               "H/AB": {
-                "value": "34/156",
+                "value": "34/157",
                 "result": "tie"
               },
               "R": {
@@ -2563,11 +2563,11 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".218",
+                "value": ".217",
                 "result": "loss"
               },
               "OPS": {
-                "value": ".682",
+                "value": ".677",
                 "result": "loss"
               },
               "IP": {
@@ -2607,7 +2607,7 @@
             "points": "11",
             "stats": {
               "H/AB": {
-                "value": "43/161",
+                "value": "43/163",
                 "result": "tie"
               },
               "R": {
@@ -2635,11 +2635,11 @@
                 "result": "win"
               },
               "AVG": {
-                "value": ".267",
+                "value": ".264",
                 "result": "win"
               },
               "OPS": {
-                "value": ".764",
+                "value": ".755",
                 "result": "win"
               },
               "IP": {
@@ -2682,7 +2682,7 @@
             "team_key": "469.l.20795.t.3",
             "team_name": "Rooker with a Heart of Gold",
             "owner": "mike",
-            "points": "6",
+            "points": "4",
             "stats": {
               "H/AB": {
                 "value": "35/143",
@@ -2690,11 +2690,11 @@
               },
               "R": {
                 "value": "15",
-                "result": "tie"
+                "result": "loss"
               },
               "HR": {
                 "value": "5",
-                "result": "win"
+                "result": "loss"
               },
               "RBI": {
                 "value": "23",
@@ -2718,7 +2718,7 @@
               },
               "OPS": {
                 "value": ".732",
-                "result": "win"
+                "result": "loss"
               },
               "IP": {
                 "value": "29.1",
@@ -2754,22 +2754,22 @@
             "team_key": "469.l.20795.t.10",
             "team_name": "Simpson Samson",
             "owner": "KC",
-            "points": "6",
+            "points": "9",
             "stats": {
               "H/AB": {
-                "value": "35/141",
+                "value": "37/144",
                 "result": "tie"
               },
               "R": {
-                "value": "15",
-                "result": "tie"
+                "value": "17",
+                "result": "win"
               },
               "HR": {
-                "value": "4",
-                "result": "loss"
+                "value": "6",
+                "result": "win"
               },
               "RBI": {
-                "value": "13",
+                "value": "17",
                 "result": "loss"
               },
               "SB": {
@@ -2785,12 +2785,12 @@
                 "result": "tie"
               },
               "AVG": {
-                "value": ".248",
+                "value": ".257",
                 "result": "win"
               },
               "OPS": {
-                "value": ".710",
-                "result": "loss"
+                "value": ".764",
+                "result": "win"
               },
               "IP": {
                 "value": "27.0",
@@ -2867,7 +2867,7 @@
                 "result": "win"
               },
               "OPS": {
-                "value": ".668",
+                "value": ".672",
                 "result": "loss"
               },
               "IP": {
