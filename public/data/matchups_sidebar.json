@@ -3,7 +3,7 @@
   "league_name": "sidebar",
   "current_week": 3,
   "total_weeks": "25",
-  "generated_at": "2026-04-11T16:46:21.319Z",
+  "generated_at": "2026-04-11T17:11:52.354Z",
   "standings": [
     {
       "team_key": "469.l.20795.t.9",
@@ -575,22 +575,22 @@
           "team_key": "469.l.20795.t.4",
           "team_name": "McGonigle in 60 Seconds",
           "owner": "joey",
-          "points": "5",
+          "points": "7",
           "stats": {
             "H/AB": {
-              "value": "31/139",
+              "value": "32/140",
               "result": "tie"
             },
             "R": {
-              "value": "20",
-              "result": "tie"
+              "value": "22",
+              "result": "win"
             },
             "HR": {
-              "value": "2",
+              "value": "3",
               "result": "loss"
             },
             "RBI": {
-              "value": "18",
+              "value": "19",
               "result": "loss"
             },
             "SB": {
@@ -606,11 +606,11 @@
               "result": "loss"
             },
             "AVG": {
-              "value": ".223",
-              "result": "loss"
+              "value": ".229",
+              "result": "win"
             },
             "OPS": {
-              "value": ".626",
+              "value": ".661",
               "result": "loss"
             },
             "IP": {
@@ -647,7 +647,7 @@
           "team_key": "469.l.20795.t.5",
           "team_name": "Lewiston Meth Heads",
           "owner": "Will Youmans",
-          "points": "9",
+          "points": "8",
           "stats": {
             "H/AB": {
               "value": "28/125",
@@ -655,7 +655,7 @@
             },
             "R": {
               "value": "20",
-              "result": "tie"
+              "result": "loss"
             },
             "HR": {
               "value": "6",
@@ -679,7 +679,7 @@
             },
             "AVG": {
               "value": ".224",
-              "result": "win"
+              "result": "loss"
             },
             "OPS": {
               "value": ".698",
@@ -728,7 +728,7 @@
           "points": "6",
           "stats": {
             "H/AB": {
-              "value": "31/145",
+              "value": "31/146",
               "result": "tie"
             },
             "R": {
@@ -756,11 +756,11 @@
               "result": "win"
             },
             "AVG": {
-              "value": ".214",
+              "value": ".212",
               "result": "win"
             },
             "OPS": {
-              "value": ".581",
+              "value": ".577",
               "result": "loss"
             },
             "IP": {
@@ -2832,22 +2832,22 @@
             "team_key": "469.l.20795.t.4",
             "team_name": "McGonigle in 60 Seconds",
             "owner": "joey",
-            "points": "5",
+            "points": "7",
             "stats": {
               "H/AB": {
-                "value": "31/139",
+                "value": "32/140",
                 "result": "tie"
               },
               "R": {
-                "value": "20",
-                "result": "tie"
+                "value": "22",
+                "result": "win"
               },
               "HR": {
-                "value": "2",
+                "value": "3",
                 "result": "loss"
               },
               "RBI": {
-                "value": "18",
+                "value": "19",
                 "result": "loss"
               },
               "SB": {
@@ -2863,11 +2863,11 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".223",
-                "result": "loss"
+                "value": ".229",
+                "result": "win"
               },
               "OPS": {
-                "value": ".626",
+                "value": ".661",
                 "result": "loss"
               },
               "IP": {
@@ -2904,7 +2904,7 @@
             "team_key": "469.l.20795.t.5",
             "team_name": "Lewiston Meth Heads",
             "owner": "Will Youmans",
-            "points": "9",
+            "points": "8",
             "stats": {
               "H/AB": {
                 "value": "28/125",
@@ -2912,7 +2912,7 @@
               },
               "R": {
                 "value": "20",
-                "result": "tie"
+                "result": "loss"
               },
               "HR": {
                 "value": "6",
@@ -2936,7 +2936,7 @@
               },
               "AVG": {
                 "value": ".224",
-                "result": "win"
+                "result": "loss"
               },
               "OPS": {
                 "value": ".698",
@@ -2985,7 +2985,7 @@
             "points": "6",
             "stats": {
               "H/AB": {
-                "value": "31/145",
+                "value": "31/146",
                 "result": "tie"
               },
               "R": {
@@ -3013,11 +3013,11 @@
                 "result": "win"
               },
               "AVG": {
-                "value": ".214",
+                "value": ".212",
                 "result": "win"
               },
               "OPS": {
-                "value": ".581",
+                "value": ".577",
                 "result": "loss"
               },
               "IP": {
