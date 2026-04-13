@@ -3,7 +3,7 @@
   "league_name": "sidebar",
   "current_week": 4,
   "total_weeks": "25",
-  "generated_at": "2026-04-13T21:47:18.251Z",
+  "generated_at": "2026-04-13T22:17:19.038Z",
   "standings": [
     {
       "team_key": "469.l.20795.t.9",
@@ -350,7 +350,7 @@
           "points": "5",
           "stats": {
             "H/AB": {
-              "value": "2/3",
+              "value": "2/4",
               "result": "tie"
             },
             "R": {
@@ -378,11 +378,11 @@
               "result": "tie"
             },
             "AVG": {
-              "value": ".667",
+              "value": ".500",
               "result": "win"
             },
             "OPS": {
-              "value": "3.333",
+              "value": "2.500",
               "result": "win"
             },
             "IP": {
@@ -425,10 +425,10 @@
           "team_key": "469.l.20795.t.4",
           "team_name": "McGonigle in 60 Seconds",
           "owner": "joey",
-          "points": "4",
+          "points": "3",
           "stats": {
             "H/AB": {
-              "value": "2/4",
+              "value": "2/5",
               "result": "tie"
             },
             "R": {
@@ -456,11 +456,11 @@
               "result": "tie"
             },
             "AVG": {
-              "value": ".500",
-              "result": "win"
+              "value": ".400",
+              "result": "tie"
             },
             "OPS": {
-              "value": "1.000",
+              "value": ".800",
               "result": "loss"
             },
             "IP": {
@@ -500,7 +500,7 @@
           "points": "1",
           "stats": {
             "H/AB": {
-              "value": "3/7",
+              "value": "4/10",
               "result": "tie"
             },
             "R": {
@@ -528,11 +528,11 @@
               "result": "tie"
             },
             "AVG": {
-              "value": ".429",
-              "result": "loss"
+              "value": ".400",
+              "result": "tie"
             },
             "OPS": {
-              "value": "1.071",
+              "value": ".955",
               "result": "win"
             },
             "IP": {
@@ -578,7 +578,7 @@
           "points": "2",
           "stats": {
             "H/AB": {
-              "value": "0/3",
+              "value": "0/4",
               "result": "tie"
             },
             "R": {
@@ -635,7 +635,7 @@
             },
             "K/BB": {
               "value": "",
-              "result": "tie"
+              "result": "loss"
             },
             "QS": {
               "value": "0",
@@ -647,7 +647,7 @@
           "team_key": "469.l.20795.t.6",
           "team_name": "Magic Baseballs",
           "owner": "Galen",
-          "points": "5",
+          "points": "6",
           "stats": {
             "H/AB": {
               "value": "0/0",
@@ -670,7 +670,7 @@
               "result": "tie"
             },
             "K": {
-              "value": "4",
+              "value": "6",
               "result": "win"
             },
             "GIDP": {
@@ -686,7 +686,7 @@
               "result": "loss"
             },
             "IP": {
-              "value": "6.0",
+              "value": "7.2",
               "result": "tie"
             },
             "L": {
@@ -698,16 +698,16 @@
               "result": "tie"
             },
             "ERA": {
-              "value": "3.00",
+              "value": "2.35",
               "result": "win"
             },
             "WHIP": {
-              "value": "1.00",
+              "value": "1.04",
               "result": "win"
             },
             "K/BB": {
-              "value": "",
-              "result": "tie"
+              "value": "6.00",
+              "result": "win"
             },
             "QS": {
               "value": "1",
@@ -728,7 +728,7 @@
           "points": "0",
           "stats": {
             "H/AB": {
-              "value": "0/3",
+              "value": "0/4",
               "result": "tie"
             },
             "R": {
@@ -761,7 +761,7 @@
             },
             "OPS": {
               "value": ".000",
-              "result": "tie"
+              "result": "loss"
             },
             "IP": {
               "value": "0.0",
@@ -797,7 +797,7 @@
           "team_key": "469.l.20795.t.10",
           "team_name": "Simpson Samson",
           "owner": "KC",
-          "points": "0",
+          "points": "1",
           "stats": {
             "H/AB": {
               "value": "0/3",
@@ -832,8 +832,8 @@
               "result": "tie"
             },
             "OPS": {
-              "value": ".000",
-              "result": "tie"
+              "value": ".250",
+              "result": "win"
             },
             "IP": {
               "value": "0.0",
@@ -3359,7 +3359,7 @@
             "points": "5",
             "stats": {
               "H/AB": {
-                "value": "2/3",
+                "value": "2/4",
                 "result": "tie"
               },
               "R": {
@@ -3387,11 +3387,11 @@
                 "result": "tie"
               },
               "AVG": {
-                "value": ".667",
+                "value": ".500",
                 "result": "win"
               },
               "OPS": {
-                "value": "3.333",
+                "value": "2.500",
                 "result": "win"
               },
               "IP": {
@@ -3434,10 +3434,10 @@
             "team_key": "469.l.20795.t.4",
             "team_name": "McGonigle in 60 Seconds",
             "owner": "joey",
-            "points": "4",
+            "points": "3",
             "stats": {
               "H/AB": {
-                "value": "2/4",
+                "value": "2/5",
                 "result": "tie"
               },
               "R": {
@@ -3465,11 +3465,11 @@
                 "result": "tie"
               },
               "AVG": {
-                "value": ".500",
-                "result": "win"
+                "value": ".400",
+                "result": "tie"
               },
               "OPS": {
-                "value": "1.000",
+                "value": ".800",
                 "result": "loss"
               },
               "IP": {
@@ -3509,7 +3509,7 @@
             "points": "1",
             "stats": {
               "H/AB": {
-                "value": "3/7",
+                "value": "4/10",
                 "result": "tie"
               },
               "R": {
@@ -3537,11 +3537,11 @@
                 "result": "tie"
               },
               "AVG": {
-                "value": ".429",
-                "result": "loss"
+                "value": ".400",
+                "result": "tie"
               },
               "OPS": {
-                "value": "1.071",
+                "value": ".955",
                 "result": "win"
               },
               "IP": {
@@ -3587,7 +3587,7 @@
             "points": "2",
             "stats": {
               "H/AB": {
-                "value": "0/3",
+                "value": "0/4",
                 "result": "tie"
               },
               "R": {
@@ -3644,7 +3644,7 @@
               },
               "K/BB": {
                 "value": "",
-                "result": "tie"
+                "result": "loss"
               },
               "QS": {
                 "value": "0",
@@ -3656,7 +3656,7 @@
             "team_key": "469.l.20795.t.6",
             "team_name": "Magic Baseballs",
             "owner": "Galen",
-            "points": "5",
+            "points": "6",
             "stats": {
               "H/AB": {
                 "value": "0/0",
@@ -3679,7 +3679,7 @@
                 "result": "tie"
               },
               "K": {
-                "value": "4",
+                "value": "6",
                 "result": "win"
               },
               "GIDP": {
@@ -3695,7 +3695,7 @@
                 "result": "loss"
               },
               "IP": {
-                "value": "6.0",
+                "value": "7.2",
                 "result": "tie"
               },
               "L": {
@@ -3707,16 +3707,16 @@
                 "result": "tie"
               },
               "ERA": {
-                "value": "3.00",
+                "value": "2.35",
                 "result": "win"
               },
               "WHIP": {
-                "value": "1.00",
+                "value": "1.04",
                 "result": "win"
               },
               "K/BB": {
-                "value": "",
-                "result": "tie"
+                "value": "6.00",
+                "result": "win"
               },
               "QS": {
                 "value": "1",
@@ -3737,7 +3737,7 @@
             "points": "0",
             "stats": {
               "H/AB": {
-                "value": "0/3",
+                "value": "0/4",
                 "result": "tie"
               },
               "R": {
@@ -3770,7 +3770,7 @@
               },
               "OPS": {
                 "value": ".000",
-                "result": "tie"
+                "result": "loss"
               },
               "IP": {
                 "value": "0.0",
@@ -3806,7 +3806,7 @@
             "team_key": "469.l.20795.t.10",
             "team_name": "Simpson Samson",
             "owner": "KC",
-            "points": "0",
+            "points": "1",
             "stats": {
               "H/AB": {
                 "value": "0/3",
@@ -3841,8 +3841,8 @@
                 "result": "tie"
               },
               "OPS": {
-                "value": ".000",
-                "result": "tie"
+                "value": ".250",
+                "result": "win"
               },
               "IP": {
                 "value": "0.0",
