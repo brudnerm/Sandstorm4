@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-04-13T06:20:58.908Z",
-  "total_transactions": 13682,
+  "generated_at": "2026-04-13T16:29:10.800Z",
+  "total_transactions": 13685,
   "seasons_included": [
     "2009",
     "2010",
@@ -381947,7 +381947,7 @@
         {
           "player_key": "469.p.64063",
           "name": "Jose Fernandez",
-          "position": "SS",
+          "position": "1B,SS",
           "mlb_team": "AZ",
           "action": "add",
           "source_type": "freeagents",
@@ -382597,7 +382597,7 @@
         {
           "player_key": "469.p.64063",
           "name": "Jose Fernandez",
-          "position": "SS",
+          "position": "1B,SS",
           "mlb_team": "AZ",
           "action": "drop",
           "source_type": "team",
@@ -383178,6 +383178,102 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Boho Chic",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "90",
+      "date": "2026-04-13",
+      "timestamp": 1776068846,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.11124",
+          "name": "Ramón Laureano",
+          "position": "OF",
+          "mlb_team": "SD",
+          "action": "add",
+          "source_type": "waivers",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Oh Kevin Is a Place on Earth"
+        },
+        {
+          "player_key": "469.p.60211",
+          "name": "Noah Cameron",
+          "position": "SP",
+          "mlb_team": "KC",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Oh Kevin Is a Place on Earth",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "91",
+      "date": "2026-04-13",
+      "timestamp": 1776082373,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.10524",
+          "name": "Mauricio Dubón",
+          "position": "2B,3B,SS,OF",
+          "mlb_team": "ATL",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Who's Your Vladdy"
+        },
+        {
+          "player_key": "469.p.64803",
+          "name": "Roki Sasaki",
+          "position": "SP",
+          "mlb_team": "LAD",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Who's Your Vladdy",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "92",
+      "date": "2026-04-13",
+      "timestamp": 1776084092,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.10565",
+          "name": "Mitch Keller",
+          "position": "SP",
+          "mlb_team": "PIT",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Leiter House Rules"
+        },
+        {
+          "player_key": "469.p.11116",
+          "name": "Zac Gallen",
+          "position": "SP",
+          "mlb_team": "AZ",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Leiter House Rules",
           "destination_type": "waivers",
           "destination_team": ""
         }
