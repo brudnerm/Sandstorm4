@@ -3,7 +3,7 @@
   "league_name": "sidebar",
   "current_week": 4,
   "total_weeks": "25",
-  "generated_at": "2026-04-15T20:08:06.348Z",
+  "generated_at": "2026-04-15T20:31:38.961Z",
   "standings": [
     {
       "team_key": "469.l.20795.t.9",
@@ -725,7 +725,7 @@
           "team_key": "469.l.20795.t.7",
           "team_name": "Pete Me In Montauk",
           "owner": "Rich Garcis",
-          "points": "4",
+          "points": "5",
           "stats": {
             "H/AB": {
               "value": "16/67",
@@ -748,7 +748,7 @@
               "result": "loss"
             },
             "K": {
-              "value": "12",
+              "value": "14",
               "result": "loss"
             },
             "GIDP": {
@@ -764,7 +764,7 @@
               "result": "loss"
             },
             "IP": {
-              "value": "12.0",
+              "value": "13.0",
               "result": "tie"
             },
             "L": {
@@ -772,20 +772,20 @@
               "result": "win"
             },
             "SV": {
-              "value": "0",
-              "result": "loss"
+              "value": "1",
+              "result": "tie"
             },
             "ERA": {
-              "value": "2.25",
+              "value": "2.08",
               "result": "win"
             },
             "WHIP": {
-              "value": "0.83",
+              "value": "0.77",
               "result": "win"
             },
             "K/BB": {
-              "value": "2.00",
-              "result": "tie"
+              "value": "2.33",
+              "result": "win"
             },
             "QS": {
               "value": "1",
@@ -797,10 +797,10 @@
           "team_key": "469.l.20795.t.10",
           "team_name": "Simpson Samson",
           "owner": "KC",
-          "points": "8",
+          "points": "7",
           "stats": {
             "H/AB": {
-              "value": "18/69",
+              "value": "19/70",
               "result": "tie"
             },
             "R": {
@@ -828,11 +828,11 @@
               "result": "tie"
             },
             "AVG": {
-              "value": ".261",
+              "value": ".271",
               "result": "win"
             },
             "OPS": {
-              "value": ".843",
+              "value": ".872",
               "result": "win"
             },
             "IP": {
@@ -845,7 +845,7 @@
             },
             "SV": {
               "value": "1",
-              "result": "win"
+              "result": "tie"
             },
             "ERA": {
               "value": "5.06",
@@ -857,7 +857,7 @@
             },
             "K/BB": {
               "value": "2.00",
-              "result": "tie"
+              "result": "loss"
             },
             "QS": {
               "value": "1",
@@ -3734,7 +3734,7 @@
             "team_key": "469.l.20795.t.7",
             "team_name": "Pete Me In Montauk",
             "owner": "Rich Garcis",
-            "points": "4",
+            "points": "5",
             "stats": {
               "H/AB": {
                 "value": "16/67",
@@ -3757,7 +3757,7 @@
                 "result": "loss"
               },
               "K": {
-                "value": "12",
+                "value": "14",
                 "result": "loss"
               },
               "GIDP": {
@@ -3773,7 +3773,7 @@
                 "result": "loss"
               },
               "IP": {
-                "value": "12.0",
+                "value": "13.0",
                 "result": "tie"
               },
               "L": {
@@ -3781,20 +3781,20 @@
                 "result": "win"
               },
               "SV": {
-                "value": "0",
-                "result": "loss"
+                "value": "1",
+                "result": "tie"
               },
               "ERA": {
-                "value": "2.25",
+                "value": "2.08",
                 "result": "win"
               },
               "WHIP": {
-                "value": "0.83",
+                "value": "0.77",
                 "result": "win"
               },
               "K/BB": {
-                "value": "2.00",
-                "result": "tie"
+                "value": "2.33",
+                "result": "win"
               },
               "QS": {
                 "value": "1",
@@ -3806,10 +3806,10 @@
             "team_key": "469.l.20795.t.10",
             "team_name": "Simpson Samson",
             "owner": "KC",
-            "points": "8",
+            "points": "7",
             "stats": {
               "H/AB": {
-                "value": "18/69",
+                "value": "19/70",
                 "result": "tie"
               },
               "R": {
@@ -3837,11 +3837,11 @@
                 "result": "tie"
               },
               "AVG": {
-                "value": ".261",
+                "value": ".271",
                 "result": "win"
               },
               "OPS": {
-                "value": ".843",
+                "value": ".872",
                 "result": "win"
               },
               "IP": {
@@ -3854,7 +3854,7 @@
               },
               "SV": {
                 "value": "1",
-                "result": "win"
+                "result": "tie"
               },
               "ERA": {
                 "value": "5.06",
@@ -3866,7 +3866,7 @@
               },
               "K/BB": {
                 "value": "2.00",
-                "result": "tie"
+                "result": "loss"
               },
               "QS": {
                 "value": "1",
