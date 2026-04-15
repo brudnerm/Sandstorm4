@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-04-15T04:18:10.825Z",
-  "total_transactions": 13693,
+  "generated_at": "2026-04-15T05:18:29.738Z",
+  "total_transactions": 13694,
   "seasons_included": [
     "2009",
     "2010",
@@ -383552,6 +383552,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Oh Kevin Is a Place on Earth",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "101",
+      "date": "2026-04-15",
+      "timestamp": 1776229692,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.9228",
+          "name": "Jorge Soler",
+          "position": "OF",
+          "mlb_team": "LAA",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Boho Chic"
+        },
+        {
+          "player_key": "469.p.10557",
+          "name": "Mickey Moniak",
+          "position": "OF",
+          "mlb_team": "COL",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Boho Chic",
           "destination_type": "waivers",
           "destination_team": ""
         }
