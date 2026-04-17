@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-04-17T06:12:30.783Z",
-  "total_transactions": 13702,
+  "generated_at": "2026-04-17T16:22:03.095Z",
+  "total_transactions": 13703,
   "seasons_included": [
     "2009",
     "2010",
@@ -383837,6 +383837,38 @@
           "name": "Steven Matz",
           "position": "SP,RP",
           "mlb_team": "TB",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Oh Kevin Is a Place on Earth",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "110",
+      "date": "2026-04-17",
+      "timestamp": 1776434837,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.11379",
+          "name": "Ryan Weathers",
+          "position": "SP",
+          "mlb_team": "NYY",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Oh Kevin Is a Place on Earth"
+        },
+        {
+          "player_key": "469.p.10869",
+          "name": "Aaron Civale",
+          "position": "SP,RP",
+          "mlb_team": "ATH",
           "action": "drop",
           "source_type": "team",
           "source_team": "Oh Kevin Is a Place on Earth",
