@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-04-19T01:55:55.335Z",
-  "total_transactions": 13705,
+  "generated_at": "2026-04-19T03:05:49.742Z",
+  "total_transactions": 13706,
   "seasons_included": [
     "2009",
     "2010",
@@ -383936,6 +383936,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "mannys still stoned",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "113",
+      "date": "2026-04-19",
+      "timestamp": 1776567586,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.11926",
+          "name": "Reid Detmers",
+          "position": "SP,RP",
+          "mlb_team": "LAA",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Bradishwalla"
+        },
+        {
+          "player_key": "469.p.8193",
+          "name": "Max Scherzer",
+          "position": "SP",
+          "mlb_team": "TOR",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Bradishwalla",
           "destination_type": "waivers",
           "destination_team": ""
         }
