@@ -25,18 +25,36 @@ function ownerFromHash(hash: string, owners: string[]): string | undefined {
   return owners.find(o => ownerToHash(o) === normalized)
 }
 
-/**
- * Compute W-L-T record from the home team's perspective using Yahoo's stat results.
- * Uses Yahoo's stat_winners data as the single source of truth.
- */
-function scoreMatchupFromYahoo(
+/** Determine if statA beats statB for a given category (from A's perspective) */
+function compareStat(
+  cat: string,
+  valA: string,
+  valB: string,
+  lowerIsBetter: Set<string>,
+  nonScoring: Set<string>,
+): 'win' | 'loss' | 'tie' {
+  if (nonScoring.has(cat)) return 'tie'
+  const a = parseFloat(valA)
+  const b = parseFloat(valB)
+  if (isNaN(a) || isNaN(b)) return 'tie'
+  // Use epsilon for floating-point comparison to handle precision issues
+  const epsilon = 0.0001
+  if (Math.abs(a - b) < epsilon) return 'tie'
+  if (lowerIsBetter.has(cat)) return a < b ? 'win' : 'loss'
+  return a > b ? 'win' : 'loss'
+}
+
+/** Compute W-L-T record from the home team's perspective */
+function computeRecord(
   home: MatchupTeam,
+  other: MatchupTeam,
+  lowerIsBetter: Set<string>,
   nonScoring: Set<string>,
 ): { w: number; l: number; t: number } {
   let w = 0, l = 0, t = 0
   for (const cat of Object.keys(home.stats)) {
     if (nonScoring.has(cat)) continue
-    const result = home.stats[cat]?.result ?? 'tie'
+    const result = compareStat(cat, home.stats[cat]?.value ?? '', other.stats[cat]?.value ?? '', lowerIsBetter, nonScoring)
     if (result === 'win') w++
     else if (result === 'loss') l++
     else t++
@@ -239,7 +257,7 @@ function MatchupsReady({ data, league }: { data: MatchupData; league: LeagueConf
         teamName: team.team_name,
         teamKey: team.team_key,
         stats: team.stats,
-        score: scoreMatchupFromYahoo(homeTeam, nonScoring),
+        score: computeRecord(homeTeam, team, lowerIsBetter, nonScoring),
         isHome: false,
         isOpponent: currentOpponent?.owner.toLowerCase() === team.owner.toLowerCase(),
       })
@@ -351,9 +369,9 @@ function MatchupsReady({ data, league }: { data: MatchupData; league: LeagueConf
                     </td>
                     {battingStats.map(s => {
                       const stat = row.stats[s]
-                      const dir = row.isHome ? null : stat?.result
+                      const dir = row.isHome ? null : compareStat(s, stat?.value ?? '', homeTeam?.stats[s]?.value ?? '', lowerIsBetter, nonScoring)
                       return (
-                        <td key={s} className={`mu-td-stat${dir === 'win' ? ' mu-stat-loss' : dir === 'loss' ? ' mu-stat-win' : dir === 'tie' ? ' mu-stat-tie' : ''}`}>
+                        <td key={s} className={`mu-td-stat${dir === 'win' ? ' mu-stat-win' : dir === 'loss' ? ' mu-stat-loss' : dir === 'tie' ? ' mu-stat-tie' : ''}`}>
                           {stat?.value ?? '—'}
                         </td>
                       )
@@ -361,9 +379,9 @@ function MatchupsReady({ data, league }: { data: MatchupData; league: LeagueConf
                     <td className="mu-td-divider" />
                     {pitchingStats.map(s => {
                       const stat = row.stats[s]
-                      const dir = row.isHome ? null : stat?.result
+                      const dir = row.isHome ? null : compareStat(s, stat?.value ?? '', homeTeam?.stats[s]?.value ?? '', lowerIsBetter, nonScoring)
                       return (
-                        <td key={s} className={`mu-td-stat${dir === 'win' ? ' mu-stat-loss' : dir === 'loss' ? ' mu-stat-win' : dir === 'tie' ? ' mu-stat-tie' : ''}`}>
+                        <td key={s} className={`mu-td-stat${dir === 'win' ? ' mu-stat-win' : dir === 'loss' ? ' mu-stat-loss' : dir === 'tie' ? ' mu-stat-tie' : ''}`}>
                           {stat?.value ?? '—'}
                         </td>
                       )
