@@ -3,7 +3,7 @@
   "league_name": "sidebar",
   "current_week": 4,
   "total_weeks": "25",
-  "generated_at": "2026-04-19T04:20:50.831Z",
+  "generated_at": "2026-04-19T05:19:08.879Z",
   "standings": [
     {
       "team_key": "469.l.20795.t.9",
@@ -125,10 +125,10 @@
           "team_key": "469.l.20795.t.1",
           "team_name": "Sod Poodles",
           "owner": "Mark",
-          "points": "9",
+          "points": "10",
           "stats": {
             "H/AB": {
-              "value": "39/169",
+              "value": "40/170",
               "result": "tie"
             },
             "R": {
@@ -140,8 +140,8 @@
               "result": "loss"
             },
             "RBI": {
-              "value": "30",
-              "result": "tie"
+              "value": "31",
+              "result": "win"
             },
             "SB": {
               "value": "4",
@@ -156,11 +156,11 @@
               "result": "loss"
             },
             "AVG": {
-              "value": ".231",
+              "value": ".235",
               "result": "win"
             },
             "OPS": {
-              "value": ".745",
+              "value": ".752",
               "result": "win"
             },
             "IP": {
@@ -200,7 +200,7 @@
           "points": "5",
           "stats": {
             "H/AB": {
-              "value": "40/185",
+              "value": "40/186",
               "result": "tie"
             },
             "R": {
@@ -213,7 +213,7 @@
             },
             "RBI": {
               "value": "30",
-              "result": "tie"
+              "result": "loss"
             },
             "SB": {
               "value": "2",
@@ -228,11 +228,11 @@
               "result": "win"
             },
             "AVG": {
-              "value": ".216",
+              "value": ".215",
               "result": "loss"
             },
             "OPS": {
-              "value": ".726",
+              "value": ".722",
               "result": "loss"
             },
             "IP": {
@@ -440,7 +440,7 @@
               "result": "loss"
             },
             "RBI": {
-              "value": "25",
+              "value": "26",
               "result": "loss"
             },
             "SB": {
@@ -460,7 +460,7 @@
               "result": "win"
             },
             "OPS": {
-              "value": ".784",
+              "value": ".782",
               "result": "loss"
             },
             "IP": {
@@ -670,7 +670,7 @@
               "result": "win"
             },
             "K": {
-              "value": "32",
+              "value": "34",
               "result": "loss"
             },
             "GIDP": {
@@ -686,7 +686,7 @@
               "result": "win"
             },
             "IP": {
-              "value": "38.1",
+              "value": "39.1",
               "result": "tie"
             },
             "L": {
@@ -694,19 +694,19 @@
               "result": "loss"
             },
             "SV": {
-              "value": "4",
+              "value": "5",
               "result": "win"
             },
             "ERA": {
-              "value": "4.46",
+              "value": "4.35",
               "result": "loss"
             },
             "WHIP": {
-              "value": "1.23",
+              "value": "1.25",
               "result": "loss"
             },
             "K/BB": {
-              "value": "2.67",
+              "value": "2.62",
               "result": "loss"
             },
             "QS": {
@@ -3134,10 +3134,10 @@
             "team_key": "469.l.20795.t.1",
             "team_name": "Sod Poodles",
             "owner": "Mark",
-            "points": "9",
+            "points": "10",
             "stats": {
               "H/AB": {
-                "value": "39/169",
+                "value": "40/170",
                 "result": "tie"
               },
               "R": {
@@ -3149,8 +3149,8 @@
                 "result": "loss"
               },
               "RBI": {
-                "value": "30",
-                "result": "tie"
+                "value": "31",
+                "result": "win"
               },
               "SB": {
                 "value": "4",
@@ -3165,11 +3165,11 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".231",
+                "value": ".235",
                 "result": "win"
               },
               "OPS": {
-                "value": ".745",
+                "value": ".752",
                 "result": "win"
               },
               "IP": {
@@ -3209,7 +3209,7 @@
             "points": "5",
             "stats": {
               "H/AB": {
-                "value": "40/185",
+                "value": "40/186",
                 "result": "tie"
               },
               "R": {
@@ -3222,7 +3222,7 @@
               },
               "RBI": {
                 "value": "30",
-                "result": "tie"
+                "result": "loss"
               },
               "SB": {
                 "value": "2",
@@ -3237,11 +3237,11 @@
                 "result": "win"
               },
               "AVG": {
-                "value": ".216",
+                "value": ".215",
                 "result": "loss"
               },
               "OPS": {
-                "value": ".726",
+                "value": ".722",
                 "result": "loss"
               },
               "IP": {
@@ -3449,7 +3449,7 @@
                 "result": "loss"
               },
               "RBI": {
-                "value": "25",
+                "value": "26",
                 "result": "loss"
               },
               "SB": {
@@ -3469,7 +3469,7 @@
                 "result": "win"
               },
               "OPS": {
-                "value": ".784",
+                "value": ".782",
                 "result": "loss"
               },
               "IP": {
@@ -3679,7 +3679,7 @@
                 "result": "win"
               },
               "K": {
-                "value": "32",
+                "value": "34",
                 "result": "loss"
               },
               "GIDP": {
@@ -3695,7 +3695,7 @@
                 "result": "win"
               },
               "IP": {
-                "value": "38.1",
+                "value": "39.1",
                 "result": "tie"
               },
               "L": {
@@ -3703,19 +3703,19 @@
                 "result": "loss"
               },
               "SV": {
-                "value": "4",
+                "value": "5",
                 "result": "win"
               },
               "ERA": {
-                "value": "4.46",
+                "value": "4.35",
                 "result": "loss"
               },
               "WHIP": {
-                "value": "1.23",
+                "value": "1.25",
                 "result": "loss"
               },
               "K/BB": {
-                "value": "2.67",
+                "value": "2.62",
                 "result": "loss"
               },
               "QS": {
