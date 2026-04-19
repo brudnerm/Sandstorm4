@@ -530,6 +530,11 @@ async function main() {
       console.log(`  [OK] ${matchups.length} matchups, week ${currentWeek}`)
       if (currentWeekWarnings?.length) {
         console.warn(`  [WARN] ${currentWeekWarnings.length} matchup(s) have score validation issues`)
+        currentWeekWarnings.forEach((warnings, idx) => {
+          if (warnings.length > 0) {
+            console.warn(`    Matchup ${idx}: ${warnings.map(w => `${w.stat}(app:${w.appResult} vs yahoo:${w.yahooResult})`).join(', ')}`)
+          }
+        })
       }
 
       await delay(300)
@@ -577,6 +582,7 @@ async function main() {
       }
       if (totalValidationWarnings > 0) {
         console.warn(`  [WARN] Total validation issues found in ${totalValidationWarnings} matchup(s) - using Yahoo's scores as source of truth`)
+        console.warn(`  [DEBUG] Check individual week logs above for stat mismatches. Common causes: stat category configuration, rounding/formatting differences, or tied stats.`)
       }
       console.log(`  [OK] Fetched ${Object.keys(allMatchups).length} weeks`)
 
