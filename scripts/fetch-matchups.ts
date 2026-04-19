@@ -573,6 +573,12 @@ async function main() {
           allMatchups[w] = weekMatchups
           if (weekWarnings?.length) {
             totalValidationWarnings += weekWarnings.length
+            weekWarnings.forEach((warnings, matchupIdx) => {
+              if (warnings.length > 0) {
+                const statMismatches = warnings.map(w => `${w.stat}(app:${w.appResult} vs yahoo:${w.yahooResult})`).join(', ')
+                console.warn(`    [WARN] Week ${w}, Matchup ${matchupIdx}: ${statMismatches}`)
+              }
+            })
           }
           if (w % 5 === 0) console.log(`    [OK] Week ${w}/${totalWeeks}`)
         } catch (err) {
