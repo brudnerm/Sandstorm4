@@ -27,8 +27,20 @@ const BASE = 'https://fantasysports.yahooapis.com/fantasy/v2'
 // sidebar history starts at 268.l.145820 (2012), current season is 469.l.20795
 // To verify current keys, run: npx tsx scripts/get-league-keys.ts <access_token>
 const LEAGUES = [
-  { key: '469.l.13624', id: 'kp', name: 'Keeping Pattycakes' },
-  { key: '469.l.20795', id: 'sidebar', name: 'sidebar' },
+  {
+    key: '469.l.13624',
+    id: 'kp',
+    name: 'Keeping Pattycakes',
+    lowerIsBetter: new Set(['L', 'ERA', 'WHIP']),
+    nonScoringStats: new Set(['H/AB', 'IP']),
+  },
+  {
+    key: '469.l.20795',
+    id: 'sidebar',
+    name: 'sidebar',
+    lowerIsBetter: new Set(['L', 'ERA', 'WHIP']),
+    nonScoringStats: new Set(['H/AB', 'IP']),
+  },
 ]
 
 type AnyObj = Record<string, unknown>
@@ -106,6 +118,86 @@ function bearerGet(url: string, accessToken: string): Promise<unknown> {
 
 function delay(ms: number) {
   return new Promise(r => setTimeout(r, ms))
+}
+
+// ---- Validation & Scoring ----
+
+/**
+ * Validate and log matchup score discrepancies.
+ * Compares app-calculated scores vs Yahoo's reported scores.
+ */
+interface ValidationWarning {
+  stat: string
+  appResult: 'win' | 'loss' | 'tie'
+  yahooResult: 'win' | 'loss' | 'tie'
+  appCalc: string
+  yahooCalc: string
+}
+
+function compareStat(
+  valA: string,
+  valB: string,
+  lowerIsBetter: boolean,
+): 'win' | 'loss' | 'tie' {
+  const a = parseFloat(valA)
+  const b = parseFloat(valB)
+  if (isNaN(a) || isNaN(b)) return 'tie'
+  if (a === b) return 'tie'
+  if (lowerIsBetter) return a < b ? 'win' : 'loss'
+  return a > b ? 'win' : 'loss'
+}
+
+function validateMatchupScore(
+  homeTeam: MatchupTeam,
+  awayTeam: MatchupTeam,
+  leagueId: string,
+  lowerIsBetterStats: Set<string>,
+  nonScoringStats: Set<string>,
+): ValidationWarning[] {
+  const warnings: ValidationWarning[] = []
+
+  for (const stat of Object.keys(homeTeam.stats)) {
+    if (nonScoringStats.has(stat)) continue
+
+    const homeStat = homeTeam.stats[stat]
+    const awayStat = awayTeam.stats[stat]
+    if (!homeStat || !awayStat) continue
+
+    // App calculation
+    const isLowerBetter = lowerIsBetterStats.has(stat)
+    const appResult = compareStat(homeStat.value, awayStat.value, isLowerBetter)
+
+    // Yahoo's determination
+    const yahooResult = homeStat.result
+
+    if (appResult !== yahooResult) {
+      warnings.push({
+        stat,
+        appResult,
+        yahooResult,
+        appCalc: homeStat.value,
+        yahooCalc: awayStat.value,
+      })
+    }
+  }
+
+  return warnings
+}
+
+function scoreMatchup(
+  homeTeam: MatchupTeam,
+  awayTeam: MatchupTeam,
+  nonScoringStats: Set<string>,
+): { w: number; l: number; t: number } {
+  let w = 0, l = 0, t = 0
+  for (const stat of Object.keys(homeTeam.stats)) {
+    if (nonScoringStats.has(stat)) continue
+    const result = homeTeam.stats[stat]?.result ?? 'tie'
+    if (result === 'win') w++
+    else if (result === 'loss') l++
+    else t++
+  }
+  return { w, l, t }
 }
 
 // ---- Response parsing ----
@@ -218,7 +310,13 @@ function parseStatCategories(raw: unknown): Map<string, string> {
   return statCategories
 }
 
-function parseScoreboard(raw: unknown, statCategories: Map<string, string>): { matchups: Matchup[]; currentWeek: number } {
+function parseScoreboard(
+  raw: unknown,
+  statCategories: Map<string, string>,
+  leagueId?: string,
+  lowerIsBetter?: Set<string>,
+  nonScoring?: Set<string>,
+): { matchups: Matchup[]; currentWeek: number; validationWarnings?: ValidationWarning[][] } {
   const leagueArr = ((raw as AnyObj)['fantasy_content'] as AnyObj)?.['league'] as unknown[]
   if (!Array.isArray(leagueArr) || leagueArr.length < 2) {
     return { matchups: [], currentWeek: 0 }
@@ -242,6 +340,7 @@ function parseScoreboard(raw: unknown, statCategories: Map<string, string>): { m
     ? matchupsObj['count'] as number
     : Object.keys(matchupsObj).filter(k => !isNaN(Number(k))).length
   const matchups: Matchup[] = []
+  const validationWarnings: ValidationWarning[][] = []
 
   for (let i = 0; i < count; i++) {
     const matchup = (matchupsObj[String(i)] as AnyObj)?.['matchup'] as AnyObj
@@ -311,15 +410,30 @@ function parseScoreboard(raw: unknown, statCategories: Map<string, string>): { m
     }
 
     if (parsedTeams.length === 2) {
-      matchups.push({
+      const matchupEntry = {
         week,
         status,
         teams: parsedTeams as [MatchupTeam, MatchupTeam],
-      })
+      }
+      matchups.push(matchupEntry)
+
+      // Validate score calculations if config provided
+      if (leagueId && lowerIsBetter && nonScoring) {
+        const warnings = validateMatchupScore(
+          parsedTeams[0],
+          parsedTeams[1],
+          leagueId,
+          lowerIsBetter,
+          nonScoring,
+        )
+        if (warnings.length > 0) {
+          validationWarnings.push(warnings)
+        }
+      }
     }
   }
 
-  return { matchups, currentWeek }
+  return { matchups, currentWeek, validationWarnings }
 }
 
 function parseStandings(raw: unknown): StandingsEntry[] {
@@ -404,8 +518,17 @@ async function main() {
       console.log(`  [INFO] Fetching current scoreboard...`)
       const scoreboardUrl = `${BASE}/league/${league.key}/scoreboard`
       const scoreboardRaw = await bearerGet(scoreboardUrl, accessToken)
-      const { matchups, currentWeek } = parseScoreboard(scoreboardRaw, statCategories)
+      const { matchups, currentWeek, validationWarnings: currentWeekWarnings } = parseScoreboard(
+        scoreboardRaw,
+        statCategories,
+        league.id,
+        league.lowerIsBetter,
+        league.nonScoringStats,
+      )
       console.log(`  [OK] ${matchups.length} matchups, week ${currentWeek}`)
+      if (currentWeekWarnings?.length) {
+        console.warn(`  [WARN] ${currentWeekWarnings.length} matchup(s) have score validation issues`)
+      }
 
       await delay(300)
 
@@ -426,19 +549,32 @@ async function main() {
       allMatchups[currentWeek] = matchups // already have current week
 
       console.log(`  [INFO] Fetching all ${totalWeeks} weeks...`)
+      let totalValidationWarnings = 0
       for (let w = 1; w <= totalWeeks; w++) {
         if (w === currentWeek) continue // already fetched
         await delay(250)
         try {
           const weekUrl = `${BASE}/league/${league.key}/scoreboard;week=${w}`
           const weekRaw = await bearerGet(weekUrl, accessToken)
-          const { matchups: weekMatchups } = parseScoreboard(weekRaw, statCategories)
+          const { matchups: weekMatchups, validationWarnings: weekWarnings } = parseScoreboard(
+            weekRaw,
+            statCategories,
+            league.id,
+            league.lowerIsBetter,
+            league.nonScoringStats,
+          )
           allMatchups[w] = weekMatchups
+          if (weekWarnings?.length) {
+            totalValidationWarnings += weekWarnings.length
+          }
           if (w % 5 === 0) console.log(`    [OK] Week ${w}/${totalWeeks}`)
         } catch (err) {
           console.warn(`    [WARN] Week ${w}: ${err}`)
           allMatchups[w] = []
         }
+      }
+      if (totalValidationWarnings > 0) {
+        console.warn(`  [WARN] Total validation issues found in ${totalValidationWarnings} matchup(s) - using Yahoo's scores as source of truth`)
       }
       console.log(`  [OK] Fetched ${Object.keys(allMatchups).length} weeks`)
 
