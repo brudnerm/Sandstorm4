@@ -144,7 +144,11 @@ function compareStat(
   const a = parseFloat(valA)
   const b = parseFloat(valB)
   if (isNaN(a) || isNaN(b)) return 'tie'
-  if (a === b) return 'tie'
+
+  // Use epsilon for floating-point comparison to handle precision issues
+  const epsilon = 0.0001
+  if (Math.abs(a - b) < epsilon) return 'tie'
+
   if (lowerIsBetter) return a < b ? 'win' : 'loss'
   return a > b ? 'win' : 'loss'
 }
