@@ -353,7 +353,7 @@ function MatchupsReady({ data, league }: { data: MatchupData; league: LeagueConf
                       const stat = row.stats[s]
                       const dir = row.isHome ? null : stat?.result
                       return (
-                        <td key={s} className={`mu-td-stat${dir === 'win' ? ' mu-stat-win' : dir === 'loss' ? ' mu-stat-loss' : dir === 'tie' ? ' mu-stat-tie' : ''}`}>
+                        <td key={s} className={`mu-td-stat${dir === 'win' ? ' mu-stat-loss' : dir === 'loss' ? ' mu-stat-win' : dir === 'tie' ? ' mu-stat-tie' : ''}`}>
                           {stat?.value ?? '—'}
                         </td>
                       )
@@ -363,7 +363,7 @@ function MatchupsReady({ data, league }: { data: MatchupData; league: LeagueConf
                       const stat = row.stats[s]
                       const dir = row.isHome ? null : stat?.result
                       return (
-                        <td key={s} className={`mu-td-stat${dir === 'win' ? ' mu-stat-win' : dir === 'loss' ? ' mu-stat-loss' : dir === 'tie' ? ' mu-stat-tie' : ''}`}>
+                        <td key={s} className={`mu-td-stat${dir === 'win' ? ' mu-stat-loss' : dir === 'loss' ? ' mu-stat-win' : dir === 'tie' ? ' mu-stat-tie' : ''}`}>
                           {stat?.value ?? '—'}
                         </td>
                       )
