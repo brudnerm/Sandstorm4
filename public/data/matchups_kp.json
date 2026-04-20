@@ -3,7 +3,7 @@
   "league_name": "Keeping Pattycakes",
   "current_week": 5,
   "total_weeks": "25",
-  "generated_at": "2026-04-20T17:24:35.448Z",
+  "generated_at": "2026-04-20T17:48:47.790Z",
   "standings": [
     {
       "team_key": "469.l.13624.t.12",
@@ -202,7 +202,7 @@
           "points": "2",
           "stats": {
             "H/AB": {
-              "value": "1/7",
+              "value": "1/8",
               "result": "tie"
             },
             "R": {
@@ -222,11 +222,11 @@
               "result": "tie"
             },
             "AVG": {
-              "value": ".143",
+              "value": ".125",
               "result": "win"
             },
             "OBP": {
-              "value": ".143",
+              "value": ".125",
               "result": "win"
             },
             "IP": {
@@ -403,14 +403,14 @@
           "team_key": "469.l.13624.t.3",
           "team_name": "Bradishwalla",
           "owner": "joey",
-          "points": "3",
+          "points": "6",
           "stats": {
             "H/AB": {
-              "value": "0/0",
+              "value": "1/1",
               "result": "tie"
             },
             "R": {
-              "value": "0",
+              "value": "1",
               "result": "tie"
             },
             "HR": {
@@ -418,20 +418,20 @@
               "result": "tie"
             },
             "RBI": {
-              "value": "0",
-              "result": "tie"
+              "value": "2",
+              "result": "win"
             },
             "SB": {
               "value": "0",
               "result": "tie"
             },
             "AVG": {
-              "value": "",
-              "result": "loss"
+              "value": "1.000",
+              "result": "win"
             },
             "OBP": {
-              "value": "",
-              "result": "loss"
+              "value": "1.000",
+              "result": "win"
             },
             "IP": {
               "value": "2.2",
@@ -467,14 +467,14 @@
           "team_key": "469.l.13624.t.6",
           "team_name": "IM IN MY PRIME",
           "owner": "Mark",
-          "points": "2",
+          "points": "0",
           "stats": {
             "H/AB": {
               "value": "0/3",
               "result": "tie"
             },
             "R": {
-              "value": "0",
+              "value": "1",
               "result": "tie"
             },
             "HR": {
@@ -483,7 +483,7 @@
             },
             "RBI": {
               "value": "0",
-              "result": "tie"
+              "result": "loss"
             },
             "SB": {
               "value": "0",
@@ -491,11 +491,11 @@
             },
             "AVG": {
               "value": ".000",
-              "result": "win"
+              "result": "loss"
             },
             "OBP": {
-              "value": ".000",
-              "result": "win"
+              "value": ".250",
+              "result": "loss"
             },
             "IP": {
               "value": "0.0",
@@ -832,7 +832,7 @@
               "result": "win"
             },
             "OBP": {
-              "value": ".500",
+              "value": ".556",
               "result": "loss"
             },
             "IP": {
@@ -4233,7 +4233,7 @@
             "points": "2",
             "stats": {
               "H/AB": {
-                "value": "1/7",
+                "value": "1/8",
                 "result": "tie"
               },
               "R": {
@@ -4253,11 +4253,11 @@
                 "result": "tie"
               },
               "AVG": {
-                "value": ".143",
+                "value": ".125",
                 "result": "win"
               },
               "OBP": {
-                "value": ".143",
+                "value": ".125",
                 "result": "win"
               },
               "IP": {
@@ -4434,14 +4434,14 @@
             "team_key": "469.l.13624.t.3",
             "team_name": "Bradishwalla",
             "owner": "joey",
-            "points": "3",
+            "points": "6",
             "stats": {
               "H/AB": {
-                "value": "0/0",
+                "value": "1/1",
                 "result": "tie"
               },
               "R": {
-                "value": "0",
+                "value": "1",
                 "result": "tie"
               },
               "HR": {
@@ -4449,20 +4449,20 @@
                 "result": "tie"
               },
               "RBI": {
-                "value": "0",
-                "result": "tie"
+                "value": "2",
+                "result": "win"
               },
               "SB": {
                 "value": "0",
                 "result": "tie"
               },
               "AVG": {
-                "value": "",
-                "result": "loss"
+                "value": "1.000",
+                "result": "win"
               },
               "OBP": {
-                "value": "",
-                "result": "loss"
+                "value": "1.000",
+                "result": "win"
               },
               "IP": {
                 "value": "2.2",
@@ -4498,14 +4498,14 @@
             "team_key": "469.l.13624.t.6",
             "team_name": "IM IN MY PRIME",
             "owner": "Mark",
-            "points": "2",
+            "points": "0",
             "stats": {
               "H/AB": {
                 "value": "0/3",
                 "result": "tie"
               },
               "R": {
-                "value": "0",
+                "value": "1",
                 "result": "tie"
               },
               "HR": {
@@ -4514,7 +4514,7 @@
               },
               "RBI": {
                 "value": "0",
-                "result": "tie"
+                "result": "loss"
               },
               "SB": {
                 "value": "0",
@@ -4522,11 +4522,11 @@
               },
               "AVG": {
                 "value": ".000",
-                "result": "win"
+                "result": "loss"
               },
               "OBP": {
-                "value": ".000",
-                "result": "win"
+                "value": ".250",
+                "result": "loss"
               },
               "IP": {
                 "value": "0.0",
@@ -4863,7 +4863,7 @@
                 "result": "win"
               },
               "OBP": {
-                "value": ".500",
+                "value": ".556",
                 "result": "loss"
               },
               "IP": {
