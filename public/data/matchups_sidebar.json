@@ -3,7 +3,7 @@
   "league_name": "sidebar",
   "current_week": 5,
   "total_weeks": "25",
-  "generated_at": "2026-04-20T18:22:11.568Z",
+  "generated_at": "2026-04-20T18:49:07.596Z",
   "standings": [
     {
       "team_key": "469.l.20795.t.9",
@@ -425,15 +425,15 @@
           "team_key": "469.l.20795.t.4",
           "team_name": "McGonigle in 60 Seconds",
           "owner": "joey",
-          "points": "7",
+          "points": "8",
           "stats": {
             "H/AB": {
               "value": "2/5",
               "result": "tie"
             },
             "R": {
-              "value": "0",
-              "result": "tie"
+              "value": "1",
+              "result": "win"
             },
             "HR": {
               "value": "0",
@@ -505,7 +505,7 @@
             },
             "R": {
               "value": "0",
-              "result": "tie"
+              "result": "loss"
             },
             "HR": {
               "value": "0",
@@ -725,7 +725,7 @@
           "team_key": "469.l.20795.t.8",
           "team_name": "I Want Yandy",
           "owner": "Nick",
-          "points": "3",
+          "points": "4",
           "stats": {
             "H/AB": {
               "value": "0/3",
@@ -741,7 +741,7 @@
             },
             "RBI": {
               "value": "0",
-              "result": "tie"
+              "result": "loss"
             },
             "SB": {
               "value": "0",
@@ -764,7 +764,7 @@
               "result": "loss"
             },
             "IP": {
-              "value": "0.1",
+              "value": "0.2",
               "result": "tie"
             },
             "L": {
@@ -772,15 +772,15 @@
               "result": "tie"
             },
             "SV": {
-              "value": "0",
-              "result": "tie"
+              "value": "1",
+              "result": "win"
             },
             "ERA": {
               "value": "0.00",
               "result": "win"
             },
             "WHIP": {
-              "value": "0.00",
+              "value": "1.50",
               "result": "win"
             },
             "K/BB": {
@@ -797,10 +797,10 @@
           "team_key": "469.l.20795.t.10",
           "team_name": "Simpson Samson",
           "owner": "KC",
-          "points": "4",
+          "points": "5",
           "stats": {
             "H/AB": {
-              "value": "1/2",
+              "value": "2/3",
               "result": "tie"
             },
             "R": {
@@ -812,8 +812,8 @@
               "result": "tie"
             },
             "RBI": {
-              "value": "0",
-              "result": "tie"
+              "value": "2",
+              "result": "win"
             },
             "SB": {
               "value": "0",
@@ -828,11 +828,11 @@
               "result": "tie"
             },
             "AVG": {
-              "value": ".500",
+              "value": ".667",
               "result": "win"
             },
             "OPS": {
-              "value": "1.250",
+              "value": "1.800",
               "result": "win"
             },
             "IP": {
@@ -845,7 +845,7 @@
             },
             "SV": {
               "value": "0",
-              "result": "tie"
+              "result": "loss"
             },
             "ERA": {
               "value": "",
@@ -4186,15 +4186,15 @@
             "team_key": "469.l.20795.t.4",
             "team_name": "McGonigle in 60 Seconds",
             "owner": "joey",
-            "points": "7",
+            "points": "8",
             "stats": {
               "H/AB": {
                 "value": "2/5",
                 "result": "tie"
               },
               "R": {
-                "value": "0",
-                "result": "tie"
+                "value": "1",
+                "result": "win"
               },
               "HR": {
                 "value": "0",
@@ -4266,7 +4266,7 @@
               },
               "R": {
                 "value": "0",
-                "result": "tie"
+                "result": "loss"
               },
               "HR": {
                 "value": "0",
@@ -4486,7 +4486,7 @@
             "team_key": "469.l.20795.t.8",
             "team_name": "I Want Yandy",
             "owner": "Nick",
-            "points": "3",
+            "points": "4",
             "stats": {
               "H/AB": {
                 "value": "0/3",
@@ -4502,7 +4502,7 @@
               },
               "RBI": {
                 "value": "0",
-                "result": "tie"
+                "result": "loss"
               },
               "SB": {
                 "value": "0",
@@ -4525,7 +4525,7 @@
                 "result": "loss"
               },
               "IP": {
-                "value": "0.1",
+                "value": "0.2",
                 "result": "tie"
               },
               "L": {
@@ -4533,15 +4533,15 @@
                 "result": "tie"
               },
               "SV": {
-                "value": "0",
-                "result": "tie"
+                "value": "1",
+                "result": "win"
               },
               "ERA": {
                 "value": "0.00",
                 "result": "win"
               },
               "WHIP": {
-                "value": "0.00",
+                "value": "1.50",
                 "result": "win"
               },
               "K/BB": {
@@ -4558,10 +4558,10 @@
             "team_key": "469.l.20795.t.10",
             "team_name": "Simpson Samson",
             "owner": "KC",
-            "points": "4",
+            "points": "5",
             "stats": {
               "H/AB": {
-                "value": "1/2",
+                "value": "2/3",
                 "result": "tie"
               },
               "R": {
@@ -4573,8 +4573,8 @@
                 "result": "tie"
               },
               "RBI": {
-                "value": "0",
-                "result": "tie"
+                "value": "2",
+                "result": "win"
               },
               "SB": {
                 "value": "0",
@@ -4589,11 +4589,11 @@
                 "result": "tie"
               },
               "AVG": {
-                "value": ".500",
+                "value": ".667",
                 "result": "win"
               },
               "OPS": {
-                "value": "1.250",
+                "value": "1.800",
                 "result": "win"
               },
               "IP": {
@@ -4606,7 +4606,7 @@
               },
               "SV": {
                 "value": "0",
-                "result": "tie"
+                "result": "loss"
               },
               "ERA": {
                 "value": "",
