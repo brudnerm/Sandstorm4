@@ -3,7 +3,7 @@
   "league_name": "sidebar",
   "current_week": 5,
   "total_weeks": "25",
-  "generated_at": "2026-04-21T21:47:06.046Z",
+  "generated_at": "2026-04-21T22:16:38.419Z",
   "standings": [
     {
       "team_key": "469.l.20795.t.9",
@@ -299,7 +299,7 @@
             },
             "K": {
               "value": "0",
-              "result": "tie"
+              "result": "loss"
             },
             "GIDP": {
               "value": "0",
@@ -327,11 +327,11 @@
             },
             "ERA": {
               "value": "",
-              "result": "tie"
+              "result": "loss"
             },
             "WHIP": {
               "value": "",
-              "result": "tie"
+              "result": "loss"
             },
             "K/BB": {
               "value": "",
@@ -347,7 +347,7 @@
           "team_key": "469.l.20795.t.3",
           "team_name": "I Love the Drake",
           "owner": "mike",
-          "points": "4",
+          "points": "7",
           "stats": {
             "H/AB": {
               "value": "10/32",
@@ -370,8 +370,8 @@
               "result": "win"
             },
             "K": {
-              "value": "0",
-              "result": "tie"
+              "value": "1",
+              "result": "win"
             },
             "GIDP": {
               "value": "0",
@@ -386,7 +386,7 @@
               "result": "win"
             },
             "IP": {
-              "value": "0.0",
+              "value": "0.2",
               "result": "tie"
             },
             "L": {
@@ -398,12 +398,12 @@
               "result": "tie"
             },
             "ERA": {
-              "value": "",
-              "result": "tie"
+              "value": "0.00",
+              "result": "win"
             },
             "WHIP": {
-              "value": "",
-              "result": "tie"
+              "value": "0.00",
+              "result": "win"
             },
             "K/BB": {
               "value": "",
@@ -800,7 +800,7 @@
           "points": "6",
           "stats": {
             "H/AB": {
-              "value": "7/34",
+              "value": "7/35",
               "result": "tie"
             },
             "R": {
@@ -828,11 +828,11 @@
               "result": "tie"
             },
             "AVG": {
-              "value": ".206",
+              "value": ".200",
               "result": "loss"
             },
             "OPS": {
-              "value": ".694",
+              "value": ".676",
               "result": "win"
             },
             "IP": {
@@ -4060,7 +4060,7 @@
               },
               "K": {
                 "value": "0",
-                "result": "tie"
+                "result": "loss"
               },
               "GIDP": {
                 "value": "0",
@@ -4088,11 +4088,11 @@
               },
               "ERA": {
                 "value": "",
-                "result": "tie"
+                "result": "loss"
               },
               "WHIP": {
                 "value": "",
-                "result": "tie"
+                "result": "loss"
               },
               "K/BB": {
                 "value": "",
@@ -4108,7 +4108,7 @@
             "team_key": "469.l.20795.t.3",
             "team_name": "I Love the Drake",
             "owner": "mike",
-            "points": "4",
+            "points": "7",
             "stats": {
               "H/AB": {
                 "value": "10/32",
@@ -4131,8 +4131,8 @@
                 "result": "win"
               },
               "K": {
-                "value": "0",
-                "result": "tie"
+                "value": "1",
+                "result": "win"
               },
               "GIDP": {
                 "value": "0",
@@ -4147,7 +4147,7 @@
                 "result": "win"
               },
               "IP": {
-                "value": "0.0",
+                "value": "0.2",
                 "result": "tie"
               },
               "L": {
@@ -4159,12 +4159,12 @@
                 "result": "tie"
               },
               "ERA": {
-                "value": "",
-                "result": "tie"
+                "value": "0.00",
+                "result": "win"
               },
               "WHIP": {
-                "value": "",
-                "result": "tie"
+                "value": "0.00",
+                "result": "win"
               },
               "K/BB": {
                 "value": "",
@@ -4561,7 +4561,7 @@
             "points": "6",
             "stats": {
               "H/AB": {
-                "value": "7/34",
+                "value": "7/35",
                 "result": "tie"
               },
               "R": {
@@ -4589,11 +4589,11 @@
                 "result": "tie"
               },
               "AVG": {
-                "value": ".206",
+                "value": ".200",
                 "result": "loss"
               },
               "OPS": {
-                "value": ".694",
+                "value": ".676",
                 "result": "win"
               },
               "IP": {
