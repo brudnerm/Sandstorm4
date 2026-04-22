@@ -3,7 +3,7 @@
   "league_name": "sidebar",
   "current_week": 5,
   "total_weeks": "25",
-  "generated_at": "2026-04-22T23:03:55.101Z",
+  "generated_at": "2026-04-22T23:32:24.447Z",
   "standings": [
     {
       "team_key": "469.l.20795.t.9",
@@ -128,7 +128,7 @@
           "points": "6",
           "stats": {
             "H/AB": {
-              "value": "21/62",
+              "value": "21/63",
               "result": "tie"
             },
             "R": {
@@ -145,7 +145,7 @@
             },
             "SB": {
               "value": "2",
-              "result": "tie"
+              "result": "loss"
             },
             "K": {
               "value": "1",
@@ -156,11 +156,11 @@
               "result": "tie"
             },
             "AVG": {
-              "value": ".339",
+              "value": ".333",
               "result": "win"
             },
             "OPS": {
-              "value": ".921",
+              "value": ".915",
               "result": "win"
             },
             "IP": {
@@ -168,7 +168,7 @@
               "result": "tie"
             },
             "L": {
-              "value": "0",
+              "value": "1",
               "result": "win"
             },
             "SV": {
@@ -197,14 +197,14 @@
           "team_key": "469.l.20795.t.5",
           "team_name": "Lewiston Meth Heads",
           "owner": "Will Youmans",
-          "points": "7",
+          "points": "9",
           "stats": {
             "H/AB": {
               "value": "17/69",
               "result": "tie"
             },
             "R": {
-              "value": "8",
+              "value": "9",
               "result": "loss"
             },
             "HR": {
@@ -216,8 +216,8 @@
               "result": "win"
             },
             "SB": {
-              "value": "2",
-              "result": "tie"
+              "value": "3",
+              "result": "win"
             },
             "K": {
               "value": "15",
@@ -232,11 +232,11 @@
               "result": "loss"
             },
             "OPS": {
-              "value": ".635",
+              "value": ".644",
               "result": "loss"
             },
             "IP": {
-              "value": "19.0",
+              "value": "20.1",
               "result": "tie"
             },
             "L": {
@@ -248,11 +248,11 @@
               "result": "win"
             },
             "ERA": {
-              "value": "5.68",
+              "value": "5.31",
               "result": "win"
             },
             "WHIP": {
-              "value": "1.26",
+              "value": "1.18",
               "result": "win"
             },
             "K/BB": {
@@ -275,14 +275,14 @@
           "team_key": "469.l.20795.t.2",
           "team_name": "She Said 'Seiya Later Boy'",
           "owner": "Jamison",
-          "points": "8",
+          "points": "7",
           "stats": {
             "H/AB": {
-              "value": "19/72",
+              "value": "19/73",
               "result": "tie"
             },
             "R": {
-              "value": "13",
+              "value": "14",
               "result": "loss"
             },
             "HR": {
@@ -290,7 +290,7 @@
               "result": "win"
             },
             "RBI": {
-              "value": "15",
+              "value": "16",
               "result": "win"
             },
             "SB": {
@@ -306,12 +306,12 @@
               "result": "tie"
             },
             "AVG": {
-              "value": ".264",
+              "value": ".260",
               "result": "loss"
             },
             "OPS": {
-              "value": ".869",
-              "result": "win"
+              "value": ".854",
+              "result": "loss"
             },
             "IP": {
               "value": "18.0",
@@ -347,10 +347,10 @@
           "team_key": "469.l.20795.t.3",
           "team_name": "I Love the Drake",
           "owner": "mike",
-          "points": "5",
+          "points": "6",
           "stats": {
             "H/AB": {
-              "value": "21/78",
+              "value": "22/80",
               "result": "tie"
             },
             "R": {
@@ -378,12 +378,12 @@
               "result": "tie"
             },
             "AVG": {
-              "value": ".269",
+              "value": ".275",
               "result": "win"
             },
             "OPS": {
-              "value": ".861",
-              "result": "loss"
+              "value": ".864",
+              "result": "win"
             },
             "IP": {
               "value": "19.0",
@@ -425,10 +425,10 @@
           "team_key": "469.l.20795.t.4",
           "team_name": "McGonigle in 60 Seconds",
           "owner": "joey",
-          "points": "5",
+          "points": "4",
           "stats": {
             "H/AB": {
-              "value": "13/57",
+              "value": "13/60",
               "result": "tie"
             },
             "R": {
@@ -456,11 +456,11 @@
               "result": "loss"
             },
             "AVG": {
-              "value": ".228",
-              "result": "win"
+              "value": ".217",
+              "result": "loss"
             },
             "OPS": {
-              "value": ".762",
+              "value": ".725",
               "result": "loss"
             },
             "IP": {
@@ -497,14 +497,14 @@
           "team_key": "469.l.20795.t.7",
           "team_name": "Pete Me In Montauk",
           "owner": "Rich Garcis",
-          "points": "9",
+          "points": "10",
           "stats": {
             "H/AB": {
-              "value": "18/80",
+              "value": "19/81",
               "result": "tie"
             },
             "R": {
-              "value": "13",
+              "value": "14",
               "result": "win"
             },
             "HR": {
@@ -528,11 +528,11 @@
               "result": "win"
             },
             "AVG": {
-              "value": ".225",
-              "result": "loss"
+              "value": ".235",
+              "result": "win"
             },
             "OPS": {
-              "value": ".783",
+              "value": ".797",
               "result": "win"
             },
             "IP": {
@@ -578,7 +578,7 @@
           "points": "5",
           "stats": {
             "H/AB": {
-              "value": "18/82",
+              "value": "18/84",
               "result": "tie"
             },
             "R": {
@@ -606,11 +606,11 @@
               "result": "loss"
             },
             "AVG": {
-              "value": ".220",
+              "value": ".214",
               "result": "win"
             },
             "OPS": {
-              "value": ".607",
+              "value": ".594",
               "result": "loss"
             },
             "IP": {
@@ -650,7 +650,7 @@
           "points": "9",
           "stats": {
             "H/AB": {
-              "value": "9/49",
+              "value": "10/51",
               "result": "tie"
             },
             "R": {
@@ -662,7 +662,7 @@
               "result": "win"
             },
             "RBI": {
-              "value": "12",
+              "value": "13",
               "result": "win"
             },
             "SB": {
@@ -670,7 +670,7 @@
               "result": "tie"
             },
             "K": {
-              "value": "8",
+              "value": "12",
               "result": "win"
             },
             "GIDP": {
@@ -678,15 +678,15 @@
               "result": "win"
             },
             "AVG": {
-              "value": ".184",
+              "value": ".196",
               "result": "loss"
             },
             "OPS": {
-              "value": ".627",
+              "value": ".640",
               "result": "win"
             },
             "IP": {
-              "value": "10.2",
+              "value": "12.1",
               "result": "tie"
             },
             "L": {
@@ -698,15 +698,15 @@
               "result": "loss"
             },
             "ERA": {
-              "value": "5.06",
+              "value": "4.38",
               "result": "loss"
             },
             "WHIP": {
-              "value": "1.50",
+              "value": "1.54",
               "result": "loss"
             },
             "K/BB": {
-              "value": "0.89",
+              "value": "1.09",
               "result": "win"
             },
             "QS": {
@@ -728,7 +728,7 @@
           "points": "7",
           "stats": {
             "H/AB": {
-              "value": "21/90",
+              "value": "22/91",
               "result": "tie"
             },
             "R": {
@@ -748,7 +748,7 @@
               "result": "loss"
             },
             "K": {
-              "value": "6",
+              "value": "7",
               "result": "win"
             },
             "GIDP": {
@@ -756,15 +756,15 @@
               "result": "tie"
             },
             "AVG": {
-              "value": ".233",
+              "value": ".242",
               "result": "win"
             },
             "OPS": {
-              "value": ".581",
+              "value": ".607",
               "result": "loss"
             },
             "IP": {
-              "value": "3.0",
+              "value": "5.0",
               "result": "tie"
             },
             "L": {
@@ -776,15 +776,15 @@
               "result": "win"
             },
             "ERA": {
-              "value": "12.00",
+              "value": "9.00",
               "result": "win"
             },
             "WHIP": {
-              "value": "2.67",
+              "value": "2.00",
               "result": "win"
             },
             "K/BB": {
-              "value": "6.00",
+              "value": "7.00",
               "result": "win"
             },
             "QS": {
@@ -3889,7 +3889,7 @@
             "points": "6",
             "stats": {
               "H/AB": {
-                "value": "21/62",
+                "value": "21/63",
                 "result": "tie"
               },
               "R": {
@@ -3906,7 +3906,7 @@
               },
               "SB": {
                 "value": "2",
-                "result": "tie"
+                "result": "loss"
               },
               "K": {
                 "value": "1",
@@ -3917,11 +3917,11 @@
                 "result": "tie"
               },
               "AVG": {
-                "value": ".339",
+                "value": ".333",
                 "result": "win"
               },
               "OPS": {
-                "value": ".921",
+                "value": ".915",
                 "result": "win"
               },
               "IP": {
@@ -3929,7 +3929,7 @@
                 "result": "tie"
               },
               "L": {
-                "value": "0",
+                "value": "1",
                 "result": "win"
               },
               "SV": {
@@ -3958,14 +3958,14 @@
             "team_key": "469.l.20795.t.5",
             "team_name": "Lewiston Meth Heads",
             "owner": "Will Youmans",
-            "points": "7",
+            "points": "9",
             "stats": {
               "H/AB": {
                 "value": "17/69",
                 "result": "tie"
               },
               "R": {
-                "value": "8",
+                "value": "9",
                 "result": "loss"
               },
               "HR": {
@@ -3977,8 +3977,8 @@
                 "result": "win"
               },
               "SB": {
-                "value": "2",
-                "result": "tie"
+                "value": "3",
+                "result": "win"
               },
               "K": {
                 "value": "15",
@@ -3993,11 +3993,11 @@
                 "result": "loss"
               },
               "OPS": {
-                "value": ".635",
+                "value": ".644",
                 "result": "loss"
               },
               "IP": {
-                "value": "19.0",
+                "value": "20.1",
                 "result": "tie"
               },
               "L": {
@@ -4009,11 +4009,11 @@
                 "result": "win"
               },
               "ERA": {
-                "value": "5.68",
+                "value": "5.31",
                 "result": "win"
               },
               "WHIP": {
-                "value": "1.26",
+                "value": "1.18",
                 "result": "win"
               },
               "K/BB": {
@@ -4036,14 +4036,14 @@
             "team_key": "469.l.20795.t.2",
             "team_name": "She Said 'Seiya Later Boy'",
             "owner": "Jamison",
-            "points": "8",
+            "points": "7",
             "stats": {
               "H/AB": {
-                "value": "19/72",
+                "value": "19/73",
                 "result": "tie"
               },
               "R": {
-                "value": "13",
+                "value": "14",
                 "result": "loss"
               },
               "HR": {
@@ -4051,7 +4051,7 @@
                 "result": "win"
               },
               "RBI": {
-                "value": "15",
+                "value": "16",
                 "result": "win"
               },
               "SB": {
@@ -4067,12 +4067,12 @@
                 "result": "tie"
               },
               "AVG": {
-                "value": ".264",
+                "value": ".260",
                 "result": "loss"
               },
               "OPS": {
-                "value": ".869",
-                "result": "win"
+                "value": ".854",
+                "result": "loss"
               },
               "IP": {
                 "value": "18.0",
@@ -4108,10 +4108,10 @@
             "team_key": "469.l.20795.t.3",
             "team_name": "I Love the Drake",
             "owner": "mike",
-            "points": "5",
+            "points": "6",
             "stats": {
               "H/AB": {
-                "value": "21/78",
+                "value": "22/80",
                 "result": "tie"
               },
               "R": {
@@ -4139,12 +4139,12 @@
                 "result": "tie"
               },
               "AVG": {
-                "value": ".269",
+                "value": ".275",
                 "result": "win"
               },
               "OPS": {
-                "value": ".861",
-                "result": "loss"
+                "value": ".864",
+                "result": "win"
               },
               "IP": {
                 "value": "19.0",
@@ -4186,10 +4186,10 @@
             "team_key": "469.l.20795.t.4",
             "team_name": "McGonigle in 60 Seconds",
             "owner": "joey",
-            "points": "5",
+            "points": "4",
             "stats": {
               "H/AB": {
-                "value": "13/57",
+                "value": "13/60",
                 "result": "tie"
               },
               "R": {
@@ -4217,11 +4217,11 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".228",
-                "result": "win"
+                "value": ".217",
+                "result": "loss"
               },
               "OPS": {
-                "value": ".762",
+                "value": ".725",
                 "result": "loss"
               },
               "IP": {
@@ -4258,14 +4258,14 @@
             "team_key": "469.l.20795.t.7",
             "team_name": "Pete Me In Montauk",
             "owner": "Rich Garcis",
-            "points": "9",
+            "points": "10",
             "stats": {
               "H/AB": {
-                "value": "18/80",
+                "value": "19/81",
                 "result": "tie"
               },
               "R": {
-                "value": "13",
+                "value": "14",
                 "result": "win"
               },
               "HR": {
@@ -4289,11 +4289,11 @@
                 "result": "win"
               },
               "AVG": {
-                "value": ".225",
-                "result": "loss"
+                "value": ".235",
+                "result": "win"
               },
               "OPS": {
-                "value": ".783",
+                "value": ".797",
                 "result": "win"
               },
               "IP": {
@@ -4339,7 +4339,7 @@
             "points": "5",
             "stats": {
               "H/AB": {
-                "value": "18/82",
+                "value": "18/84",
                 "result": "tie"
               },
               "R": {
@@ -4367,11 +4367,11 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".220",
+                "value": ".214",
                 "result": "win"
               },
               "OPS": {
-                "value": ".607",
+                "value": ".594",
                 "result": "loss"
               },
               "IP": {
@@ -4411,7 +4411,7 @@
             "points": "9",
             "stats": {
               "H/AB": {
-                "value": "9/49",
+                "value": "10/51",
                 "result": "tie"
               },
               "R": {
@@ -4423,7 +4423,7 @@
                 "result": "win"
               },
               "RBI": {
-                "value": "12",
+                "value": "13",
                 "result": "win"
               },
               "SB": {
@@ -4431,7 +4431,7 @@
                 "result": "tie"
               },
               "K": {
-                "value": "8",
+                "value": "12",
                 "result": "win"
               },
               "GIDP": {
@@ -4439,15 +4439,15 @@
                 "result": "win"
               },
               "AVG": {
-                "value": ".184",
+                "value": ".196",
                 "result": "loss"
               },
               "OPS": {
-                "value": ".627",
+                "value": ".640",
                 "result": "win"
               },
               "IP": {
-                "value": "10.2",
+                "value": "12.1",
                 "result": "tie"
               },
               "L": {
@@ -4459,15 +4459,15 @@
                 "result": "loss"
               },
               "ERA": {
-                "value": "5.06",
+                "value": "4.38",
                 "result": "loss"
               },
               "WHIP": {
-                "value": "1.50",
+                "value": "1.54",
                 "result": "loss"
               },
               "K/BB": {
-                "value": "0.89",
+                "value": "1.09",
                 "result": "win"
               },
               "QS": {
@@ -4489,7 +4489,7 @@
             "points": "7",
             "stats": {
               "H/AB": {
-                "value": "21/90",
+                "value": "22/91",
                 "result": "tie"
               },
               "R": {
@@ -4509,7 +4509,7 @@
                 "result": "loss"
               },
               "K": {
-                "value": "6",
+                "value": "7",
                 "result": "win"
               },
               "GIDP": {
@@ -4517,15 +4517,15 @@
                 "result": "tie"
               },
               "AVG": {
-                "value": ".233",
+                "value": ".242",
                 "result": "win"
               },
               "OPS": {
-                "value": ".581",
+                "value": ".607",
                 "result": "loss"
               },
               "IP": {
-                "value": "3.0",
+                "value": "5.0",
                 "result": "tie"
               },
               "L": {
@@ -4537,15 +4537,15 @@
                 "result": "win"
               },
               "ERA": {
-                "value": "12.00",
+                "value": "9.00",
                 "result": "win"
               },
               "WHIP": {
-                "value": "2.67",
+                "value": "2.00",
                 "result": "win"
               },
               "K/BB": {
-                "value": "6.00",
+                "value": "7.00",
                 "result": "win"
               },
               "QS": {
