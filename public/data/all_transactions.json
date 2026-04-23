@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-04-23T20:08:56.298Z",
-  "total_transactions": 13728,
+  "generated_at": "2026-04-23T20:35:33.782Z",
+  "total_transactions": 13729,
   "seasons_included": [
     "2009",
     "2010",
@@ -384672,6 +384672,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Bo Bishit",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "136",
+      "date": "2026-04-23",
+      "timestamp": 1776976025,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.10752",
+          "name": "Ildemaro Vargas",
+          "position": "1B,2B",
+          "mlb_team": "AZ",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Who's Your Vladdy"
+        },
+        {
+          "player_key": "469.p.11639",
+          "name": "Joel Kuhnel",
+          "position": "RP",
+          "mlb_team": "ATH",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Who's Your Vladdy",
           "destination_type": "waivers",
           "destination_team": ""
         }
