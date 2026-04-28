@@ -3,7 +3,7 @@
   "league_name": "Keeping Pattycakes",
   "current_week": 6,
   "total_weeks": "25",
-  "generated_at": "2026-04-28T06:38:00.568Z",
+  "generated_at": "2026-04-28T16:37:24.723Z",
   "standings": [
     {
       "team_key": "469.l.13624.t.8",
@@ -805,7 +805,7 @@
           "team_key": "469.l.13624.t.10",
           "team_name": "mannys still stoned",
           "owner": "Galen",
-          "points": "2",
+          "points": "1",
           "stats": {
             "H/AB": {
               "value": "1/14",
@@ -836,23 +836,23 @@
               "result": "win"
             },
             "IP": {
-              "value": "0.0",
+              "value": "",
               "result": "tie"
             },
             "W": {
-              "value": "0",
-              "result": "tie"
+              "value": "",
+              "result": "loss"
             },
             "L": {
-              "value": "0",
-              "result": "win"
+              "value": "",
+              "result": "loss"
             },
             "SV": {
-              "value": "0",
+              "value": "",
               "result": "loss"
             },
             "K": {
-              "value": "0",
+              "value": "",
               "result": "loss"
             },
             "ERA": {
@@ -869,7 +869,7 @@
           "team_key": "469.l.13624.t.12",
           "team_name": "Who's Your Vladdy",
           "owner": "KC",
-          "points": "8",
+          "points": "10",
           "stats": {
             "H/AB": {
               "value": "4/25",
@@ -905,11 +905,11 @@
             },
             "W": {
               "value": "0",
-              "result": "tie"
+              "result": "win"
             },
             "L": {
               "value": "1",
-              "result": "loss"
+              "result": "win"
             },
             "SV": {
               "value": "1",
@@ -5642,7 +5642,7 @@
             "team_key": "469.l.13624.t.10",
             "team_name": "mannys still stoned",
             "owner": "Galen",
-            "points": "2",
+            "points": "1",
             "stats": {
               "H/AB": {
                 "value": "1/14",
@@ -5673,23 +5673,23 @@
                 "result": "win"
               },
               "IP": {
-                "value": "0.0",
+                "value": "",
                 "result": "tie"
               },
               "W": {
-                "value": "0",
-                "result": "tie"
+                "value": "",
+                "result": "loss"
               },
               "L": {
-                "value": "0",
-                "result": "win"
+                "value": "",
+                "result": "loss"
               },
               "SV": {
-                "value": "0",
+                "value": "",
                 "result": "loss"
               },
               "K": {
-                "value": "0",
+                "value": "",
                 "result": "loss"
               },
               "ERA": {
@@ -5706,7 +5706,7 @@
             "team_key": "469.l.13624.t.12",
             "team_name": "Who's Your Vladdy",
             "owner": "KC",
-            "points": "8",
+            "points": "10",
             "stats": {
               "H/AB": {
                 "value": "4/25",
@@ -5742,11 +5742,11 @@
               },
               "W": {
                 "value": "0",
-                "result": "tie"
+                "result": "win"
               },
               "L": {
                 "value": "1",
-                "result": "loss"
+                "result": "win"
               },
               "SV": {
                 "value": "1",

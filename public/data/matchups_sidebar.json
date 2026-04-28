@@ -3,7 +3,7 @@
   "league_name": "sidebar",
   "current_week": 6,
   "total_weeks": "25",
-  "generated_at": "2026-04-28T06:38:13.095Z",
+  "generated_at": "2026-04-28T16:37:39.097Z",
   "standings": [
     {
       "team_key": "469.l.20795.t.9",
@@ -113,7 +113,7 @@
       "losses": 46,
       "ties": 1,
       "waiver_priority": 8,
-      "faab_balance": 76
+      "faab_balance": 74
     }
   ],
   "matchups": [
@@ -291,7 +291,7 @@
           "team_key": "469.l.20795.t.2",
           "team_name": "She Said 'Seiya Later Boy'",
           "owner": "Jamison",
-          "points": "10",
+          "points": "11",
           "stats": {
             "H/AB": {
               "value": "10/29",
@@ -358,8 +358,8 @@
               "result": "win"
             },
             "K/BB": {
-              "value": "",
-              "result": "loss"
+              "value": "INF",
+              "result": "win"
             },
             "QS": {
               "value": "0",
@@ -371,7 +371,7 @@
           "team_key": "469.l.20795.t.10",
           "team_name": "Simpson Samson",
           "owner": "KC",
-          "points": "4",
+          "points": "3",
           "stats": {
             "H/AB": {
               "value": "2/15",
@@ -439,7 +439,7 @@
             },
             "K/BB": {
               "value": "1.00",
-              "result": "win"
+              "result": "loss"
             },
             "QS": {
               "value": "0",
@@ -623,7 +623,7 @@
           "team_key": "469.l.20795.t.4",
           "team_name": "McGonigle in 60 Seconds",
           "owner": "joey",
-          "points": "5",
+          "points": "4",
           "stats": {
             "H/AB": {
               "value": "3/18",
@@ -691,7 +691,7 @@
             },
             "K/BB": {
               "value": "1.29",
-              "result": "win"
+              "result": "loss"
             },
             "QS": {
               "value": "0",
@@ -703,7 +703,7 @@
           "team_key": "469.l.20795.t.6",
           "team_name": "Magic Baseballs",
           "owner": "Galen",
-          "points": "5",
+          "points": "6",
           "stats": {
             "H/AB": {
               "value": "4/17",
@@ -770,8 +770,8 @@
               "result": "loss"
             },
             "K/BB": {
-              "value": "",
-              "result": "loss"
+              "value": "INF",
+              "result": "win"
             },
             "QS": {
               "value": "0",
@@ -5284,7 +5284,7 @@
             "team_key": "469.l.20795.t.2",
             "team_name": "She Said 'Seiya Later Boy'",
             "owner": "Jamison",
-            "points": "10",
+            "points": "11",
             "stats": {
               "H/AB": {
                 "value": "10/29",
@@ -5351,8 +5351,8 @@
                 "result": "win"
               },
               "K/BB": {
-                "value": "",
-                "result": "loss"
+                "value": "INF",
+                "result": "win"
               },
               "QS": {
                 "value": "0",
@@ -5364,7 +5364,7 @@
             "team_key": "469.l.20795.t.10",
             "team_name": "Simpson Samson",
             "owner": "KC",
-            "points": "4",
+            "points": "3",
             "stats": {
               "H/AB": {
                 "value": "2/15",
@@ -5432,7 +5432,7 @@
               },
               "K/BB": {
                 "value": "1.00",
-                "result": "win"
+                "result": "loss"
               },
               "QS": {
                 "value": "0",
@@ -5616,7 +5616,7 @@
             "team_key": "469.l.20795.t.4",
             "team_name": "McGonigle in 60 Seconds",
             "owner": "joey",
-            "points": "5",
+            "points": "4",
             "stats": {
               "H/AB": {
                 "value": "3/18",
@@ -5684,7 +5684,7 @@
               },
               "K/BB": {
                 "value": "1.29",
-                "result": "win"
+                "result": "loss"
               },
               "QS": {
                 "value": "0",
@@ -5696,7 +5696,7 @@
             "team_key": "469.l.20795.t.6",
             "team_name": "Magic Baseballs",
             "owner": "Galen",
-            "points": "5",
+            "points": "6",
             "stats": {
               "H/AB": {
                 "value": "4/17",
@@ -5763,8 +5763,8 @@
                 "result": "loss"
               },
               "K/BB": {
-                "value": "",
-                "result": "loss"
+                "value": "INF",
+                "result": "win"
               },
               "QS": {
                 "value": "0",

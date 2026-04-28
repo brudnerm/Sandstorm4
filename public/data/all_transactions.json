@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-04-28T06:38:17.452Z",
-  "total_transactions": 13739,
+  "generated_at": "2026-04-28T16:37:43.924Z",
+  "total_transactions": 13741,
   "seasons_included": [
     "2009",
     "2010",
@@ -385003,6 +385003,70 @@
           "source_type": "team",
           "source_team": "So bad it Kurtz",
           "destination_type": "freeagents",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "147",
+      "date": "2026-04-28",
+      "timestamp": 1777363541,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.62975",
+          "name": "Chase Dollander",
+          "position": "SP,RP",
+          "mlb_team": "COL",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Bradishwalla"
+        },
+        {
+          "player_key": "469.p.11926",
+          "name": "Reid Detmers",
+          "position": "SP,RP",
+          "mlb_team": "LAA",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Bradishwalla",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "148",
+      "date": "2026-04-28",
+      "timestamp": 1777372771,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.11781",
+          "name": "Miguel Vargas",
+          "position": "1B,3B",
+          "mlb_team": "CWS",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "IM IN MY PRIME"
+        },
+        {
+          "player_key": "469.p.11928",
+          "name": "Dillon Dingler",
+          "position": "C",
+          "mlb_team": "DET",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "IM IN MY PRIME",
+          "destination_type": "waivers",
           "destination_team": ""
         }
       ]
