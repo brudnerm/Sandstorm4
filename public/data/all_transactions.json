@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-04-28T19:34:09.389Z",
-  "total_transactions": 13741,
+  "generated_at": "2026-04-28T20:10:55.554Z",
+  "total_transactions": 13742,
   "seasons_included": [
     "2009",
     "2010",
@@ -385066,6 +385066,27 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "IM IN MY PRIME",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "149",
+      "date": "2026-04-28",
+      "timestamp": 1777405754,
+      "transaction_type": "drop",
+      "players": [
+        {
+          "player_key": "469.p.12776",
+          "name": "Kodai Senga",
+          "position": "SP",
+          "mlb_team": "NYM",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Bennett?",
           "destination_type": "waivers",
           "destination_team": ""
         }
