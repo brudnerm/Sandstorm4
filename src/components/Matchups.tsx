@@ -341,11 +341,11 @@ function MatchupsReady({ data, league }: { data: MatchupData; league: LeagueConf
                   <th className="mu-th-sticky mu-th-owner">Owner</th>
                   <th className="mu-th-sticky mu-th-score">vs</th>
                   {battingStats.map(s => (
-                    <th key={s} className="mu-th-stat">{s}</th>
+                    <th key={s} className="mu-th-stat">{s.replace(/_[BP]$/, '')}</th>
                   ))}
                   <th className="mu-th-divider" />
                   {pitchingStats.map(s => (
-                    <th key={s} className="mu-th-stat">{s}</th>
+                    <th key={s} className="mu-th-stat">{s.replace(/_[BP]$/, '')}</th>
                   ))}
                   <th className="mu-th-divider" />
                   <th className="mu-th-team">Team</th>

@@ -353,9 +353,9 @@ export const SIDEBAR_CONFIG: LeagueConfig = {
   enableKeepers: false,
   storagePrefix: 'sandstorm_sidebar_draft',
   showTransactionTabs: false,
-  // K=pitcher Ks (higher is better), GIDP=pitcher GIDP induced (higher is better)
-  pitchingStatKeys: ['L', 'SV', 'K', 'GIDP', 'ERA', 'WHIP', 'K/BB', 'QS'],
-  lowerIsBetter: ['L', 'ERA', 'WHIP'],
+  // K_P=pitcher Ks (higher is better), K_B=batter Ks (lower is better), GIDP_P=pitcher GIDP induced (higher is better), GIDP_B=batter GIDP (lower is better)
+  pitchingStatKeys: ['L', 'SV', 'K_P', 'GIDP_P', 'ERA', 'WHIP', 'K/BB', 'QS'],
+  lowerIsBetter: ['L', 'ERA', 'WHIP', 'K_B', 'GIDP_B'],
   nonScoringStats: ['H/AB', 'IP'],
   batterColumns: SIDEBAR_BATTER_COLUMNS,
   pitcherColumns: SIDEBAR_PITCHER_COLUMNS,

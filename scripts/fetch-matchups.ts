@@ -39,8 +39,8 @@ const LEAGUES = [
     key: '469.l.20795',
     id: 'sidebar',
     name: 'sidebar',
-    pitchingStats: new Set(['L', 'SV', 'K', 'GIDP', 'ERA', 'WHIP', 'K/BB', 'QS']),
-    lowerIsBetter: new Set(['L', 'ERA', 'WHIP']),
+    pitchingStats: new Set(['L', 'SV', 'K_P', 'GIDP_P', 'ERA', 'WHIP', 'K/BB', 'QS']),
+    lowerIsBetter: new Set(['L', 'ERA', 'WHIP', 'K_B', 'GIDP_B']),
     nonScoringStats: new Set(['H/AB', 'IP']),
   },
 ]
@@ -291,9 +291,11 @@ function extractOwnerName(teamArr: unknown[]): string {
 }
 
 function parseStatCategories(raw: unknown): Map<string, string> {
-  const statCategories = new Map<string, string>()
+  // First pass: collect all stats with id, display name, and position type
+  const allStats: Array<{ id: string; abbr: string; posType: string }> = []
+
   const leagueArr = ((raw as AnyObj)['fantasy_content'] as AnyObj)?.['league'] as unknown[]
-  if (!Array.isArray(leagueArr)) return statCategories
+  if (!Array.isArray(leagueArr)) return new Map()
 
   for (const item of leagueArr) {
     const settingsObj = (item as AnyObj)?.['settings'] as unknown[] | undefined
@@ -304,15 +306,45 @@ function parseStatCategories(raw: unknown): Map<string, string> {
       if (Array.isArray(stats)) {
         for (const st of stats) {
           const stat = (st as AnyObj)?.['stat'] as AnyObj | undefined
-          if (stat) {
-            const id = String(stat['stat_id'] ?? '')
-            const abbr = (stat['display_name'] as string) ?? ''
-            if (id && abbr) statCategories.set(id, abbr)
+          if (!stat) continue
+          const id = String(stat['stat_id'] ?? '')
+          const abbr = (stat['display_name'] as string) ?? ''
+          if (!id || !abbr) continue
+
+          // Yahoo returns position_type as 'B' or 'P' on each stat
+          let posType = (stat['position_type'] as string) ?? ''
+          if (!posType) {
+            // Fallback: check stat_position_types object
+            const spt = stat['stat_position_types'] as AnyObj | undefined
+            const inner = spt?.['stat_position_type'] as AnyObj | undefined
+            posType = (inner?.['position_type'] as string) ?? ''
           }
+
+          allStats.push({ id, abbr, posType })
         }
       }
     }
   }
+
+  // Detect duplicate display names across stats
+  const abbrCount = new Map<string, number>()
+  for (const { abbr } of allStats) {
+    abbrCount.set(abbr, (abbrCount.get(abbr) ?? 0) + 1)
+  }
+
+  // Build final map: suffix with _B/_P for duplicate display names (e.g. GIDP, K)
+  const statCategories = new Map<string, string>()
+  for (const { id, abbr, posType } of allStats) {
+    if ((abbrCount.get(abbr) ?? 0) > 1 && posType) {
+      statCategories.set(id, `${abbr}_${posType}`)
+    } else {
+      statCategories.set(id, abbr)
+    }
+  }
+
+  // Log all parsed categories for debugging
+  console.log(`  [DEBUG] Stat categories: ${[...statCategories.values()].join(', ')}`)
+
   return statCategories
 }
 
