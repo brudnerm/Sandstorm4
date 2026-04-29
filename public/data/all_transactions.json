@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-04-29T06:34:55.811Z",
-  "total_transactions": 13745,
+  "generated_at": "2026-04-29T16:34:42.090Z",
+  "total_transactions": 13747,
   "seasons_included": [
     "2009",
     "2010",
@@ -379432,7 +379432,7 @@
         {
           "player_key": "469.p.10639",
           "name": "Fernando Tatis Jr.",
-          "position": "OF",
+          "position": "2B,OF",
           "mlb_team": "SD",
           "action": "keeper",
           "source_type": "draft",
@@ -385174,6 +385174,48 @@
           "source_team": "",
           "destination_type": "team",
           "destination_team": "Bennett?"
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "153",
+      "date": "2026-04-29",
+      "timestamp": 1777472689,
+      "transaction_type": "drop",
+      "players": [
+        {
+          "player_key": "469.p.12501",
+          "name": "Max Muncy",
+          "position": "2B,3B,SS",
+          "mlb_team": "ATH",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "mannys still stoned",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "154",
+      "date": "2026-04-29",
+      "timestamp": 1777472728,
+      "transaction_type": "add",
+      "players": [
+        {
+          "player_key": "469.p.60115",
+          "name": "Elmer Rodríguez",
+          "position": "SP",
+          "mlb_team": "NYY",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "mannys still stoned"
         }
       ]
     }
