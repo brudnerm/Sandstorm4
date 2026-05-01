@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-05-01T22:18:25.873Z",
-  "total_transactions": 13757,
+  "generated_at": "2026-05-01T22:47:36.451Z",
+  "total_transactions": 13758,
   "seasons_included": [
     "2009",
     "2010",
@@ -385534,6 +385534,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Bo Bishit",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "165",
+      "date": "2026-05-01",
+      "timestamp": 1777673921,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.10489",
+          "name": "Foster Griffin",
+          "position": "SP,RP",
+          "mlb_team": "WSH",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Who's Your Vladdy"
+        },
+        {
+          "player_key": "469.p.10909",
+          "name": "Trevor Rogers",
+          "position": "SP",
+          "mlb_team": "BAL",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Who's Your Vladdy",
           "destination_type": "waivers",
           "destination_team": ""
         }
