@@ -291,8 +291,8 @@ function extractOwnerName(teamArr: unknown[]): string {
 }
 
 function parseStatCategories(raw: unknown): Map<string, string> {
-  // First pass: collect all stats with id, display name, and position type
-  const allStats: Array<{ id: string; abbr: string; posType: string }> = []
+  // First pass: collect all stats with id, display name, position type, and sort order
+  const allStats: Array<{ id: string; abbr: string; posType: string; sortOrder: string }> = []
 
   const leagueArr = ((raw as AnyObj)['fantasy_content'] as AnyObj)?.['league'] as unknown[]
   if (!Array.isArray(leagueArr)) return new Map()
@@ -311,40 +311,45 @@ function parseStatCategories(raw: unknown): Map<string, string> {
           const abbr = (stat['display_name'] as string) ?? ''
           if (!id || !abbr) continue
 
-          // Yahoo returns position_type as 'B' or 'P' on each stat
           let posType = (stat['position_type'] as string) ?? ''
           if (!posType) {
-            // Fallback: check stat_position_types object
             const spt = stat['stat_position_types'] as AnyObj | undefined
             const inner = spt?.['stat_position_type'] as AnyObj | undefined
             posType = (inner?.['position_type'] as string) ?? ''
           }
 
-          allStats.push({ id, abbr, posType })
+          const sortOrder = String(stat['sort_order'] ?? '')
+          allStats.push({ id, abbr, posType, sortOrder })
         }
       }
     }
   }
 
-  // Detect duplicate display names across stats
+  // Log every raw stat so we can see exactly what Yahoo returns
+  console.log(`  [DEBUG] Raw stat fields (${allStats.length}):`)
+  for (const { id, abbr, posType, sortOrder } of allStats) {
+    console.log(`    id=${id} name=${abbr} position_type=${posType || '?'} sort_order=${sortOrder || '?'}`)
+  }
+
+  // Detect duplicate display names
   const abbrCount = new Map<string, number>()
   for (const { abbr } of allStats) {
     abbrCount.set(abbr, (abbrCount.get(abbr) ?? 0) + 1)
   }
 
-  // Build final map: suffix with _B/_P for duplicate display names (e.g. GIDP, K)
+  // Build final map: for duplicate display names, suffix with _B or _P
+  // Priority: position_type field → sort_order (0=lower-is-better=batter negative, 1=higher-is-better=pitcher positive)
   const statCategories = new Map<string, string>()
-  for (const { id, abbr, posType } of allStats) {
-    if ((abbrCount.get(abbr) ?? 0) > 1 && posType) {
-      statCategories.set(id, `${abbr}_${posType}`)
+  for (const { id, abbr, posType, sortOrder } of allStats) {
+    if ((abbrCount.get(abbr) ?? 0) > 1) {
+      const suffix = posType || (sortOrder === '0' ? 'B' : sortOrder === '1' ? 'P' : '')
+      statCategories.set(id, suffix ? `${abbr}_${suffix}` : abbr)
     } else {
       statCategories.set(id, abbr)
     }
   }
 
-  // Log all parsed categories for debugging
-  console.log(`  [DEBUG] Stat categories: ${[...statCategories.values()].join(', ')}`)
-
+  console.log(`  [DEBUG] Resolved stat categories: ${[...statCategories.values()].join(', ')}`)
   return statCategories
 }
 
