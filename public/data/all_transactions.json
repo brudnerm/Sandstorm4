@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-05-02T05:49:44.151Z",
-  "total_transactions": 13760,
+  "generated_at": "2026-05-02T15:57:09.578Z",
+  "total_transactions": 13761,
   "seasons_included": [
     "2009",
     "2010",
@@ -385631,6 +385631,38 @@
           "source_type": "team",
           "source_team": "Bo Bishit",
           "destination_type": "freeagents",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "168",
+      "date": "2026-05-02",
+      "timestamp": 1777726442,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.12544",
+          "name": "Casey Schmitt",
+          "position": "1B,2B,3B",
+          "mlb_team": "SF",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "mannys still stoned"
+        },
+        {
+          "player_key": "469.p.60115",
+          "name": "Elmer Rodríguez",
+          "position": "SP",
+          "mlb_team": "NYY",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "mannys still stoned",
+          "destination_type": "waivers",
           "destination_team": ""
         }
       ]
