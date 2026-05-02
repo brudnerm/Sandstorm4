@@ -3,7 +3,7 @@
   "league_name": "sidebar",
   "current_week": 6,
   "total_weeks": "25",
-  "generated_at": "2026-05-02T22:46:33.688Z",
+  "generated_at": "2026-05-02T23:17:00.280Z",
   "standings": [
     {
       "team_key": "469.l.20795.t.9",
@@ -128,7 +128,7 @@
           "points": "6",
           "stats": {
             "H/AB": {
-              "value": "46/167",
+              "value": "47/168",
               "result": "tie"
             },
             "R": {
@@ -140,7 +140,7 @@
               "result": "win"
             },
             "RBI": {
-              "value": "31",
+              "value": "32",
               "result": "win"
             },
             "SB": {
@@ -156,11 +156,11 @@
               "result": "win"
             },
             "AVG": {
-              "value": ".275",
+              "value": ".280",
               "result": "loss"
             },
             "OPS": {
-              "value": ".860",
+              "value": ".866",
               "result": "loss"
             },
             "IP": {
@@ -208,7 +208,7 @@
           "points": "8",
           "stats": {
             "H/AB": {
-              "value": "49/159",
+              "value": "49/160",
               "result": "tie"
             },
             "R": {
@@ -236,11 +236,11 @@
               "result": "loss"
             },
             "AVG": {
-              "value": ".308",
+              "value": ".306",
               "result": "win"
             },
             "OPS": {
-              "value": ".930",
+              "value": ".925",
               "result": "win"
             },
             "IP": {
@@ -374,7 +374,7 @@
           "points": "5",
           "stats": {
             "H/AB": {
-              "value": "57/181",
+              "value": "57/182",
               "result": "tie"
             },
             "R": {
@@ -402,11 +402,11 @@
               "result": "loss"
             },
             "AVG": {
-              "value": ".315",
+              "value": ".313",
               "result": "win"
             },
             "OPS": {
-              "value": ".964",
+              "value": ".959",
               "result": "win"
             },
             "IP": {
@@ -460,12 +460,12 @@
           "points": "10",
           "stats": {
             "H/AB": {
-              "value": "32/158",
+              "value": "32/159",
               "result": "tie"
             },
             "R": {
               "value": "20",
-              "result": "tie"
+              "result": "loss"
             },
             "HR": {
               "value": "3",
@@ -485,14 +485,14 @@
             },
             "GIDP_B": {
               "value": "3",
-              "result": "loss"
+              "result": "tie"
             },
             "AVG": {
-              "value": ".203",
+              "value": ".201",
               "result": "loss"
             },
             "OPS": {
-              "value": ".585",
+              "value": ".581",
               "result": "loss"
             },
             "IP": {
@@ -540,12 +540,12 @@
           "points": "4",
           "stats": {
             "H/AB": {
-              "value": "38/141",
+              "value": "39/144",
               "result": "tie"
             },
             "R": {
-              "value": "20",
-              "result": "tie"
+              "value": "21",
+              "result": "win"
             },
             "HR": {
               "value": "2",
@@ -564,15 +564,15 @@
               "result": "loss"
             },
             "GIDP_B": {
-              "value": "2",
-              "result": "win"
+              "value": "3",
+              "result": "tie"
             },
             "AVG": {
-              "value": ".270",
+              "value": ".271",
               "result": "win"
             },
             "OPS": {
-              "value": ".789",
+              "value": ".787",
               "result": "win"
             },
             "IP": {
@@ -623,10 +623,10 @@
           "team_key": "469.l.20795.t.4",
           "team_name": "McGonigle in 60 Seconds",
           "owner": "joey",
-          "points": "4",
+          "points": "2",
           "stats": {
             "H/AB": {
-              "value": "28/145",
+              "value": "30/147",
               "result": "tie"
             },
             "R": {
@@ -654,15 +654,15 @@
               "result": "loss"
             },
             "AVG": {
-              "value": ".193",
+              "value": ".204",
               "result": "loss"
             },
             "OPS": {
-              "value": ".619",
+              "value": ".637",
               "result": "loss"
             },
             "IP": {
-              "value": "33.2",
+              "value": "35.0",
               "result": "tie"
             },
             "L": {
@@ -671,7 +671,7 @@
             },
             "SV": {
               "value": "1",
-              "result": "win"
+              "result": "tie"
             },
             "K_P": {
               "value": "35",
@@ -682,12 +682,12 @@
               "result": "win"
             },
             "ERA": {
-              "value": "5.08",
+              "value": "5.14",
               "result": "loss"
             },
             "WHIP": {
-              "value": "1.40",
-              "result": "win"
+              "value": "1.46",
+              "result": "loss"
             },
             "K/BB": {
               "value": "2.50",
@@ -703,7 +703,7 @@
           "team_key": "469.l.20795.t.6",
           "team_name": "Magic Baseballs",
           "owner": "Galen",
-          "points": "11",
+          "points": "12",
           "stats": {
             "H/AB": {
               "value": "39/155",
@@ -742,7 +742,7 @@
               "result": "win"
             },
             "IP": {
-              "value": "20.1",
+              "value": "20.2",
               "result": "tie"
             },
             "L": {
@@ -750,8 +750,8 @@
               "result": "win"
             },
             "SV": {
-              "value": "0",
-              "result": "loss"
+              "value": "1",
+              "result": "tie"
             },
             "K_P": {
               "value": "20",
@@ -762,12 +762,12 @@
               "result": "loss"
             },
             "ERA": {
-              "value": "3.10",
+              "value": "3.05",
               "result": "win"
             },
             "WHIP": {
-              "value": "1.43",
-              "result": "loss"
+              "value": "1.40",
+              "result": "win"
             },
             "K/BB": {
               "value": "2.86",
@@ -792,7 +792,7 @@
           "points": "5",
           "stats": {
             "H/AB": {
-              "value": "42/158",
+              "value": "43/161",
               "result": "tie"
             },
             "R": {
@@ -804,7 +804,7 @@
               "result": "win"
             },
             "RBI": {
-              "value": "24",
+              "value": "25",
               "result": "win"
             },
             "SB": {
@@ -820,11 +820,11 @@
               "result": "tie"
             },
             "AVG": {
-              "value": ".266",
+              "value": ".267",
               "result": "win"
             },
             "OPS": {
-              "value": ".868",
+              "value": ".864",
               "result": "win"
             },
             "IP": {
@@ -5121,7 +5121,7 @@
             "points": "6",
             "stats": {
               "H/AB": {
-                "value": "46/167",
+                "value": "47/168",
                 "result": "tie"
               },
               "R": {
@@ -5133,7 +5133,7 @@
                 "result": "win"
               },
               "RBI": {
-                "value": "31",
+                "value": "32",
                 "result": "win"
               },
               "SB": {
@@ -5149,11 +5149,11 @@
                 "result": "win"
               },
               "AVG": {
-                "value": ".275",
+                "value": ".280",
                 "result": "loss"
               },
               "OPS": {
-                "value": ".860",
+                "value": ".866",
                 "result": "loss"
               },
               "IP": {
@@ -5201,7 +5201,7 @@
             "points": "8",
             "stats": {
               "H/AB": {
-                "value": "49/159",
+                "value": "49/160",
                 "result": "tie"
               },
               "R": {
@@ -5229,11 +5229,11 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".308",
+                "value": ".306",
                 "result": "win"
               },
               "OPS": {
-                "value": ".930",
+                "value": ".925",
                 "result": "win"
               },
               "IP": {
@@ -5367,7 +5367,7 @@
             "points": "5",
             "stats": {
               "H/AB": {
-                "value": "57/181",
+                "value": "57/182",
                 "result": "tie"
               },
               "R": {
@@ -5395,11 +5395,11 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".315",
+                "value": ".313",
                 "result": "win"
               },
               "OPS": {
-                "value": ".964",
+                "value": ".959",
                 "result": "win"
               },
               "IP": {
@@ -5453,12 +5453,12 @@
             "points": "10",
             "stats": {
               "H/AB": {
-                "value": "32/158",
+                "value": "32/159",
                 "result": "tie"
               },
               "R": {
                 "value": "20",
-                "result": "tie"
+                "result": "loss"
               },
               "HR": {
                 "value": "3",
@@ -5478,14 +5478,14 @@
               },
               "GIDP_B": {
                 "value": "3",
-                "result": "loss"
+                "result": "tie"
               },
               "AVG": {
-                "value": ".203",
+                "value": ".201",
                 "result": "loss"
               },
               "OPS": {
-                "value": ".585",
+                "value": ".581",
                 "result": "loss"
               },
               "IP": {
@@ -5533,12 +5533,12 @@
             "points": "4",
             "stats": {
               "H/AB": {
-                "value": "38/141",
+                "value": "39/144",
                 "result": "tie"
               },
               "R": {
-                "value": "20",
-                "result": "tie"
+                "value": "21",
+                "result": "win"
               },
               "HR": {
                 "value": "2",
@@ -5557,15 +5557,15 @@
                 "result": "loss"
               },
               "GIDP_B": {
-                "value": "2",
-                "result": "win"
+                "value": "3",
+                "result": "tie"
               },
               "AVG": {
-                "value": ".270",
+                "value": ".271",
                 "result": "win"
               },
               "OPS": {
-                "value": ".789",
+                "value": ".787",
                 "result": "win"
               },
               "IP": {
@@ -5616,10 +5616,10 @@
             "team_key": "469.l.20795.t.4",
             "team_name": "McGonigle in 60 Seconds",
             "owner": "joey",
-            "points": "4",
+            "points": "2",
             "stats": {
               "H/AB": {
-                "value": "28/145",
+                "value": "30/147",
                 "result": "tie"
               },
               "R": {
@@ -5647,15 +5647,15 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".193",
+                "value": ".204",
                 "result": "loss"
               },
               "OPS": {
-                "value": ".619",
+                "value": ".637",
                 "result": "loss"
               },
               "IP": {
-                "value": "33.2",
+                "value": "35.0",
                 "result": "tie"
               },
               "L": {
@@ -5664,7 +5664,7 @@
               },
               "SV": {
                 "value": "1",
-                "result": "win"
+                "result": "tie"
               },
               "K_P": {
                 "value": "35",
@@ -5675,12 +5675,12 @@
                 "result": "win"
               },
               "ERA": {
-                "value": "5.08",
+                "value": "5.14",
                 "result": "loss"
               },
               "WHIP": {
-                "value": "1.40",
-                "result": "win"
+                "value": "1.46",
+                "result": "loss"
               },
               "K/BB": {
                 "value": "2.50",
@@ -5696,7 +5696,7 @@
             "team_key": "469.l.20795.t.6",
             "team_name": "Magic Baseballs",
             "owner": "Galen",
-            "points": "11",
+            "points": "12",
             "stats": {
               "H/AB": {
                 "value": "39/155",
@@ -5735,7 +5735,7 @@
                 "result": "win"
               },
               "IP": {
-                "value": "20.1",
+                "value": "20.2",
                 "result": "tie"
               },
               "L": {
@@ -5743,8 +5743,8 @@
                 "result": "win"
               },
               "SV": {
-                "value": "0",
-                "result": "loss"
+                "value": "1",
+                "result": "tie"
               },
               "K_P": {
                 "value": "20",
@@ -5755,12 +5755,12 @@
                 "result": "loss"
               },
               "ERA": {
-                "value": "3.10",
+                "value": "3.05",
                 "result": "win"
               },
               "WHIP": {
-                "value": "1.43",
-                "result": "loss"
+                "value": "1.40",
+                "result": "win"
               },
               "K/BB": {
                 "value": "2.86",
@@ -5785,7 +5785,7 @@
             "points": "5",
             "stats": {
               "H/AB": {
-                "value": "42/158",
+                "value": "43/161",
                 "result": "tie"
               },
               "R": {
@@ -5797,7 +5797,7 @@
                 "result": "win"
               },
               "RBI": {
-                "value": "24",
+                "value": "25",
                 "result": "win"
               },
               "SB": {
@@ -5813,11 +5813,11 @@
                 "result": "tie"
               },
               "AVG": {
-                "value": ".266",
+                "value": ".267",
                 "result": "win"
               },
               "OPS": {
-                "value": ".868",
+                "value": ".864",
                 "result": "win"
               },
               "IP": {
