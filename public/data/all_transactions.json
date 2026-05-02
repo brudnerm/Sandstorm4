@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-05-02T02:19:28.004Z",
-  "total_transactions": 13758,
+  "generated_at": "2026-05-02T03:44:25.588Z",
+  "total_transactions": 13759,
   "seasons_included": [
     "2009",
     "2010",
@@ -385563,6 +385563,38 @@
           "name": "Trevor Rogers",
           "position": "SP",
           "mlb_team": "BAL",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Who's Your Vladdy",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "166",
+      "date": "2026-05-02",
+      "timestamp": 1777689167,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.62461",
+          "name": "Jack Perkins",
+          "position": "SP,RP",
+          "mlb_team": "ATH",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Who's Your Vladdy"
+        },
+        {
+          "player_key": "469.p.10557",
+          "name": "Mickey Moniak",
+          "position": "OF",
+          "mlb_team": "COL",
           "action": "drop",
           "source_type": "team",
           "source_team": "Who's Your Vladdy",
