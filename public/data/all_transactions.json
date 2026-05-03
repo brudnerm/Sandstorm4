@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-05-03T23:30:14.425Z",
-  "total_transactions": 13766,
+  "generated_at": "2026-05-03T23:52:41.356Z",
+  "total_transactions": 13767,
   "seasons_included": [
     "2009",
     "2010",
@@ -385813,6 +385813,27 @@
           "source_team": "When the Bo Bishit goes down",
           "destination_type": "waivers",
           "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "174",
+      "date": "2026-05-03",
+      "timestamp": 1777851805,
+      "transaction_type": "add",
+      "players": [
+        {
+          "player_key": "469.p.60262",
+          "name": "Logan Henderson",
+          "position": "SP",
+          "mlb_team": "MIL",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "mannys still stoned"
         }
       ]
     }
