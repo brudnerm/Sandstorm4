@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-05-04T18:02:12.973Z",
-  "total_transactions": 13769,
+  "generated_at": "2026-05-04T18:50:22.603Z",
+  "total_transactions": 13770,
   "seasons_included": [
     "2009",
     "2010",
@@ -385896,6 +385896,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "So bad it Kurtz",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "177",
+      "date": "2026-05-04",
+      "timestamp": 1777919736,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.12015",
+          "name": "Max Meyer",
+          "position": "SP",
+          "mlb_team": "MIA",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Manchester by Marsee"
+        },
+        {
+          "player_key": "469.p.11823",
+          "name": "Joey Cantillo",
+          "position": "SP,RP",
+          "mlb_team": "CLE",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Manchester by Marsee",
           "destination_type": "waivers",
           "destination_team": ""
         }
