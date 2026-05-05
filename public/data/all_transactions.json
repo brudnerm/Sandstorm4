@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-05-05T03:08:26.308Z",
-  "total_transactions": 13772,
+  "generated_at": "2026-05-05T04:22:56.682Z",
+  "total_transactions": 13773,
   "seasons_included": [
     "2009",
     "2010",
@@ -385992,6 +385992,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Bennett?",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "180",
+      "date": "2026-05-05",
+      "timestamp": 1777951210,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.12007",
+          "name": "Cade Cavalli",
+          "position": "SP",
+          "mlb_team": "WSH",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Manchester by Marsee"
+        },
+        {
+          "player_key": "469.p.60137",
+          "name": "Tanner Bibee",
+          "position": "SP",
+          "mlb_team": "CLE",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Manchester by Marsee",
           "destination_type": "waivers",
           "destination_team": ""
         }
