@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-05-05T01:56:14.327Z",
-  "total_transactions": 13771,
+  "generated_at": "2026-05-05T03:08:26.308Z",
+  "total_transactions": 13772,
   "seasons_included": [
     "2009",
     "2010",
@@ -385960,6 +385960,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "When the Bo Bishit goes down",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "179",
+      "date": "2026-05-05",
+      "timestamp": 1777948983,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.64329",
+          "name": "Carson Benge",
+          "position": "OF",
+          "mlb_team": "NYM",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Bennett?"
+        },
+        {
+          "player_key": "469.p.10843",
+          "name": "Daulton Varsho",
+          "position": "OF",
+          "mlb_team": "TOR",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Bennett?",
           "destination_type": "waivers",
           "destination_team": ""
         }
