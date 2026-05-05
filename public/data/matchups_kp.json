@@ -3,7 +3,7 @@
   "league_name": "Keeping Pattycakes",
   "current_week": 7,
   "total_weeks": "25",
-  "generated_at": "2026-05-05T06:21:45.530Z",
+  "generated_at": "2026-05-05T16:33:46.952Z",
   "standings": [
     {
       "team_key": "469.l.13624.t.8",
@@ -187,11 +187,11 @@
             },
             "ERA": {
               "value": "7.20",
-              "result": "win"
+              "result": "loss"
             },
             "WHIP": {
               "value": "1.60",
-              "result": "win"
+              "result": "loss"
             }
           }
         },
@@ -250,12 +250,12 @@
               "result": "loss"
             },
             "ERA": {
-              "value": "",
-              "result": "loss"
+              "value": "-",
+              "result": "win"
             },
             "WHIP": {
-              "value": "",
-              "result": "loss"
+              "value": "-",
+              "result": "win"
             }
           }
         }
@@ -300,23 +300,23 @@
               "result": "win"
             },
             "IP": {
-              "value": "0.0",
+              "value": "",
               "result": "tie"
             },
             "W": {
-              "value": "0",
+              "value": "",
               "result": "tie"
             },
             "L": {
-              "value": "0",
+              "value": "",
               "result": "tie"
             },
             "SV": {
-              "value": "0",
+              "value": "",
               "result": "tie"
             },
             "K": {
-              "value": "0",
+              "value": "",
               "result": "tie"
             },
             "ERA": {
@@ -364,23 +364,23 @@
               "result": "loss"
             },
             "IP": {
-              "value": "0.0",
+              "value": "",
               "result": "tie"
             },
             "W": {
-              "value": "0",
+              "value": "",
               "result": "tie"
             },
             "L": {
-              "value": "0",
+              "value": "",
               "result": "tie"
             },
             "SV": {
-              "value": "0",
+              "value": "",
               "result": "tie"
             },
             "K": {
-              "value": "0",
+              "value": "",
               "result": "tie"
             },
             "ERA": {
@@ -671,7 +671,7 @@
           "team_key": "469.l.13624.t.7",
           "team_name": "When the Bo Bishit goes down",
           "owner": "Nick",
-          "points": "7",
+          "points": "9",
           "stats": {
             "H/AB": {
               "value": "8/29",
@@ -711,11 +711,11 @@
             },
             "L": {
               "value": "0",
-              "result": "tie"
+              "result": "win"
             },
             "SV": {
               "value": "0",
-              "result": "tie"
+              "result": "win"
             },
             "K": {
               "value": "20",
@@ -766,23 +766,23 @@
               "result": "win"
             },
             "IP": {
-              "value": "0.0",
+              "value": "",
               "result": "tie"
             },
             "W": {
-              "value": "0",
+              "value": "",
               "result": "loss"
             },
             "L": {
-              "value": "0",
-              "result": "tie"
+              "value": "",
+              "result": "loss"
             },
             "SV": {
-              "value": "0",
-              "result": "tie"
+              "value": "",
+              "result": "loss"
             },
             "K": {
-              "value": "0",
+              "value": "",
               "result": "loss"
             },
             "ERA": {
@@ -5830,11 +5830,11 @@
               },
               "ERA": {
                 "value": "7.20",
-                "result": "win"
+                "result": "loss"
               },
               "WHIP": {
                 "value": "1.60",
-                "result": "win"
+                "result": "loss"
               }
             }
           },
@@ -5893,12 +5893,12 @@
                 "result": "loss"
               },
               "ERA": {
-                "value": "",
-                "result": "loss"
+                "value": "-",
+                "result": "win"
               },
               "WHIP": {
-                "value": "",
-                "result": "loss"
+                "value": "-",
+                "result": "win"
               }
             }
           }
@@ -5943,23 +5943,23 @@
                 "result": "win"
               },
               "IP": {
-                "value": "0.0",
+                "value": "",
                 "result": "tie"
               },
               "W": {
-                "value": "0",
+                "value": "",
                 "result": "tie"
               },
               "L": {
-                "value": "0",
+                "value": "",
                 "result": "tie"
               },
               "SV": {
-                "value": "0",
+                "value": "",
                 "result": "tie"
               },
               "K": {
-                "value": "0",
+                "value": "",
                 "result": "tie"
               },
               "ERA": {
@@ -6007,23 +6007,23 @@
                 "result": "loss"
               },
               "IP": {
-                "value": "0.0",
+                "value": "",
                 "result": "tie"
               },
               "W": {
-                "value": "0",
+                "value": "",
                 "result": "tie"
               },
               "L": {
-                "value": "0",
+                "value": "",
                 "result": "tie"
               },
               "SV": {
-                "value": "0",
+                "value": "",
                 "result": "tie"
               },
               "K": {
-                "value": "0",
+                "value": "",
                 "result": "tie"
               },
               "ERA": {
@@ -6314,7 +6314,7 @@
             "team_key": "469.l.13624.t.7",
             "team_name": "When the Bo Bishit goes down",
             "owner": "Nick",
-            "points": "7",
+            "points": "9",
             "stats": {
               "H/AB": {
                 "value": "8/29",
@@ -6354,11 +6354,11 @@
               },
               "L": {
                 "value": "0",
-                "result": "tie"
+                "result": "win"
               },
               "SV": {
                 "value": "0",
-                "result": "tie"
+                "result": "win"
               },
               "K": {
                 "value": "20",
@@ -6409,23 +6409,23 @@
                 "result": "win"
               },
               "IP": {
-                "value": "0.0",
+                "value": "",
                 "result": "tie"
               },
               "W": {
-                "value": "0",
+                "value": "",
                 "result": "loss"
               },
               "L": {
-                "value": "0",
-                "result": "tie"
+                "value": "",
+                "result": "loss"
               },
               "SV": {
-                "value": "0",
-                "result": "tie"
+                "value": "",
+                "result": "loss"
               },
               "K": {
-                "value": "0",
+                "value": "",
                 "result": "loss"
               },
               "ERA": {
