@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-05-06T23:33:51.203Z",
-  "total_transactions": 13781,
+  "generated_at": "2026-05-07T00:03:13.274Z",
+  "total_transactions": 13782,
   "seasons_included": [
     "2009",
     "2010",
@@ -386280,6 +386280,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "IM IN MY PRIME",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "189",
+      "date": "2026-05-06",
+      "timestamp": 1778111070,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.11778",
+          "name": "Michael Busch",
+          "position": "1B",
+          "mlb_team": "CHC",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "When the Bo Bishit goes down"
+        },
+        {
+          "player_key": "469.p.11717",
+          "name": "Trevor Megill",
+          "position": "RP",
+          "mlb_team": "MIL",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "When the Bo Bishit goes down",
           "destination_type": "waivers",
           "destination_team": ""
         }
