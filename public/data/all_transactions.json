@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-05-11T06:45:49.931Z",
-  "total_transactions": 13791,
+  "generated_at": "2026-05-11T16:55:40.664Z",
+  "total_transactions": 13792,
   "seasons_included": [
     "2009",
     "2010",
@@ -386520,7 +386520,7 @@
         {
           "player_key": "469.p.12503",
           "name": "Zack Gelof",
-          "position": "2B,OF",
+          "position": "2B,3B,OF",
           "mlb_team": "ATH",
           "action": "add",
           "source_type": "freeagents",
@@ -386597,6 +386597,38 @@
           "name": "Robby Snelling",
           "position": "SP",
           "mlb_team": "MIA",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Raisin Duran Crunch",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "199",
+      "date": "2026-05-11",
+      "timestamp": 1778499208,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.64479",
+          "name": "Ryan Waldschmidt",
+          "position": "OF",
+          "mlb_team": "AZ",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Raisin Duran Crunch"
+        },
+        {
+          "player_key": "469.p.60294",
+          "name": "Spencer Jones",
+          "position": "OF",
+          "mlb_team": "NYY",
           "action": "drop",
           "source_type": "team",
           "source_team": "Raisin Duran Crunch",
