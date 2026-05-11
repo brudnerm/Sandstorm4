@@ -3,7 +3,7 @@
   "league_name": "sidebar",
   "current_week": 8,
   "total_weeks": "25",
-  "generated_at": "2026-05-11T22:14:06.529Z",
+  "generated_at": "2026-05-11T22:38:24.279Z",
   "standings": [
     {
       "team_key": "469.l.20795.t.6",
@@ -157,11 +157,11 @@
             },
             "AVG": {
               "value": "",
-              "result": "tie"
+              "result": "loss"
             },
             "OPS": {
               "value": "",
-              "result": "tie"
+              "result": "loss"
             },
             "IP": {
               "value": "0.0",
@@ -205,10 +205,10 @@
           "team_key": "469.l.20795.t.6",
           "team_name": "Magic Baseballs",
           "owner": "Galen",
-          "points": "0",
+          "points": "2",
           "stats": {
             "H/AB": {
-              "value": "0/0",
+              "value": "0/1",
               "result": "tie"
             },
             "R": {
@@ -236,12 +236,12 @@
               "result": "tie"
             },
             "AVG": {
-              "value": "",
-              "result": "tie"
+              "value": ".000",
+              "result": "win"
             },
             "OPS": {
-              "value": "",
-              "result": "tie"
+              "value": ".000",
+              "result": "win"
             },
             "IP": {
               "value": "0.0",
@@ -457,6 +457,172 @@
           "team_key": "469.l.20795.t.3",
           "team_name": "Asi Asi Harris II",
           "owner": "mike",
+          "points": "0",
+          "stats": {
+            "H/AB": {
+              "value": "0/3",
+              "result": "tie"
+            },
+            "R": {
+              "value": "0",
+              "result": "tie"
+            },
+            "HR": {
+              "value": "0",
+              "result": "tie"
+            },
+            "RBI": {
+              "value": "0",
+              "result": "tie"
+            },
+            "SB": {
+              "value": "0",
+              "result": "tie"
+            },
+            "K_B": {
+              "value": "0",
+              "result": "tie"
+            },
+            "GIDP_B": {
+              "value": "0",
+              "result": "tie"
+            },
+            "AVG": {
+              "value": ".000",
+              "result": "tie"
+            },
+            "OPS": {
+              "value": ".000",
+              "result": "tie"
+            },
+            "IP": {
+              "value": "0.0",
+              "result": "tie"
+            },
+            "L": {
+              "value": "0",
+              "result": "tie"
+            },
+            "SV": {
+              "value": "0",
+              "result": "tie"
+            },
+            "K_P": {
+              "value": "0",
+              "result": "tie"
+            },
+            "GIDP_P": {
+              "value": "0",
+              "result": "tie"
+            },
+            "ERA": {
+              "value": "",
+              "result": "tie"
+            },
+            "WHIP": {
+              "value": "",
+              "result": "tie"
+            },
+            "K/BB": {
+              "value": "",
+              "result": "tie"
+            },
+            "QS": {
+              "value": "0",
+              "result": "tie"
+            }
+          }
+        },
+        {
+          "team_key": "469.l.20795.t.4",
+          "team_name": "McGonigle in 60 Seconds",
+          "owner": "joey",
+          "points": "0",
+          "stats": {
+            "H/AB": {
+              "value": "0/1",
+              "result": "tie"
+            },
+            "R": {
+              "value": "0",
+              "result": "tie"
+            },
+            "HR": {
+              "value": "0",
+              "result": "tie"
+            },
+            "RBI": {
+              "value": "0",
+              "result": "tie"
+            },
+            "SB": {
+              "value": "0",
+              "result": "tie"
+            },
+            "K_B": {
+              "value": "0",
+              "result": "tie"
+            },
+            "GIDP_B": {
+              "value": "0",
+              "result": "tie"
+            },
+            "AVG": {
+              "value": ".000",
+              "result": "tie"
+            },
+            "OPS": {
+              "value": ".000",
+              "result": "tie"
+            },
+            "IP": {
+              "value": "0.0",
+              "result": "tie"
+            },
+            "L": {
+              "value": "0",
+              "result": "tie"
+            },
+            "SV": {
+              "value": "0",
+              "result": "tie"
+            },
+            "K_P": {
+              "value": "0",
+              "result": "tie"
+            },
+            "GIDP_P": {
+              "value": "0",
+              "result": "tie"
+            },
+            "ERA": {
+              "value": "",
+              "result": "tie"
+            },
+            "WHIP": {
+              "value": "",
+              "result": "tie"
+            },
+            "K/BB": {
+              "value": "",
+              "result": "tie"
+            },
+            "QS": {
+              "value": "0",
+              "result": "tie"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "status": "midevent",
+      "teams": [
+        {
+          "team_key": "469.l.20795.t.5",
+          "team_name": "Lewiston Meth Heads",
+          "owner": "Will Youmans",
           "points": "2",
           "stats": {
             "H/AB": {
@@ -534,172 +700,6 @@
           }
         },
         {
-          "team_key": "469.l.20795.t.4",
-          "team_name": "McGonigle in 60 Seconds",
-          "owner": "joey",
-          "points": "0",
-          "stats": {
-            "H/AB": {
-              "value": "0/0",
-              "result": "tie"
-            },
-            "R": {
-              "value": "0",
-              "result": "tie"
-            },
-            "HR": {
-              "value": "0",
-              "result": "tie"
-            },
-            "RBI": {
-              "value": "0",
-              "result": "tie"
-            },
-            "SB": {
-              "value": "0",
-              "result": "tie"
-            },
-            "K_B": {
-              "value": "0",
-              "result": "tie"
-            },
-            "GIDP_B": {
-              "value": "0",
-              "result": "tie"
-            },
-            "AVG": {
-              "value": "",
-              "result": "loss"
-            },
-            "OPS": {
-              "value": "",
-              "result": "loss"
-            },
-            "IP": {
-              "value": "0.0",
-              "result": "tie"
-            },
-            "L": {
-              "value": "0",
-              "result": "tie"
-            },
-            "SV": {
-              "value": "0",
-              "result": "tie"
-            },
-            "K_P": {
-              "value": "0",
-              "result": "tie"
-            },
-            "GIDP_P": {
-              "value": "0",
-              "result": "tie"
-            },
-            "ERA": {
-              "value": "",
-              "result": "tie"
-            },
-            "WHIP": {
-              "value": "",
-              "result": "tie"
-            },
-            "K/BB": {
-              "value": "",
-              "result": "tie"
-            },
-            "QS": {
-              "value": "0",
-              "result": "tie"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "week": 8,
-      "status": "midevent",
-      "teams": [
-        {
-          "team_key": "469.l.20795.t.5",
-          "team_name": "Lewiston Meth Heads",
-          "owner": "Will Youmans",
-          "points": "0",
-          "stats": {
-            "H/AB": {
-              "value": "0/0",
-              "result": "tie"
-            },
-            "R": {
-              "value": "0",
-              "result": "tie"
-            },
-            "HR": {
-              "value": "0",
-              "result": "tie"
-            },
-            "RBI": {
-              "value": "0",
-              "result": "tie"
-            },
-            "SB": {
-              "value": "0",
-              "result": "tie"
-            },
-            "K_B": {
-              "value": "0",
-              "result": "tie"
-            },
-            "GIDP_B": {
-              "value": "0",
-              "result": "tie"
-            },
-            "AVG": {
-              "value": "",
-              "result": "tie"
-            },
-            "OPS": {
-              "value": "",
-              "result": "tie"
-            },
-            "IP": {
-              "value": "0.0",
-              "result": "tie"
-            },
-            "L": {
-              "value": "0",
-              "result": "tie"
-            },
-            "SV": {
-              "value": "0",
-              "result": "tie"
-            },
-            "K_P": {
-              "value": "0",
-              "result": "tie"
-            },
-            "GIDP_P": {
-              "value": "0",
-              "result": "tie"
-            },
-            "ERA": {
-              "value": "",
-              "result": "tie"
-            },
-            "WHIP": {
-              "value": "",
-              "result": "tie"
-            },
-            "K/BB": {
-              "value": "",
-              "result": "tie"
-            },
-            "QS": {
-              "value": "0",
-              "result": "tie"
-            }
-          }
-        },
-        {
           "team_key": "469.l.20795.t.8",
           "team_name": "I Want Yandy",
           "owner": "Nick",
@@ -735,11 +735,11 @@
             },
             "AVG": {
               "value": "",
-              "result": "tie"
+              "result": "loss"
             },
             "OPS": {
               "value": "",
-              "result": "tie"
+              "result": "loss"
             },
             "IP": {
               "value": "0.0",
@@ -6814,11 +6814,11 @@
               },
               "AVG": {
                 "value": "",
-                "result": "tie"
+                "result": "loss"
               },
               "OPS": {
                 "value": "",
-                "result": "tie"
+                "result": "loss"
               },
               "IP": {
                 "value": "0.0",
@@ -6862,10 +6862,10 @@
             "team_key": "469.l.20795.t.6",
             "team_name": "Magic Baseballs",
             "owner": "Galen",
-            "points": "0",
+            "points": "2",
             "stats": {
               "H/AB": {
-                "value": "0/0",
+                "value": "0/1",
                 "result": "tie"
               },
               "R": {
@@ -6893,12 +6893,12 @@
                 "result": "tie"
               },
               "AVG": {
-                "value": "",
-                "result": "tie"
+                "value": ".000",
+                "result": "win"
               },
               "OPS": {
-                "value": "",
-                "result": "tie"
+                "value": ".000",
+                "result": "win"
               },
               "IP": {
                 "value": "0.0",
@@ -7114,6 +7114,172 @@
             "team_key": "469.l.20795.t.3",
             "team_name": "Asi Asi Harris II",
             "owner": "mike",
+            "points": "0",
+            "stats": {
+              "H/AB": {
+                "value": "0/3",
+                "result": "tie"
+              },
+              "R": {
+                "value": "0",
+                "result": "tie"
+              },
+              "HR": {
+                "value": "0",
+                "result": "tie"
+              },
+              "RBI": {
+                "value": "0",
+                "result": "tie"
+              },
+              "SB": {
+                "value": "0",
+                "result": "tie"
+              },
+              "K_B": {
+                "value": "0",
+                "result": "tie"
+              },
+              "GIDP_B": {
+                "value": "0",
+                "result": "tie"
+              },
+              "AVG": {
+                "value": ".000",
+                "result": "tie"
+              },
+              "OPS": {
+                "value": ".000",
+                "result": "tie"
+              },
+              "IP": {
+                "value": "0.0",
+                "result": "tie"
+              },
+              "L": {
+                "value": "0",
+                "result": "tie"
+              },
+              "SV": {
+                "value": "0",
+                "result": "tie"
+              },
+              "K_P": {
+                "value": "0",
+                "result": "tie"
+              },
+              "GIDP_P": {
+                "value": "0",
+                "result": "tie"
+              },
+              "ERA": {
+                "value": "",
+                "result": "tie"
+              },
+              "WHIP": {
+                "value": "",
+                "result": "tie"
+              },
+              "K/BB": {
+                "value": "",
+                "result": "tie"
+              },
+              "QS": {
+                "value": "0",
+                "result": "tie"
+              }
+            }
+          },
+          {
+            "team_key": "469.l.20795.t.4",
+            "team_name": "McGonigle in 60 Seconds",
+            "owner": "joey",
+            "points": "0",
+            "stats": {
+              "H/AB": {
+                "value": "0/1",
+                "result": "tie"
+              },
+              "R": {
+                "value": "0",
+                "result": "tie"
+              },
+              "HR": {
+                "value": "0",
+                "result": "tie"
+              },
+              "RBI": {
+                "value": "0",
+                "result": "tie"
+              },
+              "SB": {
+                "value": "0",
+                "result": "tie"
+              },
+              "K_B": {
+                "value": "0",
+                "result": "tie"
+              },
+              "GIDP_B": {
+                "value": "0",
+                "result": "tie"
+              },
+              "AVG": {
+                "value": ".000",
+                "result": "tie"
+              },
+              "OPS": {
+                "value": ".000",
+                "result": "tie"
+              },
+              "IP": {
+                "value": "0.0",
+                "result": "tie"
+              },
+              "L": {
+                "value": "0",
+                "result": "tie"
+              },
+              "SV": {
+                "value": "0",
+                "result": "tie"
+              },
+              "K_P": {
+                "value": "0",
+                "result": "tie"
+              },
+              "GIDP_P": {
+                "value": "0",
+                "result": "tie"
+              },
+              "ERA": {
+                "value": "",
+                "result": "tie"
+              },
+              "WHIP": {
+                "value": "",
+                "result": "tie"
+              },
+              "K/BB": {
+                "value": "",
+                "result": "tie"
+              },
+              "QS": {
+                "value": "0",
+                "result": "tie"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "week": 8,
+        "status": "midevent",
+        "teams": [
+          {
+            "team_key": "469.l.20795.t.5",
+            "team_name": "Lewiston Meth Heads",
+            "owner": "Will Youmans",
             "points": "2",
             "stats": {
               "H/AB": {
@@ -7191,172 +7357,6 @@
             }
           },
           {
-            "team_key": "469.l.20795.t.4",
-            "team_name": "McGonigle in 60 Seconds",
-            "owner": "joey",
-            "points": "0",
-            "stats": {
-              "H/AB": {
-                "value": "0/0",
-                "result": "tie"
-              },
-              "R": {
-                "value": "0",
-                "result": "tie"
-              },
-              "HR": {
-                "value": "0",
-                "result": "tie"
-              },
-              "RBI": {
-                "value": "0",
-                "result": "tie"
-              },
-              "SB": {
-                "value": "0",
-                "result": "tie"
-              },
-              "K_B": {
-                "value": "0",
-                "result": "tie"
-              },
-              "GIDP_B": {
-                "value": "0",
-                "result": "tie"
-              },
-              "AVG": {
-                "value": "",
-                "result": "loss"
-              },
-              "OPS": {
-                "value": "",
-                "result": "loss"
-              },
-              "IP": {
-                "value": "0.0",
-                "result": "tie"
-              },
-              "L": {
-                "value": "0",
-                "result": "tie"
-              },
-              "SV": {
-                "value": "0",
-                "result": "tie"
-              },
-              "K_P": {
-                "value": "0",
-                "result": "tie"
-              },
-              "GIDP_P": {
-                "value": "0",
-                "result": "tie"
-              },
-              "ERA": {
-                "value": "",
-                "result": "tie"
-              },
-              "WHIP": {
-                "value": "",
-                "result": "tie"
-              },
-              "K/BB": {
-                "value": "",
-                "result": "tie"
-              },
-              "QS": {
-                "value": "0",
-                "result": "tie"
-              }
-            }
-          }
-        ]
-      },
-      {
-        "week": 8,
-        "status": "midevent",
-        "teams": [
-          {
-            "team_key": "469.l.20795.t.5",
-            "team_name": "Lewiston Meth Heads",
-            "owner": "Will Youmans",
-            "points": "0",
-            "stats": {
-              "H/AB": {
-                "value": "0/0",
-                "result": "tie"
-              },
-              "R": {
-                "value": "0",
-                "result": "tie"
-              },
-              "HR": {
-                "value": "0",
-                "result": "tie"
-              },
-              "RBI": {
-                "value": "0",
-                "result": "tie"
-              },
-              "SB": {
-                "value": "0",
-                "result": "tie"
-              },
-              "K_B": {
-                "value": "0",
-                "result": "tie"
-              },
-              "GIDP_B": {
-                "value": "0",
-                "result": "tie"
-              },
-              "AVG": {
-                "value": "",
-                "result": "tie"
-              },
-              "OPS": {
-                "value": "",
-                "result": "tie"
-              },
-              "IP": {
-                "value": "0.0",
-                "result": "tie"
-              },
-              "L": {
-                "value": "0",
-                "result": "tie"
-              },
-              "SV": {
-                "value": "0",
-                "result": "tie"
-              },
-              "K_P": {
-                "value": "0",
-                "result": "tie"
-              },
-              "GIDP_P": {
-                "value": "0",
-                "result": "tie"
-              },
-              "ERA": {
-                "value": "",
-                "result": "tie"
-              },
-              "WHIP": {
-                "value": "",
-                "result": "tie"
-              },
-              "K/BB": {
-                "value": "",
-                "result": "tie"
-              },
-              "QS": {
-                "value": "0",
-                "result": "tie"
-              }
-            }
-          },
-          {
             "team_key": "469.l.20795.t.8",
             "team_name": "I Want Yandy",
             "owner": "Nick",
@@ -7392,11 +7392,11 @@
               },
               "AVG": {
                 "value": "",
-                "result": "tie"
+                "result": "loss"
               },
               "OPS": {
                 "value": "",
-                "result": "tie"
+                "result": "loss"
               },
               "IP": {
                 "value": "0.0",
