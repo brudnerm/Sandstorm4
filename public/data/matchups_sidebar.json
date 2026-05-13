@@ -3,7 +3,7 @@
   "league_name": "sidebar",
   "current_week": 8,
   "total_weeks": "25",
-  "generated_at": "2026-05-13T04:46:40.533Z",
+  "generated_at": "2026-05-13T06:09:02.794Z",
   "standings": [
     {
       "team_key": "469.l.20795.t.6",
@@ -457,7 +457,7 @@
           "team_key": "469.l.20795.t.3",
           "team_name": "Asi Asi Harris II",
           "owner": "mike",
-          "points": "9",
+          "points": "10",
           "stats": {
             "H/AB": {
               "value": "9/62",
@@ -501,7 +501,7 @@
             },
             "L": {
               "value": "0",
-              "result": "tie"
+              "result": "win"
             },
             "SV": {
               "value": "3",
@@ -580,8 +580,8 @@
               "result": "tie"
             },
             "L": {
-              "value": "0",
-              "result": "tie"
+              "value": "1",
+              "result": "loss"
             },
             "SV": {
               "value": "1",
@@ -623,10 +623,10 @@
           "team_key": "469.l.20795.t.5",
           "team_name": "Lewiston Meth Heads",
           "owner": "Will Youmans",
-          "points": "7",
+          "points": "6",
           "stats": {
             "H/AB": {
-              "value": "22/62",
+              "value": "22/64",
               "result": "tie"
             },
             "R": {
@@ -646,19 +646,19 @@
               "result": "loss"
             },
             "K_B": {
-              "value": "12",
-              "result": "win"
+              "value": "13",
+              "result": "tie"
             },
             "GIDP_B": {
               "value": "0",
               "result": "win"
             },
             "AVG": {
-              "value": ".355",
+              "value": ".344",
               "result": "win"
             },
             "OPS": {
-              "value": ".999",
+              "value": ".970",
               "result": "win"
             },
             "IP": {
@@ -727,7 +727,7 @@
             },
             "K_B": {
               "value": "13",
-              "result": "loss"
+              "result": "tie"
             },
             "GIDP_B": {
               "value": "2",
@@ -7114,7 +7114,7 @@
             "team_key": "469.l.20795.t.3",
             "team_name": "Asi Asi Harris II",
             "owner": "mike",
-            "points": "9",
+            "points": "10",
             "stats": {
               "H/AB": {
                 "value": "9/62",
@@ -7158,7 +7158,7 @@
               },
               "L": {
                 "value": "0",
-                "result": "tie"
+                "result": "win"
               },
               "SV": {
                 "value": "3",
@@ -7237,8 +7237,8 @@
                 "result": "tie"
               },
               "L": {
-                "value": "0",
-                "result": "tie"
+                "value": "1",
+                "result": "loss"
               },
               "SV": {
                 "value": "1",
@@ -7280,10 +7280,10 @@
             "team_key": "469.l.20795.t.5",
             "team_name": "Lewiston Meth Heads",
             "owner": "Will Youmans",
-            "points": "7",
+            "points": "6",
             "stats": {
               "H/AB": {
-                "value": "22/62",
+                "value": "22/64",
                 "result": "tie"
               },
               "R": {
@@ -7303,19 +7303,19 @@
                 "result": "loss"
               },
               "K_B": {
-                "value": "12",
-                "result": "win"
+                "value": "13",
+                "result": "tie"
               },
               "GIDP_B": {
                 "value": "0",
                 "result": "win"
               },
               "AVG": {
-                "value": ".355",
+                "value": ".344",
                 "result": "win"
               },
               "OPS": {
-                "value": ".999",
+                "value": ".970",
                 "result": "win"
               },
               "IP": {
@@ -7384,7 +7384,7 @@
               },
               "K_B": {
                 "value": "13",
-                "result": "loss"
+                "result": "tie"
               },
               "GIDP_B": {
                 "value": "2",

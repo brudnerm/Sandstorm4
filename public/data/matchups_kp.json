@@ -3,7 +3,7 @@
   "league_name": "Keeping Pattycakes",
   "current_week": 8,
   "total_weeks": "25",
-  "generated_at": "2026-05-13T04:46:27.205Z",
+  "generated_at": "2026-05-13T06:08:49.734Z",
   "standings": [
     {
       "team_key": "469.l.13624.t.4",
@@ -179,7 +179,7 @@
             },
             "SV": {
               "value": "0",
-              "result": "tie"
+              "result": "loss"
             },
             "K": {
               "value": "7",
@@ -199,7 +199,7 @@
           "team_key": "469.l.13624.t.9",
           "team_name": "MAINEiacs",
           "owner": "Will Youmans",
-          "points": "3",
+          "points": "4",
           "stats": {
             "H/AB": {
               "value": "13/53",
@@ -230,7 +230,7 @@
               "result": "loss"
             },
             "IP": {
-              "value": "0.1",
+              "value": "1.1",
               "result": "tie"
             },
             "W": {
@@ -242,11 +242,11 @@
               "result": "tie"
             },
             "SV": {
-              "value": "0",
-              "result": "tie"
+              "value": "1",
+              "result": "win"
             },
             "K": {
-              "value": "0",
+              "value": "1",
               "result": "loss"
             },
             "ERA": {
@@ -403,7 +403,7 @@
           "team_key": "469.l.13624.t.3",
           "team_name": "Bradishwalla",
           "owner": "joey",
-          "points": "6",
+          "points": "7",
           "stats": {
             "H/AB": {
               "value": "13/46",
@@ -443,7 +443,7 @@
             },
             "L": {
               "value": "0",
-              "result": "tie"
+              "result": "win"
             },
             "SV": {
               "value": "0",
@@ -506,8 +506,8 @@
               "result": "tie"
             },
             "L": {
-              "value": "0",
-              "result": "tie"
+              "value": "1",
+              "result": "loss"
             },
             "SV": {
               "value": "1",
@@ -540,7 +540,7 @@
           "points": "1",
           "stats": {
             "H/AB": {
-              "value": "13/61",
+              "value": "13/62",
               "result": "tie"
             },
             "R": {
@@ -560,11 +560,11 @@
               "result": "loss"
             },
             "AVG": {
-              "value": ".213",
+              "value": ".210",
               "result": "loss"
             },
             "OBP": {
-              "value": ".304",
+              "value": ".300",
               "result": "loss"
             },
             "IP": {
@@ -6628,7 +6628,7 @@
               },
               "SV": {
                 "value": "0",
-                "result": "tie"
+                "result": "loss"
               },
               "K": {
                 "value": "7",
@@ -6648,7 +6648,7 @@
             "team_key": "469.l.13624.t.9",
             "team_name": "MAINEiacs",
             "owner": "Will Youmans",
-            "points": "3",
+            "points": "4",
             "stats": {
               "H/AB": {
                 "value": "13/53",
@@ -6679,7 +6679,7 @@
                 "result": "loss"
               },
               "IP": {
-                "value": "0.1",
+                "value": "1.1",
                 "result": "tie"
               },
               "W": {
@@ -6691,11 +6691,11 @@
                 "result": "tie"
               },
               "SV": {
-                "value": "0",
-                "result": "tie"
+                "value": "1",
+                "result": "win"
               },
               "K": {
-                "value": "0",
+                "value": "1",
                 "result": "loss"
               },
               "ERA": {
@@ -6852,7 +6852,7 @@
             "team_key": "469.l.13624.t.3",
             "team_name": "Bradishwalla",
             "owner": "joey",
-            "points": "6",
+            "points": "7",
             "stats": {
               "H/AB": {
                 "value": "13/46",
@@ -6892,7 +6892,7 @@
               },
               "L": {
                 "value": "0",
-                "result": "tie"
+                "result": "win"
               },
               "SV": {
                 "value": "0",
@@ -6955,8 +6955,8 @@
                 "result": "tie"
               },
               "L": {
-                "value": "0",
-                "result": "tie"
+                "value": "1",
+                "result": "loss"
               },
               "SV": {
                 "value": "1",
@@ -6989,7 +6989,7 @@
             "points": "1",
             "stats": {
               "H/AB": {
-                "value": "13/61",
+                "value": "13/62",
                 "result": "tie"
               },
               "R": {
@@ -7009,11 +7009,11 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".213",
+                "value": ".210",
                 "result": "loss"
               },
               "OBP": {
-                "value": ".304",
+                "value": ".300",
                 "result": "loss"
               },
               "IP": {
