@@ -3,7 +3,7 @@
   "league_name": "Keeping Pattycakes",
   "current_week": 8,
   "total_weeks": "25",
-  "generated_at": "2026-05-15T04:47:22.320Z",
+  "generated_at": "2026-05-15T06:14:22.201Z",
   "standings": [
     {
       "team_key": "469.l.13624.t.4",
@@ -202,7 +202,7 @@
           "points": "2",
           "stats": {
             "H/AB": {
-              "value": "25/100",
+              "value": "25/101",
               "result": "tie"
             },
             "R": {
@@ -222,11 +222,11 @@
               "result": "loss"
             },
             "AVG": {
-              "value": ".250",
+              "value": ".248",
               "result": "loss"
             },
             "OBP": {
-              "value": ".306",
+              "value": ".304",
               "result": "loss"
             },
             "IP": {
@@ -470,7 +470,7 @@
           "points": "3",
           "stats": {
             "H/AB": {
-              "value": "22/91",
+              "value": "22/92",
               "result": "tie"
             },
             "R": {
@@ -490,11 +490,11 @@
               "result": "loss"
             },
             "AVG": {
-              "value": ".242",
+              "value": ".239",
               "result": "win"
             },
             "OBP": {
-              "value": ".337",
+              "value": ".333",
               "result": "win"
             },
             "IP": {
@@ -540,7 +540,7 @@
           "points": "1",
           "stats": {
             "H/AB": {
-              "value": "18/108",
+              "value": "18/109",
               "result": "tie"
             },
             "R": {
@@ -560,11 +560,11 @@
               "result": "loss"
             },
             "AVG": {
-              "value": ".167",
+              "value": ".165",
               "result": "loss"
             },
             "OBP": {
-              "value": ".264",
+              "value": ".262",
               "result": "loss"
             },
             "IP": {
@@ -840,8 +840,8 @@
               "result": "tie"
             },
             "W": {
-              "value": "1",
-              "result": "loss"
+              "value": "2",
+              "result": "tie"
             },
             "L": {
               "value": "2",
@@ -869,7 +869,7 @@
           "team_key": "469.l.13624.t.11",
           "team_name": "So bad it Kurtz",
           "owner": "Jamison",
-          "points": "7",
+          "points": "6",
           "stats": {
             "H/AB": {
               "value": "35/111",
@@ -900,23 +900,23 @@
               "result": "win"
             },
             "IP": {
-              "value": "8.0",
+              "value": "9.0",
               "result": "tie"
             },
             "W": {
               "value": "2",
-              "result": "win"
+              "result": "tie"
             },
             "L": {
               "value": "0",
               "result": "win"
             },
             "SV": {
-              "value": "0",
+              "value": "1",
               "result": "loss"
             },
             "K": {
-              "value": "9",
+              "value": "11",
               "result": "loss"
             },
             "ERA": {
@@ -924,7 +924,7 @@
               "result": "win"
             },
             "WHIP": {
-              "value": "0.88",
+              "value": "0.78",
               "result": "loss"
             }
           }
@@ -6651,7 +6651,7 @@
             "points": "2",
             "stats": {
               "H/AB": {
-                "value": "25/100",
+                "value": "25/101",
                 "result": "tie"
               },
               "R": {
@@ -6671,11 +6671,11 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".250",
+                "value": ".248",
                 "result": "loss"
               },
               "OBP": {
-                "value": ".306",
+                "value": ".304",
                 "result": "loss"
               },
               "IP": {
@@ -6919,7 +6919,7 @@
             "points": "3",
             "stats": {
               "H/AB": {
-                "value": "22/91",
+                "value": "22/92",
                 "result": "tie"
               },
               "R": {
@@ -6939,11 +6939,11 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".242",
+                "value": ".239",
                 "result": "win"
               },
               "OBP": {
-                "value": ".337",
+                "value": ".333",
                 "result": "win"
               },
               "IP": {
@@ -6989,7 +6989,7 @@
             "points": "1",
             "stats": {
               "H/AB": {
-                "value": "18/108",
+                "value": "18/109",
                 "result": "tie"
               },
               "R": {
@@ -7009,11 +7009,11 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".167",
+                "value": ".165",
                 "result": "loss"
               },
               "OBP": {
-                "value": ".264",
+                "value": ".262",
                 "result": "loss"
               },
               "IP": {
@@ -7289,8 +7289,8 @@
                 "result": "tie"
               },
               "W": {
-                "value": "1",
-                "result": "loss"
+                "value": "2",
+                "result": "tie"
               },
               "L": {
                 "value": "2",
@@ -7318,7 +7318,7 @@
             "team_key": "469.l.13624.t.11",
             "team_name": "So bad it Kurtz",
             "owner": "Jamison",
-            "points": "7",
+            "points": "6",
             "stats": {
               "H/AB": {
                 "value": "35/111",
@@ -7349,23 +7349,23 @@
                 "result": "win"
               },
               "IP": {
-                "value": "8.0",
+                "value": "9.0",
                 "result": "tie"
               },
               "W": {
                 "value": "2",
-                "result": "win"
+                "result": "tie"
               },
               "L": {
                 "value": "0",
                 "result": "win"
               },
               "SV": {
-                "value": "0",
+                "value": "1",
                 "result": "loss"
               },
               "K": {
-                "value": "9",
+                "value": "11",
                 "result": "loss"
               },
               "ERA": {
@@ -7373,7 +7373,7 @@
                 "result": "win"
               },
               "WHIP": {
-                "value": "0.88",
+                "value": "0.78",
                 "result": "loss"
               }
             }
