@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-05-15T06:14:39.501Z",
-  "total_transactions": 13809,
+  "generated_at": "2026-05-15T16:37:56.673Z",
+  "total_transactions": 13810,
   "seasons_included": [
     "2009",
     "2010",
@@ -387154,6 +387154,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Manchester by Marsee",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "217",
+      "date": "2026-05-15",
+      "timestamp": 1778860691,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.11794",
+          "name": "Ryan Jeffers",
+          "position": "C",
+          "mlb_team": "MIN",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Bradishwalla"
+        },
+        {
+          "player_key": "469.p.62975",
+          "name": "Chase Dollander",
+          "position": "SP,RP",
+          "mlb_team": "COL",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Bradishwalla",
           "destination_type": "waivers",
           "destination_team": ""
         }
