@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-05-15T20:11:27.408Z",
-  "total_transactions": 13810,
+  "generated_at": "2026-05-15T20:40:38.990Z",
+  "total_transactions": 13811,
   "seasons_included": [
     "2009",
     "2010",
@@ -387186,6 +387186,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Bradishwalla",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "218",
+      "date": "2026-05-15",
+      "timestamp": 1778877414,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.11348",
+          "name": "Luke Raley",
+          "position": "1B,OF",
+          "mlb_team": "SEA",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "IM IN MY PRIME"
+        },
+        {
+          "player_key": "469.p.12488",
+          "name": "Carlos Cortes",
+          "position": "OF",
+          "mlb_team": "ATH",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "IM IN MY PRIME",
           "destination_type": "waivers",
           "destination_team": ""
         }
