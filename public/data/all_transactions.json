@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-05-15T21:37:05.239Z",
-  "total_transactions": 13811,
+  "generated_at": "2026-05-15T22:07:03.730Z",
+  "total_transactions": 13812,
   "seasons_included": [
     "2009",
     "2010",
@@ -387218,6 +387218,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "IM IN MY PRIME",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "219",
+      "date": "2026-05-15",
+      "timestamp": 1778881415,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.11782",
+          "name": "JJ Bleday",
+          "position": "OF",
+          "mlb_team": "CIN",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "So bad it Kurtz"
+        },
+        {
+          "player_key": "469.p.11277",
+          "name": "Grayson Rodriguez",
+          "position": "SP",
+          "mlb_team": "LAA",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "So bad it Kurtz",
           "destination_type": "waivers",
           "destination_team": ""
         }
