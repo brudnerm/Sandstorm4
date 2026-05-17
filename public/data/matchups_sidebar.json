@@ -3,7 +3,7 @@
   "league_name": "sidebar",
   "current_week": 8,
   "total_weeks": "25",
-  "generated_at": "2026-05-17T06:33:50.099Z",
+  "generated_at": "2026-05-17T16:22:35.706Z",
   "standings": [
     {
       "team_key": "469.l.20795.t.6",
@@ -58,7 +58,7 @@
       "losses": 49,
       "ties": 5,
       "waiver_priority": 5,
-      "faab_balance": 86
+      "faab_balance": 84
     },
     {
       "team_key": "469.l.20795.t.3",
@@ -113,7 +113,7 @@
       "losses": 64,
       "ties": 5,
       "waiver_priority": 8,
-      "faab_balance": 82
+      "faab_balance": 73
     }
   ],
   "matchups": [
@@ -208,7 +208,7 @@
           "points": "12",
           "stats": {
             "H/AB": {
-              "value": "48/173",
+              "value": "48/174",
               "result": "tie"
             },
             "R": {
@@ -236,11 +236,11 @@
               "result": "win"
             },
             "AVG": {
-              "value": ".277",
+              "value": ".276",
               "result": "win"
             },
             "OPS": {
-              "value": ".823",
+              "value": ".818",
               "result": "win"
             },
             "IP": {
@@ -330,7 +330,7 @@
               "result": "loss"
             },
             "IP": {
-              "value": "37.2",
+              "value": "38.2",
               "result": "tie"
             },
             "L": {
@@ -350,11 +350,11 @@
               "result": "tie"
             },
             "ERA": {
-              "value": "2.87",
+              "value": "2.79",
               "result": "win"
             },
             "WHIP": {
-              "value": "0.85",
+              "value": "0.83",
               "result": "win"
             },
             "K/BB": {
@@ -809,7 +809,7 @@
             },
             "SB": {
               "value": "5",
-              "result": "tie"
+              "result": "loss"
             },
             "K_B": {
               "value": "40",
@@ -869,7 +869,7 @@
           "team_key": "469.l.20795.t.10",
           "team_name": "Simpson Samson",
           "owner": "KC",
-          "points": "12",
+          "points": "13",
           "stats": {
             "H/AB": {
               "value": "56/182",
@@ -888,8 +888,8 @@
               "result": "win"
             },
             "SB": {
-              "value": "5",
-              "result": "tie"
+              "value": "6",
+              "result": "win"
             },
             "K_B": {
               "value": "50",
@@ -904,7 +904,7 @@
               "result": "win"
             },
             "OPS": {
-              "value": ".897",
+              "value": ".900",
               "result": "win"
             },
             "IP": {
@@ -6865,7 +6865,7 @@
             "points": "12",
             "stats": {
               "H/AB": {
-                "value": "48/173",
+                "value": "48/174",
                 "result": "tie"
               },
               "R": {
@@ -6893,11 +6893,11 @@
                 "result": "win"
               },
               "AVG": {
-                "value": ".277",
+                "value": ".276",
                 "result": "win"
               },
               "OPS": {
-                "value": ".823",
+                "value": ".818",
                 "result": "win"
               },
               "IP": {
@@ -6987,7 +6987,7 @@
                 "result": "loss"
               },
               "IP": {
-                "value": "37.2",
+                "value": "38.2",
                 "result": "tie"
               },
               "L": {
@@ -7007,11 +7007,11 @@
                 "result": "tie"
               },
               "ERA": {
-                "value": "2.87",
+                "value": "2.79",
                 "result": "win"
               },
               "WHIP": {
-                "value": "0.85",
+                "value": "0.83",
                 "result": "win"
               },
               "K/BB": {
@@ -7466,7 +7466,7 @@
               },
               "SB": {
                 "value": "5",
-                "result": "tie"
+                "result": "loss"
               },
               "K_B": {
                 "value": "40",
@@ -7526,7 +7526,7 @@
             "team_key": "469.l.20795.t.10",
             "team_name": "Simpson Samson",
             "owner": "KC",
-            "points": "12",
+            "points": "13",
             "stats": {
               "H/AB": {
                 "value": "56/182",
@@ -7545,8 +7545,8 @@
                 "result": "win"
               },
               "SB": {
-                "value": "5",
-                "result": "tie"
+                "value": "6",
+                "result": "win"
               },
               "K_B": {
                 "value": "50",
@@ -7561,7 +7561,7 @@
                 "result": "win"
               },
               "OPS": {
-                "value": ".897",
+                "value": ".900",
                 "result": "win"
               },
               "IP": {
