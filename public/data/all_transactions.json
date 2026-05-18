@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-05-18T18:38:53.534Z",
-  "total_transactions": 13827,
+  "generated_at": "2026-05-18T19:17:23.147Z",
+  "total_transactions": 13828,
   "seasons_included": [
     "2009",
     "2010",
@@ -387752,6 +387752,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "You’re a Tolle",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "235",
+      "date": "2026-05-18",
+      "timestamp": 1779130574,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.11083",
+          "name": "Casey Mize",
+          "position": "SP",
+          "mlb_team": "DET",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Who's Your Vladdy"
+        },
+        {
+          "player_key": "469.p.11850",
+          "name": "Josh Jung",
+          "position": "3B",
+          "mlb_team": "TEX",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Who's Your Vladdy",
           "destination_type": "waivers",
           "destination_team": ""
         }
