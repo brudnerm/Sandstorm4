@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-05-18T16:59:50.263Z",
-  "total_transactions": 13826,
+  "generated_at": "2026-05-18T17:47:42.344Z",
+  "total_transactions": 13827,
   "seasons_included": [
     "2009",
     "2010",
@@ -387720,6 +387720,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "So bad it Kurtz",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "234",
+      "date": "2026-05-18",
+      "timestamp": 1779125783,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.10879",
+          "name": "Gavin Sheets",
+          "position": "1B,OF",
+          "mlb_team": "SD",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "You’re a Tolle"
+        },
+        {
+          "player_key": "469.p.10499",
+          "name": "Brandon Marsh",
+          "position": "OF",
+          "mlb_team": "PHI",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "You’re a Tolle",
           "destination_type": "waivers",
           "destination_team": ""
         }
