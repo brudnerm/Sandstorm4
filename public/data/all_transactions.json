@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-05-18T06:48:42.937Z",
-  "total_transactions": 13823,
+  "generated_at": "2026-05-18T16:59:50.263Z",
+  "total_transactions": 13826,
   "seasons_included": [
     "2009",
     "2010",
@@ -382437,7 +382437,7 @@
         {
           "player_key": "469.p.10152",
           "name": "Reynaldo López",
-          "position": "SP",
+          "position": "SP,RP",
           "mlb_team": "ATL",
           "action": "add",
           "source_type": "freeagents",
@@ -383547,7 +383547,7 @@
         {
           "player_key": "469.p.10152",
           "name": "Reynaldo López",
-          "position": "SP",
+          "position": "SP,RP",
           "mlb_team": "ATL",
           "action": "drop",
           "source_type": "team",
@@ -384144,7 +384144,7 @@
         {
           "player_key": "469.p.10152",
           "name": "Reynaldo López",
-          "position": "SP",
+          "position": "SP,RP",
           "mlb_team": "ATL",
           "action": "add",
           "source_type": "freeagents",
@@ -384347,7 +384347,7 @@
         {
           "player_key": "469.p.10152",
           "name": "Reynaldo López",
-          "position": "SP",
+          "position": "SP,RP",
           "mlb_team": "ATL",
           "action": "drop",
           "source_type": "team",
@@ -387602,6 +387602,124 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "You’re a Tolle",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "231",
+      "date": "2026-05-18",
+      "timestamp": 1779108434,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.12400",
+          "name": "Angel Martínez",
+          "position": "2B,OF",
+          "mlb_team": "CLE",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Who's Your Vladdy"
+        },
+        {
+          "player_key": "469.p.12468",
+          "name": "Eury Pérez",
+          "position": "SP",
+          "mlb_team": "MIA",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Who's Your Vladdy",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "232",
+      "date": "2026-05-18",
+      "timestamp": 1779112999,
+      "transaction_type": "trade",
+      "players": [
+        {
+          "player_key": "469.p.11731",
+          "name": "Gunnar Henderson",
+          "position": "SS",
+          "mlb_team": "BAL",
+          "action": "trade",
+          "source_type": "team",
+          "source_team": "Who's Your Vladdy",
+          "destination_type": "team",
+          "destination_team": "IM IN MY PRIME"
+        },
+        {
+          "player_key": "469.p.10917",
+          "name": "Brent Rooker",
+          "position": "OF",
+          "mlb_team": "ATH",
+          "action": "trade",
+          "source_type": "team",
+          "source_team": "Who's Your Vladdy",
+          "destination_type": "team",
+          "destination_team": "IM IN MY PRIME"
+        },
+        {
+          "player_key": "469.p.9861",
+          "name": "Kyle Schwarber",
+          "position": "OF",
+          "mlb_team": "PHI",
+          "action": "trade",
+          "source_type": "team",
+          "source_team": "IM IN MY PRIME",
+          "destination_type": "team",
+          "destination_team": "Who's Your Vladdy"
+        },
+        {
+          "player_key": "469.p.11781",
+          "name": "Miguel Vargas",
+          "position": "1B,3B",
+          "mlb_team": "CWS",
+          "action": "trade",
+          "source_type": "team",
+          "source_team": "IM IN MY PRIME",
+          "destination_type": "team",
+          "destination_team": "Who's Your Vladdy"
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "233",
+      "date": "2026-05-18",
+      "timestamp": 1779121319,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.64803",
+          "name": "Roki Sasaki",
+          "position": "SP",
+          "mlb_team": "LAD",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "So bad it Kurtz"
+        },
+        {
+          "player_key": "469.p.12719",
+          "name": "Lawrence Butler",
+          "position": "OF",
+          "mlb_team": "ATH",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "So bad it Kurtz",
           "destination_type": "waivers",
           "destination_team": ""
         }
