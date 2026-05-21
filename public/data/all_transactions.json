@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-05-21T01:20:12.158Z",
-  "total_transactions": 13833,
+  "generated_at": "2026-05-21T02:21:18.493Z",
+  "total_transactions": 13835,
   "seasons_included": [
     "2009",
     "2010",
@@ -387944,6 +387944,70 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Manchester by Marsee",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "241",
+      "date": "2026-05-21",
+      "timestamp": 1779326484,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.63027",
+          "name": "Grant Taylor",
+          "position": "SP,RP",
+          "mlb_team": "CWS",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Who's Your Vladdy"
+        },
+        {
+          "player_key": "469.p.10489",
+          "name": "Foster Griffin",
+          "position": "SP,RP",
+          "mlb_team": "WSH",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Who's Your Vladdy",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "242",
+      "date": "2026-05-21",
+      "timestamp": 1779326731,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.12203",
+          "name": "Griffin Jax",
+          "position": "SP,RP",
+          "mlb_team": "TB",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Who's Your Vladdy"
+        },
+        {
+          "player_key": "469.p.10903",
+          "name": "Edward Cabrera",
+          "position": "SP",
+          "mlb_team": "CHC",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Who's Your Vladdy",
           "destination_type": "waivers",
           "destination_team": ""
         }
