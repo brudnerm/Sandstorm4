@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-05-22T16:46:30.339Z",
-  "total_transactions": 13839,
+  "generated_at": "2026-05-22T17:36:11.393Z",
+  "total_transactions": 13840,
   "seasons_included": [
     "2009",
     "2010",
@@ -388136,6 +388136,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Dirk Dingler",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "247",
+      "date": "2026-05-22",
+      "timestamp": 1779470936,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.10899",
+          "name": "Keibert Ruiz",
+          "position": "C",
+          "mlb_team": "WSH",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Papua New Vinnie"
+        },
+        {
+          "player_key": "469.p.11379",
+          "name": "Ryan Weathers",
+          "position": "SP",
+          "mlb_team": "NYY",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Papua New Vinnie",
           "destination_type": "waivers",
           "destination_team": ""
         }
