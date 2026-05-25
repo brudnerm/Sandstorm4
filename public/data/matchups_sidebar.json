@@ -3,16 +3,27 @@
   "league_name": "sidebar",
   "current_week": 10,
   "total_weeks": "25",
-  "generated_at": "2026-05-25T07:10:39.760Z",
+  "generated_at": "2026-05-25T16:45:12.035Z",
   "standings": [
+    {
+      "team_key": "469.l.20795.t.3",
+      "team_name": "Asi Asi Harris II",
+      "owner": "mike",
+      "rank": 1,
+      "wins": 74,
+      "losses": 61,
+      "ties": 9,
+      "waiver_priority": 7,
+      "faab_balance": 68
+    },
     {
       "team_key": "469.l.20795.t.6",
       "team_name": "Magic Baseballs",
       "owner": "Galen",
-      "rank": 1,
-      "wins": 70,
-      "losses": 49,
-      "ties": 9,
+      "rank": 2,
+      "wins": 72,
+      "losses": 59,
+      "ties": 13,
       "waiver_priority": 3,
       "faab_balance": 95
     },
@@ -20,87 +31,65 @@
       "team_key": "469.l.20795.t.10",
       "team_name": "Samsonite - I was way off",
       "owner": "KC",
-      "rank": 2,
-      "wins": 70,
-      "losses": 53,
-      "ties": 5,
+      "rank": 3,
+      "wins": 75,
+      "losses": 63,
+      "ties": 6,
       "waiver_priority": 5,
       "faab_balance": 81
-    },
-    {
-      "team_key": "469.l.20795.t.8",
-      "team_name": "Steamed Abrahams",
-      "owner": "Nick",
-      "rank": 3,
-      "wins": 67,
-      "losses": 54,
-      "ties": 7,
-      "waiver_priority": 2,
-      "faab_balance": 89
-    },
-    {
-      "team_key": "469.l.20795.t.2",
-      "team_name": "She Said 'Seiya Later Boy'",
-      "owner": "Jamison",
-      "rank": 4,
-      "wins": 63,
-      "losses": 56,
-      "ties": 9,
-      "waiver_priority": 10,
-      "faab_balance": 100
-    },
-    {
-      "team_key": "469.l.20795.t.3",
-      "team_name": "Asi Asi Harris II",
-      "owner": "mike",
-      "rank": 5,
-      "wins": 64,
-      "losses": 59,
-      "ties": 5,
-      "waiver_priority": 7,
-      "faab_balance": 68
     },
     {
       "team_key": "469.l.20795.t.9",
       "team_name": "Three Lindors Down",
       "owner": "angel escobar",
-      "rank": 6,
-      "wins": 60,
-      "losses": 56,
-      "ties": 12,
+      "rank": 4,
+      "wins": 70,
+      "losses": 61,
+      "ties": 13,
       "waiver_priority": 1,
       "faab_balance": 68
+    },
+    {
+      "team_key": "469.l.20795.t.8",
+      "team_name": "Steamed Abrahams",
+      "owner": "Nick",
+      "rank": 5,
+      "wins": 72,
+      "losses": 64,
+      "ties": 8,
+      "waiver_priority": 2,
+      "faab_balance": 89
     },
     {
       "team_key": "469.l.20795.t.1",
       "team_name": "Sod Poodles",
       "owner": "Mark",
-      "rank": 7,
-      "wins": 54,
-      "losses": 58,
+      "rank": 6,
+      "wins": 65,
+      "losses": 63,
       "ties": 16,
       "waiver_priority": 4,
       "faab_balance": 74
     },
     {
-      "team_key": "469.l.20795.t.7",
-      "team_name": "Pete Me In Montauk",
-      "owner": "Rich Garcis",
-      "rank": 8,
-      "wins": 51,
-      "losses": 70,
-      "ties": 7,
-      "waiver_priority": 8,
-      "faab_balance": 63
+      "team_key": "469.l.20795.t.2",
+      "team_name": "She Said 'Seiya Later Boy'",
+      "owner": "Jamison",
+      "rank": 7,
+      "wins": 67,
+      "losses": 65,
+      "ties": 12,
+      "waiver_priority": 10,
+      "faab_balance": 100
     },
     {
       "team_key": "469.l.20795.t.5",
       "team_name": "Lewiston Meth Heads",
       "owner": "Will Youmans",
-      "rank": 9,
-      "wins": 49,
-      "losses": 68,
-      "ties": 11,
+      "rank": 8,
+      "wins": 58,
+      "losses": 72,
+      "ties": 14,
       "waiver_priority": 6,
       "faab_balance": 93
     },
@@ -108,12 +97,23 @@
       "team_key": "469.l.20795.t.4",
       "team_name": "DeLauter'd in the Comatorium",
       "owner": "joey",
-      "rank": 10,
-      "wins": 44,
-      "losses": 69,
-      "ties": 15,
+      "rank": 9,
+      "wins": 54,
+      "losses": 74,
+      "ties": 16,
       "waiver_priority": 9,
       "faab_balance": 88
+    },
+    {
+      "team_key": "469.l.20795.t.7",
+      "team_name": "Pete Me In Montauk",
+      "owner": "Rich Garcis",
+      "rank": 10,
+      "wins": 56,
+      "losses": 81,
+      "ties": 7,
+      "waiver_priority": 8,
+      "faab_balance": 63
     }
   ],
   "matchups": [
@@ -128,31 +128,31 @@
           "points": "0",
           "stats": {
             "H/AB": {
-              "value": "/",
+              "value": "0/0",
               "result": "tie"
             },
             "R": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "HR": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "RBI": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "SB": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "K_B": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "GIDP_B": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "AVG": {
@@ -164,23 +164,23 @@
               "result": "tie"
             },
             "IP": {
-              "value": "",
+              "value": "0.0",
               "result": "tie"
             },
             "L": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "SV": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "K_P": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "GIDP_P": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "ERA": {
@@ -196,7 +196,7 @@
               "result": "tie"
             },
             "QS": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             }
           }
@@ -208,31 +208,31 @@
           "points": "0",
           "stats": {
             "H/AB": {
-              "value": "/",
+              "value": "0/0",
               "result": "tie"
             },
             "R": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "HR": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "RBI": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "SB": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "K_B": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "GIDP_B": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "AVG": {
@@ -244,23 +244,23 @@
               "result": "tie"
             },
             "IP": {
-              "value": "",
+              "value": "0.0",
               "result": "tie"
             },
             "L": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "SV": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "K_P": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "GIDP_P": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "ERA": {
@@ -276,7 +276,7 @@
               "result": "tie"
             },
             "QS": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             }
           }
@@ -294,31 +294,31 @@
           "points": "0",
           "stats": {
             "H/AB": {
-              "value": "/",
+              "value": "0/0",
               "result": "tie"
             },
             "R": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "HR": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "RBI": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "SB": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "K_B": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "GIDP_B": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "AVG": {
@@ -330,23 +330,23 @@
               "result": "tie"
             },
             "IP": {
-              "value": "",
+              "value": "0.0",
               "result": "tie"
             },
             "L": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "SV": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "K_P": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "GIDP_P": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "ERA": {
@@ -362,7 +362,7 @@
               "result": "tie"
             },
             "QS": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             }
           }
@@ -374,31 +374,31 @@
           "points": "0",
           "stats": {
             "H/AB": {
-              "value": "/",
+              "value": "0/0",
               "result": "tie"
             },
             "R": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "HR": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "RBI": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "SB": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "K_B": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "GIDP_B": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "AVG": {
@@ -410,23 +410,23 @@
               "result": "tie"
             },
             "IP": {
-              "value": "",
+              "value": "0.0",
               "result": "tie"
             },
             "L": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "SV": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "K_P": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "GIDP_P": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "ERA": {
@@ -442,7 +442,7 @@
               "result": "tie"
             },
             "QS": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             }
           }
@@ -460,31 +460,31 @@
           "points": "0",
           "stats": {
             "H/AB": {
-              "value": "/",
+              "value": "0/0",
               "result": "tie"
             },
             "R": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "HR": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "RBI": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "SB": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "K_B": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "GIDP_B": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "AVG": {
@@ -496,23 +496,23 @@
               "result": "tie"
             },
             "IP": {
-              "value": "",
+              "value": "0.0",
               "result": "tie"
             },
             "L": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "SV": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "K_P": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "GIDP_P": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "ERA": {
@@ -528,7 +528,7 @@
               "result": "tie"
             },
             "QS": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             }
           }
@@ -540,31 +540,31 @@
           "points": "0",
           "stats": {
             "H/AB": {
-              "value": "/",
+              "value": "0/0",
               "result": "tie"
             },
             "R": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "HR": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "RBI": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "SB": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "K_B": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "GIDP_B": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "AVG": {
@@ -576,23 +576,23 @@
               "result": "tie"
             },
             "IP": {
-              "value": "",
+              "value": "0.0",
               "result": "tie"
             },
             "L": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "SV": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "K_P": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "GIDP_P": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "ERA": {
@@ -608,7 +608,7 @@
               "result": "tie"
             },
             "QS": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             }
           }
@@ -626,31 +626,31 @@
           "points": "0",
           "stats": {
             "H/AB": {
-              "value": "/",
+              "value": "0/0",
               "result": "tie"
             },
             "R": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "HR": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "RBI": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "SB": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "K_B": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "GIDP_B": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "AVG": {
@@ -662,23 +662,23 @@
               "result": "tie"
             },
             "IP": {
-              "value": "",
+              "value": "0.0",
               "result": "tie"
             },
             "L": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "SV": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "K_P": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "GIDP_P": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "ERA": {
@@ -694,7 +694,7 @@
               "result": "tie"
             },
             "QS": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             }
           }
@@ -706,31 +706,31 @@
           "points": "0",
           "stats": {
             "H/AB": {
-              "value": "/",
+              "value": "0/0",
               "result": "tie"
             },
             "R": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "HR": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "RBI": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "SB": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "K_B": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "GIDP_B": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "AVG": {
@@ -742,23 +742,23 @@
               "result": "tie"
             },
             "IP": {
-              "value": "",
+              "value": "0.0",
               "result": "tie"
             },
             "L": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "SV": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "K_P": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "GIDP_P": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "ERA": {
@@ -774,7 +774,7 @@
               "result": "tie"
             },
             "QS": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             }
           }
@@ -792,31 +792,31 @@
           "points": "0",
           "stats": {
             "H/AB": {
-              "value": "/",
+              "value": "0/0",
               "result": "tie"
             },
             "R": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "HR": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "RBI": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "SB": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "K_B": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "GIDP_B": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "AVG": {
@@ -828,23 +828,23 @@
               "result": "tie"
             },
             "IP": {
-              "value": "",
+              "value": "0.0",
               "result": "tie"
             },
             "L": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "SV": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "K_P": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "GIDP_P": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "ERA": {
@@ -860,7 +860,7 @@
               "result": "tie"
             },
             "QS": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             }
           }
@@ -872,31 +872,31 @@
           "points": "0",
           "stats": {
             "H/AB": {
-              "value": "/",
+              "value": "0/0",
               "result": "tie"
             },
             "R": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "HR": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "RBI": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "SB": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "K_B": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "GIDP_B": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "AVG": {
@@ -908,23 +908,23 @@
               "result": "tie"
             },
             "IP": {
-              "value": "",
+              "value": "0.0",
               "result": "tie"
             },
             "L": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "SV": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "K_P": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "GIDP_P": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             },
             "ERA": {
@@ -940,7 +940,7 @@
               "result": "tie"
             },
             "QS": {
-              "value": "",
+              "value": "0",
               "result": "tie"
             }
           }
@@ -7608,7 +7608,7 @@
     "9": [
       {
         "week": "9",
-        "status": "midevent",
+        "status": "postevent",
         "teams": [
           {
             "team_key": "469.l.20795.t.1",
@@ -7774,7 +7774,7 @@
       },
       {
         "week": "9",
-        "status": "midevent",
+        "status": "postevent",
         "teams": [
           {
             "team_key": "469.l.20795.t.2",
@@ -7940,7 +7940,7 @@
       },
       {
         "week": "9",
-        "status": "midevent",
+        "status": "postevent",
         "teams": [
           {
             "team_key": "469.l.20795.t.3",
@@ -8013,7 +8013,7 @@
                 "result": "win"
               },
               "K/BB": {
-                "value": "2.62",
+                "value": "2.63",
                 "result": "loss"
               },
               "QS": {
@@ -8106,7 +8106,7 @@
       },
       {
         "week": "9",
-        "status": "midevent",
+        "status": "postevent",
         "teams": [
           {
             "team_key": "469.l.20795.t.4",
@@ -8272,7 +8272,7 @@
       },
       {
         "week": "9",
-        "status": "midevent",
+        "status": "postevent",
         "teams": [
           {
             "team_key": "469.l.20795.t.8",
@@ -8449,31 +8449,31 @@
             "points": "0",
             "stats": {
               "H/AB": {
-                "value": "/",
+                "value": "0/0",
                 "result": "tie"
               },
               "R": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "HR": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "RBI": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "SB": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "K_B": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "GIDP_B": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "AVG": {
@@ -8485,23 +8485,23 @@
                 "result": "tie"
               },
               "IP": {
-                "value": "",
+                "value": "0.0",
                 "result": "tie"
               },
               "L": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "SV": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "K_P": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "GIDP_P": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "ERA": {
@@ -8517,7 +8517,7 @@
                 "result": "tie"
               },
               "QS": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               }
             }
@@ -8529,31 +8529,31 @@
             "points": "0",
             "stats": {
               "H/AB": {
-                "value": "/",
+                "value": "0/0",
                 "result": "tie"
               },
               "R": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "HR": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "RBI": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "SB": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "K_B": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "GIDP_B": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "AVG": {
@@ -8565,23 +8565,23 @@
                 "result": "tie"
               },
               "IP": {
-                "value": "",
+                "value": "0.0",
                 "result": "tie"
               },
               "L": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "SV": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "K_P": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "GIDP_P": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "ERA": {
@@ -8597,7 +8597,7 @@
                 "result": "tie"
               },
               "QS": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               }
             }
@@ -8615,31 +8615,31 @@
             "points": "0",
             "stats": {
               "H/AB": {
-                "value": "/",
+                "value": "0/0",
                 "result": "tie"
               },
               "R": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "HR": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "RBI": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "SB": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "K_B": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "GIDP_B": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "AVG": {
@@ -8651,23 +8651,23 @@
                 "result": "tie"
               },
               "IP": {
-                "value": "",
+                "value": "0.0",
                 "result": "tie"
               },
               "L": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "SV": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "K_P": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "GIDP_P": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "ERA": {
@@ -8683,7 +8683,7 @@
                 "result": "tie"
               },
               "QS": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               }
             }
@@ -8695,31 +8695,31 @@
             "points": "0",
             "stats": {
               "H/AB": {
-                "value": "/",
+                "value": "0/0",
                 "result": "tie"
               },
               "R": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "HR": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "RBI": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "SB": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "K_B": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "GIDP_B": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "AVG": {
@@ -8731,23 +8731,23 @@
                 "result": "tie"
               },
               "IP": {
-                "value": "",
+                "value": "0.0",
                 "result": "tie"
               },
               "L": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "SV": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "K_P": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "GIDP_P": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "ERA": {
@@ -8763,7 +8763,7 @@
                 "result": "tie"
               },
               "QS": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               }
             }
@@ -8781,31 +8781,31 @@
             "points": "0",
             "stats": {
               "H/AB": {
-                "value": "/",
+                "value": "0/0",
                 "result": "tie"
               },
               "R": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "HR": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "RBI": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "SB": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "K_B": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "GIDP_B": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "AVG": {
@@ -8817,23 +8817,23 @@
                 "result": "tie"
               },
               "IP": {
-                "value": "",
+                "value": "0.0",
                 "result": "tie"
               },
               "L": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "SV": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "K_P": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "GIDP_P": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "ERA": {
@@ -8849,7 +8849,7 @@
                 "result": "tie"
               },
               "QS": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               }
             }
@@ -8861,31 +8861,31 @@
             "points": "0",
             "stats": {
               "H/AB": {
-                "value": "/",
+                "value": "0/0",
                 "result": "tie"
               },
               "R": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "HR": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "RBI": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "SB": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "K_B": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "GIDP_B": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "AVG": {
@@ -8897,23 +8897,23 @@
                 "result": "tie"
               },
               "IP": {
-                "value": "",
+                "value": "0.0",
                 "result": "tie"
               },
               "L": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "SV": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "K_P": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "GIDP_P": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "ERA": {
@@ -8929,7 +8929,7 @@
                 "result": "tie"
               },
               "QS": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               }
             }
@@ -8947,31 +8947,31 @@
             "points": "0",
             "stats": {
               "H/AB": {
-                "value": "/",
+                "value": "0/0",
                 "result": "tie"
               },
               "R": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "HR": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "RBI": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "SB": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "K_B": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "GIDP_B": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "AVG": {
@@ -8983,23 +8983,23 @@
                 "result": "tie"
               },
               "IP": {
-                "value": "",
+                "value": "0.0",
                 "result": "tie"
               },
               "L": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "SV": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "K_P": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "GIDP_P": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "ERA": {
@@ -9015,7 +9015,7 @@
                 "result": "tie"
               },
               "QS": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               }
             }
@@ -9027,31 +9027,31 @@
             "points": "0",
             "stats": {
               "H/AB": {
-                "value": "/",
+                "value": "0/0",
                 "result": "tie"
               },
               "R": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "HR": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "RBI": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "SB": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "K_B": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "GIDP_B": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "AVG": {
@@ -9063,23 +9063,23 @@
                 "result": "tie"
               },
               "IP": {
-                "value": "",
+                "value": "0.0",
                 "result": "tie"
               },
               "L": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "SV": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "K_P": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "GIDP_P": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "ERA": {
@@ -9095,7 +9095,7 @@
                 "result": "tie"
               },
               "QS": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               }
             }
@@ -9113,31 +9113,31 @@
             "points": "0",
             "stats": {
               "H/AB": {
-                "value": "/",
+                "value": "0/0",
                 "result": "tie"
               },
               "R": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "HR": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "RBI": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "SB": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "K_B": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "GIDP_B": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "AVG": {
@@ -9149,23 +9149,23 @@
                 "result": "tie"
               },
               "IP": {
-                "value": "",
+                "value": "0.0",
                 "result": "tie"
               },
               "L": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "SV": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "K_P": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "GIDP_P": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "ERA": {
@@ -9181,7 +9181,7 @@
                 "result": "tie"
               },
               "QS": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               }
             }
@@ -9193,31 +9193,31 @@
             "points": "0",
             "stats": {
               "H/AB": {
-                "value": "/",
+                "value": "0/0",
                 "result": "tie"
               },
               "R": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "HR": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "RBI": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "SB": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "K_B": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "GIDP_B": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "AVG": {
@@ -9229,23 +9229,23 @@
                 "result": "tie"
               },
               "IP": {
-                "value": "",
+                "value": "0.0",
                 "result": "tie"
               },
               "L": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "SV": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "K_P": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "GIDP_P": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               },
               "ERA": {
@@ -9261,7 +9261,7 @@
                 "result": "tie"
               },
               "QS": {
-                "value": "",
+                "value": "0",
                 "result": "tie"
               }
             }
