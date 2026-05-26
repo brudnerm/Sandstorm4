@@ -3,7 +3,7 @@
   "league_name": "sidebar",
   "current_week": 10,
   "total_weeks": "25",
-  "generated_at": "2026-05-26T06:47:07.412Z",
+  "generated_at": "2026-05-26T17:08:25.788Z",
   "standings": [
     {
       "team_key": "469.l.20795.t.3",
@@ -13,7 +13,7 @@
       "wins": 74,
       "losses": 61,
       "ties": 9,
-      "waiver_priority": 7,
+      "waiver_priority": 6,
       "faab_balance": 68
     },
     {
@@ -35,7 +35,7 @@
       "wins": 75,
       "losses": 63,
       "ties": 6,
-      "waiver_priority": 5,
+      "waiver_priority": 4,
       "faab_balance": 81
     },
     {
@@ -47,7 +47,7 @@
       "losses": 61,
       "ties": 13,
       "waiver_priority": 1,
-      "faab_balance": 68
+      "faab_balance": 64
     },
     {
       "team_key": "469.l.20795.t.8",
@@ -68,7 +68,7 @@
       "wins": 65,
       "losses": 63,
       "ties": 16,
-      "waiver_priority": 4,
+      "waiver_priority": 10,
       "faab_balance": 74
     },
     {
@@ -79,7 +79,7 @@
       "wins": 67,
       "losses": 65,
       "ties": 12,
-      "waiver_priority": 10,
+      "waiver_priority": 9,
       "faab_balance": 100
     },
     {
@@ -90,7 +90,7 @@
       "wins": 58,
       "losses": 72,
       "ties": 14,
-      "waiver_priority": 6,
+      "waiver_priority": 5,
       "faab_balance": 93
     },
     {
@@ -101,7 +101,7 @@
       "wins": 54,
       "losses": 74,
       "ties": 16,
-      "waiver_priority": 9,
+      "waiver_priority": 8,
       "faab_balance": 88
     },
     {
@@ -112,7 +112,7 @@
       "wins": 56,
       "losses": 81,
       "ties": 7,
-      "waiver_priority": 8,
+      "waiver_priority": 7,
       "faab_balance": 63
     }
   ],
@@ -125,7 +125,7 @@
           "team_key": "469.l.20795.t.1",
           "team_name": "Sod Poodles",
           "owner": "Mark",
-          "points": "5",
+          "points": "6",
           "stats": {
             "H/AB": {
               "value": "7/32",
@@ -192,8 +192,8 @@
               "result": "loss"
             },
             "K/BB": {
-              "value": "",
-              "result": "loss"
+              "value": "INF",
+              "result": "win"
             },
             "QS": {
               "value": "0",
@@ -205,7 +205,7 @@
           "team_key": "469.l.20795.t.3",
           "team_name": "Asi Asi Harris II",
           "owner": "mike",
-          "points": "8",
+          "points": "7",
           "stats": {
             "H/AB": {
               "value": "4/18",
@@ -273,7 +273,7 @@
             },
             "K/BB": {
               "value": "4.00",
-              "result": "win"
+              "result": "loss"
             },
             "QS": {
               "value": "2",
@@ -828,23 +828,23 @@
               "result": "win"
             },
             "IP": {
-              "value": "0.0",
+              "value": "",
               "result": "tie"
             },
             "L": {
-              "value": "0",
+              "value": "",
               "result": "tie"
             },
             "SV": {
-              "value": "0",
+              "value": "",
               "result": "tie"
             },
             "K_P": {
-              "value": "0",
+              "value": "",
               "result": "tie"
             },
             "GIDP_P": {
-              "value": "0",
+              "value": "",
               "result": "tie"
             },
             "ERA": {
@@ -860,7 +860,7 @@
               "result": "tie"
             },
             "QS": {
-              "value": "0",
+              "value": "",
               "result": "tie"
             }
           }
@@ -908,23 +908,23 @@
               "result": "loss"
             },
             "IP": {
-              "value": "0.0",
+              "value": "",
               "result": "tie"
             },
             "L": {
-              "value": "0",
+              "value": "",
               "result": "tie"
             },
             "SV": {
-              "value": "0",
+              "value": "",
               "result": "tie"
             },
             "K_P": {
-              "value": "0",
+              "value": "",
               "result": "tie"
             },
             "GIDP_P": {
-              "value": "0",
+              "value": "",
               "result": "tie"
             },
             "ERA": {
@@ -940,7 +940,7 @@
               "result": "tie"
             },
             "QS": {
-              "value": "0",
+              "value": "",
               "result": "tie"
             }
           }
@@ -8446,7 +8446,7 @@
             "team_key": "469.l.20795.t.1",
             "team_name": "Sod Poodles",
             "owner": "Mark",
-            "points": "5",
+            "points": "6",
             "stats": {
               "H/AB": {
                 "value": "7/32",
@@ -8513,8 +8513,8 @@
                 "result": "loss"
               },
               "K/BB": {
-                "value": "",
-                "result": "loss"
+                "value": "INF",
+                "result": "win"
               },
               "QS": {
                 "value": "0",
@@ -8526,7 +8526,7 @@
             "team_key": "469.l.20795.t.3",
             "team_name": "Asi Asi Harris II",
             "owner": "mike",
-            "points": "8",
+            "points": "7",
             "stats": {
               "H/AB": {
                 "value": "4/18",
@@ -8594,7 +8594,7 @@
               },
               "K/BB": {
                 "value": "4.00",
-                "result": "win"
+                "result": "loss"
               },
               "QS": {
                 "value": "2",
@@ -9149,23 +9149,23 @@
                 "result": "win"
               },
               "IP": {
-                "value": "0.0",
+                "value": "",
                 "result": "tie"
               },
               "L": {
-                "value": "0",
+                "value": "",
                 "result": "tie"
               },
               "SV": {
-                "value": "0",
+                "value": "",
                 "result": "tie"
               },
               "K_P": {
-                "value": "0",
+                "value": "",
                 "result": "tie"
               },
               "GIDP_P": {
-                "value": "0",
+                "value": "",
                 "result": "tie"
               },
               "ERA": {
@@ -9181,7 +9181,7 @@
                 "result": "tie"
               },
               "QS": {
-                "value": "0",
+                "value": "",
                 "result": "tie"
               }
             }
@@ -9229,23 +9229,23 @@
                 "result": "loss"
               },
               "IP": {
-                "value": "0.0",
+                "value": "",
                 "result": "tie"
               },
               "L": {
-                "value": "0",
+                "value": "",
                 "result": "tie"
               },
               "SV": {
-                "value": "0",
+                "value": "",
                 "result": "tie"
               },
               "K_P": {
-                "value": "0",
+                "value": "",
                 "result": "tie"
               },
               "GIDP_P": {
-                "value": "0",
+                "value": "",
                 "result": "tie"
               },
               "ERA": {
@@ -9261,7 +9261,7 @@
                 "result": "tie"
               },
               "QS": {
-                "value": "0",
+                "value": "",
                 "result": "tie"
               }
             }
