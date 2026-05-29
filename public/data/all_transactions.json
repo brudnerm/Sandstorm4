@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-05-29T06:52:32.965Z",
-  "total_transactions": 13853,
+  "generated_at": "2026-05-29T17:11:38.434Z",
+  "total_transactions": 13854,
   "seasons_included": [
     "2009",
     "2010",
@@ -388548,6 +388548,38 @@
           "name": "Jack Flaherty",
           "position": "SP",
           "mlb_team": "DET",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Dirk Dingler",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "261",
+      "date": "2026-05-29",
+      "timestamp": 1780066570,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.11717",
+          "name": "Trevor Megill",
+          "position": "RP",
+          "mlb_team": "MIL",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Dirk Dingler"
+        },
+        {
+          "player_key": "469.p.10683",
+          "name": "Nick Pivetta",
+          "position": "SP",
+          "mlb_team": "SD",
           "action": "drop",
           "source_type": "team",
           "source_team": "Dirk Dingler",
