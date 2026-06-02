@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-02T22:18:44.856Z",
-  "total_transactions": 13873,
+  "generated_at": "2026-06-02T23:09:29.334Z",
+  "total_transactions": 13874,
   "seasons_included": [
     "2009",
     "2010",
@@ -389161,6 +389161,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Dirk Dingler",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "281",
+      "date": "2026-06-02",
+      "timestamp": 1780439477,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.11265",
+          "name": "Jake McCarthy",
+          "position": "OF",
+          "mlb_team": "COL",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Beginning to marsee the light"
+        },
+        {
+          "player_key": "469.p.62119",
+          "name": "Jakob Marsee",
+          "position": "OF",
+          "mlb_team": "MIA",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Beginning to marsee the light",
           "destination_type": "waivers",
           "destination_team": ""
         }
