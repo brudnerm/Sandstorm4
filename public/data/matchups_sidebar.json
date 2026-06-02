@@ -3,7 +3,7 @@
   "league_name": "sidebar",
   "current_week": 11,
   "total_weeks": "25",
-  "generated_at": "2026-06-02T07:13:37.506Z",
+  "generated_at": "2026-06-02T17:35:18.085Z",
   "standings": [
     {
       "team_key": "469.l.20795.t.3",
@@ -58,7 +58,7 @@
       "losses": 71,
       "ties": 10,
       "waiver_priority": 2,
-      "faab_balance": 89
+      "faab_balance": 83
     },
     {
       "team_key": "469.l.20795.t.9",
@@ -125,7 +125,7 @@
           "team_key": "469.l.20795.t.1",
           "team_name": "Sod Poodles",
           "owner": "Mark",
-          "points": "4",
+          "points": "5",
           "stats": {
             "H/AB": {
               "value": "4/19",
@@ -192,8 +192,8 @@
               "result": "win"
             },
             "K/BB": {
-              "value": "",
-              "result": "loss"
+              "value": "INF",
+              "result": "win"
             },
             "QS": {
               "value": "1",
@@ -205,7 +205,7 @@
           "team_key": "469.l.20795.t.10",
           "team_name": "Walker - St. Louis Cardinal",
           "owner": "KC",
-          "points": "7",
+          "points": "6",
           "stats": {
             "H/AB": {
               "value": "9/22",
@@ -268,12 +268,12 @@
               "result": "win"
             },
             "WHIP": {
-              "value": "1.12",
+              "value": "1.13",
               "result": "loss"
             },
             "K/BB": {
               "value": "0.00",
-              "result": "win"
+              "result": "loss"
             },
             "QS": {
               "value": "0",
@@ -291,7 +291,7 @@
           "team_key": "469.l.20795.t.2",
           "team_name": "She Said 'Seiya Later Boy'",
           "owner": "Jamison",
-          "points": "3",
+          "points": "4",
           "stats": {
             "H/AB": {
               "value": "1/11",
@@ -358,8 +358,8 @@
               "result": "win"
             },
             "K/BB": {
-              "value": "",
-              "result": "loss"
+              "value": "INF",
+              "result": "win"
             },
             "QS": {
               "value": "1",
@@ -371,7 +371,7 @@
           "team_key": "469.l.20795.t.4",
           "team_name": "DeLauter'd in the Comatorium",
           "owner": "joey",
-          "points": "10",
+          "points": "9",
           "stats": {
             "H/AB": {
               "value": "7/24",
@@ -439,7 +439,7 @@
             },
             "K/BB": {
               "value": "0.80",
-              "result": "win"
+              "result": "loss"
             },
             "QS": {
               "value": "0",
@@ -457,7 +457,7 @@
           "team_key": "469.l.20795.t.3",
           "team_name": "Give Me Somethin' to Drake",
           "owner": "mike",
-          "points": "4",
+          "points": "5",
           "stats": {
             "H/AB": {
               "value": "1/8",
@@ -524,8 +524,8 @@
               "result": "win"
             },
             "K/BB": {
-              "value": "",
-              "result": "loss"
+              "value": "INF",
+              "result": "win"
             },
             "QS": {
               "value": "0",
@@ -537,7 +537,7 @@
           "team_key": "469.l.20795.t.7",
           "team_name": "Pete Me In Montauk",
           "owner": "Rich Garcis",
-          "points": "6",
+          "points": "5",
           "stats": {
             "H/AB": {
               "value": "4/24",
@@ -605,7 +605,7 @@
             },
             "K/BB": {
               "value": "1.00",
-              "result": "win"
+              "result": "loss"
             },
             "QS": {
               "value": "0",
@@ -690,7 +690,7 @@
               "result": "loss"
             },
             "K/BB": {
-              "value": "",
+              "value": "INF",
               "result": "tie"
             },
             "QS": {
@@ -770,7 +770,7 @@
               "result": "win"
             },
             "K/BB": {
-              "value": "",
+              "value": "INF",
               "result": "tie"
             },
             "QS": {
@@ -789,7 +789,7 @@
           "team_key": "469.l.20795.t.6",
           "team_name": "Magic Baseballs",
           "owner": "Galen",
-          "points": "3",
+          "points": "4",
           "stats": {
             "H/AB": {
               "value": "6/32",
@@ -856,8 +856,8 @@
               "result": "loss"
             },
             "K/BB": {
-              "value": "",
-              "result": "loss"
+              "value": "INF",
+              "result": "win"
             },
             "QS": {
               "value": "0",
@@ -869,7 +869,7 @@
           "team_key": "469.l.20795.t.8",
           "team_name": "Steamed Abrahams",
           "owner": "Nick",
-          "points": "7",
+          "points": "6",
           "stats": {
             "H/AB": {
               "value": "7/22",
@@ -937,7 +937,7 @@
             },
             "K/BB": {
               "value": "9.00",
-              "result": "win"
+              "result": "loss"
             },
             "QS": {
               "value": "0",
@@ -9278,7 +9278,7 @@
             "team_key": "469.l.20795.t.1",
             "team_name": "Sod Poodles",
             "owner": "Mark",
-            "points": "4",
+            "points": "5",
             "stats": {
               "H/AB": {
                 "value": "4/19",
@@ -9345,8 +9345,8 @@
                 "result": "win"
               },
               "K/BB": {
-                "value": "",
-                "result": "loss"
+                "value": "INF",
+                "result": "win"
               },
               "QS": {
                 "value": "1",
@@ -9358,7 +9358,7 @@
             "team_key": "469.l.20795.t.10",
             "team_name": "Walker - St. Louis Cardinal",
             "owner": "KC",
-            "points": "7",
+            "points": "6",
             "stats": {
               "H/AB": {
                 "value": "9/22",
@@ -9421,12 +9421,12 @@
                 "result": "win"
               },
               "WHIP": {
-                "value": "1.12",
+                "value": "1.13",
                 "result": "loss"
               },
               "K/BB": {
                 "value": "0.00",
-                "result": "win"
+                "result": "loss"
               },
               "QS": {
                 "value": "0",
@@ -9444,7 +9444,7 @@
             "team_key": "469.l.20795.t.2",
             "team_name": "She Said 'Seiya Later Boy'",
             "owner": "Jamison",
-            "points": "3",
+            "points": "4",
             "stats": {
               "H/AB": {
                 "value": "1/11",
@@ -9511,8 +9511,8 @@
                 "result": "win"
               },
               "K/BB": {
-                "value": "",
-                "result": "loss"
+                "value": "INF",
+                "result": "win"
               },
               "QS": {
                 "value": "1",
@@ -9524,7 +9524,7 @@
             "team_key": "469.l.20795.t.4",
             "team_name": "DeLauter'd in the Comatorium",
             "owner": "joey",
-            "points": "10",
+            "points": "9",
             "stats": {
               "H/AB": {
                 "value": "7/24",
@@ -9592,7 +9592,7 @@
               },
               "K/BB": {
                 "value": "0.80",
-                "result": "win"
+                "result": "loss"
               },
               "QS": {
                 "value": "0",
@@ -9610,7 +9610,7 @@
             "team_key": "469.l.20795.t.3",
             "team_name": "Give Me Somethin' to Drake",
             "owner": "mike",
-            "points": "4",
+            "points": "5",
             "stats": {
               "H/AB": {
                 "value": "1/8",
@@ -9677,8 +9677,8 @@
                 "result": "win"
               },
               "K/BB": {
-                "value": "",
-                "result": "loss"
+                "value": "INF",
+                "result": "win"
               },
               "QS": {
                 "value": "0",
@@ -9690,7 +9690,7 @@
             "team_key": "469.l.20795.t.7",
             "team_name": "Pete Me In Montauk",
             "owner": "Rich Garcis",
-            "points": "6",
+            "points": "5",
             "stats": {
               "H/AB": {
                 "value": "4/24",
@@ -9758,7 +9758,7 @@
               },
               "K/BB": {
                 "value": "1.00",
-                "result": "win"
+                "result": "loss"
               },
               "QS": {
                 "value": "0",
@@ -9843,7 +9843,7 @@
                 "result": "loss"
               },
               "K/BB": {
-                "value": "",
+                "value": "INF",
                 "result": "tie"
               },
               "QS": {
@@ -9923,7 +9923,7 @@
                 "result": "win"
               },
               "K/BB": {
-                "value": "",
+                "value": "INF",
                 "result": "tie"
               },
               "QS": {
@@ -9942,7 +9942,7 @@
             "team_key": "469.l.20795.t.6",
             "team_name": "Magic Baseballs",
             "owner": "Galen",
-            "points": "3",
+            "points": "4",
             "stats": {
               "H/AB": {
                 "value": "6/32",
@@ -10009,8 +10009,8 @@
                 "result": "loss"
               },
               "K/BB": {
-                "value": "",
-                "result": "loss"
+                "value": "INF",
+                "result": "win"
               },
               "QS": {
                 "value": "0",
@@ -10022,7 +10022,7 @@
             "team_key": "469.l.20795.t.8",
             "team_name": "Steamed Abrahams",
             "owner": "Nick",
-            "points": "7",
+            "points": "6",
             "stats": {
               "H/AB": {
                 "value": "7/22",
@@ -10090,7 +10090,7 @@
               },
               "K/BB": {
                 "value": "9.00",
-                "result": "win"
+                "result": "loss"
               },
               "QS": {
                 "value": "0",
