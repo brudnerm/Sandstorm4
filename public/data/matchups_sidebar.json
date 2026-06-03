@@ -3,7 +3,7 @@
   "league_name": "sidebar",
   "current_week": 11,
   "total_weeks": "25",
-  "generated_at": "2026-06-03T06:37:13.534Z",
+  "generated_at": "2026-06-03T17:42:16.506Z",
   "standings": [
     {
       "team_key": "469.l.20795.t.3",
@@ -14,7 +14,7 @@
       "losses": 64,
       "ties": 11,
       "waiver_priority": 6,
-      "faab_balance": 68
+      "faab_balance": 67
     },
     {
       "team_key": "469.l.20795.t.6",
@@ -128,7 +128,7 @@
           "points": "7",
           "stats": {
             "H/AB": {
-              "value": "13/54",
+              "value": "13/55",
               "result": "tie"
             },
             "R": {
@@ -148,19 +148,19 @@
               "result": "tie"
             },
             "K_B": {
-              "value": "13",
-              "result": "tie"
+              "value": "14",
+              "result": "loss"
             },
             "GIDP_B": {
               "value": "1",
               "result": "loss"
             },
             "AVG": {
-              "value": ".241",
+              "value": ".236",
               "result": "loss"
             },
             "OPS": {
-              "value": ".832",
+              "value": ".818",
               "result": "loss"
             },
             "IP": {
@@ -205,10 +205,10 @@
           "team_key": "469.l.20795.t.10",
           "team_name": "Walker - St. Louis Cardinal",
           "owner": "KC",
-          "points": "6",
+          "points": "7",
           "stats": {
             "H/AB": {
-              "value": "20/58",
+              "value": "21/60",
               "result": "tie"
             },
             "R": {
@@ -229,18 +229,18 @@
             },
             "K_B": {
               "value": "13",
-              "result": "tie"
+              "result": "win"
             },
             "GIDP_B": {
               "value": "0",
               "result": "win"
             },
             "AVG": {
-              "value": ".345",
+              "value": ".350",
               "result": "win"
             },
             "OPS": {
-              "value": "1.054",
+              "value": "1.051",
               "result": "win"
             },
             "IP": {
@@ -374,7 +374,7 @@
           "points": "11",
           "stats": {
             "H/AB": {
-              "value": "12/50",
+              "value": "12/51",
               "result": "tie"
             },
             "R": {
@@ -402,11 +402,11 @@
               "result": "win"
             },
             "AVG": {
-              "value": ".240",
+              "value": ".235",
               "result": "win"
             },
             "OPS": {
-              "value": ".836",
+              "value": ".820",
               "result": "win"
             },
             "IP": {
@@ -460,7 +460,7 @@
           "points": "8",
           "stats": {
             "H/AB": {
-              "value": "13/38",
+              "value": "14/39",
               "result": "tie"
             },
             "R": {
@@ -472,7 +472,7 @@
               "result": "loss"
             },
             "RBI": {
-              "value": "6",
+              "value": "7",
               "result": "loss"
             },
             "SB": {
@@ -488,11 +488,11 @@
               "result": "loss"
             },
             "AVG": {
-              "value": ".342",
+              "value": ".359",
               "result": "win"
             },
             "OPS": {
-              "value": ".928",
+              "value": ".954",
               "result": "win"
             },
             "IP": {
@@ -626,11 +626,11 @@
           "points": "10",
           "stats": {
             "H/AB": {
-              "value": "17/48",
+              "value": "18/50",
               "result": "tie"
             },
             "R": {
-              "value": "11",
+              "value": "12",
               "result": "win"
             },
             "HR": {
@@ -646,7 +646,7 @@
               "result": "win"
             },
             "K_B": {
-              "value": "10",
+              "value": "11",
               "result": "win"
             },
             "GIDP_B": {
@@ -654,11 +654,11 @@
               "result": "loss"
             },
             "AVG": {
-              "value": ".354",
+              "value": ".360",
               "result": "win"
             },
             "OPS": {
-              "value": "1.001",
+              "value": "1.010",
               "result": "win"
             },
             "IP": {
@@ -792,7 +792,7 @@
           "points": "6",
           "stats": {
             "H/AB": {
-              "value": "13/69",
+              "value": "14/70",
               "result": "tie"
             },
             "R": {
@@ -820,11 +820,11 @@
               "result": "loss"
             },
             "AVG": {
-              "value": ".188",
+              "value": ".200",
               "result": "loss"
             },
             "OPS": {
-              "value": ".672",
+              "value": ".689",
               "result": "loss"
             },
             "IP": {
@@ -872,7 +872,7 @@
           "points": "8",
           "stats": {
             "H/AB": {
-              "value": "15/53",
+              "value": "16/55",
               "result": "tie"
             },
             "R": {
@@ -884,7 +884,7 @@
               "result": "loss"
             },
             "RBI": {
-              "value": "2",
+              "value": "3",
               "result": "loss"
             },
             "SB": {
@@ -900,11 +900,11 @@
               "result": "win"
             },
             "AVG": {
-              "value": ".283",
+              "value": ".291",
               "result": "win"
             },
             "OPS": {
-              "value": ".776",
+              "value": ".783",
               "result": "win"
             },
             "IP": {
@@ -9281,7 +9281,7 @@
             "points": "7",
             "stats": {
               "H/AB": {
-                "value": "13/54",
+                "value": "13/55",
                 "result": "tie"
               },
               "R": {
@@ -9301,19 +9301,19 @@
                 "result": "tie"
               },
               "K_B": {
-                "value": "13",
-                "result": "tie"
+                "value": "14",
+                "result": "loss"
               },
               "GIDP_B": {
                 "value": "1",
                 "result": "loss"
               },
               "AVG": {
-                "value": ".241",
+                "value": ".236",
                 "result": "loss"
               },
               "OPS": {
-                "value": ".832",
+                "value": ".818",
                 "result": "loss"
               },
               "IP": {
@@ -9358,10 +9358,10 @@
             "team_key": "469.l.20795.t.10",
             "team_name": "Walker - St. Louis Cardinal",
             "owner": "KC",
-            "points": "6",
+            "points": "7",
             "stats": {
               "H/AB": {
-                "value": "20/58",
+                "value": "21/60",
                 "result": "tie"
               },
               "R": {
@@ -9382,18 +9382,18 @@
               },
               "K_B": {
                 "value": "13",
-                "result": "tie"
+                "result": "win"
               },
               "GIDP_B": {
                 "value": "0",
                 "result": "win"
               },
               "AVG": {
-                "value": ".345",
+                "value": ".350",
                 "result": "win"
               },
               "OPS": {
-                "value": "1.054",
+                "value": "1.051",
                 "result": "win"
               },
               "IP": {
@@ -9527,7 +9527,7 @@
             "points": "11",
             "stats": {
               "H/AB": {
-                "value": "12/50",
+                "value": "12/51",
                 "result": "tie"
               },
               "R": {
@@ -9555,11 +9555,11 @@
                 "result": "win"
               },
               "AVG": {
-                "value": ".240",
+                "value": ".235",
                 "result": "win"
               },
               "OPS": {
-                "value": ".836",
+                "value": ".820",
                 "result": "win"
               },
               "IP": {
@@ -9613,7 +9613,7 @@
             "points": "8",
             "stats": {
               "H/AB": {
-                "value": "13/38",
+                "value": "14/39",
                 "result": "tie"
               },
               "R": {
@@ -9625,7 +9625,7 @@
                 "result": "loss"
               },
               "RBI": {
-                "value": "6",
+                "value": "7",
                 "result": "loss"
               },
               "SB": {
@@ -9641,11 +9641,11 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".342",
+                "value": ".359",
                 "result": "win"
               },
               "OPS": {
-                "value": ".928",
+                "value": ".954",
                 "result": "win"
               },
               "IP": {
@@ -9779,11 +9779,11 @@
             "points": "10",
             "stats": {
               "H/AB": {
-                "value": "17/48",
+                "value": "18/50",
                 "result": "tie"
               },
               "R": {
-                "value": "11",
+                "value": "12",
                 "result": "win"
               },
               "HR": {
@@ -9799,7 +9799,7 @@
                 "result": "win"
               },
               "K_B": {
-                "value": "10",
+                "value": "11",
                 "result": "win"
               },
               "GIDP_B": {
@@ -9807,11 +9807,11 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".354",
+                "value": ".360",
                 "result": "win"
               },
               "OPS": {
-                "value": "1.001",
+                "value": "1.010",
                 "result": "win"
               },
               "IP": {
@@ -9945,7 +9945,7 @@
             "points": "6",
             "stats": {
               "H/AB": {
-                "value": "13/69",
+                "value": "14/70",
                 "result": "tie"
               },
               "R": {
@@ -9973,11 +9973,11 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".188",
+                "value": ".200",
                 "result": "loss"
               },
               "OPS": {
-                "value": ".672",
+                "value": ".689",
                 "result": "loss"
               },
               "IP": {
@@ -10025,7 +10025,7 @@
             "points": "8",
             "stats": {
               "H/AB": {
-                "value": "15/53",
+                "value": "16/55",
                 "result": "tie"
               },
               "R": {
@@ -10037,7 +10037,7 @@
                 "result": "loss"
               },
               "RBI": {
-                "value": "2",
+                "value": "3",
                 "result": "loss"
               },
               "SB": {
@@ -10053,11 +10053,11 @@
                 "result": "win"
               },
               "AVG": {
-                "value": ".283",
+                "value": ".291",
                 "result": "win"
               },
               "OPS": {
-                "value": ".776",
+                "value": ".783",
                 "result": "win"
               },
               "IP": {
