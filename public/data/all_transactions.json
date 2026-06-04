@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-04T17:04:39.100Z",
-  "total_transactions": 13877,
+  "generated_at": "2026-06-04T18:01:39.198Z",
+  "total_transactions": 13879,
   "seasons_included": [
     "2009",
     "2010",
@@ -389291,6 +389291,48 @@
           "source_team": "So bad it Kurtz",
           "destination_type": "waivers",
           "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "285",
+      "date": "2026-06-04",
+      "timestamp": 1780595766,
+      "transaction_type": "drop",
+      "players": [
+        {
+          "player_key": "469.p.10214",
+          "name": "Edwin Díaz",
+          "position": "RP",
+          "mlb_team": "LAD",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "MAINEiacs",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "286",
+      "date": "2026-06-04",
+      "timestamp": 1780595883,
+      "transaction_type": "add",
+      "players": [
+        {
+          "player_key": "469.p.12049",
+          "name": "Nick Gonzales",
+          "position": "2B,3B,SS",
+          "mlb_team": "PIT",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "MAINEiacs"
         }
       ]
     }
