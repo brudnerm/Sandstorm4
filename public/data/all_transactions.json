@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-04T05:55:15.151Z",
-  "total_transactions": 13876,
+  "generated_at": "2026-06-04T17:04:39.100Z",
+  "total_transactions": 13877,
   "seasons_included": [
     "2009",
     "2010",
@@ -378512,7 +378512,7 @@
         {
           "player_key": "469.p.12390",
           "name": "Matt McLain",
-          "position": "2B",
+          "position": "2B,SS",
           "mlb_team": "CIN",
           "action": "draft",
           "source_type": "draft",
@@ -385891,7 +385891,7 @@
         {
           "player_key": "469.p.12390",
           "name": "Matt McLain",
-          "position": "2B",
+          "position": "2B,SS",
           "mlb_team": "CIN",
           "action": "drop",
           "source_type": "team",
@@ -389257,6 +389257,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Dirk Dingler",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "284",
+      "date": "2026-06-04",
+      "timestamp": 1780570466,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.10916",
+          "name": "Royce Lewis",
+          "position": "3B",
+          "mlb_team": "MIN",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "So bad it Kurtz"
+        },
+        {
+          "player_key": "469.p.10910",
+          "name": "Corbin Burnes",
+          "position": "SP",
+          "mlb_team": "AZ",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "So bad it Kurtz",
           "destination_type": "waivers",
           "destination_team": ""
         }
