@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-05T01:34:19.366Z",
-  "total_transactions": 13879,
+  "generated_at": "2026-06-05T02:41:08.138Z",
+  "total_transactions": 13880,
   "seasons_included": [
     "2009",
     "2010",
@@ -389333,6 +389333,38 @@
           "source_team": "",
           "destination_type": "team",
           "destination_team": "MAINEiacs"
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "287",
+      "date": "2026-06-05",
+      "timestamp": 1780625214,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.63494",
+          "name": "Jung Hoo Lee",
+          "position": "OF",
+          "mlb_team": "SF",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Jesus take the wheel."
+        },
+        {
+          "player_key": "469.p.10879",
+          "name": "Gavin Sheets",
+          "position": "1B,OF",
+          "mlb_team": "SD",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Jesus take the wheel.",
+          "destination_type": "waivers",
+          "destination_team": ""
         }
       ]
     }
