@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-07T07:09:02.696Z",
-  "total_transactions": 13884,
+  "generated_at": "2026-06-07T16:32:14.795Z",
+  "total_transactions": 13887,
   "seasons_included": [
     "2009",
     "2010",
@@ -375430,7 +375430,7 @@
         {
           "player_key": "469.p.11284",
           "name": "Nico Hoerner",
-          "position": "2B",
+          "position": "2B,SS",
           "mlb_team": "CHC",
           "action": "draft",
           "source_type": "draft",
@@ -389491,6 +389491,102 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Who's Your Vladdy",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "292",
+      "date": "2026-06-07",
+      "timestamp": 1780835409,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.10499",
+          "name": "Brandon Marsh",
+          "position": "OF",
+          "mlb_team": "PHI",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "IM IN MY PRIME"
+        },
+        {
+          "player_key": "469.p.11348",
+          "name": "Luke Raley",
+          "position": "1B,OF",
+          "mlb_team": "SEA",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "IM IN MY PRIME",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "293",
+      "date": "2026-06-07",
+      "timestamp": 1780838025,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.63027",
+          "name": "Grant Taylor",
+          "position": "SP,RP",
+          "mlb_team": "CWS",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "So bad it Kurtz"
+        },
+        {
+          "player_key": "469.p.12363",
+          "name": "Spencer Schwellenbach",
+          "position": "SP",
+          "mlb_team": "ATL",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "So bad it Kurtz",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "294",
+      "date": "2026-06-07",
+      "timestamp": 1780838286,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.62982",
+          "name": "Jacob Gonzalez",
+          "position": "1B,2B,SS",
+          "mlb_team": "CWS",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "So bad it Kurtz"
+        },
+        {
+          "player_key": "469.p.11806",
+          "name": "Yoendrys Gómez",
+          "position": "SP,RP",
+          "mlb_team": "MIN",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "So bad it Kurtz",
           "destination_type": "waivers",
           "destination_team": ""
         }
