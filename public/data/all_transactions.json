@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-08T06:33:38.294Z",
-  "total_transactions": 13889,
+  "generated_at": "2026-06-08T17:08:42.382Z",
+  "total_transactions": 13890,
   "seasons_included": [
     "2009",
     "2010",
@@ -389651,6 +389651,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Wacha Shame",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "297",
+      "date": "2026-06-08",
+      "timestamp": 1780914346,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.11892",
+          "name": "Ernie Clement",
+          "position": "1B,2B,3B,SS",
+          "mlb_team": "TOR",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Hip-Happ-anonymous"
+        },
+        {
+          "player_key": "469.p.60138",
+          "name": "Chase DeLauter",
+          "position": "OF",
+          "mlb_team": "CLE",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Hip-Happ-anonymous",
           "destination_type": "waivers",
           "destination_team": ""
         }
