@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-09T19:19:05.427Z",
-  "total_transactions": 13891,
+  "generated_at": "2026-06-09T20:15:55.872Z",
+  "total_transactions": 13893,
   "seasons_included": [
     "2009",
     "2010",
@@ -389717,6 +389717,48 @@
           "source_team": "IM IN MY PRIME",
           "destination_type": "waivers",
           "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "299",
+      "date": "2026-06-09",
+      "timestamp": 1781034754,
+      "transaction_type": "drop",
+      "players": [
+        {
+          "player_key": "469.p.9105",
+          "name": "Nolan Arenado",
+          "position": "3B",
+          "mlb_team": "AZ",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "IM IN MY PRIME",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "300",
+      "date": "2026-06-09",
+      "timestamp": 1781034846,
+      "transaction_type": "add",
+      "players": [
+        {
+          "player_key": "469.p.64314",
+          "name": "Braden Montgomery",
+          "position": "OF",
+          "mlb_team": "CWS",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "IM IN MY PRIME"
         }
       ]
     }
