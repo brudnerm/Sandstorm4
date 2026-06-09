@@ -3,7 +3,7 @@
   "league_name": "sidebar",
   "current_week": 12,
   "total_weeks": "25",
-  "generated_at": "2026-06-09T06:47:31.270Z",
+  "generated_at": "2026-06-09T16:56:13.406Z",
   "standings": [
     {
       "team_key": "469.l.20795.t.3",
@@ -125,7 +125,7 @@
           "team_key": "469.l.20795.t.1",
           "team_name": "Sod Poodles",
           "owner": "Mark",
-          "points": "5",
+          "points": "8",
           "stats": {
             "H/AB": {
               "value": "4/29",
@@ -169,11 +169,11 @@
             },
             "L": {
               "value": "0",
-              "result": "tie"
+              "result": "win"
             },
             "SV": {
               "value": "0",
-              "result": "tie"
+              "result": "win"
             },
             "K_P": {
               "value": "10",
@@ -192,8 +192,8 @@
               "result": "win"
             },
             "K/BB": {
-              "value": "",
-              "result": "tie"
+              "value": "INF",
+              "result": "win"
             },
             "QS": {
               "value": "1",
@@ -244,23 +244,23 @@
               "result": "win"
             },
             "IP": {
-              "value": "0.0",
+              "value": "",
               "result": "tie"
             },
             "L": {
-              "value": "0",
-              "result": "tie"
+              "value": "",
+              "result": "loss"
             },
             "SV": {
-              "value": "0",
-              "result": "tie"
+              "value": "",
+              "result": "loss"
             },
             "K_P": {
-              "value": "0",
+              "value": "",
               "result": "loss"
             },
             "GIDP_P": {
-              "value": "0",
+              "value": "",
               "result": "loss"
             },
             "ERA": {
@@ -273,10 +273,10 @@
             },
             "K/BB": {
               "value": "",
-              "result": "tie"
+              "result": "loss"
             },
             "QS": {
-              "value": "0",
+              "value": "",
               "result": "loss"
             }
           }
@@ -457,7 +457,7 @@
           "team_key": "469.l.20795.t.3",
           "team_name": "Give Me Somethin' to Drake",
           "owner": "mike",
-          "points": "7",
+          "points": "8",
           "stats": {
             "H/AB": {
               "value": "4/30",
@@ -501,7 +501,7 @@
             },
             "L": {
               "value": "0",
-              "result": "tie"
+              "result": "win"
             },
             "SV": {
               "value": "1",
@@ -576,23 +576,23 @@
               "result": "win"
             },
             "IP": {
-              "value": "0.0",
+              "value": "",
               "result": "tie"
             },
             "L": {
-              "value": "0",
-              "result": "tie"
+              "value": "",
+              "result": "loss"
             },
             "SV": {
-              "value": "0",
+              "value": "",
               "result": "loss"
             },
             "K_P": {
-              "value": "0",
+              "value": "",
               "result": "loss"
             },
             "GIDP_P": {
-              "value": "0",
+              "value": "",
               "result": "loss"
             },
             "ERA": {
@@ -608,7 +608,7 @@
               "result": "loss"
             },
             "QS": {
-              "value": "0",
+              "value": "",
               "result": "loss"
             }
           }
@@ -690,7 +690,7 @@
               "result": "win"
             },
             "K/BB": {
-              "value": "",
+              "value": "-",
               "result": "loss"
             },
             "QS": {
@@ -766,7 +766,7 @@
               "result": "loss"
             },
             "WHIP": {
-              "value": "1.12",
+              "value": "1.13",
               "result": "loss"
             },
             "K/BB": {
@@ -828,24 +828,24 @@
               "result": "win"
             },
             "IP": {
-              "value": "0.0",
+              "value": "",
               "result": "tie"
             },
             "L": {
-              "value": "0",
-              "result": "tie"
+              "value": "",
+              "result": "loss"
             },
             "SV": {
-              "value": "0",
+              "value": "",
               "result": "loss"
             },
             "K_P": {
-              "value": "0",
+              "value": "",
               "result": "loss"
             },
             "GIDP_P": {
-              "value": "0",
-              "result": "tie"
+              "value": "",
+              "result": "loss"
             },
             "ERA": {
               "value": "",
@@ -860,8 +860,8 @@
               "result": "loss"
             },
             "QS": {
-              "value": "0",
-              "result": "tie"
+              "value": "",
+              "result": "loss"
             }
           }
         },
@@ -869,7 +869,7 @@
           "team_key": "469.l.20795.t.9",
           "team_name": "Three Lindors Down",
           "owner": "angel escobar",
-          "points": "7",
+          "points": "10",
           "stats": {
             "H/AB": {
               "value": "6/21",
@@ -913,7 +913,7 @@
             },
             "L": {
               "value": "0",
-              "result": "tie"
+              "result": "win"
             },
             "SV": {
               "value": "1",
@@ -925,7 +925,7 @@
             },
             "GIDP_P": {
               "value": "0",
-              "result": "tie"
+              "result": "win"
             },
             "ERA": {
               "value": "21.60",
@@ -941,7 +941,7 @@
             },
             "QS": {
               "value": "0",
-              "result": "tie"
+              "result": "win"
             }
           }
         }
@@ -10110,7 +10110,7 @@
             "team_key": "469.l.20795.t.1",
             "team_name": "Sod Poodles",
             "owner": "Mark",
-            "points": "5",
+            "points": "8",
             "stats": {
               "H/AB": {
                 "value": "4/29",
@@ -10154,11 +10154,11 @@
               },
               "L": {
                 "value": "0",
-                "result": "tie"
+                "result": "win"
               },
               "SV": {
                 "value": "0",
-                "result": "tie"
+                "result": "win"
               },
               "K_P": {
                 "value": "10",
@@ -10177,8 +10177,8 @@
                 "result": "win"
               },
               "K/BB": {
-                "value": "",
-                "result": "tie"
+                "value": "INF",
+                "result": "win"
               },
               "QS": {
                 "value": "1",
@@ -10229,23 +10229,23 @@
                 "result": "win"
               },
               "IP": {
-                "value": "0.0",
+                "value": "",
                 "result": "tie"
               },
               "L": {
-                "value": "0",
-                "result": "tie"
+                "value": "",
+                "result": "loss"
               },
               "SV": {
-                "value": "0",
-                "result": "tie"
+                "value": "",
+                "result": "loss"
               },
               "K_P": {
-                "value": "0",
+                "value": "",
                 "result": "loss"
               },
               "GIDP_P": {
-                "value": "0",
+                "value": "",
                 "result": "loss"
               },
               "ERA": {
@@ -10258,10 +10258,10 @@
               },
               "K/BB": {
                 "value": "",
-                "result": "tie"
+                "result": "loss"
               },
               "QS": {
-                "value": "0",
+                "value": "",
                 "result": "loss"
               }
             }
@@ -10442,7 +10442,7 @@
             "team_key": "469.l.20795.t.3",
             "team_name": "Give Me Somethin' to Drake",
             "owner": "mike",
-            "points": "7",
+            "points": "8",
             "stats": {
               "H/AB": {
                 "value": "4/30",
@@ -10486,7 +10486,7 @@
               },
               "L": {
                 "value": "0",
-                "result": "tie"
+                "result": "win"
               },
               "SV": {
                 "value": "1",
@@ -10561,23 +10561,23 @@
                 "result": "win"
               },
               "IP": {
-                "value": "0.0",
+                "value": "",
                 "result": "tie"
               },
               "L": {
-                "value": "0",
-                "result": "tie"
+                "value": "",
+                "result": "loss"
               },
               "SV": {
-                "value": "0",
+                "value": "",
                 "result": "loss"
               },
               "K_P": {
-                "value": "0",
+                "value": "",
                 "result": "loss"
               },
               "GIDP_P": {
-                "value": "0",
+                "value": "",
                 "result": "loss"
               },
               "ERA": {
@@ -10593,7 +10593,7 @@
                 "result": "loss"
               },
               "QS": {
-                "value": "0",
+                "value": "",
                 "result": "loss"
               }
             }
@@ -10675,7 +10675,7 @@
                 "result": "win"
               },
               "K/BB": {
-                "value": "",
+                "value": "-",
                 "result": "loss"
               },
               "QS": {
@@ -10751,7 +10751,7 @@
                 "result": "loss"
               },
               "WHIP": {
-                "value": "1.12",
+                "value": "1.13",
                 "result": "loss"
               },
               "K/BB": {
@@ -10813,24 +10813,24 @@
                 "result": "win"
               },
               "IP": {
-                "value": "0.0",
+                "value": "",
                 "result": "tie"
               },
               "L": {
-                "value": "0",
-                "result": "tie"
+                "value": "",
+                "result": "loss"
               },
               "SV": {
-                "value": "0",
+                "value": "",
                 "result": "loss"
               },
               "K_P": {
-                "value": "0",
+                "value": "",
                 "result": "loss"
               },
               "GIDP_P": {
-                "value": "0",
-                "result": "tie"
+                "value": "",
+                "result": "loss"
               },
               "ERA": {
                 "value": "",
@@ -10845,8 +10845,8 @@
                 "result": "loss"
               },
               "QS": {
-                "value": "0",
-                "result": "tie"
+                "value": "",
+                "result": "loss"
               }
             }
           },
@@ -10854,7 +10854,7 @@
             "team_key": "469.l.20795.t.9",
             "team_name": "Three Lindors Down",
             "owner": "angel escobar",
-            "points": "7",
+            "points": "10",
             "stats": {
               "H/AB": {
                 "value": "6/21",
@@ -10898,7 +10898,7 @@
               },
               "L": {
                 "value": "0",
-                "result": "tie"
+                "result": "win"
               },
               "SV": {
                 "value": "1",
@@ -10910,7 +10910,7 @@
               },
               "GIDP_P": {
                 "value": "0",
-                "result": "tie"
+                "result": "win"
               },
               "ERA": {
                 "value": "21.60",
@@ -10926,7 +10926,7 @@
               },
               "QS": {
                 "value": "0",
-                "result": "tie"
+                "result": "win"
               }
             }
           }
