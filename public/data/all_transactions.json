@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-11T23:03:36.739Z",
-  "total_transactions": 13898,
+  "generated_at": "2026-06-11T23:50:24.798Z",
+  "total_transactions": 13899,
   "seasons_included": [
     "2009",
     "2010",
@@ -389917,6 +389917,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Be Messick or Be Dead",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "306",
+      "date": "2026-06-11",
+      "timestamp": 1781220320,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.11035",
+          "name": "Zack Littell",
+          "position": "SP",
+          "mlb_team": "WSH",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Wacha Shame"
+        },
+        {
+          "player_key": "469.p.9329",
+          "name": "Michael Wacha",
+          "position": "SP",
+          "mlb_team": "KC",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Wacha Shame",
           "destination_type": "waivers",
           "destination_team": ""
         }
