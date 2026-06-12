@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-12T18:45:31.323Z",
-  "total_transactions": 13901,
+  "generated_at": "2026-06-12T19:30:22.721Z",
+  "total_transactions": 13902,
   "seasons_included": [
     "2009",
     "2010",
@@ -390010,6 +390010,38 @@
           "name": "Zebby Matthews",
           "position": "SP",
           "mlb_team": "MIN",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Dirk Dingler",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "309",
+      "date": "2026-06-12",
+      "timestamp": 1781291223,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.10860",
+          "name": "Alex Lange",
+          "position": "RP",
+          "mlb_team": "KC",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Dirk Dingler"
+        },
+        {
+          "player_key": "469.p.11709",
+          "name": "Kyle Finnegan",
+          "position": "RP",
+          "mlb_team": "DET",
           "action": "drop",
           "source_type": "team",
           "source_team": "Dirk Dingler",
