@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-11T23:50:24.798Z",
-  "total_transactions": 13899,
+  "generated_at": "2026-06-12T00:49:52.530Z",
+  "total_transactions": 13900,
   "seasons_included": [
     "2009",
     "2010",
@@ -389949,6 +389949,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Wacha Shame",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "307",
+      "date": "2026-06-12",
+      "timestamp": 1781222556,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.60243",
+          "name": "Ryan Ward",
+          "position": "1B,OF",
+          "mlb_team": "LAD",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Roman Got Fingered"
+        },
+        {
+          "player_key": "469.p.11265",
+          "name": "Jake McCarthy",
+          "position": "OF",
+          "mlb_team": "COL",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Roman Got Fingered",
           "destination_type": "waivers",
           "destination_team": ""
         }
