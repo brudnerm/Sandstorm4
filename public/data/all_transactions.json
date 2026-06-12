@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-12T06:33:40.793Z",
-  "total_transactions": 13900,
+  "generated_at": "2026-06-12T17:01:35.270Z",
+  "total_transactions": 13901,
   "seasons_included": [
     "2009",
     "2010",
@@ -389981,6 +389981,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Roman Got Fingered",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "308",
+      "date": "2026-06-12",
+      "timestamp": 1781260020,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.60211",
+          "name": "Noah Cameron",
+          "position": "SP",
+          "mlb_team": "KC",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Dirk Dingler"
+        },
+        {
+          "player_key": "469.p.63601",
+          "name": "Zebby Matthews",
+          "position": "SP",
+          "mlb_team": "MIN",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Dirk Dingler",
           "destination_type": "waivers",
           "destination_team": ""
         }
