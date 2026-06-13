@@ -3,7 +3,7 @@
   "league_name": "sidebar",
   "current_week": 12,
   "total_weeks": "25",
-  "generated_at": "2026-06-13T17:46:34.166Z",
+  "generated_at": "2026-06-13T18:30:58.933Z",
   "standings": [
     {
       "team_key": "469.l.20795.t.3",
@@ -128,7 +128,7 @@
           "points": "14",
           "stats": {
             "H/AB": {
-              "value": "39/159",
+              "value": "39/160",
               "result": "tie"
             },
             "R": {
@@ -156,11 +156,11 @@
               "result": "win"
             },
             "AVG": {
-              "value": ".245",
+              "value": ".244",
               "result": "win"
             },
             "OPS": {
-              "value": ".840",
+              "value": ".835",
               "result": "win"
             },
             "IP": {
@@ -374,7 +374,7 @@
           "points": "4",
           "stats": {
             "H/AB": {
-              "value": "34/131",
+              "value": "34/132",
               "result": "tie"
             },
             "R": {
@@ -394,7 +394,7 @@
               "result": "win"
             },
             "K_B": {
-              "value": "29",
+              "value": "30",
               "result": "win"
             },
             "GIDP_B": {
@@ -402,11 +402,11 @@
               "result": "loss"
             },
             "AVG": {
-              "value": ".260",
+              "value": ".258",
               "result": "loss"
             },
             "OPS": {
-              "value": ".864",
+              "value": ".858",
               "result": "loss"
             },
             "IP": {
@@ -540,7 +540,7 @@
           "points": "8",
           "stats": {
             "H/AB": {
-              "value": "44/160",
+              "value": "44/161",
               "result": "tie"
             },
             "R": {
@@ -568,11 +568,11 @@
               "result": "tie"
             },
             "AVG": {
-              "value": ".275",
+              "value": ".273",
               "result": "win"
             },
             "OPS": {
-              "value": ".801",
+              "value": ".796",
               "result": "win"
             },
             "IP": {
@@ -789,22 +789,22 @@
           "team_key": "469.l.20795.t.7",
           "team_name": "Peter of Cola",
           "owner": "Rich Garcis",
-          "points": "9",
+          "points": "10",
           "stats": {
             "H/AB": {
-              "value": "43/141",
+              "value": "44/142",
               "result": "tie"
             },
             "R": {
-              "value": "33",
+              "value": "34",
               "result": "win"
             },
             "HR": {
-              "value": "8",
-              "result": "tie"
+              "value": "9",
+              "result": "win"
             },
             "RBI": {
-              "value": "20",
+              "value": "22",
               "result": "win"
             },
             "SB": {
@@ -820,11 +820,11 @@
               "result": "loss"
             },
             "AVG": {
-              "value": ".305",
+              "value": ".310",
               "result": "win"
             },
             "OPS": {
-              "value": ".949",
+              "value": ".980",
               "result": "win"
             },
             "IP": {
@@ -881,7 +881,7 @@
             },
             "HR": {
               "value": "8",
-              "result": "tie"
+              "result": "loss"
             },
             "RBI": {
               "value": "18",
@@ -10113,7 +10113,7 @@
             "points": "14",
             "stats": {
               "H/AB": {
-                "value": "39/159",
+                "value": "39/160",
                 "result": "tie"
               },
               "R": {
@@ -10141,11 +10141,11 @@
                 "result": "win"
               },
               "AVG": {
-                "value": ".245",
+                "value": ".244",
                 "result": "win"
               },
               "OPS": {
-                "value": ".840",
+                "value": ".835",
                 "result": "win"
               },
               "IP": {
@@ -10359,7 +10359,7 @@
             "points": "4",
             "stats": {
               "H/AB": {
-                "value": "34/131",
+                "value": "34/132",
                 "result": "tie"
               },
               "R": {
@@ -10379,7 +10379,7 @@
                 "result": "win"
               },
               "K_B": {
-                "value": "29",
+                "value": "30",
                 "result": "win"
               },
               "GIDP_B": {
@@ -10387,11 +10387,11 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".260",
+                "value": ".258",
                 "result": "loss"
               },
               "OPS": {
-                "value": ".864",
+                "value": ".858",
                 "result": "loss"
               },
               "IP": {
@@ -10525,7 +10525,7 @@
             "points": "8",
             "stats": {
               "H/AB": {
-                "value": "44/160",
+                "value": "44/161",
                 "result": "tie"
               },
               "R": {
@@ -10553,11 +10553,11 @@
                 "result": "tie"
               },
               "AVG": {
-                "value": ".275",
+                "value": ".273",
                 "result": "win"
               },
               "OPS": {
-                "value": ".801",
+                "value": ".796",
                 "result": "win"
               },
               "IP": {
@@ -10774,22 +10774,22 @@
             "team_key": "469.l.20795.t.7",
             "team_name": "Peter of Cola",
             "owner": "Rich Garcis",
-            "points": "9",
+            "points": "10",
             "stats": {
               "H/AB": {
-                "value": "43/141",
+                "value": "44/142",
                 "result": "tie"
               },
               "R": {
-                "value": "33",
+                "value": "34",
                 "result": "win"
               },
               "HR": {
-                "value": "8",
-                "result": "tie"
+                "value": "9",
+                "result": "win"
               },
               "RBI": {
-                "value": "20",
+                "value": "22",
                 "result": "win"
               },
               "SB": {
@@ -10805,11 +10805,11 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".305",
+                "value": ".310",
                 "result": "win"
               },
               "OPS": {
-                "value": ".949",
+                "value": ".980",
                 "result": "win"
               },
               "IP": {
@@ -10866,7 +10866,7 @@
               },
               "HR": {
                 "value": "8",
-                "result": "tie"
+                "result": "loss"
               },
               "RBI": {
                 "value": "18",
