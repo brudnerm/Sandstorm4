@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-13T02:47:21.518Z",
-  "total_transactions": 13902,
+  "generated_at": "2026-06-13T04:32:01.225Z",
+  "total_transactions": 13903,
   "seasons_included": [
     "2009",
     "2010",
@@ -390045,6 +390045,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Dirk Dingler",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "310",
+      "date": "2026-06-13",
+      "timestamp": 1781322839,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.8652",
+          "name": "Martín Pérez",
+          "position": "SP",
+          "mlb_team": "ATL",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Wacha Shame"
+        },
+        {
+          "player_key": "469.p.11035",
+          "name": "Zack Littell",
+          "position": "SP",
+          "mlb_team": "WSH",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Wacha Shame",
           "destination_type": "waivers",
           "destination_team": ""
         }
