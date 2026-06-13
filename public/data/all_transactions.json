@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-13T06:10:53.985Z",
-  "total_transactions": 13903,
+  "generated_at": "2026-06-13T16:32:32.572Z",
+  "total_transactions": 13904,
   "seasons_included": [
     "2009",
     "2010",
@@ -375614,7 +375614,7 @@
         {
           "player_key": "469.p.11733",
           "name": "Kyle Stowers",
-          "position": "OF",
+          "position": "1B,OF",
           "mlb_team": "MIA",
           "action": "draft",
           "source_type": "draft",
@@ -390077,6 +390077,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Wacha Shame",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "311",
+      "date": "2026-06-13",
+      "timestamp": 1781364973,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.12158",
+          "name": "J.T. Ginn",
+          "position": "SP,RP",
+          "mlb_team": "ATH",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Dirk Dingler"
+        },
+        {
+          "player_key": "469.p.60211",
+          "name": "Noah Cameron",
+          "position": "SP",
+          "mlb_team": "KC",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Dirk Dingler",
           "destination_type": "waivers",
           "destination_team": ""
         }
