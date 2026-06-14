@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-14T07:11:49.866Z",
-  "total_transactions": 13905,
+  "generated_at": "2026-06-14T16:33:45.552Z",
+  "total_transactions": 13907,
   "seasons_included": [
     "2009",
     "2010",
@@ -381510,7 +381510,7 @@
         {
           "player_key": "469.p.10916",
           "name": "Royce Lewis",
-          "position": "3B",
+          "position": "1B,3B",
           "mlb_team": "MIN",
           "action": "add",
           "source_type": "freeagents",
@@ -382949,7 +382949,7 @@
         {
           "player_key": "469.p.10916",
           "name": "Royce Lewis",
-          "position": "3B",
+          "position": "1B,3B",
           "mlb_team": "MIN",
           "action": "drop",
           "source_type": "team",
@@ -389273,7 +389273,7 @@
         {
           "player_key": "469.p.10916",
           "name": "Royce Lewis",
-          "position": "3B",
+          "position": "1B,3B",
           "mlb_team": "MIN",
           "action": "add",
           "source_type": "freeagents",
@@ -390141,6 +390141,70 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Who's Your Vladdy",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "313",
+      "date": "2026-06-14",
+      "timestamp": 1781443355,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.10489",
+          "name": "Foster Griffin",
+          "position": "SP,RP",
+          "mlb_team": "WSH",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "IM IN MY PRIME"
+        },
+        {
+          "player_key": "469.p.11121",
+          "name": "Jeffrey Springs",
+          "position": "SP",
+          "mlb_team": "ATH",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "IM IN MY PRIME",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "314",
+      "date": "2026-06-14",
+      "timestamp": 1781444676,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.11805",
+          "name": "Jasson Domínguez",
+          "position": "OF",
+          "mlb_team": "NYY",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "So bad it Kurtz"
+        },
+        {
+          "player_key": "469.p.12281",
+          "name": "Spencer Strider",
+          "position": "SP",
+          "mlb_team": "ATL",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "So bad it Kurtz",
           "destination_type": "waivers",
           "destination_team": ""
         }
