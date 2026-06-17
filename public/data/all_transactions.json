@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-17T01:52:39.710Z",
-  "total_transactions": 13913,
+  "generated_at": "2026-06-17T03:10:15.713Z",
+  "total_transactions": 13914,
   "seasons_included": [
     "2009",
     "2010",
@@ -390397,6 +390397,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "IM IN MY PRIME",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "321",
+      "date": "2026-06-17",
+      "timestamp": 1781664091,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.60622",
+          "name": "Troy Johnston",
+          "position": "1B,OF",
+          "mlb_team": "COL",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Papua New Vinnie"
+        },
+        {
+          "player_key": "469.p.12275",
+          "name": "Dylan Lee",
+          "position": "RP",
+          "mlb_team": "ATL",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Papua New Vinnie",
           "destination_type": "waivers",
           "destination_team": ""
         }
