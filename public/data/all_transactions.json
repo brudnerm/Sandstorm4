@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-17T06:44:59.393Z",
-  "total_transactions": 13914,
+  "generated_at": "2026-06-17T17:04:22.325Z",
+  "total_transactions": 13915,
   "seasons_included": [
     "2009",
     "2010",
@@ -390429,6 +390429,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Papua New Vinnie",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "322",
+      "date": "2026-06-17",
+      "timestamp": 1781692434,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.12468",
+          "name": "Eury Pérez",
+          "position": "SP",
+          "mlb_team": "MIA",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Be Messick or Be Dead"
+        },
+        {
+          "player_key": "469.p.12345",
+          "name": "Kyle Bradish",
+          "position": "SP",
+          "mlb_team": "BAL",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Be Messick or Be Dead",
           "destination_type": "waivers",
           "destination_team": ""
         }
