@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-18T06:36:27.224Z",
-  "total_transactions": 13916,
+  "generated_at": "2026-06-18T17:05:21.074Z",
+  "total_transactions": 13918,
   "seasons_included": [
     "2009",
     "2010",
@@ -390493,6 +390493,70 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Wacha Shame",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "324",
+      "date": "2026-06-18",
+      "timestamp": 1781782712,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.60061",
+          "name": "Dominic Canzone",
+          "position": "OF",
+          "mlb_team": "SEA",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Roman Got Fingered"
+        },
+        {
+          "player_key": "469.p.60243",
+          "name": "Ryan Ward",
+          "position": "1B,OF",
+          "mlb_team": "LAD",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Roman Got Fingered",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "325",
+      "date": "2026-06-18",
+      "timestamp": 1781782819,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.60092",
+          "name": "Samuel Basallo",
+          "position": "C",
+          "mlb_team": "BAL",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Roman Got Fingered"
+        },
+        {
+          "player_key": "469.p.60232",
+          "name": "Dalton Rushing",
+          "position": "C",
+          "mlb_team": "LAD",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Roman Got Fingered",
           "destination_type": "waivers",
           "destination_team": ""
         }
