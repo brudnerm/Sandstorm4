@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-19T06:00:37.185Z",
-  "total_transactions": 13918,
+  "generated_at": "2026-06-19T16:50:53.432Z",
+  "total_transactions": 13919,
   "seasons_included": [
     "2009",
     "2010",
@@ -390557,6 +390557,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Roman Got Fingered",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "326",
+      "date": "2026-06-19",
+      "timestamp": 1781857302,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.12345",
+          "name": "Kyle Bradish",
+          "position": "SP",
+          "mlb_team": "BAL",
+          "action": "add",
+          "source_type": "waivers",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "So bad it Kurtz"
+        },
+        {
+          "player_key": "469.p.63129",
+          "name": "A.J. Ewing",
+          "position": "2B,OF",
+          "mlb_team": "NYM",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "So bad it Kurtz",
           "destination_type": "waivers",
           "destination_team": ""
         }
