@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-20T22:40:30.200Z",
-  "total_transactions": 13921,
+  "generated_at": "2026-06-20T23:09:21.275Z",
+  "total_transactions": 13922,
   "seasons_included": [
     "2009",
     "2010",
@@ -390653,6 +390653,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Wacha Shame",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "329",
+      "date": "2026-06-20",
+      "timestamp": 1781995755,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.60238",
+          "name": "Emmet Sheehan",
+          "position": "SP",
+          "mlb_team": "LAD",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Dirk Dingler"
+        },
+        {
+          "player_key": "469.p.10860",
+          "name": "Alex Lange",
+          "position": "RP",
+          "mlb_team": "KC",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Dirk Dingler",
           "destination_type": "waivers",
           "destination_team": ""
         }
