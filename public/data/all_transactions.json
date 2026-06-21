@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-21T02:28:01.469Z",
-  "total_transactions": 13922,
+  "generated_at": "2026-06-21T03:49:46.479Z",
+  "total_transactions": 13923,
   "seasons_included": [
     "2009",
     "2010",
@@ -390685,6 +390685,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Dirk Dingler",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "330",
+      "date": "2026-06-21",
+      "timestamp": 1782010342,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.10557",
+          "name": "Mickey Moniak",
+          "position": "OF",
+          "mlb_team": "COL",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "YesavAge of Empires II"
+        },
+        {
+          "player_key": "469.p.10522",
+          "name": "Trent Grisham",
+          "position": "OF",
+          "mlb_team": "NYY",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "YesavAge of Empires II",
           "destination_type": "waivers",
           "destination_team": ""
         }
