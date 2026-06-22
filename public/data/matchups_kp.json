@@ -1,37 +1,27 @@
 {
   "league_key": "469.l.13624",
   "league_name": "Keeping Pattycakes",
-  "current_week": 13,
+  "current_week": 14,
   "total_weeks": "25",
-  "generated_at": "2026-06-22T06:49:13.189Z",
+  "generated_at": "2026-06-22T17:33:11.303Z",
   "standings": [
     {
       "team_key": "469.l.13624.t.10",
       "team_name": "mannys still stoned",
       "owner": "Galen",
       "rank": 1,
-      "wins": 80,
-      "losses": 53,
+      "wins": 84,
+      "losses": 61,
       "ties": 11,
       "waiver_priority": 8
-    },
-    {
-      "team_key": "469.l.13624.t.8",
-      "team_name": "Be Messick or Be Dead",
-      "owner": "angel escobar",
-      "rank": 2,
-      "wins": 75,
-      "losses": 56,
-      "ties": 13,
-      "waiver_priority": 11
     },
     {
       "team_key": "469.l.13624.t.4",
       "team_name": "Wacha Shame",
       "owner": "Rich Garcis",
-      "rank": 3,
-      "wins": 76,
-      "losses": 59,
+      "rank": 2,
+      "wins": 84,
+      "losses": 63,
       "ties": 9,
       "waiver_priority": 1
     },
@@ -39,20 +29,30 @@
       "team_key": "469.l.13624.t.11",
       "team_name": "So bad it Kurtz",
       "owner": "Jamison",
-      "rank": 4,
-      "wins": 74,
-      "losses": 62,
-      "ties": 8,
+      "rank": 3,
+      "wins": 83,
+      "losses": 63,
+      "ties": 10,
       "waiver_priority": 12
+    },
+    {
+      "team_key": "469.l.13624.t.8",
+      "team_name": "Be Messick or Be Dead",
+      "owner": "angel escobar",
+      "rank": 4,
+      "wins": 81,
+      "losses": 62,
+      "ties": 13,
+      "waiver_priority": 11
     },
     {
       "team_key": "469.l.13624.t.5",
       "team_name": "Papua New Vinnie",
       "owner": "mike",
       "rank": 5,
-      "wins": 72,
-      "losses": 62,
-      "ties": 10,
+      "wins": 73,
+      "losses": 71,
+      "ties": 12,
       "waiver_priority": 9
     },
     {
@@ -60,49 +60,49 @@
       "team_name": "Who's Your Vladdy",
       "owner": "KC",
       "rank": 6,
-      "wins": 60,
-      "losses": 65,
-      "ties": 19,
+      "wins": 68,
+      "losses": 67,
+      "ties": 21,
       "waiver_priority": 5
+    },
+    {
+      "team_key": "469.l.13624.t.6",
+      "team_name": "IM IN MY PRIME",
+      "owner": "Mark",
+      "rank": 7,
+      "wins": 71,
+      "losses": 75,
+      "ties": 10,
+      "waiver_priority": 10
     },
     {
       "team_key": "469.l.13624.t.1",
       "team_name": "Dirk Dingler",
       "owner": "Swan",
-      "rank": 7,
-      "wins": 62,
-      "losses": 69,
-      "ties": 13,
+      "rank": 8,
+      "wins": 69,
+      "losses": 73,
+      "ties": 14,
       "waiver_priority": 3
     },
     {
       "team_key": "469.l.13624.t.3",
       "team_name": "YesavAge of Empires II",
       "owner": "joey",
-      "rank": 8,
-      "wins": 61,
-      "losses": 69,
-      "ties": 14,
-      "waiver_priority": 7
-    },
-    {
-      "team_key": "469.l.13624.t.6",
-      "team_name": "IM IN MY PRIME",
-      "owner": "Mark",
       "rank": 9,
-      "wins": 63,
-      "losses": 71,
-      "ties": 10,
-      "waiver_priority": 10
+      "wins": 65,
+      "losses": 76,
+      "ties": 15,
+      "waiver_priority": 7
     },
     {
       "team_key": "469.l.13624.t.9",
       "team_name": "MAINEiacs",
       "owner": "Will Youmans",
       "rank": 10,
-      "wins": 61,
-      "losses": 72,
-      "ties": 11,
+      "wins": 63,
+      "losses": 80,
+      "ties": 13,
       "waiver_priority": 2
     },
     {
@@ -110,8 +110,8 @@
       "team_name": "Bennett?",
       "owner": "Brian Bennett",
       "rank": 11,
-      "wins": 55,
-      "losses": 76,
+      "wins": 61,
+      "losses": 82,
       "ties": 13,
       "waiver_priority": 4
     },
@@ -120,748 +120,78 @@
       "team_name": "Roman Got Fingered",
       "owner": "Nick",
       "rank": 12,
-      "wins": 53,
-      "losses": 78,
+      "wins": 57,
+      "losses": 86,
       "ties": 13,
       "waiver_priority": 6
     }
   ],
   "matchups": [
     {
-      "week": 13,
+      "week": 14,
       "status": "midevent",
       "teams": [
         {
           "team_key": "469.l.13624.t.1",
           "team_name": "Dirk Dingler",
           "owner": "Swan",
-          "points": "7",
+          "points": "0",
           "stats": {
             "H/AB": {
-              "value": "68/208",
+              "value": "/",
               "result": "tie"
             },
             "R": {
-              "value": "41",
-              "result": "win"
+              "value": "",
+              "result": "tie"
             },
             "HR": {
-              "value": "13",
-              "result": "win"
+              "value": "",
+              "result": "tie"
             },
             "RBI": {
-              "value": "41",
-              "result": "win"
+              "value": "",
+              "result": "tie"
             },
             "SB": {
-              "value": "5",
-              "result": "win"
-            },
-            "AVG": {
-              "value": ".327",
-              "result": "win"
-            },
-            "OBP": {
-              "value": ".384",
-              "result": "loss"
-            },
-            "IP": {
-              "value": "47.2",
-              "result": "tie"
-            },
-            "W": {
-              "value": "3",
-              "result": "tie"
-            },
-            "L": {
-              "value": "4",
-              "result": "loss"
-            },
-            "SV": {
-              "value": "4",
-              "result": "win"
-            },
-            "K": {
-              "value": "48",
-              "result": "win"
-            },
-            "ERA": {
-              "value": "3.59",
-              "result": "loss"
-            },
-            "WHIP": {
-              "value": "1.51",
-              "result": "loss"
-            }
-          }
-        },
-        {
-          "team_key": "469.l.13624.t.3",
-          "team_name": "YesavAge of Empires II",
-          "owner": "joey",
-          "points": "4",
-          "stats": {
-            "H/AB": {
-              "value": "44/167",
-              "result": "tie"
-            },
-            "R": {
-              "value": "28",
-              "result": "loss"
-            },
-            "HR": {
-              "value": "2",
-              "result": "loss"
-            },
-            "RBI": {
-              "value": "17",
-              "result": "loss"
-            },
-            "SB": {
-              "value": "3",
-              "result": "loss"
-            },
-            "AVG": {
-              "value": ".263",
-              "result": "loss"
-            },
-            "OBP": {
-              "value": ".395",
-              "result": "win"
-            },
-            "IP": {
-              "value": "46.1",
-              "result": "tie"
-            },
-            "W": {
-              "value": "3",
-              "result": "tie"
-            },
-            "L": {
-              "value": "3",
-              "result": "win"
-            },
-            "SV": {
-              "value": "1",
-              "result": "loss"
-            },
-            "K": {
-              "value": "42",
-              "result": "loss"
-            },
-            "ERA": {
-              "value": "2.91",
-              "result": "win"
-            },
-            "WHIP": {
-              "value": "0.91",
-              "result": "win"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "week": 13,
-      "status": "midevent",
-      "teams": [
-        {
-          "team_key": "469.l.13624.t.2",
-          "team_name": "Bennett?",
-          "owner": "Brian Bennett",
-          "points": "6",
-          "stats": {
-            "H/AB": {
-              "value": "54/180",
-              "result": "tie"
-            },
-            "R": {
-              "value": "35",
-              "result": "win"
-            },
-            "HR": {
-              "value": "18",
-              "result": "win"
-            },
-            "RBI": {
-              "value": "35",
-              "result": "win"
-            },
-            "SB": {
-              "value": "6",
-              "result": "win"
-            },
-            "AVG": {
-              "value": ".300",
-              "result": "win"
-            },
-            "OBP": {
-              "value": ".368",
-              "result": "win"
-            },
-            "IP": {
-              "value": "40.2",
-              "result": "tie"
-            },
-            "W": {
-              "value": "2",
-              "result": "loss"
-            },
-            "L": {
-              "value": "4",
-              "result": "loss"
-            },
-            "SV": {
-              "value": "1",
-              "result": "loss"
-            },
-            "K": {
-              "value": "50",
-              "result": "loss"
-            },
-            "ERA": {
-              "value": "6.20",
-              "result": "loss"
-            },
-            "WHIP": {
-              "value": "1.48",
-              "result": "loss"
-            }
-          }
-        },
-        {
-          "team_key": "469.l.13624.t.8",
-          "team_name": "Be Messick or Be Dead",
-          "owner": "angel escobar",
-          "points": "6",
-          "stats": {
-            "H/AB": {
-              "value": "53/209",
-              "result": "tie"
-            },
-            "R": {
-              "value": "29",
-              "result": "loss"
-            },
-            "HR": {
-              "value": "8",
-              "result": "loss"
-            },
-            "RBI": {
-              "value": "29",
-              "result": "loss"
-            },
-            "SB": {
-              "value": "3",
-              "result": "loss"
-            },
-            "AVG": {
-              "value": ".254",
-              "result": "loss"
-            },
-            "OBP": {
-              "value": ".345",
-              "result": "loss"
-            },
-            "IP": {
-              "value": "48.2",
-              "result": "tie"
-            },
-            "W": {
-              "value": "4",
-              "result": "win"
-            },
-            "L": {
-              "value": "1",
-              "result": "win"
-            },
-            "SV": {
-              "value": "4",
-              "result": "win"
-            },
-            "K": {
-              "value": "58",
-              "result": "win"
-            },
-            "ERA": {
-              "value": "3.51",
-              "result": "win"
-            },
-            "WHIP": {
-              "value": "1.15",
-              "result": "win"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "week": 13,
-      "status": "midevent",
-      "teams": [
-        {
-          "team_key": "469.l.13624.t.4",
-          "team_name": "Wacha Shame",
-          "owner": "Rich Garcis",
-          "points": "6",
-          "stats": {
-            "H/AB": {
-              "value": "44/184",
-              "result": "tie"
-            },
-            "R": {
-              "value": "35",
-              "result": "win"
-            },
-            "HR": {
-              "value": "11",
-              "result": "win"
-            },
-            "RBI": {
-              "value": "29",
-              "result": "win"
-            },
-            "SB": {
-              "value": "6",
-              "result": "win"
-            },
-            "AVG": {
-              "value": ".239",
-              "result": "loss"
-            },
-            "OBP": {
-              "value": ".338",
-              "result": "loss"
-            },
-            "IP": {
-              "value": "40.2",
-              "result": "tie"
-            },
-            "W": {
-              "value": "4",
-              "result": "win"
-            },
-            "L": {
-              "value": "2",
-              "result": "win"
-            },
-            "SV": {
-              "value": "0",
-              "result": "loss"
-            },
-            "K": {
-              "value": "33",
-              "result": "loss"
-            },
-            "ERA": {
-              "value": "5.31",
-              "result": "loss"
-            },
-            "WHIP": {
-              "value": "1.43",
-              "result": "loss"
-            }
-          }
-        },
-        {
-          "team_key": "469.l.13624.t.7",
-          "team_name": "Roman Got Fingered",
-          "owner": "Nick",
-          "points": "6",
-          "stats": {
-            "H/AB": {
-              "value": "46/182",
-              "result": "tie"
-            },
-            "R": {
-              "value": "24",
-              "result": "loss"
-            },
-            "HR": {
-              "value": "8",
-              "result": "loss"
-            },
-            "RBI": {
-              "value": "21",
-              "result": "loss"
-            },
-            "SB": {
-              "value": "5",
-              "result": "loss"
-            },
-            "AVG": {
-              "value": ".253",
-              "result": "win"
-            },
-            "OBP": {
-              "value": ".340",
-              "result": "win"
-            },
-            "IP": {
-              "value": "58.2",
-              "result": "tie"
-            },
-            "W": {
-              "value": "3",
-              "result": "loss"
-            },
-            "L": {
-              "value": "4",
-              "result": "loss"
-            },
-            "SV": {
-              "value": "7",
-              "result": "win"
-            },
-            "K": {
-              "value": "66",
-              "result": "win"
-            },
-            "ERA": {
-              "value": "2.76",
-              "result": "win"
-            },
-            "WHIP": {
-              "value": "0.94",
-              "result": "win"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "week": 13,
-      "status": "midevent",
-      "teams": [
-        {
-          "team_key": "469.l.13624.t.5",
-          "team_name": "Papua New Vinnie",
-          "owner": "mike",
-          "points": "1",
-          "stats": {
-            "H/AB": {
-              "value": "53/205",
-              "result": "tie"
-            },
-            "R": {
-              "value": "31",
-              "result": "loss"
-            },
-            "HR": {
-              "value": "11",
-              "result": "loss"
-            },
-            "RBI": {
-              "value": "25",
-              "result": "loss"
-            },
-            "SB": {
-              "value": "4",
+              "value": "",
               "result": "tie"
             },
             "AVG": {
-              "value": ".259",
-              "result": "loss"
+              "value": "",
+              "result": "tie"
             },
             "OBP": {
-              "value": ".364",
-              "result": "loss"
+              "value": "",
+              "result": "tie"
             },
             "IP": {
-              "value": "48.0",
+              "value": "",
               "result": "tie"
             },
             "W": {
-              "value": "4",
-              "result": "loss"
+              "value": "",
+              "result": "tie"
             },
             "L": {
-              "value": "3",
-              "result": "loss"
+              "value": "",
+              "result": "tie"
             },
             "SV": {
-              "value": "2",
+              "value": "",
               "result": "tie"
             },
             "K": {
-              "value": "53",
-              "result": "win"
+              "value": "",
+              "result": "tie"
             },
             "ERA": {
-              "value": "5.44",
-              "result": "loss"
+              "value": "",
+              "result": "tie"
             },
             "WHIP": {
-              "value": "1.52",
-              "result": "loss"
-            }
-          }
-        },
-        {
-          "team_key": "469.l.13624.t.11",
-          "team_name": "So bad it Kurtz",
-          "owner": "Jamison",
-          "points": "9",
-          "stats": {
-            "H/AB": {
-              "value": "57/209",
+              "value": "",
               "result": "tie"
-            },
-            "R": {
-              "value": "36",
-              "result": "win"
-            },
-            "HR": {
-              "value": "14",
-              "result": "win"
-            },
-            "RBI": {
-              "value": "38",
-              "result": "win"
-            },
-            "SB": {
-              "value": "4",
-              "result": "tie"
-            },
-            "AVG": {
-              "value": ".273",
-              "result": "win"
-            },
-            "OBP": {
-              "value": ".367",
-              "result": "win"
-            },
-            "IP": {
-              "value": "38.0",
-              "result": "tie"
-            },
-            "W": {
-              "value": "5",
-              "result": "win"
-            },
-            "L": {
-              "value": "0",
-              "result": "win"
-            },
-            "SV": {
-              "value": "2",
-              "result": "tie"
-            },
-            "K": {
-              "value": "43",
-              "result": "loss"
-            },
-            "ERA": {
-              "value": "2.37",
-              "result": "win"
-            },
-            "WHIP": {
-              "value": "1.13",
-              "result": "win"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "week": 13,
-      "status": "midevent",
-      "teams": [
-        {
-          "team_key": "469.l.13624.t.6",
-          "team_name": "IM IN MY PRIME",
-          "owner": "Mark",
-          "points": "9",
-          "stats": {
-            "H/AB": {
-              "value": "42/204",
-              "result": "tie"
-            },
-            "R": {
-              "value": "26",
-              "result": "win"
-            },
-            "HR": {
-              "value": "9",
-              "result": "win"
-            },
-            "RBI": {
-              "value": "28",
-              "result": "win"
-            },
-            "SB": {
-              "value": "2",
-              "result": "tie"
-            },
-            "AVG": {
-              "value": ".206",
-              "result": "loss"
-            },
-            "OBP": {
-              "value": ".266",
-              "result": "loss"
-            },
-            "IP": {
-              "value": "38.0",
-              "result": "tie"
-            },
-            "W": {
-              "value": "3",
-              "result": "win"
-            },
-            "L": {
-              "value": "1",
-              "result": "win"
-            },
-            "SV": {
-              "value": "3",
-              "result": "win"
-            },
-            "K": {
-              "value": "35",
-              "result": "win"
-            },
-            "ERA": {
-              "value": "4.26",
-              "result": "win"
-            },
-            "WHIP": {
-              "value": "1.37",
-              "result": "win"
-            }
-          }
-        },
-        {
-          "team_key": "469.l.13624.t.10",
-          "team_name": "mannys still stoned",
-          "owner": "Galen",
-          "points": "2",
-          "stats": {
-            "H/AB": {
-              "value": "50/189",
-              "result": "tie"
-            },
-            "R": {
-              "value": "20",
-              "result": "loss"
-            },
-            "HR": {
-              "value": "5",
-              "result": "loss"
-            },
-            "RBI": {
-              "value": "27",
-              "result": "loss"
-            },
-            "SB": {
-              "value": "2",
-              "result": "tie"
-            },
-            "AVG": {
-              "value": ".265",
-              "result": "win"
-            },
-            "OBP": {
-              "value": ".336",
-              "result": "win"
-            },
-            "IP": {
-              "value": "30.0",
-              "result": "tie"
-            },
-            "W": {
-              "value": "0",
-              "result": "loss"
-            },
-            "L": {
-              "value": "3",
-              "result": "loss"
-            },
-            "SV": {
-              "value": "1",
-              "result": "loss"
-            },
-            "K": {
-              "value": "31",
-              "result": "loss"
-            },
-            "ERA": {
-              "value": "4.80",
-              "result": "loss"
-            },
-            "WHIP": {
-              "value": "1.40",
-              "result": "loss"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "week": 13,
-      "status": "midevent",
-      "teams": [
-        {
-          "team_key": "469.l.13624.t.9",
-          "team_name": "MAINEiacs",
-          "owner": "Will Youmans",
-          "points": "2",
-          "stats": {
-            "H/AB": {
-              "value": "40/172",
-              "result": "tie"
-            },
-            "R": {
-              "value": "20",
-              "result": "loss"
-            },
-            "HR": {
-              "value": "7",
-              "result": "loss"
-            },
-            "RBI": {
-              "value": "23",
-              "result": "loss"
-            },
-            "SB": {
-              "value": "1",
-              "result": "tie"
-            },
-            "AVG": {
-              "value": ".233",
-              "result": "loss"
-            },
-            "OBP": {
-              "value": ".269",
-              "result": "loss"
-            },
-            "IP": {
-              "value": "47.0",
-              "result": "tie"
-            },
-            "W": {
-              "value": "3",
-              "result": "loss"
-            },
-            "L": {
-              "value": "2",
-              "result": "win"
-            },
-            "SV": {
-              "value": "1",
-              "result": "tie"
-            },
-            "K": {
-              "value": "50",
-              "result": "win"
-            },
-            "ERA": {
-              "value": "4.79",
-              "result": "loss"
-            },
-            "WHIP": {
-              "value": "1.36",
-              "result": "loss"
             }
           }
         },
@@ -869,63 +199,733 @@
           "team_key": "469.l.13624.t.12",
           "team_name": "Who's Your Vladdy",
           "owner": "KC",
-          "points": "8",
+          "points": "0",
           "stats": {
             "H/AB": {
-              "value": "52/209",
+              "value": "/",
               "result": "tie"
             },
             "R": {
-              "value": "29",
-              "result": "win"
+              "value": "",
+              "result": "tie"
             },
             "HR": {
-              "value": "11",
-              "result": "win"
+              "value": "",
+              "result": "tie"
             },
             "RBI": {
-              "value": "32",
-              "result": "win"
+              "value": "",
+              "result": "tie"
             },
             "SB": {
-              "value": "1",
+              "value": "",
               "result": "tie"
             },
             "AVG": {
-              "value": ".249",
-              "result": "win"
+              "value": "",
+              "result": "tie"
             },
             "OBP": {
-              "value": ".328",
-              "result": "win"
+              "value": "",
+              "result": "tie"
             },
             "IP": {
-              "value": "35.1",
+              "value": "",
               "result": "tie"
             },
             "W": {
-              "value": "4",
-              "result": "win"
+              "value": "",
+              "result": "tie"
             },
             "L": {
-              "value": "4",
-              "result": "loss"
+              "value": "",
+              "result": "tie"
             },
             "SV": {
-              "value": "1",
+              "value": "",
               "result": "tie"
             },
             "K": {
-              "value": "39",
-              "result": "loss"
+              "value": "",
+              "result": "tie"
             },
             "ERA": {
-              "value": "3.57",
-              "result": "win"
+              "value": "",
+              "result": "tie"
             },
             "WHIP": {
-              "value": "1.02",
-              "result": "win"
+              "value": "",
+              "result": "tie"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "week": 14,
+      "status": "midevent",
+      "teams": [
+        {
+          "team_key": "469.l.13624.t.2",
+          "team_name": "Bennett?",
+          "owner": "Brian Bennett",
+          "points": "0",
+          "stats": {
+            "H/AB": {
+              "value": "/",
+              "result": "tie"
+            },
+            "R": {
+              "value": "",
+              "result": "tie"
+            },
+            "HR": {
+              "value": "",
+              "result": "tie"
+            },
+            "RBI": {
+              "value": "",
+              "result": "tie"
+            },
+            "SB": {
+              "value": "",
+              "result": "tie"
+            },
+            "AVG": {
+              "value": "",
+              "result": "tie"
+            },
+            "OBP": {
+              "value": "",
+              "result": "tie"
+            },
+            "IP": {
+              "value": "",
+              "result": "tie"
+            },
+            "W": {
+              "value": "",
+              "result": "tie"
+            },
+            "L": {
+              "value": "",
+              "result": "tie"
+            },
+            "SV": {
+              "value": "",
+              "result": "tie"
+            },
+            "K": {
+              "value": "",
+              "result": "tie"
+            },
+            "ERA": {
+              "value": "",
+              "result": "tie"
+            },
+            "WHIP": {
+              "value": "",
+              "result": "tie"
+            }
+          }
+        },
+        {
+          "team_key": "469.l.13624.t.6",
+          "team_name": "IM IN MY PRIME",
+          "owner": "Mark",
+          "points": "0",
+          "stats": {
+            "H/AB": {
+              "value": "/",
+              "result": "tie"
+            },
+            "R": {
+              "value": "",
+              "result": "tie"
+            },
+            "HR": {
+              "value": "",
+              "result": "tie"
+            },
+            "RBI": {
+              "value": "",
+              "result": "tie"
+            },
+            "SB": {
+              "value": "",
+              "result": "tie"
+            },
+            "AVG": {
+              "value": "",
+              "result": "tie"
+            },
+            "OBP": {
+              "value": "",
+              "result": "tie"
+            },
+            "IP": {
+              "value": "",
+              "result": "tie"
+            },
+            "W": {
+              "value": "",
+              "result": "tie"
+            },
+            "L": {
+              "value": "",
+              "result": "tie"
+            },
+            "SV": {
+              "value": "",
+              "result": "tie"
+            },
+            "K": {
+              "value": "",
+              "result": "tie"
+            },
+            "ERA": {
+              "value": "",
+              "result": "tie"
+            },
+            "WHIP": {
+              "value": "",
+              "result": "tie"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "week": 14,
+      "status": "midevent",
+      "teams": [
+        {
+          "team_key": "469.l.13624.t.3",
+          "team_name": "YesavAge of Empires II",
+          "owner": "joey",
+          "points": "0",
+          "stats": {
+            "H/AB": {
+              "value": "/",
+              "result": "tie"
+            },
+            "R": {
+              "value": "",
+              "result": "tie"
+            },
+            "HR": {
+              "value": "",
+              "result": "tie"
+            },
+            "RBI": {
+              "value": "",
+              "result": "tie"
+            },
+            "SB": {
+              "value": "",
+              "result": "tie"
+            },
+            "AVG": {
+              "value": "",
+              "result": "tie"
+            },
+            "OBP": {
+              "value": "",
+              "result": "tie"
+            },
+            "IP": {
+              "value": "",
+              "result": "tie"
+            },
+            "W": {
+              "value": "",
+              "result": "tie"
+            },
+            "L": {
+              "value": "",
+              "result": "tie"
+            },
+            "SV": {
+              "value": "",
+              "result": "tie"
+            },
+            "K": {
+              "value": "",
+              "result": "tie"
+            },
+            "ERA": {
+              "value": "",
+              "result": "tie"
+            },
+            "WHIP": {
+              "value": "",
+              "result": "tie"
+            }
+          }
+        },
+        {
+          "team_key": "469.l.13624.t.5",
+          "team_name": "Papua New Vinnie",
+          "owner": "mike",
+          "points": "0",
+          "stats": {
+            "H/AB": {
+              "value": "/",
+              "result": "tie"
+            },
+            "R": {
+              "value": "",
+              "result": "tie"
+            },
+            "HR": {
+              "value": "",
+              "result": "tie"
+            },
+            "RBI": {
+              "value": "",
+              "result": "tie"
+            },
+            "SB": {
+              "value": "",
+              "result": "tie"
+            },
+            "AVG": {
+              "value": "",
+              "result": "tie"
+            },
+            "OBP": {
+              "value": "",
+              "result": "tie"
+            },
+            "IP": {
+              "value": "",
+              "result": "tie"
+            },
+            "W": {
+              "value": "",
+              "result": "tie"
+            },
+            "L": {
+              "value": "",
+              "result": "tie"
+            },
+            "SV": {
+              "value": "",
+              "result": "tie"
+            },
+            "K": {
+              "value": "",
+              "result": "tie"
+            },
+            "ERA": {
+              "value": "",
+              "result": "tie"
+            },
+            "WHIP": {
+              "value": "",
+              "result": "tie"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "week": 14,
+      "status": "midevent",
+      "teams": [
+        {
+          "team_key": "469.l.13624.t.4",
+          "team_name": "Wacha Shame",
+          "owner": "Rich Garcis",
+          "points": "0",
+          "stats": {
+            "H/AB": {
+              "value": "/",
+              "result": "tie"
+            },
+            "R": {
+              "value": "",
+              "result": "tie"
+            },
+            "HR": {
+              "value": "",
+              "result": "tie"
+            },
+            "RBI": {
+              "value": "",
+              "result": "tie"
+            },
+            "SB": {
+              "value": "",
+              "result": "tie"
+            },
+            "AVG": {
+              "value": "",
+              "result": "tie"
+            },
+            "OBP": {
+              "value": "",
+              "result": "tie"
+            },
+            "IP": {
+              "value": "",
+              "result": "tie"
+            },
+            "W": {
+              "value": "",
+              "result": "tie"
+            },
+            "L": {
+              "value": "",
+              "result": "tie"
+            },
+            "SV": {
+              "value": "",
+              "result": "tie"
+            },
+            "K": {
+              "value": "",
+              "result": "tie"
+            },
+            "ERA": {
+              "value": "",
+              "result": "tie"
+            },
+            "WHIP": {
+              "value": "",
+              "result": "tie"
+            }
+          }
+        },
+        {
+          "team_key": "469.l.13624.t.10",
+          "team_name": "mannys still stoned",
+          "owner": "Galen",
+          "points": "0",
+          "stats": {
+            "H/AB": {
+              "value": "/",
+              "result": "tie"
+            },
+            "R": {
+              "value": "",
+              "result": "tie"
+            },
+            "HR": {
+              "value": "",
+              "result": "tie"
+            },
+            "RBI": {
+              "value": "",
+              "result": "tie"
+            },
+            "SB": {
+              "value": "",
+              "result": "tie"
+            },
+            "AVG": {
+              "value": "",
+              "result": "tie"
+            },
+            "OBP": {
+              "value": "",
+              "result": "tie"
+            },
+            "IP": {
+              "value": "",
+              "result": "tie"
+            },
+            "W": {
+              "value": "",
+              "result": "tie"
+            },
+            "L": {
+              "value": "",
+              "result": "tie"
+            },
+            "SV": {
+              "value": "",
+              "result": "tie"
+            },
+            "K": {
+              "value": "",
+              "result": "tie"
+            },
+            "ERA": {
+              "value": "",
+              "result": "tie"
+            },
+            "WHIP": {
+              "value": "",
+              "result": "tie"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "week": 14,
+      "status": "midevent",
+      "teams": [
+        {
+          "team_key": "469.l.13624.t.7",
+          "team_name": "Roman Got Fingered",
+          "owner": "Nick",
+          "points": "0",
+          "stats": {
+            "H/AB": {
+              "value": "/",
+              "result": "tie"
+            },
+            "R": {
+              "value": "",
+              "result": "tie"
+            },
+            "HR": {
+              "value": "",
+              "result": "tie"
+            },
+            "RBI": {
+              "value": "",
+              "result": "tie"
+            },
+            "SB": {
+              "value": "",
+              "result": "tie"
+            },
+            "AVG": {
+              "value": "",
+              "result": "tie"
+            },
+            "OBP": {
+              "value": "",
+              "result": "tie"
+            },
+            "IP": {
+              "value": "",
+              "result": "tie"
+            },
+            "W": {
+              "value": "",
+              "result": "tie"
+            },
+            "L": {
+              "value": "",
+              "result": "tie"
+            },
+            "SV": {
+              "value": "",
+              "result": "tie"
+            },
+            "K": {
+              "value": "",
+              "result": "tie"
+            },
+            "ERA": {
+              "value": "",
+              "result": "tie"
+            },
+            "WHIP": {
+              "value": "",
+              "result": "tie"
+            }
+          }
+        },
+        {
+          "team_key": "469.l.13624.t.9",
+          "team_name": "MAINEiacs",
+          "owner": "Will Youmans",
+          "points": "0",
+          "stats": {
+            "H/AB": {
+              "value": "/",
+              "result": "tie"
+            },
+            "R": {
+              "value": "",
+              "result": "tie"
+            },
+            "HR": {
+              "value": "",
+              "result": "tie"
+            },
+            "RBI": {
+              "value": "",
+              "result": "tie"
+            },
+            "SB": {
+              "value": "",
+              "result": "tie"
+            },
+            "AVG": {
+              "value": "",
+              "result": "tie"
+            },
+            "OBP": {
+              "value": "",
+              "result": "tie"
+            },
+            "IP": {
+              "value": "",
+              "result": "tie"
+            },
+            "W": {
+              "value": "",
+              "result": "tie"
+            },
+            "L": {
+              "value": "",
+              "result": "tie"
+            },
+            "SV": {
+              "value": "",
+              "result": "tie"
+            },
+            "K": {
+              "value": "",
+              "result": "tie"
+            },
+            "ERA": {
+              "value": "",
+              "result": "tie"
+            },
+            "WHIP": {
+              "value": "",
+              "result": "tie"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "week": 14,
+      "status": "midevent",
+      "teams": [
+        {
+          "team_key": "469.l.13624.t.8",
+          "team_name": "Be Messick or Be Dead",
+          "owner": "angel escobar",
+          "points": "0",
+          "stats": {
+            "H/AB": {
+              "value": "/",
+              "result": "tie"
+            },
+            "R": {
+              "value": "",
+              "result": "tie"
+            },
+            "HR": {
+              "value": "",
+              "result": "tie"
+            },
+            "RBI": {
+              "value": "",
+              "result": "tie"
+            },
+            "SB": {
+              "value": "",
+              "result": "tie"
+            },
+            "AVG": {
+              "value": "",
+              "result": "tie"
+            },
+            "OBP": {
+              "value": "",
+              "result": "tie"
+            },
+            "IP": {
+              "value": "",
+              "result": "tie"
+            },
+            "W": {
+              "value": "",
+              "result": "tie"
+            },
+            "L": {
+              "value": "",
+              "result": "tie"
+            },
+            "SV": {
+              "value": "",
+              "result": "tie"
+            },
+            "K": {
+              "value": "",
+              "result": "tie"
+            },
+            "ERA": {
+              "value": "",
+              "result": "tie"
+            },
+            "WHIP": {
+              "value": "",
+              "result": "tie"
+            }
+          }
+        },
+        {
+          "team_key": "469.l.13624.t.11",
+          "team_name": "So bad it Kurtz",
+          "owner": "Jamison",
+          "points": "0",
+          "stats": {
+            "H/AB": {
+              "value": "/",
+              "result": "tie"
+            },
+            "R": {
+              "value": "",
+              "result": "tie"
+            },
+            "HR": {
+              "value": "",
+              "result": "tie"
+            },
+            "RBI": {
+              "value": "",
+              "result": "tie"
+            },
+            "SB": {
+              "value": "",
+              "result": "tie"
+            },
+            "AVG": {
+              "value": "",
+              "result": "tie"
+            },
+            "OBP": {
+              "value": "",
+              "result": "tie"
+            },
+            "IP": {
+              "value": "",
+              "result": "tie"
+            },
+            "W": {
+              "value": "",
+              "result": "tie"
+            },
+            "L": {
+              "value": "",
+              "result": "tie"
+            },
+            "SV": {
+              "value": "",
+              "result": "tie"
+            },
+            "K": {
+              "value": "",
+              "result": "tie"
+            },
+            "ERA": {
+              "value": "",
+              "result": "tie"
+            },
+            "WHIP": {
+              "value": "",
+              "result": "tie"
             }
           }
         }
@@ -10607,8 +10607,8 @@
     ],
     "13": [
       {
-        "week": 13,
-        "status": "midevent",
+        "week": "13",
+        "status": "postevent",
         "teams": [
           {
             "team_key": "469.l.13624.t.1",
@@ -10617,7 +10617,7 @@
             "points": "7",
             "stats": {
               "H/AB": {
-                "value": "68/208",
+                "value": "69/212",
                 "result": "tie"
               },
               "R": {
@@ -10637,11 +10637,11 @@
                 "result": "win"
               },
               "AVG": {
-                "value": ".327",
+                "value": ".325",
                 "result": "win"
               },
               "OBP": {
-                "value": ".384",
+                "value": ".381",
                 "result": "loss"
               },
               "IP": {
@@ -10741,8 +10741,8 @@
         ]
       },
       {
-        "week": 13,
-        "status": "midevent",
+        "week": "13",
+        "status": "postevent",
         "teams": [
           {
             "team_key": "469.l.13624.t.2",
@@ -10751,7 +10751,7 @@
             "points": "6",
             "stats": {
               "H/AB": {
-                "value": "54/180",
+                "value": "54/184",
                 "result": "tie"
               },
               "R": {
@@ -10771,11 +10771,11 @@
                 "result": "win"
               },
               "AVG": {
-                "value": ".300",
+                "value": ".293",
                 "result": "win"
               },
               "OBP": {
-                "value": ".368",
+                "value": ".361",
                 "result": "win"
               },
               "IP": {
@@ -10867,7 +10867,7 @@
                 "result": "win"
               },
               "WHIP": {
-                "value": "1.15",
+                "value": "1.17",
                 "result": "win"
               }
             }
@@ -10875,29 +10875,29 @@
         ]
       },
       {
-        "week": 13,
-        "status": "midevent",
+        "week": "13",
+        "status": "postevent",
         "teams": [
           {
             "team_key": "469.l.13624.t.4",
             "team_name": "Wacha Shame",
             "owner": "Rich Garcis",
-            "points": "6",
+            "points": "8",
             "stats": {
               "H/AB": {
-                "value": "44/184",
+                "value": "50/197",
                 "result": "tie"
               },
               "R": {
-                "value": "35",
+                "value": "38",
                 "result": "win"
               },
               "HR": {
-                "value": "11",
+                "value": "12",
                 "result": "win"
               },
               "RBI": {
-                "value": "29",
+                "value": "31",
                 "result": "win"
               },
               "SB": {
@@ -10905,12 +10905,12 @@
                 "result": "win"
               },
               "AVG": {
-                "value": ".239",
-                "result": "loss"
+                "value": ".254",
+                "result": "win"
               },
               "OBP": {
-                "value": ".338",
-                "result": "loss"
+                "value": ".348",
+                "result": "win"
               },
               "IP": {
                 "value": "40.2",
@@ -10946,22 +10946,22 @@
             "team_key": "469.l.13624.t.7",
             "team_name": "Roman Got Fingered",
             "owner": "Nick",
-            "points": "6",
+            "points": "4",
             "stats": {
               "H/AB": {
-                "value": "46/182",
+                "value": "47/189",
                 "result": "tie"
               },
               "R": {
-                "value": "24",
+                "value": "26",
                 "result": "loss"
               },
               "HR": {
-                "value": "8",
+                "value": "10",
                 "result": "loss"
               },
               "RBI": {
-                "value": "21",
+                "value": "23",
                 "result": "loss"
               },
               "SB": {
@@ -10969,12 +10969,12 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".253",
-                "result": "win"
+                "value": ".249",
+                "result": "loss"
               },
               "OBP": {
-                "value": ".340",
-                "result": "win"
+                "value": ".335",
+                "result": "loss"
               },
               "IP": {
                 "value": "58.2",
@@ -11009,8 +11009,8 @@
         ]
       },
       {
-        "week": 13,
-        "status": "midevent",
+        "week": "13",
+        "status": "postevent",
         "teams": [
           {
             "team_key": "469.l.13624.t.5",
@@ -11019,19 +11019,19 @@
             "points": "1",
             "stats": {
               "H/AB": {
-                "value": "53/205",
+                "value": "53/210",
                 "result": "tie"
               },
               "R": {
-                "value": "31",
+                "value": "32",
                 "result": "loss"
               },
               "HR": {
-                "value": "11",
+                "value": "12",
                 "result": "loss"
               },
               "RBI": {
-                "value": "25",
+                "value": "26",
                 "result": "loss"
               },
               "SB": {
@@ -11039,11 +11039,11 @@
                 "result": "tie"
               },
               "AVG": {
-                "value": ".259",
+                "value": ".252",
                 "result": "loss"
               },
               "OBP": {
-                "value": ".364",
+                "value": ".356",
                 "result": "loss"
               },
               "IP": {
@@ -11067,11 +11067,11 @@
                 "result": "win"
               },
               "ERA": {
-                "value": "5.44",
+                "value": "5.25",
                 "result": "loss"
               },
               "WHIP": {
-                "value": "1.52",
+                "value": "1.50",
                 "result": "loss"
               }
             }
@@ -11143,14 +11143,14 @@
         ]
       },
       {
-        "week": 13,
-        "status": "midevent",
+        "week": "13",
+        "status": "postevent",
         "teams": [
           {
             "team_key": "469.l.13624.t.6",
             "team_name": "IM IN MY PRIME",
             "owner": "Mark",
-            "points": "9",
+            "points": "8",
             "stats": {
               "H/AB": {
                 "value": "42/204",
@@ -11166,11 +11166,11 @@
               },
               "RBI": {
                 "value": "28",
-                "result": "win"
+                "result": "loss"
               },
               "SB": {
                 "value": "2",
-                "result": "tie"
+                "result": "loss"
               },
               "AVG": {
                 "value": ".206",
@@ -11214,14 +11214,14 @@
             "team_key": "469.l.13624.t.10",
             "team_name": "mannys still stoned",
             "owner": "Galen",
-            "points": "2",
+            "points": "4",
             "stats": {
               "H/AB": {
-                "value": "50/189",
+                "value": "52/197",
                 "result": "tie"
               },
               "R": {
-                "value": "20",
+                "value": "21",
                 "result": "loss"
               },
               "HR": {
@@ -11229,19 +11229,19 @@
                 "result": "loss"
               },
               "RBI": {
-                "value": "27",
-                "result": "loss"
+                "value": "29",
+                "result": "win"
               },
               "SB": {
-                "value": "2",
-                "result": "tie"
+                "value": "3",
+                "result": "win"
               },
               "AVG": {
-                "value": ".265",
+                "value": ".264",
                 "result": "win"
               },
               "OBP": {
-                "value": ".336",
+                "value": ".332",
                 "result": "win"
               },
               "IP": {
@@ -11277,8 +11277,8 @@
         ]
       },
       {
-        "week": 13,
-        "status": "midevent",
+        "week": "13",
+        "status": "postevent",
         "teams": [
           {
             "team_key": "469.l.13624.t.9",
@@ -11287,11 +11287,11 @@
             "points": "2",
             "stats": {
               "H/AB": {
-                "value": "40/172",
+                "value": "42/176",
                 "result": "tie"
               },
               "R": {
-                "value": "20",
+                "value": "21",
                 "result": "loss"
               },
               "HR": {
@@ -11307,15 +11307,15 @@
                 "result": "tie"
               },
               "AVG": {
-                "value": ".233",
+                "value": ".239",
                 "result": "loss"
               },
               "OBP": {
-                "value": ".269",
+                "value": ".278",
                 "result": "loss"
               },
               "IP": {
-                "value": "47.0",
+                "value": "47.2",
                 "result": "tie"
               },
               "W": {
@@ -11331,15 +11331,15 @@
                 "result": "tie"
               },
               "K": {
-                "value": "50",
+                "value": "52",
                 "result": "win"
               },
               "ERA": {
-                "value": "4.79",
+                "value": "4.72",
                 "result": "loss"
               },
               "WHIP": {
-                "value": "1.36",
+                "value": "1.34",
                 "result": "loss"
               }
             }
@@ -11413,8 +11413,8 @@
     ],
     "14": [
       {
-        "week": "14",
-        "status": "preevent",
+        "week": 14,
+        "status": "midevent",
         "teams": [
           {
             "team_key": "469.l.13624.t.1",
@@ -11547,8 +11547,8 @@
         ]
       },
       {
-        "week": "14",
-        "status": "preevent",
+        "week": 14,
+        "status": "midevent",
         "teams": [
           {
             "team_key": "469.l.13624.t.2",
@@ -11681,8 +11681,8 @@
         ]
       },
       {
-        "week": "14",
-        "status": "preevent",
+        "week": 14,
+        "status": "midevent",
         "teams": [
           {
             "team_key": "469.l.13624.t.3",
@@ -11815,8 +11815,8 @@
         ]
       },
       {
-        "week": "14",
-        "status": "preevent",
+        "week": 14,
+        "status": "midevent",
         "teams": [
           {
             "team_key": "469.l.13624.t.4",
@@ -11949,8 +11949,8 @@
         ]
       },
       {
-        "week": "14",
-        "status": "preevent",
+        "week": 14,
+        "status": "midevent",
         "teams": [
           {
             "team_key": "469.l.13624.t.7",
@@ -12083,8 +12083,8 @@
         ]
       },
       {
-        "week": "14",
-        "status": "preevent",
+        "week": 14,
+        "status": "midevent",
         "teams": [
           {
             "team_key": "469.l.13624.t.8",
