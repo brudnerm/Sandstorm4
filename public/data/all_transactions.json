@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-23T01:15:40.549Z",
-  "total_transactions": 13928,
+  "generated_at": "2026-06-23T02:03:10.766Z",
+  "total_transactions": 13929,
   "seasons_included": [
     "2009",
     "2010",
@@ -390877,6 +390877,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "IM IN MY PRIME",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "336",
+      "date": "2026-06-23",
+      "timestamp": 1782179969,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.61788",
+          "name": "Caleb Durbin",
+          "position": "2B,3B",
+          "mlb_team": "BOS",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Roman Got Fingered"
+        },
+        {
+          "player_key": "469.p.62954",
+          "name": "Colt Emerson",
+          "position": "3B,SS",
+          "mlb_team": "SEA",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Roman Got Fingered",
           "destination_type": "waivers",
           "destination_team": ""
         }
