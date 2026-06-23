@@ -3,7 +3,7 @@
   "league_name": "sidebar",
   "current_week": 14,
   "total_weeks": "25",
-  "generated_at": "2026-06-23T06:24:39.081Z",
+  "generated_at": "2026-06-23T16:50:59.361Z",
   "standings": [
     {
       "team_key": "469.l.20795.t.3",
@@ -14,7 +14,7 @@
       "losses": 83,
       "ties": 15,
       "waiver_priority": 6,
-      "faab_balance": 63
+      "faab_balance": 61
     },
     {
       "team_key": "469.l.20795.t.2",
@@ -80,7 +80,7 @@
       "losses": 101,
       "ties": 11,
       "waiver_priority": 2,
-      "faab_balance": 63
+      "faab_balance": 62
     },
     {
       "team_key": "469.l.20795.t.4",
@@ -623,7 +623,7 @@
           "team_key": "469.l.20795.t.6",
           "team_name": "Magic Baseballs",
           "owner": "Galen",
-          "points": "10",
+          "points": "13",
           "stats": {
             "H/AB": {
               "value": "6/20",
@@ -667,7 +667,7 @@
             },
             "L": {
               "value": "0",
-              "result": "tie"
+              "result": "win"
             },
             "SV": {
               "value": "1",
@@ -679,7 +679,7 @@
             },
             "GIDP_P": {
               "value": "0",
-              "result": "tie"
+              "result": "win"
             },
             "ERA": {
               "value": "0.00",
@@ -695,7 +695,7 @@
             },
             "QS": {
               "value": "0",
-              "result": "tie"
+              "result": "win"
             }
           }
         },
@@ -742,24 +742,24 @@
               "result": "loss"
             },
             "IP": {
-              "value": "0.0",
+              "value": "",
               "result": "tie"
             },
             "L": {
-              "value": "0",
-              "result": "tie"
+              "value": "",
+              "result": "loss"
             },
             "SV": {
-              "value": "0",
+              "value": "",
               "result": "loss"
             },
             "K_P": {
-              "value": "0",
+              "value": "",
               "result": "loss"
             },
             "GIDP_P": {
-              "value": "0",
-              "result": "tie"
+              "value": "",
+              "result": "loss"
             },
             "ERA": {
               "value": "",
@@ -774,8 +774,8 @@
               "result": "loss"
             },
             "QS": {
-              "value": "0",
-              "result": "tie"
+              "value": "",
+              "result": "loss"
             }
           }
         }
@@ -12272,7 +12272,7 @@
             "team_key": "469.l.20795.t.6",
             "team_name": "Magic Baseballs",
             "owner": "Galen",
-            "points": "10",
+            "points": "13",
             "stats": {
               "H/AB": {
                 "value": "6/20",
@@ -12316,7 +12316,7 @@
               },
               "L": {
                 "value": "0",
-                "result": "tie"
+                "result": "win"
               },
               "SV": {
                 "value": "1",
@@ -12328,7 +12328,7 @@
               },
               "GIDP_P": {
                 "value": "0",
-                "result": "tie"
+                "result": "win"
               },
               "ERA": {
                 "value": "0.00",
@@ -12344,7 +12344,7 @@
               },
               "QS": {
                 "value": "0",
-                "result": "tie"
+                "result": "win"
               }
             }
           },
@@ -12391,24 +12391,24 @@
                 "result": "loss"
               },
               "IP": {
-                "value": "0.0",
+                "value": "",
                 "result": "tie"
               },
               "L": {
-                "value": "0",
-                "result": "tie"
+                "value": "",
+                "result": "loss"
               },
               "SV": {
-                "value": "0",
+                "value": "",
                 "result": "loss"
               },
               "K_P": {
-                "value": "0",
+                "value": "",
                 "result": "loss"
               },
               "GIDP_P": {
-                "value": "0",
-                "result": "tie"
+                "value": "",
+                "result": "loss"
               },
               "ERA": {
                 "value": "",
@@ -12423,8 +12423,8 @@
                 "result": "loss"
               },
               "QS": {
-                "value": "0",
-                "result": "tie"
+                "value": "",
+                "result": "loss"
               }
             }
           }

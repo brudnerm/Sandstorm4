@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-23T06:24:43.702Z",
-  "total_transactions": 13929,
+  "generated_at": "2026-06-23T16:51:06.623Z",
+  "total_transactions": 13930,
   "seasons_included": [
     "2009",
     "2010",
@@ -390909,6 +390909,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Roman Got Fingered",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "337",
+      "date": "2026-06-23",
+      "timestamp": 1782211394,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.10860",
+          "name": "Alex Lange",
+          "position": "RP",
+          "mlb_team": "KC",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Who's Your Vladdy"
+        },
+        {
+          "player_key": "469.p.11489",
+          "name": "Aaron Ashby",
+          "position": "RP",
+          "mlb_team": "MIL",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Who's Your Vladdy",
           "destination_type": "waivers",
           "destination_team": ""
         }
