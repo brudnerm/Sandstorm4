@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-24T04:53:25.361Z",
-  "total_transactions": 13932,
+  "generated_at": "2026-06-24T06:22:20.210Z",
+  "total_transactions": 13933,
   "seasons_included": [
     "2009",
     "2010",
@@ -391005,6 +391005,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Papua New Vinnie",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "340",
+      "date": "2026-06-24",
+      "timestamp": 1782278395,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.8967",
+          "name": "Paul Goldschmidt",
+          "position": "1B",
+          "mlb_team": "NYY",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "YesavAge of Empires II"
+        },
+        {
+          "player_key": "469.p.11855",
+          "name": "Gabriel Moreno",
+          "position": "C",
+          "mlb_team": "AZ",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "YesavAge of Empires II",
           "destination_type": "waivers",
           "destination_team": ""
         }
