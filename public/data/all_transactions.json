@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-25T02:27:22.749Z",
-  "total_transactions": 13936,
+  "generated_at": "2026-06-25T03:48:03.108Z",
+  "total_transactions": 13937,
   "seasons_included": [
     "2009",
     "2010",
@@ -391171,6 +391171,27 @@
           "source_team": "Be Messick or Be Dead",
           "destination_team": "Dirk Dingler",
           "original_team": "Be Messick or Be Dead"
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "344",
+      "date": "2026-06-25",
+      "timestamp": 1782356659,
+      "transaction_type": "add",
+      "players": [
+        {
+          "player_key": "469.p.60175",
+          "name": "Troy Melton",
+          "position": "SP,RP",
+          "mlb_team": "DET",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Dirk Dingler"
         }
       ]
     }
