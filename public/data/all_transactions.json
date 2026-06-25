@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-25T18:31:52.703Z",
-  "total_transactions": 13938,
+  "generated_at": "2026-06-25T19:24:20.115Z",
+  "total_transactions": 13939,
   "seasons_included": [
     "2009",
     "2010",
@@ -391222,6 +391222,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Be Messick or Be Dead",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "346",
+      "date": "2026-06-25",
+      "timestamp": 1782415215,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.11349",
+          "name": "Francisco Alvarez",
+          "position": "C",
+          "mlb_team": "NYM",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Bennett?"
+        },
+        {
+          "player_key": "469.p.60090",
+          "name": "Jackson Holliday",
+          "position": "2B,SS",
+          "mlb_team": "BAL",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Bennett?",
           "destination_type": "waivers",
           "destination_team": ""
         }
