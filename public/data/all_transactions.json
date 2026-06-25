@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-25T16:48:06.250Z",
-  "total_transactions": 13937,
+  "generated_at": "2026-06-25T17:51:54.565Z",
+  "total_transactions": 13938,
   "seasons_included": [
     "2009",
     "2010",
@@ -391192,6 +391192,38 @@
           "source_team": "",
           "destination_type": "team",
           "destination_team": "Dirk Dingler"
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "345",
+      "date": "2026-06-25",
+      "timestamp": 1782406370,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.11284",
+          "name": "Nico Hoerner",
+          "position": "2B,SS",
+          "mlb_team": "CHC",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Be Messick or Be Dead"
+        },
+        {
+          "player_key": "469.p.62976",
+          "name": "Jacob Wilson",
+          "position": "SS",
+          "mlb_team": "ATH",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Be Messick or Be Dead",
+          "destination_type": "waivers",
+          "destination_team": ""
         }
       ]
     }
