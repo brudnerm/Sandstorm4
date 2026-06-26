@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-26T17:20:53.316Z",
-  "total_transactions": 13942,
+  "generated_at": "2026-06-26T18:06:55.935Z",
+  "total_transactions": 13943,
   "seasons_included": [
     "2009",
     "2010",
@@ -391350,6 +391350,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Who's Your Vladdy",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "350",
+      "date": "2026-06-26",
+      "timestamp": 1782495889,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.62882",
+          "name": "Cooper Ingle",
+          "position": "C",
+          "mlb_team": "CLE",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "So bad it Kurtz"
+        },
+        {
+          "player_key": "469.p.11782",
+          "name": "JJ Bleday",
+          "position": "OF",
+          "mlb_team": "CIN",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "So bad it Kurtz",
           "destination_type": "waivers",
           "destination_team": ""
         }
