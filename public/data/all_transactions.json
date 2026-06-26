@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-26T06:50:43.860Z",
-  "total_transactions": 13940,
+  "generated_at": "2026-06-26T16:42:10.820Z",
+  "total_transactions": 13942,
   "seasons_included": [
     "2009",
     "2010",
@@ -391286,6 +391286,70 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Dirk Dingler",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "348",
+      "date": "2026-06-26",
+      "timestamp": 1782473452,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.9329",
+          "name": "Michael Wacha",
+          "position": "SP",
+          "mlb_team": "KC",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Wacha Shame"
+        },
+        {
+          "player_key": "469.p.10326",
+          "name": "Seth Lugo",
+          "position": "SP",
+          "mlb_team": "KC",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Wacha Shame",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "349",
+      "date": "2026-06-26",
+      "timestamp": 1782480434,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.10909",
+          "name": "Trevor Rogers",
+          "position": "SP",
+          "mlb_team": "BAL",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Who's Your Vladdy"
+        },
+        {
+          "player_key": "469.p.12748",
+          "name": "Ben Brown",
+          "position": "SP,RP",
+          "mlb_team": "CHC",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Who's Your Vladdy",
           "destination_type": "waivers",
           "destination_team": ""
         }
