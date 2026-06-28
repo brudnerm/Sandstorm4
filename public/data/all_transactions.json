@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-28T19:32:15.483Z",
-  "total_transactions": 13948,
+  "generated_at": "2026-06-28T20:10:16.044Z",
+  "total_transactions": 13949,
   "seasons_included": [
     "2009",
     "2010",
@@ -391522,6 +391522,38 @@
           "source_team": "",
           "destination_type": "team",
           "destination_team": "mannys still stoned"
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "356",
+      "date": "2026-06-28",
+      "timestamp": 1782675360,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.11265",
+          "name": "Jake McCarthy",
+          "position": "OF",
+          "mlb_team": "COL",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Roman Got Fingered"
+        },
+        {
+          "player_key": "469.p.60061",
+          "name": "Dominic Canzone",
+          "position": "OF",
+          "mlb_team": "SEA",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Roman Got Fingered",
+          "destination_type": "waivers",
+          "destination_team": ""
         }
       ]
     }
