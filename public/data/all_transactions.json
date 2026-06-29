@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-29T23:07:57.366Z",
-  "total_transactions": 13951,
+  "generated_at": "2026-06-29T23:37:14.781Z",
+  "total_transactions": 13952,
   "seasons_included": [
     "2009",
     "2010",
@@ -391616,6 +391616,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Papua New Vinnie",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "359",
+      "date": "2026-06-29",
+      "timestamp": 1782774779,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.10691",
+          "name": "Emilio Pagán",
+          "position": "RP",
+          "mlb_team": "CIN",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Dirk Dingler"
+        },
+        {
+          "player_key": "469.p.8758",
+          "name": "Kenley Jansen",
+          "position": "RP",
+          "mlb_team": "DET",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Dirk Dingler",
           "destination_type": "waivers",
           "destination_team": ""
         }
