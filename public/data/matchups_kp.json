@@ -3,15 +3,25 @@
   "league_name": "Keeping Pattycakes",
   "current_week": 15,
   "total_weeks": "25",
-  "generated_at": "2026-06-29T07:16:28.793Z",
+  "generated_at": "2026-06-29T17:01:24.242Z",
   "standings": [
+    {
+      "team_key": "469.l.13624.t.8",
+      "team_name": "Be Messick or Be Dead",
+      "owner": "angel escobar",
+      "rank": 1,
+      "wins": 90,
+      "losses": 64,
+      "ties": 14,
+      "waiver_priority": 11
+    },
     {
       "team_key": "469.l.13624.t.10",
       "team_name": "mannys still stoned",
       "owner": "Galen",
-      "rank": 1,
-      "wins": 84,
-      "losses": 61,
+      "rank": 2,
+      "wins": 90,
+      "losses": 67,
       "ties": 11,
       "waiver_priority": 8
     },
@@ -19,9 +29,9 @@
       "team_key": "469.l.13624.t.4",
       "team_name": "Wacha Shame",
       "owner": "Rich Garcis",
-      "rank": 2,
-      "wins": 84,
-      "losses": 63,
+      "rank": 3,
+      "wins": 90,
+      "losses": 69,
       "ties": 9,
       "waiver_priority": 1
     },
@@ -29,101 +39,91 @@
       "team_key": "469.l.13624.t.11",
       "team_name": "So bad it Kurtz",
       "owner": "Jamison",
-      "rank": 3,
-      "wins": 83,
-      "losses": 63,
-      "ties": 10,
-      "waiver_priority": 12
-    },
-    {
-      "team_key": "469.l.13624.t.8",
-      "team_name": "Be Messick or Be Dead",
-      "owner": "angel escobar",
       "rank": 4,
-      "wins": 81,
-      "losses": 62,
-      "ties": 13,
-      "waiver_priority": 11
+      "wins": 85,
+      "losses": 72,
+      "ties": 11,
+      "waiver_priority": 12
     },
     {
       "team_key": "469.l.13624.t.5",
       "team_name": "Papua New Vinnie",
       "owner": "mike",
       "rank": 5,
-      "wins": 73,
-      "losses": 71,
-      "ties": 12,
+      "wins": 80,
+      "losses": 75,
+      "ties": 13,
       "waiver_priority": 9
     },
     {
-      "team_key": "469.l.13624.t.12",
-      "team_name": "Who's Your Vladdy",
-      "owner": "KC",
+      "team_key": "469.l.13624.t.1",
+      "team_name": "Dirk Dingler",
+      "owner": "Swan",
       "rank": 6,
-      "wins": 68,
-      "losses": 67,
-      "ties": 21,
-      "waiver_priority": 5
+      "wins": 78,
+      "losses": 75,
+      "ties": 15,
+      "waiver_priority": 3
     },
     {
       "team_key": "469.l.13624.t.6",
       "team_name": "IM IN MY PRIME",
       "owner": "Mark",
       "rank": 7,
-      "wins": 71,
-      "losses": 75,
+      "wins": 78,
+      "losses": 80,
       "ties": 10,
       "waiver_priority": 10
     },
     {
-      "team_key": "469.l.13624.t.1",
-      "team_name": "Dirk Dingler",
-      "owner": "Swan",
+      "team_key": "469.l.13624.t.12",
+      "team_name": "Who's Your Vladdy",
+      "owner": "KC",
       "rank": 8,
-      "wins": 69,
-      "losses": 73,
-      "ties": 14,
-      "waiver_priority": 3
+      "wins": 70,
+      "losses": 76,
+      "ties": 22,
+      "waiver_priority": 5
     },
     {
       "team_key": "469.l.13624.t.3",
       "team_name": "YesavAge of Empires II",
       "owner": "joey",
       "rank": 9,
-      "wins": 65,
-      "losses": 76,
-      "ties": 15,
+      "wins": 69,
+      "losses": 83,
+      "ties": 16,
       "waiver_priority": 7
     },
     {
-      "team_key": "469.l.13624.t.9",
-      "team_name": "MAINEiacs",
-      "owner": "Will Youmans",
+      "team_key": "469.l.13624.t.7",
+      "team_name": "Roman Got Fingered",
+      "owner": "Nick",
       "rank": 10,
-      "wins": 63,
-      "losses": 80,
-      "ties": 13,
-      "waiver_priority": 2
+      "wins": 66,
+      "losses": 87,
+      "ties": 15,
+      "waiver_priority": 6
     },
     {
       "team_key": "469.l.13624.t.2",
       "team_name": "Bennett?",
       "owner": "Brian Bennett",
       "rank": 11,
-      "wins": 61,
-      "losses": 82,
+      "wins": 66,
+      "losses": 89,
       "ties": 13,
       "waiver_priority": 4
     },
     {
-      "team_key": "469.l.13624.t.7",
-      "team_name": "Roman Got Fingered",
-      "owner": "Nick",
+      "team_key": "469.l.13624.t.9",
+      "team_name": "MAINEiacs",
+      "owner": "Will Youmans",
       "rank": 12,
-      "wins": 57,
-      "losses": 86,
-      "ties": 13,
-      "waiver_priority": 6
+      "wins": 64,
+      "losses": 89,
+      "ties": 15,
+      "waiver_priority": 2
     }
   ],
   "matchups": [
@@ -11414,7 +11414,7 @@
     "14": [
       {
         "week": "14",
-        "status": "midevent",
+        "status": "postevent",
         "teams": [
           {
             "team_key": "469.l.13624.t.1",
@@ -11471,11 +11471,11 @@
                 "result": "loss"
               },
               "ERA": {
-                "value": "4.95",
+                "value": "4.12",
                 "result": "win"
               },
               "WHIP": {
-                "value": "1.17",
+                "value": "1.15",
                 "result": "win"
               }
             }
@@ -11548,7 +11548,7 @@
       },
       {
         "week": "14",
-        "status": "midevent",
+        "status": "postevent",
         "teams": [
           {
             "team_key": "469.l.13624.t.2",
@@ -11682,13 +11682,13 @@
       },
       {
         "week": "14",
-        "status": "midevent",
+        "status": "postevent",
         "teams": [
           {
             "team_key": "469.l.13624.t.3",
             "team_name": "YesavAge of Empires II",
             "owner": "joey",
-            "points": "2",
+            "points": "4",
             "stats": {
               "H/AB": {
                 "value": "43/202",
@@ -11712,11 +11712,11 @@
               },
               "AVG": {
                 "value": ".213",
-                "result": "loss"
+                "result": "win"
               },
               "OBP": {
                 "value": ".298",
-                "result": "loss"
+                "result": "win"
               },
               "IP": {
                 "value": "55.2",
@@ -11752,10 +11752,10 @@
             "team_key": "469.l.13624.t.5",
             "team_name": "Papua New Vinnie",
             "owner": "mike",
-            "points": "9",
+            "points": "7",
             "stats": {
               "H/AB": {
-                "value": "48/224",
+                "value": "47/224",
                 "result": "tie"
               },
               "R": {
@@ -11775,12 +11775,12 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".214",
-                "result": "win"
+                "value": ".210",
+                "result": "loss"
               },
               "OBP": {
-                "value": ".302",
-                "result": "win"
+                "value": ".298",
+                "result": "loss"
               },
               "IP": {
                 "value": "49.2",
@@ -11816,7 +11816,7 @@
       },
       {
         "week": "14",
-        "status": "midevent",
+        "status": "postevent",
         "teams": [
           {
             "team_key": "469.l.13624.t.4",
@@ -11950,7 +11950,7 @@
       },
       {
         "week": "14",
-        "status": "midevent",
+        "status": "postevent",
         "teams": [
           {
             "team_key": "469.l.13624.t.7",
@@ -12011,7 +12011,7 @@
                 "result": "win"
               },
               "WHIP": {
-                "value": "1.09",
+                "value": "1.11",
                 "result": "win"
               }
             }
@@ -12084,7 +12084,7 @@
       },
       {
         "week": "14",
-        "status": "midevent",
+        "status": "postevent",
         "teams": [
           {
             "team_key": "469.l.13624.t.8",

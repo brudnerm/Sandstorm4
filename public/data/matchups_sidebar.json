@@ -3,16 +3,16 @@
   "league_name": "sidebar",
   "current_week": 15,
   "total_weeks": "25",
-  "generated_at": "2026-06-29T07:16:41.860Z",
+  "generated_at": "2026-06-29T17:01:38.065Z",
   "standings": [
     {
       "team_key": "469.l.20795.t.3",
       "team_name": "Guerrero Rocher",
       "owner": "mike",
       "rank": 1,
-      "wins": 110,
-      "losses": 83,
-      "ties": 15,
+      "wins": 117,
+      "losses": 90,
+      "ties": 17,
       "waiver_priority": 6,
       "faab_balance": 61
     },
@@ -21,9 +21,9 @@
       "team_name": "She Said 'Seiya Later Boy'",
       "owner": "Jamison",
       "rank": 2,
-      "wins": 107,
-      "losses": 85,
-      "ties": 16,
+      "wins": 114,
+      "losses": 92,
+      "ties": 18,
       "waiver_priority": 9,
       "faab_balance": 73
     },
@@ -32,9 +32,9 @@
       "team_name": "Walker - St. Louis Cardinal",
       "owner": "KC",
       "rank": 3,
-      "wins": 107,
-      "losses": 87,
-      "ties": 14,
+      "wins": 115,
+      "losses": 94,
+      "ties": 15,
       "waiver_priority": 4,
       "faab_balance": 56
     },
@@ -43,52 +43,19 @@
       "team_name": "Magic Baseballs",
       "owner": "Galen",
       "rank": 4,
-      "wins": 99,
-      "losses": 91,
-      "ties": 18,
+      "wins": 108,
+      "losses": 97,
+      "ties": 19,
       "waiver_priority": 3,
       "faab_balance": 82
-    },
-    {
-      "team_key": "469.l.20795.t.1",
-      "team_name": "Sod Poodles",
-      "owner": "Mark",
-      "rank": 5,
-      "wins": 93,
-      "losses": 94,
-      "ties": 21,
-      "waiver_priority": 10,
-      "faab_balance": 68
-    },
-    {
-      "team_key": "469.l.20795.t.9",
-      "team_name": "Three Lindors Down",
-      "owner": "angel escobar",
-      "rank": 6,
-      "wins": 93,
-      "losses": 98,
-      "ties": 17,
-      "waiver_priority": 1,
-      "faab_balance": 60
-    },
-    {
-      "team_key": "469.l.20795.t.8",
-      "team_name": "Steamed Abrahams",
-      "owner": "Nick",
-      "rank": 7,
-      "wins": 96,
-      "losses": 101,
-      "ties": 11,
-      "waiver_priority": 2,
-      "faab_balance": 53
     },
     {
       "team_key": "469.l.20795.t.4",
       "team_name": "DeLauter'd in the Comatorium",
       "owner": "joey",
-      "rank": 8,
-      "wins": 88,
-      "losses": 99,
+      "rank": 5,
+      "wins": 102,
+      "losses": 101,
       "ties": 21,
       "waiver_priority": 8,
       "faab_balance": 79
@@ -97,20 +64,53 @@
       "team_key": "469.l.20795.t.5",
       "team_name": "Lewiston Meth Heads",
       "owner": "Will Youmans",
-      "rank": 9,
-      "wins": 87,
-      "losses": 101,
-      "ties": 20,
+      "rank": 6,
+      "wins": 98,
+      "losses": 104,
+      "ties": 22,
       "waiver_priority": 5,
       "faab_balance": 92
+    },
+    {
+      "team_key": "469.l.20795.t.8",
+      "team_name": "Steamed Abrahams",
+      "owner": "Nick",
+      "rank": 7,
+      "wins": 103,
+      "losses": 109,
+      "ties": 12,
+      "waiver_priority": 2,
+      "faab_balance": 48
+    },
+    {
+      "team_key": "469.l.20795.t.9",
+      "team_name": "Three Lindors Down",
+      "owner": "angel escobar",
+      "rank": 8,
+      "wins": 99,
+      "losses": 107,
+      "ties": 18,
+      "waiver_priority": 1,
+      "faab_balance": 60
+    },
+    {
+      "team_key": "469.l.20795.t.1",
+      "team_name": "Sod Poodles",
+      "owner": "Mark",
+      "rank": 9,
+      "wins": 96,
+      "losses": 105,
+      "ties": 23,
+      "waiver_priority": 10,
+      "faab_balance": 68
     },
     {
       "team_key": "469.l.20795.t.7",
       "team_name": "Peter of Cola",
       "owner": "Rich Garcis",
       "rank": 10,
-      "wins": 75,
-      "losses": 116,
+      "wins": 77,
+      "losses": 130,
       "ties": 17,
       "waiver_priority": 7,
       "faab_balance": 46
@@ -11768,7 +11768,7 @@
     "14": [
       {
         "week": "14",
-        "status": "midevent",
+        "status": "postevent",
         "teams": [
           {
             "team_key": "469.l.20795.t.1",
@@ -11833,7 +11833,7 @@
                 "result": "tie"
               },
               "ERA": {
-                "value": "3.54",
+                "value": "3.32",
                 "result": "loss"
               },
               "WHIP": {
@@ -11857,7 +11857,7 @@
             "points": "11",
             "stats": {
               "H/AB": {
-                "value": "65/205",
+                "value": "64/205",
                 "result": "tie"
               },
               "R": {
@@ -11885,11 +11885,11 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".317",
+                "value": ".312",
                 "result": "win"
               },
               "OPS": {
-                "value": ".961",
+                "value": ".952",
                 "result": "win"
               },
               "IP": {
@@ -11934,7 +11934,7 @@
       },
       {
         "week": "14",
-        "status": "midevent",
+        "status": "postevent",
         "teams": [
           {
             "team_key": "469.l.20795.t.2",
@@ -11999,11 +11999,11 @@
                 "result": "win"
               },
               "ERA": {
-                "value": "3.28",
+                "value": "2.65",
                 "result": "win"
               },
               "WHIP": {
-                "value": "1.16",
+                "value": "1.14",
                 "result": "loss"
               },
               "K/BB": {
@@ -12011,7 +12011,7 @@
                 "result": "loss"
               },
               "QS": {
-                "value": "4",
+                "value": "5",
                 "result": "win"
               }
             }
@@ -12100,7 +12100,7 @@
       },
       {
         "week": "14",
-        "status": "midevent",
+        "status": "postevent",
         "teams": [
           {
             "team_key": "469.l.20795.t.4",
@@ -12266,7 +12266,7 @@
       },
       {
         "week": "14",
-        "status": "midevent",
+        "status": "postevent",
         "teams": [
           {
             "team_key": "469.l.20795.t.6",
@@ -12335,7 +12335,7 @@
                 "result": "win"
               },
               "WHIP": {
-                "value": "1.29",
+                "value": "1.32",
                 "result": "loss"
               },
               "K/BB": {
@@ -12432,7 +12432,7 @@
       },
       {
         "week": "14",
-        "status": "midevent",
+        "status": "postevent",
         "teams": [
           {
             "team_key": "469.l.20795.t.8",
@@ -12473,7 +12473,7 @@
                 "result": "loss"
               },
               "OPS": {
-                "value": ".634",
+                "value": ".630",
                 "result": "loss"
               },
               "IP": {
@@ -12577,7 +12577,7 @@
                 "result": "win"
               },
               "ERA": {
-                "value": "4.72",
+                "value": "4.73",
                 "result": "win"
               },
               "WHIP": {
