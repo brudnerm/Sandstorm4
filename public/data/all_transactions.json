@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-30T20:26:48.392Z",
-  "total_transactions": 13954,
+  "generated_at": "2026-06-30T21:08:19.569Z",
+  "total_transactions": 13955,
   "seasons_included": [
     "2009",
     "2010",
@@ -391712,6 +391712,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "YesavAge of Empires II",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "362",
+      "date": "2026-06-30",
+      "timestamp": 1782852200,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.64150",
+          "name": "Esmerlyn Valdez",
+          "position": "1B,OF",
+          "mlb_team": "PIT",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Dirk Dingler"
+        },
+        {
+          "player_key": "469.p.62974",
+          "name": "Max Clark",
+          "position": "OF",
+          "mlb_team": "DET",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Dirk Dingler",
           "destination_type": "waivers",
           "destination_team": ""
         }
