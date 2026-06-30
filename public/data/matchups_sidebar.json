@@ -3,7 +3,7 @@
   "league_name": "sidebar",
   "current_week": 15,
   "total_weeks": "25",
-  "generated_at": "2026-06-30T18:12:05.212Z",
+  "generated_at": "2026-06-30T18:56:06.310Z",
   "standings": [
     {
       "team_key": "469.l.20795.t.3",
@@ -125,7 +125,7 @@
           "team_key": "469.l.20795.t.1",
           "team_name": "Sod Poodles",
           "owner": "Mark",
-          "points": "2",
+          "points": "3",
           "stats": {
             "H/AB": {
               "value": "5/34",
@@ -193,7 +193,7 @@
             },
             "K/BB": {
               "value": "0.60",
-              "result": "loss"
+              "result": "win"
             },
             "QS": {
               "value": "0",
@@ -205,7 +205,7 @@
           "team_key": "469.l.20795.t.9",
           "team_name": "Three Lindors Down",
           "owner": "angel escobar",
-          "points": "10",
+          "points": "9",
           "stats": {
             "H/AB": {
               "value": "5/28",
@@ -272,8 +272,8 @@
               "result": "win"
             },
             "K/BB": {
-              "value": "INF",
-              "result": "win"
+              "value": "",
+              "result": "loss"
             },
             "QS": {
               "value": "1",
@@ -291,7 +291,7 @@
           "team_key": "469.l.20795.t.2",
           "team_name": "She Said 'Seiya Later Boy'",
           "owner": "Jamison",
-          "points": "4",
+          "points": "5",
           "stats": {
             "H/AB": {
               "value": "9/29",
@@ -350,7 +350,7 @@
               "result": "tie"
             },
             "ERA": {
-              "value": "5.63",
+              "value": "5.62",
               "result": "loss"
             },
             "WHIP": {
@@ -359,7 +359,7 @@
             },
             "K/BB": {
               "value": "10.00",
-              "result": "loss"
+              "result": "win"
             },
             "QS": {
               "value": "0",
@@ -371,7 +371,7 @@
           "team_key": "469.l.20795.t.10",
           "team_name": "Walker - St. Louis Cardinal",
           "owner": "KC",
-          "points": "9",
+          "points": "8",
           "stats": {
             "H/AB": {
               "value": "6/34",
@@ -438,8 +438,8 @@
               "result": "win"
             },
             "K/BB": {
-              "value": "INF",
-              "result": "win"
+              "value": "",
+              "result": "loss"
             },
             "QS": {
               "value": "1",
@@ -524,7 +524,7 @@
               "result": "loss"
             },
             "K/BB": {
-              "value": "INF",
+              "value": "",
               "result": "tie"
             },
             "QS": {
@@ -604,7 +604,7 @@
               "result": "win"
             },
             "K/BB": {
-              "value": "INF",
+              "value": "",
               "result": "tie"
             },
             "QS": {
@@ -623,7 +623,7 @@
           "team_key": "469.l.20795.t.4",
           "team_name": "DeLauter'd in the Comatorium",
           "owner": "joey",
-          "points": "7",
+          "points": "6",
           "stats": {
             "H/AB": {
               "value": "9/31",
@@ -690,8 +690,8 @@
               "result": "loss"
             },
             "K/BB": {
-              "value": "INF",
-              "result": "win"
+              "value": "",
+              "result": "loss"
             },
             "QS": {
               "value": "0",
@@ -703,7 +703,7 @@
           "team_key": "469.l.20795.t.6",
           "team_name": "Magic Baseballs",
           "owner": "Galen",
-          "points": "8",
+          "points": "9",
           "stats": {
             "H/AB": {
               "value": "5/21",
@@ -771,7 +771,7 @@
             },
             "K/BB": {
               "value": "7.00",
-              "result": "loss"
+              "result": "win"
             },
             "QS": {
               "value": "1",
@@ -828,24 +828,24 @@
               "result": "loss"
             },
             "IP": {
-              "value": "",
+              "value": "0.0",
               "result": "tie"
             },
             "L": {
-              "value": "",
-              "result": "loss"
+              "value": "0",
+              "result": "tie"
             },
             "SV": {
-              "value": "",
+              "value": "0",
               "result": "loss"
             },
             "K_P": {
-              "value": "",
+              "value": "0",
               "result": "loss"
             },
             "GIDP_P": {
-              "value": "",
-              "result": "loss"
+              "value": "0",
+              "result": "tie"
             },
             "ERA": {
               "value": "",
@@ -860,7 +860,7 @@
               "result": "loss"
             },
             "QS": {
-              "value": "",
+              "value": "0",
               "result": "loss"
             }
           }
@@ -869,7 +869,7 @@
           "team_key": "469.l.20795.t.8",
           "team_name": "Steamed Abrahams",
           "owner": "Nick",
-          "points": "15",
+          "points": "13",
           "stats": {
             "H/AB": {
               "value": "8/30",
@@ -913,7 +913,7 @@
             },
             "L": {
               "value": "0",
-              "result": "win"
+              "result": "tie"
             },
             "SV": {
               "value": "1",
@@ -925,7 +925,7 @@
             },
             "GIDP_P": {
               "value": "0",
-              "result": "win"
+              "result": "tie"
             },
             "ERA": {
               "value": "3.21",
@@ -12606,7 +12606,7 @@
             "team_key": "469.l.20795.t.1",
             "team_name": "Sod Poodles",
             "owner": "Mark",
-            "points": "2",
+            "points": "3",
             "stats": {
               "H/AB": {
                 "value": "5/34",
@@ -12674,7 +12674,7 @@
               },
               "K/BB": {
                 "value": "0.60",
-                "result": "loss"
+                "result": "win"
               },
               "QS": {
                 "value": "0",
@@ -12686,7 +12686,7 @@
             "team_key": "469.l.20795.t.9",
             "team_name": "Three Lindors Down",
             "owner": "angel escobar",
-            "points": "10",
+            "points": "9",
             "stats": {
               "H/AB": {
                 "value": "5/28",
@@ -12753,8 +12753,8 @@
                 "result": "win"
               },
               "K/BB": {
-                "value": "INF",
-                "result": "win"
+                "value": "",
+                "result": "loss"
               },
               "QS": {
                 "value": "1",
@@ -12772,7 +12772,7 @@
             "team_key": "469.l.20795.t.2",
             "team_name": "She Said 'Seiya Later Boy'",
             "owner": "Jamison",
-            "points": "4",
+            "points": "5",
             "stats": {
               "H/AB": {
                 "value": "9/29",
@@ -12831,7 +12831,7 @@
                 "result": "tie"
               },
               "ERA": {
-                "value": "5.63",
+                "value": "5.62",
                 "result": "loss"
               },
               "WHIP": {
@@ -12840,7 +12840,7 @@
               },
               "K/BB": {
                 "value": "10.00",
-                "result": "loss"
+                "result": "win"
               },
               "QS": {
                 "value": "0",
@@ -12852,7 +12852,7 @@
             "team_key": "469.l.20795.t.10",
             "team_name": "Walker - St. Louis Cardinal",
             "owner": "KC",
-            "points": "9",
+            "points": "8",
             "stats": {
               "H/AB": {
                 "value": "6/34",
@@ -12919,8 +12919,8 @@
                 "result": "win"
               },
               "K/BB": {
-                "value": "INF",
-                "result": "win"
+                "value": "",
+                "result": "loss"
               },
               "QS": {
                 "value": "1",
@@ -13005,7 +13005,7 @@
                 "result": "loss"
               },
               "K/BB": {
-                "value": "INF",
+                "value": "",
                 "result": "tie"
               },
               "QS": {
@@ -13085,7 +13085,7 @@
                 "result": "win"
               },
               "K/BB": {
-                "value": "INF",
+                "value": "",
                 "result": "tie"
               },
               "QS": {
@@ -13104,7 +13104,7 @@
             "team_key": "469.l.20795.t.4",
             "team_name": "DeLauter'd in the Comatorium",
             "owner": "joey",
-            "points": "7",
+            "points": "6",
             "stats": {
               "H/AB": {
                 "value": "9/31",
@@ -13171,8 +13171,8 @@
                 "result": "loss"
               },
               "K/BB": {
-                "value": "INF",
-                "result": "win"
+                "value": "",
+                "result": "loss"
               },
               "QS": {
                 "value": "0",
@@ -13184,7 +13184,7 @@
             "team_key": "469.l.20795.t.6",
             "team_name": "Magic Baseballs",
             "owner": "Galen",
-            "points": "8",
+            "points": "9",
             "stats": {
               "H/AB": {
                 "value": "5/21",
@@ -13252,7 +13252,7 @@
               },
               "K/BB": {
                 "value": "7.00",
-                "result": "loss"
+                "result": "win"
               },
               "QS": {
                 "value": "1",
@@ -13309,24 +13309,24 @@
                 "result": "loss"
               },
               "IP": {
-                "value": "",
+                "value": "0.0",
                 "result": "tie"
               },
               "L": {
-                "value": "",
-                "result": "loss"
+                "value": "0",
+                "result": "tie"
               },
               "SV": {
-                "value": "",
+                "value": "0",
                 "result": "loss"
               },
               "K_P": {
-                "value": "",
+                "value": "0",
                 "result": "loss"
               },
               "GIDP_P": {
-                "value": "",
-                "result": "loss"
+                "value": "0",
+                "result": "tie"
               },
               "ERA": {
                 "value": "",
@@ -13341,7 +13341,7 @@
                 "result": "loss"
               },
               "QS": {
-                "value": "",
+                "value": "0",
                 "result": "loss"
               }
             }
@@ -13350,7 +13350,7 @@
             "team_key": "469.l.20795.t.8",
             "team_name": "Steamed Abrahams",
             "owner": "Nick",
-            "points": "15",
+            "points": "13",
             "stats": {
               "H/AB": {
                 "value": "8/30",
@@ -13394,7 +13394,7 @@
               },
               "L": {
                 "value": "0",
-                "result": "win"
+                "result": "tie"
               },
               "SV": {
                 "value": "1",
@@ -13406,7 +13406,7 @@
               },
               "GIDP_P": {
                 "value": "0",
-                "result": "win"
+                "result": "tie"
               },
               "ERA": {
                 "value": "3.21",
