@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-06-30T00:09:00.400Z",
-  "total_transactions": 13952,
+  "generated_at": "2026-06-30T01:18:54.924Z",
+  "total_transactions": 13953,
   "seasons_included": [
     "2009",
     "2010",
@@ -391645,6 +391645,38 @@
           "name": "Kenley Jansen",
           "position": "RP",
           "mlb_team": "DET",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Dirk Dingler",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "360",
+      "date": "2026-06-30",
+      "timestamp": 1782780437,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.10881",
+          "name": "Isaac Paredes",
+          "position": "1B,3B",
+          "mlb_team": "HOU",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Dirk Dingler"
+        },
+        {
+          "player_key": "469.p.11529",
+          "name": "Noelvi Marte",
+          "position": "3B,OF",
+          "mlb_team": "CIN",
           "action": "drop",
           "source_type": "team",
           "source_team": "Dirk Dingler",
