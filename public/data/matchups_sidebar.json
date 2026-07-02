@@ -3,7 +3,7 @@
   "league_name": "sidebar",
   "current_week": 15,
   "total_weeks": "25",
-  "generated_at": "2026-07-02T06:22:06.105Z",
+  "generated_at": "2026-07-02T17:42:42.425Z",
   "standings": [
     {
       "team_key": "469.l.20795.t.3",
@@ -29,14 +29,14 @@
     },
     {
       "team_key": "469.l.20795.t.10",
-      "team_name": "Walker - St. Louis Cardinal",
+      "team_name": "Forgot about Trea",
       "owner": "KC",
       "rank": 3,
       "wins": 115,
       "losses": 94,
       "ties": 15,
       "waiver_priority": 4,
-      "faab_balance": 56
+      "faab_balance": 49
     },
     {
       "team_key": "469.l.20795.t.6",
@@ -208,7 +208,7 @@
           "points": "9",
           "stats": {
             "H/AB": {
-              "value": "19/89",
+              "value": "21/94",
               "result": "tie"
             },
             "R": {
@@ -228,7 +228,7 @@
               "result": "win"
             },
             "K_B": {
-              "value": "30",
+              "value": "32",
               "result": "loss"
             },
             "GIDP_B": {
@@ -236,11 +236,11 @@
               "result": "win"
             },
             "AVG": {
-              "value": ".213",
+              "value": ".223",
               "result": "loss"
             },
             "OPS": {
-              "value": ".751",
+              "value": ".763",
               "result": "loss"
             },
             "IP": {
@@ -369,12 +369,12 @@
         },
         {
           "team_key": "469.l.20795.t.10",
-          "team_name": "Walker - St. Louis Cardinal",
+          "team_name": "Forgot about Trea",
           "owner": "KC",
           "points": "9",
           "stats": {
             "H/AB": {
-              "value": "23/101",
+              "value": "24/106",
               "result": "tie"
             },
             "R": {
@@ -386,7 +386,7 @@
               "result": "win"
             },
             "RBI": {
-              "value": "19",
+              "value": "20",
               "result": "win"
             },
             "SB": {
@@ -394,7 +394,7 @@
               "result": "win"
             },
             "K_B": {
-              "value": "34",
+              "value": "38",
               "result": "loss"
             },
             "GIDP_B": {
@@ -402,11 +402,11 @@
               "result": "win"
             },
             "AVG": {
-              "value": ".228",
+              "value": ".226",
               "result": "loss"
             },
             "OPS": {
-              "value": ".814",
+              "value": ".810",
               "result": "loss"
             },
             "IP": {
@@ -457,7 +457,7 @@
           "team_key": "469.l.20795.t.3",
           "team_name": "Guerrero Rocher",
           "owner": "mike",
-          "points": "5",
+          "points": "6",
           "stats": {
             "H/AB": {
               "value": "23/81",
@@ -489,7 +489,7 @@
             },
             "AVG": {
               "value": ".284",
-              "result": "loss"
+              "result": "win"
             },
             "OPS": {
               "value": ".814",
@@ -537,10 +537,10 @@
           "team_key": "469.l.20795.t.5",
           "team_name": "Lewiston Meth Heads",
           "owner": "Will Youmans",
-          "points": "10",
+          "points": "9",
           "stats": {
             "H/AB": {
-              "value": "22/77",
+              "value": "22/79",
               "result": "tie"
             },
             "R": {
@@ -568,11 +568,11 @@
               "result": "loss"
             },
             "AVG": {
-              "value": ".286",
-              "result": "win"
+              "value": ".278",
+              "result": "loss"
             },
             "OPS": {
-              "value": ".930",
+              "value": ".907",
               "result": "win"
             },
             "IP": {
@@ -623,7 +623,7 @@
           "team_key": "469.l.20795.t.4",
           "team_name": "DeLauter'd in the Comatorium",
           "owner": "joey",
-          "points": "1",
+          "points": "2",
           "stats": {
             "H/AB": {
               "value": "21/92",
@@ -651,7 +651,7 @@
             },
             "GIDP_B": {
               "value": "3",
-              "result": "tie"
+              "result": "win"
             },
             "AVG": {
               "value": ".228",
@@ -706,7 +706,7 @@
           "points": "12",
           "stats": {
             "H/AB": {
-              "value": "21/89",
+              "value": "21/91",
               "result": "tie"
             },
             "R": {
@@ -726,19 +726,19 @@
               "result": "loss"
             },
             "K_B": {
-              "value": "10",
+              "value": "11",
               "result": "win"
             },
             "GIDP_B": {
-              "value": "3",
-              "result": "tie"
+              "value": "4",
+              "result": "loss"
             },
             "AVG": {
-              "value": ".236",
+              "value": ".231",
               "result": "win"
             },
             "OPS": {
-              "value": ".727",
+              "value": ".711",
               "result": "win"
             },
             "IP": {
@@ -1700,7 +1700,7 @@
           },
           {
             "team_key": "469.l.20795.t.10",
-            "team_name": "Walker - St. Louis Cardinal",
+            "team_name": "Forgot about Trea",
             "owner": "KC",
             "points": "7",
             "stats": {
@@ -1868,7 +1868,7 @@
           },
           {
             "team_key": "469.l.20795.t.10",
-            "team_name": "Walker - St. Louis Cardinal",
+            "team_name": "Forgot about Trea",
             "owner": "KC",
             "points": "10",
             "stats": {
@@ -3032,7 +3032,7 @@
           },
           {
             "team_key": "469.l.20795.t.10",
-            "team_name": "Walker - St. Louis Cardinal",
+            "team_name": "Forgot about Trea",
             "owner": "KC",
             "points": "10",
             "stats": {
@@ -4196,7 +4196,7 @@
           },
           {
             "team_key": "469.l.20795.t.10",
-            "team_name": "Walker - St. Louis Cardinal",
+            "team_name": "Forgot about Trea",
             "owner": "KC",
             "points": "11",
             "stats": {
@@ -5028,7 +5028,7 @@
           },
           {
             "team_key": "469.l.20795.t.10",
-            "team_name": "Walker - St. Louis Cardinal",
+            "team_name": "Forgot about Trea",
             "owner": "KC",
             "points": "7",
             "stats": {
@@ -5362,7 +5362,7 @@
           },
           {
             "team_key": "469.l.20795.t.10",
-            "team_name": "Walker - St. Louis Cardinal",
+            "team_name": "Forgot about Trea",
             "owner": "KC",
             "points": "5",
             "stats": {
@@ -6526,7 +6526,7 @@
           },
           {
             "team_key": "469.l.20795.t.10",
-            "team_name": "Walker - St. Louis Cardinal",
+            "team_name": "Forgot about Trea",
             "owner": "KC",
             "points": "8",
             "stats": {
@@ -7524,7 +7524,7 @@
           },
           {
             "team_key": "469.l.20795.t.10",
-            "team_name": "Walker - St. Louis Cardinal",
+            "team_name": "Forgot about Trea",
             "owner": "KC",
             "points": "12",
             "stats": {
@@ -8190,7 +8190,7 @@
           },
           {
             "team_key": "469.l.20795.t.10",
-            "team_name": "Walker - St. Louis Cardinal",
+            "team_name": "Forgot about Trea",
             "owner": "KC",
             "points": "5",
             "stats": {
@@ -9188,7 +9188,7 @@
           },
           {
             "team_key": "469.l.20795.t.10",
-            "team_name": "Walker - St. Louis Cardinal",
+            "team_name": "Forgot about Trea",
             "owner": "KC",
             "points": "7",
             "stats": {
@@ -9356,7 +9356,7 @@
           },
           {
             "team_key": "469.l.20795.t.10",
-            "team_name": "Walker - St. Louis Cardinal",
+            "team_name": "Forgot about Trea",
             "owner": "KC",
             "points": "6",
             "stats": {
@@ -10520,7 +10520,7 @@
           },
           {
             "team_key": "469.l.20795.t.10",
-            "team_name": "Walker - St. Louis Cardinal",
+            "team_name": "Forgot about Trea",
             "owner": "KC",
             "points": "9",
             "stats": {
@@ -11684,7 +11684,7 @@
           },
           {
             "team_key": "469.l.20795.t.10",
-            "team_name": "Walker - St. Louis Cardinal",
+            "team_name": "Forgot about Trea",
             "owner": "KC",
             "points": "10",
             "stats": {
@@ -12516,7 +12516,7 @@
           },
           {
             "team_key": "469.l.20795.t.10",
-            "team_name": "Walker - St. Louis Cardinal",
+            "team_name": "Forgot about Trea",
             "owner": "KC",
             "points": "8",
             "stats": {
@@ -12689,7 +12689,7 @@
             "points": "9",
             "stats": {
               "H/AB": {
-                "value": "19/89",
+                "value": "21/94",
                 "result": "tie"
               },
               "R": {
@@ -12709,7 +12709,7 @@
                 "result": "win"
               },
               "K_B": {
-                "value": "30",
+                "value": "32",
                 "result": "loss"
               },
               "GIDP_B": {
@@ -12717,11 +12717,11 @@
                 "result": "win"
               },
               "AVG": {
-                "value": ".213",
+                "value": ".223",
                 "result": "loss"
               },
               "OPS": {
-                "value": ".751",
+                "value": ".763",
                 "result": "loss"
               },
               "IP": {
@@ -12850,12 +12850,12 @@
           },
           {
             "team_key": "469.l.20795.t.10",
-            "team_name": "Walker - St. Louis Cardinal",
+            "team_name": "Forgot about Trea",
             "owner": "KC",
             "points": "9",
             "stats": {
               "H/AB": {
-                "value": "23/101",
+                "value": "24/106",
                 "result": "tie"
               },
               "R": {
@@ -12867,7 +12867,7 @@
                 "result": "win"
               },
               "RBI": {
-                "value": "19",
+                "value": "20",
                 "result": "win"
               },
               "SB": {
@@ -12875,7 +12875,7 @@
                 "result": "win"
               },
               "K_B": {
-                "value": "34",
+                "value": "38",
                 "result": "loss"
               },
               "GIDP_B": {
@@ -12883,11 +12883,11 @@
                 "result": "win"
               },
               "AVG": {
-                "value": ".228",
+                "value": ".226",
                 "result": "loss"
               },
               "OPS": {
-                "value": ".814",
+                "value": ".810",
                 "result": "loss"
               },
               "IP": {
@@ -12938,7 +12938,7 @@
             "team_key": "469.l.20795.t.3",
             "team_name": "Guerrero Rocher",
             "owner": "mike",
-            "points": "5",
+            "points": "6",
             "stats": {
               "H/AB": {
                 "value": "23/81",
@@ -12970,7 +12970,7 @@
               },
               "AVG": {
                 "value": ".284",
-                "result": "loss"
+                "result": "win"
               },
               "OPS": {
                 "value": ".814",
@@ -13018,10 +13018,10 @@
             "team_key": "469.l.20795.t.5",
             "team_name": "Lewiston Meth Heads",
             "owner": "Will Youmans",
-            "points": "10",
+            "points": "9",
             "stats": {
               "H/AB": {
-                "value": "22/77",
+                "value": "22/79",
                 "result": "tie"
               },
               "R": {
@@ -13049,11 +13049,11 @@
                 "result": "loss"
               },
               "AVG": {
-                "value": ".286",
-                "result": "win"
+                "value": ".278",
+                "result": "loss"
               },
               "OPS": {
-                "value": ".930",
+                "value": ".907",
                 "result": "win"
               },
               "IP": {
@@ -13104,7 +13104,7 @@
             "team_key": "469.l.20795.t.4",
             "team_name": "DeLauter'd in the Comatorium",
             "owner": "joey",
-            "points": "1",
+            "points": "2",
             "stats": {
               "H/AB": {
                 "value": "21/92",
@@ -13132,7 +13132,7 @@
               },
               "GIDP_B": {
                 "value": "3",
-                "result": "tie"
+                "result": "win"
               },
               "AVG": {
                 "value": ".228",
@@ -13187,7 +13187,7 @@
             "points": "12",
             "stats": {
               "H/AB": {
-                "value": "21/89",
+                "value": "21/91",
                 "result": "tie"
               },
               "R": {
@@ -13207,19 +13207,19 @@
                 "result": "loss"
               },
               "K_B": {
-                "value": "10",
+                "value": "11",
                 "result": "win"
               },
               "GIDP_B": {
-                "value": "3",
-                "result": "tie"
+                "value": "4",
+                "result": "loss"
               },
               "AVG": {
-                "value": ".236",
+                "value": ".231",
                 "result": "win"
               },
               "OPS": {
-                "value": ".727",
+                "value": ".711",
                 "result": "win"
               },
               "IP": {
@@ -14014,7 +14014,7 @@
           },
           {
             "team_key": "469.l.20795.t.10",
-            "team_name": "Walker - St. Louis Cardinal",
+            "team_name": "Forgot about Trea",
             "owner": "KC",
             "points": "0",
             "stats": {
@@ -15012,7 +15012,7 @@
           },
           {
             "team_key": "469.l.20795.t.10",
-            "team_name": "Walker - St. Louis Cardinal",
+            "team_name": "Forgot about Trea",
             "owner": "KC",
             "points": "0",
             "stats": {
@@ -15678,7 +15678,7 @@
           },
           {
             "team_key": "469.l.20795.t.10",
-            "team_name": "Walker - St. Louis Cardinal",
+            "team_name": "Forgot about Trea",
             "owner": "KC",
             "points": "0",
             "stats": {
@@ -16676,7 +16676,7 @@
           },
           {
             "team_key": "469.l.20795.t.10",
-            "team_name": "Walker - St. Louis Cardinal",
+            "team_name": "Forgot about Trea",
             "owner": "KC",
             "points": "0",
             "stats": {
@@ -16844,7 +16844,7 @@
           },
           {
             "team_key": "469.l.20795.t.10",
-            "team_name": "Walker - St. Louis Cardinal",
+            "team_name": "Forgot about Trea",
             "owner": "KC",
             "points": "0",
             "stats": {
@@ -18008,7 +18008,7 @@
           },
           {
             "team_key": "469.l.20795.t.10",
-            "team_name": "Walker - St. Louis Cardinal",
+            "team_name": "Forgot about Trea",
             "owner": "KC",
             "points": "0",
             "stats": {
@@ -19172,7 +19172,7 @@
           },
           {
             "team_key": "469.l.20795.t.10",
-            "team_name": "Walker - St. Louis Cardinal",
+            "team_name": "Forgot about Trea",
             "owner": "KC",
             "points": "0",
             "stats": {

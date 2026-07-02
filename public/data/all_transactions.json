@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-07-02T06:22:10.537Z",
-  "total_transactions": 13957,
+  "generated_at": "2026-07-02T17:42:47.219Z",
+  "total_transactions": 13961,
   "seasons_included": [
     "2009",
     "2010",
@@ -379363,7 +379363,7 @@
         {
           "player_key": "469.p.63023",
           "name": "Luke Keaschall",
-          "position": "2B",
+          "position": "2B,OF",
           "mlb_team": "MIN",
           "action": "keeper",
           "source_type": "draft",
@@ -391808,6 +391808,123 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Who's Your Vladdy",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "365",
+      "date": "2026-07-02",
+      "timestamp": 1782986667,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.10234",
+          "name": "Dansby Swanson",
+          "position": "SS",
+          "mlb_team": "CHC",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "YesavAge of Empires II"
+        },
+        {
+          "player_key": "469.p.8967",
+          "name": "Paul Goldschmidt",
+          "position": "1B",
+          "mlb_team": "NYY",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "YesavAge of Empires II",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "366",
+      "date": "2026-07-02",
+      "timestamp": 1783001166,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.62194",
+          "name": "Javier Sanoja",
+          "position": "2B,3B,SS,OF",
+          "mlb_team": "MIA",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Roman Got Fingered"
+        },
+        {
+          "player_key": "469.p.63494",
+          "name": "Jung Hoo Lee",
+          "position": "OF",
+          "mlb_team": "SF",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Roman Got Fingered",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "367",
+      "date": "2026-07-02",
+      "timestamp": 1783002391,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.12275",
+          "name": "Dylan Lee",
+          "position": "RP",
+          "mlb_team": "ATL",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "mannys still stoned"
+        },
+        {
+          "player_key": "469.p.11323",
+          "name": "Brady Singer",
+          "position": "SP",
+          "mlb_team": "CIN",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "mannys still stoned",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "368",
+      "date": "2026-07-02",
+      "timestamp": 1783008672,
+      "transaction_type": "drop",
+      "players": [
+        {
+          "player_key": "469.p.10917",
+          "name": "Brent Rooker",
+          "position": "OF",
+          "mlb_team": "ATH",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "IM IN MY PRIME",
           "destination_type": "waivers",
           "destination_team": ""
         }
