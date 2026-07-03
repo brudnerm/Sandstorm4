@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-07-03T07:35:58.548Z",
-  "total_transactions": 13962,
+  "generated_at": "2026-07-03T17:21:05.120Z",
+  "total_transactions": 13964,
   "seasons_included": [
     "2009",
     "2010",
@@ -391957,6 +391957,59 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Dirk Dingler",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "370",
+      "date": "2026-07-03",
+      "timestamp": 1783071737,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.10557",
+          "name": "Mickey Moniak",
+          "position": "OF",
+          "mlb_team": "COL",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Wacha Shame"
+        },
+        {
+          "player_key": "469.p.10868",
+          "name": "Willi Castro",
+          "position": "1B,2B,3B,SS,OF",
+          "mlb_team": "COL",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Wacha Shame",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "371",
+      "date": "2026-07-03",
+      "timestamp": 1783092409,
+      "transaction_type": "drop",
+      "players": [
+        {
+          "player_key": "469.p.11284",
+          "name": "Nico Hoerner",
+          "position": "2B,SS",
+          "mlb_team": "CHC",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Be Messick or Be Dead",
           "destination_type": "waivers",
           "destination_team": ""
         }
