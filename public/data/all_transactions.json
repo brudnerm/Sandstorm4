@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-07-04T08:05:16.030Z",
-  "total_transactions": 13964,
+  "generated_at": "2026-07-04T17:00:46.860Z",
+  "total_transactions": 13966,
   "seasons_included": [
     "2009",
     "2010",
@@ -392010,6 +392010,70 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Be Messick or Be Dead",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "372",
+      "date": "2026-07-04",
+      "timestamp": 1783153389,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.63494",
+          "name": "Jung Hoo Lee",
+          "position": "OF",
+          "mlb_team": "SF",
+          "action": "add",
+          "source_type": "waivers",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "mannys still stoned"
+        },
+        {
+          "player_key": "469.p.10205",
+          "name": "Matt Chapman",
+          "position": "3B",
+          "mlb_team": "SF",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "mannys still stoned",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "373",
+      "date": "2026-07-04",
+      "timestamp": 1783175376,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.10214",
+          "name": "Edwin Díaz",
+          "position": "RP",
+          "mlb_team": "LAD",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Who's Your Vladdy"
+        },
+        {
+          "player_key": "469.p.12558",
+          "name": "Curtis Mead",
+          "position": "1B,2B,3B",
+          "mlb_team": "WSH",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Who's Your Vladdy",
           "destination_type": "waivers",
           "destination_team": ""
         }
