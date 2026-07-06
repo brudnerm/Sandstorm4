@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-07-06T05:52:32.922Z",
-  "total_transactions": 13971,
+  "generated_at": "2026-07-06T18:08:57.341Z",
+  "total_transactions": 13974,
   "seasons_included": [
     "2009",
     "2010",
@@ -392212,6 +392212,102 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Be Messick or Be Dead",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "379",
+      "date": "2026-07-06",
+      "timestamp": 1783347320,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.12418",
+          "name": "Sean Burke",
+          "position": "SP,RP",
+          "mlb_team": "CWS",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Be Messick or Be Dead"
+        },
+        {
+          "player_key": "469.p.11926",
+          "name": "Reid Detmers",
+          "position": "SP,RP",
+          "mlb_team": "LAA",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Be Messick or Be Dead",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "380",
+      "date": "2026-07-06",
+      "timestamp": 1783349188,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.62979",
+          "name": "Kyle Teel",
+          "position": "C",
+          "mlb_team": "CWS",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "So bad it Kurtz"
+        },
+        {
+          "player_key": "469.p.9015",
+          "name": "Salvador Perez",
+          "position": "C,1B",
+          "mlb_team": "KC",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "So bad it Kurtz",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "381",
+      "date": "2026-07-06",
+      "timestamp": 1783353452,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.60418",
+          "name": "Ian Seymour",
+          "position": "SP,RP",
+          "mlb_team": "TB",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "So bad it Kurtz"
+        },
+        {
+          "player_key": "469.p.66492",
+          "name": "Tatsuya Imai",
+          "position": "SP",
+          "mlb_team": "HOU",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "So bad it Kurtz",
           "destination_type": "waivers",
           "destination_team": ""
         }
