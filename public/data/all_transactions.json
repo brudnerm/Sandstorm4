@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-07-08T01:11:29.725Z",
-  "total_transactions": 13979,
+  "generated_at": "2026-07-08T04:31:48.765Z",
+  "total_transactions": 13980,
   "seasons_included": [
     "2009",
     "2010",
@@ -392468,6 +392468,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Wacha Shame",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "387",
+      "date": "2026-07-08",
+      "timestamp": 1783474962,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.12152",
+          "name": "Garrett Mitchell",
+          "position": "OF",
+          "mlb_team": "MIL",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "YesavAge of Empires II"
+        },
+        {
+          "player_key": "469.p.12591",
+          "name": "Andre Pallante",
+          "position": "SP",
+          "mlb_team": "STL",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "YesavAge of Empires II",
           "destination_type": "waivers",
           "destination_team": ""
         }
