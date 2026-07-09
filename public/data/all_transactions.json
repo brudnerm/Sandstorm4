@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-07-09T02:32:16.687Z",
-  "total_transactions": 13981,
+  "generated_at": "2026-07-09T06:29:51.277Z",
+  "total_transactions": 13982,
   "seasons_included": [
     "2009",
     "2010",
@@ -392521,6 +392521,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "Jax On Jax Off",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "389",
+      "date": "2026-07-09",
+      "timestamp": 1783566173,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.65729",
+          "name": "Kade Anderson",
+          "position": "SP",
+          "mlb_team": "SEA",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Wacha Shame"
+        },
+        {
+          "player_key": "469.p.11379",
+          "name": "Ryan Weathers",
+          "position": "SP",
+          "mlb_team": "NYY",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Wacha Shame",
           "destination_type": "waivers",
           "destination_team": ""
         }
