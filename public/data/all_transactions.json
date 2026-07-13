@@ -1,7 +1,7 @@
 {
   "league_name": "Keeping Pattycakes",
-  "generated_at": "2026-07-12T23:09:10.630Z",
-  "total_transactions": 13989,
+  "generated_at": "2026-07-13T00:10:44.792Z",
+  "total_transactions": 13990,
   "seasons_included": [
     "2009",
     "2010",
@@ -392777,6 +392777,38 @@
           "action": "drop",
           "source_type": "team",
           "source_team": "So bad it Kurtz",
+          "destination_type": "waivers",
+          "destination_team": ""
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "league_key": "469.l.13624",
+      "transaction_id": "397",
+      "date": "2026-07-12",
+      "timestamp": 1783898753,
+      "transaction_type": "add/drop",
+      "players": [
+        {
+          "player_key": "469.p.10011",
+          "name": "Matthew Boyd",
+          "position": "SP",
+          "mlb_team": "CHC",
+          "action": "add",
+          "source_type": "freeagents",
+          "source_team": "",
+          "destination_type": "team",
+          "destination_team": "Bennett?"
+        },
+        {
+          "player_key": "469.p.10730",
+          "name": "Brandon Woodruff",
+          "position": "SP",
+          "mlb_team": "MIL",
+          "action": "drop",
+          "source_type": "team",
+          "source_team": "Bennett?",
           "destination_type": "waivers",
           "destination_team": ""
         }
